@@ -2,8 +2,9 @@
 
 <HTML LANG="ja">
 <HEAD>
-<META http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
 <TITLE>サンプルのデータが邪魔なんだけど</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
@@ -13,21 +14,15 @@
 <P>【目標】 <BR>
 <BR>
 　現在編集中のデータを、<B>サンプルゲームが入っていない空データ</B>に差し替えます。<BR>
-<BR>
-　◆<B>基本システムだけ使いたい</B>場合　→　<B><A href="MUST_005.html#A1">【A1】</A></B> へ<BR>
-　◆<B>基本システムも何もいらない</B>場合は　→ <B><A href="MUST_005.html#B1">【B1】</A></B> へ<BR>
-<BR>
-<BR>
-※「<B>ファイルのコピー</B>」、「<B>移動</B>」、「<B>削除</B>」などの<BR>
-　 基本的な操作はできるという前提で説明を進めて行きます。</P>
-<HR id="A1">
-※ここから下は、<B>基本システムだけ入っている初期データ</B>に差し替える場合の手順です。
+<br>
+　この記事はVer3対応です。<BR>
+</P>
 <HR>
 <TABLE border="0">
 
 <TBODY>
 <TR>
-<TD nowrap>【A1】　<B>基本システムだけ使いたい場合</B><BR>
+<TD nowrap>【1】　<B>「基本システムだけ使いたい」または「完全な空データにしたい」場合</B><BR>
       <BR>
       　まず、エディターを使用中の場合は、<BR>
       　<B>エディターを終了</B>させてください。</TD>
@@ -39,81 +34,61 @@
 <HR id="A1">
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【A2】<BR>
+<TD nowrap>【2】<BR>
       　「<B>WOLF_RPG_Editor</B>」フォルダ内の<BR>
-      　「<B>Data</B>」フォルダを、「<B>データ集</B>」フォルダに<BR>
-      　移動させておきます。<BR>
+      　「<B>Data</B>」フォルダを削除します。<BR>
+      　<br>
+      　※これまで作っていたデータは<br>
+      　　消えてしまうので、<br>
+      　　もし取っておきたい場合は、<br>
+      　　「Data」を「Data_backup」にするなど<br>
+      　　好きな名前に変更して<br>
+      　　取っておいてください。</TD>
+<TD nowrap><img src="image/MUST_005_1.png" width="428" height="270" border="1"></TD>
+</TR>
+</TBODY>
+</TABLE>
+<HR>
+<TABLE border="0">
+<TBODY>
+<TR>
+<TD nowrap>【3】<br>
+      　次に<b>Editor.exe</b>を起動すると、<br>
+      　右のような確認メッセージが出てくるので<br>
+      　「<b>はい</b>」を選びます。</TD>
+<TD nowrap><img src="image/MUST_005_2.png" width="253" height="146" border="1"></TD>
+</TR>
+</TBODY>
+</TABLE>
+<hr>
+<TABLE border="0">
+<TBODY>
+<TR>
+<TD nowrap>【4】<br>
+      　「<b>基本システム入りの空データ</b>」を作成するか、<br>
+      　「<b>完全初期データの空データ</b>」を作成するか<br>
+      　選びます。<br>
+      <br>
+      　詳しい説明もウィンドウ内に記載されているので、<br>
+      　よく読んでください。<br>
+      <br>
+      　選ぶとデータのコピーが開始され、<br>
+      　新たな「<b>Data</b>」フォルダが作成されます。</TD>
+<TD nowrap><img src="image/MUST_005_3.png" width="441" height="438" border="1"></TD>
+</TR>
+</TBODY>
+</TABLE>
+<HR>
+<TABLE border="0">
+<TBODY>
+<TR>
+<TD nowrap>【5】<BR>
+      　新たなゲームデータが作成され、<br>
+      　このまま自動でエディターが起動されます。<BR>
       <BR>
-      　※もし現在のデータが必要なければ、<BR>
-      　　「<B>Data</B>」フォルダをそのまま<B>削除</B>しても<BR>
-      　　構いません。<BR>
-      　</TD>
-<TD nowrap><IMG src="image/MUST_005_1.gif" width="300" height="209" border="0"></TD>
-</TR>
-</TBODY>
-</TABLE>
-<HR>
-<TABLE border="0">
-<TBODY>
-<TR>
-<TD nowrap>【A3】<BR>
-      　次に「<B>データ集</B>」フォルダ内にある、<BR>
-      　「<B>（空データ[基本システム入り]）</B>」を<BR>
-      　開きます。</TD>
-<TD nowrap><IMG src="image/MUST_005_2A.gif" width="309" height="93" border="1"></TD>
-</TR>
-</TBODY>
-</TABLE>
-<HR>
-<TABLE border="0">
-<TBODY>
-<TR>
-<TD nowrap>【A4】<BR>
-      　中に「<B>Data</B>」フォルダが<BR>
-      　一つだけ入っているので、<BR>
-      　これを「<B>コピー</B>」します。</TD>
-<TD nowrap><IMG src="image/MUST_005_3.gif" width="111" height="89" border="1"></TD>
-</TR>
-</TBODY>
-</TABLE>
-<HR>
-<TABLE border="0">
-<TBODY>
-<TR>
-<TD nowrap>【A5】　<BR>
-      　再び、<B>Game.exe</B>などが<BR>
-      　あるフォルダに戻ります。<BR>
-      <BR>
-      　ここで「<B>貼り付け</B>」を行い、<BR>
-      　【A4】の「<B>Data</B>」フォルダを<BR>
-      　貼り付けます。</TD>
-<TD nowrap><IMG src="image/MUST_005_4.gif" width="318" height="260" border="1"></TD>
-</TR>
-</TBODY>
-</TABLE>
-<HR>
-<TABLE border="0">
-<TBODY>
-<TR>
-<TD nowrap>【A6】　<BR>
-      　最終的に、元あった「<B>Data</B>」フォルダが、<BR>
-      　新しい「<B>Data</B>」フォルダと入れ替わるような<BR>
-      　フォルダ構成になれば、全ての手順が終了です。</TD>
-<TD nowrap><IMG src="image/MUST_005_1.gif" width="300" height="209" border="1"></TD>
-</TR>
-</TBODY>
-</TABLE>
-<HR>
-<TABLE border="0">
-<TBODY>
-<TR>
-<TD nowrap>【A7】<BR>
-      　この段階で<B>Editor.exe</B>を実行すると、<BR>
-      　<B>基本システム</B>と<B>最低限の画像</B>のみ入った状態から、<BR>
-      　ゲームの作成を開始することができます。<BR>
-      <BR>
-      　あなたの作る、新たなRPGに期待しています！<BR>　お疲れ様でした。</TD>
-<TD nowrap></TD>
+      　あなたの作る、新たなRPGに期待しています！<BR>
+      　お疲れ様でした！</TD>
+<TD nowrap><img src="image/MUST_005_4.png" width="307" height="172" border="1"></TD>
 </TR>
 </TBODY>
 </TABLE>
@@ -123,105 +98,6 @@
 <BR>
 <BR>
 </P>
-<HR id="B1">
-※ここから下は、基本システムも何も入っていない<B>完全初期データ</B>に差し替える場合の手順です。
-<HR>
-<TABLE border="0">
-<TBODY>
-<TR>
-<TD nowrap>【B1】　<B>基本システムも何もいらない場合</B><BR>
-      <BR>
-      　まず、エディターを使用中の場合は、<BR>
-      　<B>エディターを終了</B>させてください。</TD>
-<TD nowrap><IMG src="image/MUST_005_0.gif" width="99" height="74" border="0"></TD>
-</TR>
-
-</TBODY>
-</TABLE>
-<HR>
-<TABLE border="0">
-<TBODY>
-    <TR>
-<TD nowrap>【B2】<BR>
-      　「<B>WOLF_RPG_Editor</B>」フォルダ内の<BR>
-      　「<B>Data</B>」フォルダを、「<B>データ集</B>」フォルダに<BR>
-      　移動させておきます。<BR>
-      <BR>
-      　※もし現在のデータが必要なければ、<BR>
-      　　「<B>Data</B>」フォルダをそのまま<B>削除</B>しても<BR>
-      　　構いません。<BR>
-      　</TD>
-<TD nowrap><IMG src="image/MUST_005_1.gif" width="300" height="209" border="0"></TD>
-</TR>
-</TBODY>
-</TABLE>
-<HR>
-<TABLE border="0">
-<TBODY>
-<TR>
-<TD nowrap>【B3】<BR>
-      　次に「<B>データ集</B>」フォルダ内にある、<BR>
-      　「<B>（完全初期状態データ）</B>」を<BR>
-      　開きます。</TD>
-<TD nowrap><IMG src="image/MUST_005_2B.gif" width="260" height="105" border="1"></TD>
-</TR>
-</TBODY>
-</TABLE>
-<HR>
-<TABLE border="0">
-<TBODY>
-<TR>
-<TD nowrap>【B4】<BR>
-      　中に「<B>Data</B>」フォルダが<BR>
-      　一つだけ入っているので、<BR>
-      　これを「<B>コピー</B>」します。</TD>
-<TD nowrap><IMG src="image/MUST_005_3.gif" width="111" height="89" border="1"></TD>
-</TR>
-</TBODY>
-</TABLE>
-<HR>
-<TABLE border="0">
-<TBODY>
-<TR>
-<TD nowrap>【B5】　<BR>
-      　再び、<B>Game.exe</B>などが<BR>
-      　あるフォルダに戻ります。<BR>
-      <BR>
-      　ここで「<B>貼り付け</B>」を行い、<BR>
-      　【B4】の「<B>Data</B>」フォルダを<BR>
-      　貼り付けます。</TD>
-<TD nowrap><IMG src="image/MUST_005_4.gif" width="318" height="260" border="1"></TD>
-</TR>
-</TBODY>
-</TABLE>
-<HR>
-<TABLE border="0">
-<TBODY>
-<TR>
-<TD nowrap>【B6】　<BR>
-      　最終的に、元あった「<B>Data</B>」フォルダが、<BR>
-      　新しい「<B>Data</B>」フォルダと入れ替わるような<BR>
-      　フォルダ構成になれば、全ての手順が終了です。</TD>
-<TD nowrap><IMG src="image/MUST_005_1.gif" width="300" height="209" border="1"></TD>
-</TR>
-</TBODY>
-</TABLE>
-<HR>
-<TABLE border="0">
-<TBODY>
-<TR>
-<TD nowrap>【B7】<BR>
-      　この段階で<B>Editor.exe</B>を実行すると、<BR>
-      　動作させるために必要な<B>最低限の画像</B>だけが入っている状態から、<BR>
-      　ゲームの作成を開始することができます。<BR>
-      <BR>
-      　あなたの作る、自由な発想のゲームに期待しています！<BR>
-      　お疲れ様でした。</TD>
-<TD nowrap></TD>
-</TR>
-</TBODY>
-</TABLE>
-<HR>
 <HR>
 <P>＜執筆者：<A href="http://www.silversecond.net/" target="_blank">SmokingWOLF</A>＞　</P>
 <HR>
