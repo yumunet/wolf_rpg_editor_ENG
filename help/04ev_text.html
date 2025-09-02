@@ -11,30 +11,33 @@
 
 
 <style>
-body {
+<!--
+
+body{
   margin: 0;
   display: flex;
   height: 100vh;
   overflow: hidden;
   font-family: sans-serif;
 }
-#menu-frame {
+#menu-frame{
   width: 185px;
   min-width: 185px;
   max-width: 185px;
   border-right: 1px solid #aaa;
   height: 100%;
 }
-#content {
+#content{
   flex-grow: 1;
   overflow-y: auto;
   padding: 16px;
 }
-iframe {
+iframe{
   width: 100%;
   height: 100%;
   border: none;
 }
+-->
 </style>
 </HEAD>
 <BODY>
@@ -43,7 +46,7 @@ iframe {
 <iframe src="00_menu.html" title="メニュー"></iframe>
 </div>
 <!--ここから右欄-->
-<div id="content" id="scroll-target">
+<div id="content">
 
 
 <P><BR>イベントコマンド　<B><FONT size="+1">【文章の表示】</FONT></B><BR>
@@ -120,12 +123,13 @@ iframe {
 　一行目に半角で「@」の後ろに数字を入れて改行すると、メッセージ表示直前にシステム変数0番「顔グラフィック番号」に入力した数値が格納されます。うまく使えばイベントコマンド1個分で「顔グラフィック変更」と「文章表示」をこなせるので、イベントコマンドの簡略化が行えます。<BR>
 　
 
-<TABLE border="0">
+
+  <table border="0">
 <TBODY>
 <TR>
 <TD><B>使用例：</B></TD>
 <TD>
-<TABLE border="1" cellpadding="1" cellspacing="1">
+        <table border="1" cellpadding="1" cellspacing="1">
 <TBODY>
 <TR>
 <TD>@5<BR>
@@ -133,30 +137,32 @@ iframe {
 顔を出す処理はコモンイベントで作っておかないといけないけどね！</TD>
 </TR>
 </TBODY>
-</TABLE>
-</TD>
+</table>
+        </TD>
 </TR>
 </TBODY>
-</TABLE>
-<P><BR>
+</table>
+  <P><BR>
 <B>・連続改行で自動入力機能</B><BR>
 　「<B>入力のたびに消去</B>」チェックをオンにしているときに<B>2回連続で改行</B>すると、自動で「入力」が行われます。複数の文章を入力しているときにもキーボードから手を離さなくて良いので、慣れれば素早い文章入力が可能です。<BR>
 　また、<B>Shiftキーを押しながら2回連続改行</B>すると、その文章を「<B>コメント文</B>」として入力することができます。<BR>
 
 <hr>
-<P><b><span style="font-size : 120%;">【「デバッグ文」による監視機能】</span></b><BR>
+<P><b><span style="font-size : 120%;">【「デバッグ文」による監視機能】</span></b><br>
+  <BR>
 　<br>
-<b>●「デバッグ文」の隠しコマンド1　【変数監視機能　ValWatch】</b><br>
+<b><span style="font-size : 120%;">●「デバッグ文」の隠しコマンド1　【変数監視機能　ValWatch】</span></b><br>
 <br>
 　たとえばデバッグ文に
-<table border="1">
+
+  <table border="1">
   <tbody>
     <tr>
       <td><b><span style="color : #ff0000;">ValWatch:ON=2000009</span></b></td>
     </tr>
   </tbody>
 </table>
-<P>　と入れると、「変数操作」コマンドなどで指定した変数に直接アクセスされたとき「デバッグウィンドウ」に以下のように表示されます。<br>
+  <P>　と入れると、「変数操作」コマンドなどで指定した変数に直接アクセスされたとき「デバッグウィンドウ」に以下のように表示されます。<br>
 <br>
 　【見本】　※通常変数9に4が格納されたとき<b><br>
 　# ValWatch=&gt; 2000009 = 4　<br>
@@ -179,32 +185,61 @@ iframe {
 	font-size : 120%;
 ">ValWatch機能のON/OFFで<br>
 　計算結果に差が発生してしまう</span></b>場合がございますのでご注意ください。<br>
+  <br>
+  <br>
 <br>
 <br>
 <br>
-<br>
-<b>●「デバッグ文」の隠しコマンド2　【ピクチャ監視機能　PictureWatch】</b><br>
+<b><span style="font-size : 120%;">●「デバッグ文」の隠しコマンド2　【ピクチャ監視機能　PictureWatch】</span></b><br>
 <br>
 　たとえば「デバッグ文」機能で
-<table border="1">
+
+  <table border="1">
   <tbody>
     <tr>
       <td><b><span style="color : #ff0000;">PictureWatch:ON=123</span></b>&nbsp;</td>
     </tr>
   </tbody>
 </table>
-<P>　と入れると以後ピクチャ123番を監視し、そのピクチャになにか処理が行われるたびに、「デバッグウィンドウ」にそのピクチャ番号と処理位置、処理内容（表示(New）　移動（Move)　消去（Delete）　ディレイリセット（Delay Reset)　ピクチャエフェクト（Effect））が表示されます。<br>
+  <P>　と入れると以後ピクチャ123番を監視し、そのピクチャになにか処理が行われるたびに、「デバッグウィンドウ」にそのピクチャ番号と処理位置、処理内容（表示(New）　移動（Move)　消去（Delete）　ディレイリセット（Delay Reset)　ピクチャエフェクト（Effect））が表示されます。<br>
 　　「ON」のところを「OFF」にしてデバッグ文を実行すると監視状態をオフに出来ます。<br>
 <br>
 　【見本】　ピクチャ123を「表示」したとき<br>
 <b>　# PictureWatch=&gt; 123 &lt;New&gt;<br>
 　--&gt;[ｺﾓﾝ696/28行]</b><br>
+  <br>
+  <br>
+  
+  <p><br>
+<br>
+<b><span style="font-size : 120%;">●「デバッグ文」の隠しコマンド3　【動作指定の監視機能　MoveWatch】</span></b> (Ver3.645以降)<br>
+<br>
+　たとえば「デバッグ文」機能で
+
+  </p>
+  <table border="1">
+  <tbody>
+    <tr>
+      <td><b><span style="color : #ff0000;">MoveWatch:ON=-2</span></b>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+  <P>　と入れると以後「<b>主人公（-2）</b>」キャラを監視し、そのキャラになにか処理が行われるたびに、「デバッグウィンドウ」にそのIDと動作指定のコマンド数が表示されます。<br>
+  　「=<b>0</b>」以上の値を入れると、そのIDのマップイベントを監視します。<br>
+　　「ON」のところを「OFF」にしてデバッグ文を実行すると監視状態をオフに出来ます。<br>
+<br>
+  　【見本】　ID「-2(主人公）」を指定して、「9コマンド」の動作指定が実行されたとき<br>
+  <b>　# MoveWatch=&gt; ID -2 [ 9 moves ]<br>
+  　--&gt;[MapEv4/4行]</b><br>
 <br>
 
-<P><BR>
+  <P><br>
+  
+  <P><BR>
 　
+
 
 
 </div>
 </BODY>
-</HTML>
+</html>

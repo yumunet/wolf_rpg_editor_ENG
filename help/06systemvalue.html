@@ -10,30 +10,33 @@
 
 
 <style>
-body {
+<!--
+
+body{
   margin: 0;
   display: flex;
   height: 100vh;
   overflow: hidden;
   font-family: sans-serif;
 }
-#menu-frame {
+#menu-frame{
   width: 185px;
   min-width: 185px;
   max-width: 185px;
   border-right: 1px solid #aaa;
   height: 100%;
 }
-#content {
+#content{
   flex-grow: 1;
   overflow-y: auto;
   padding: 16px;
 }
-iframe {
+iframe{
   width: 100%;
   height: 100%;
   border: none;
 }
+-->
 </style>
 </HEAD>
 <BODY>
@@ -42,7 +45,7 @@ iframe {
 <iframe src="00_menu.html" title="メニュー"></iframe>
 </div>
 <!--ここから右欄-->
-<div id="content" id="scroll-target">
+<div id="content">
 
 
 <P><BR>
@@ -56,9 +59,10 @@ size=+1>【システム変数/文字列一覧】</FONT></B><BR>
 　
 
 
-<HR size="1" id=value>
-<P><B><FONT size="+1">[ システム変数一覧 ] </FONT></B></P>
-<TABLE border="0">
+
+  <hr size="1" id="value">
+  <P><B><FONT size="+1">[ システム変数一覧 ] </FONT></B></P>
+  <table border="0">
 <TBODY>
 <TR>
 <TD></TD>
@@ -198,8 +202,19 @@ size=+1>【システム変数/文字列一覧】</FONT></B><BR>
       　現在のフレームスキップの度合いを指定します　→　0：スキップなし　1：FPS1/2化　2:FPS1/4化<br>
       　<s>フレームスキップはF5キーでも変更できます。</s>(Ver3.158以降は無料版ウディタではF5キー変更は無効になりました)<BR>
       　これはConfig.exeと同じくGame.iniの設定を変更するもので、ゲームを終了しても値が引き継がれます。<br>
-      <BR>
-<BR>
+        <br>
+        <br>
+<B>Sys34：ｷｬﾗ表示Y補正[-(ﾀｲﾙ-1)～0]px</B>　[Ver3.645で実装]<BR>
+        ・このSys34にマイナスの値を入れると、そのpx分だけ【全キャラの「表示Y座標」が補正されて表示】されます。<br>
+        　つまり、「<b>タイルの中央付近にキャラを立たせる</b>」ことが簡単にできます。<br>
+        ・設定可能な範囲は「-(タイルサイズ-1）～0」までの範囲です。タイルサイズ16なら「-15～0」までです。<br>
+        ・マップイベントの画像として「<b>タイルセット</b>」が設定されている場合は、「<b>Sys34の値がいくつでも表示Y座標は変化しません</b>」。<br>
+        　（もし変わってしまった場合、「タイル画像」が設定されたマップイベントがマップに重ならなくなってしまうからです）<BR>
+        ・このSys34がいかなる値でも、「変数操作+」で得られるキャラクターY座標には変化はありません。<br>
+        ・裏技として、「<b>マップイベント名</b>」に「<b><span style="color : #cc0000;">&lt;Y=FIXED&gt;</span></b>」という文字列を含めると、そのイベントだけSys34の影響を無視することができます（「タイルセット画像」を設定したときと同じ挙動になります）。<br>
+        <br>
+        <br>
+        <BR>
 <B>Sys35：主人公移動中？(1=YES)　マスの間にいる?</B><BR>
       　読み取り専用です、主人公がマスとマスの間を移動中の場合のみ1になります。<BR>
       　隣のマスへ移動してる最中にメニューなどの自動実行イベントを起動すると、<BR>
@@ -538,13 +553,13 @@ size=+1>【システム変数/文字列一覧】</FONT></B><BR>
       </TD>
 </TR>
 </TBODY>
-</TABLE>
-<P><BR>
+</table>
+  <P><BR>
 </P>
-<HR size="1" id=string>
-<P><B><FONT size="+1">[ システム文字列一覧 ] </FONT></B><BR>
+  <hr size="1" id="string">
+  <P><B><FONT size="+1">[ システム文字列一覧 ] </FONT></B><BR>
 </P>
-<TABLE border="0">
+  <table border="0">
 <TBODY>
 <TR>
 <TD></TD>
@@ -695,8 +710,8 @@ size=+1>【システム変数/文字列一覧】</FONT></B><BR>
       </TD>
 </TR>
 </TBODY>
-</TABLE>
-<P><BR>
+</table>
+  <P><BR>
 <BR>
 <BR>
 <BR>

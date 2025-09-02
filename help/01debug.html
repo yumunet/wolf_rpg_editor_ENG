@@ -8,30 +8,33 @@
 <TITLE>デバッグコマンド一覧</TITLE><LINK rel="stylesheet" href="style.css">
 
 <style>
-body {
+<!--
+
+body{
   margin: 0;
   display: flex;
   height: 100vh;
   overflow: hidden;
   font-family: sans-serif;
 }
-#menu-frame {
+#menu-frame{
   width: 185px;
   min-width: 185px;
   max-width: 185px;
   border-right: 1px solid #aaa;
   height: 100%;
 }
-#content {
+#content{
   flex-grow: 1;
   overflow-y: auto;
   padding: 16px;
 }
-iframe {
+iframe{
   width: 100%;
   height: 100%;
   border: none;
 }
+-->
 </style>
 </HEAD>
 <BODY>
@@ -48,8 +51,9 @@ iframe {
 テストプレイ時にはGame.exe上で次のようなコマンドが使えます。<BR>
 テストプレイとしてではなく、Game.exeを直接起動したときにはこれらのコマンドが使えないので注意してください。<BR>
 <BR>
-　・<B><a href="#dwindow" class="glink">デバッグウィンドウ</a></B><BR>
-　　- <a href="#dcommand" class="glink"><b>「デバッグ文」コマンドの裏技 ValWatch(変数監視)とPictureWatch(ピクチャ監視)</b></a><br>
+  　・<B><a href="#dwindow" class="glink">デバッグウィンドウ</a></B><BR>
+　　- <a href="#dcommand" class="glink"><b>「デバッグ文」コマンドの裏技 ValWatch(変数監視)と<br>
+  PictureWatch(ピクチャ監視)、MoveWatch(動作指定監視)</b></a><br>
 　・<B><a href="#logsave" class="glink">デバッグウィンドウ表示（F3）</a></B><BR>
 　・<B><a href="#picture" class="glink">ピクチャ詳細一覧（F7）</a></B><BR>
 　・<B><a href="#debugdata" class="glink">デバッグデータ（F8）</a></B><BR>
@@ -83,11 +87,11 @@ iframe {
 
 <HR size="1" id="dcommand">
 <BR>
-<B><FONT size="+1">[ 「デバッグ文」コマンドの裏技 ValWatchとPictureWatch ]</FONT></B><BR>
+<B><FONT size="+1">[ 「デバッグ文」コマンドの裏技 ValWatchとPictureWatch、MoveWatch ]</FONT></B><BR>
 <BR>
 　「文章の表示」コマンドの「デバッグ文」で以下の入力を行うと、<b>変数やピクチャの監視</b>ができます。 <BR>
 　<br>
-<b>●「デバッグ文」の隠しコマンド1　【変数監視機能　ValWatch】</b><br>
+<b><span style="font-size : 120%;">●「デバッグ文」の隠しコマンド1　【変数監視機能　ValWatch】</span></b><br>
 <br>
 　たとえばデバッグ文に
 <table border="1">
@@ -122,8 +126,9 @@ iframe {
 <br>
 <br>
 <br>
-<br>
-<b>●「デバッグ文」の隠しコマンド2　【ピクチャ監視機能　PictureWatch】</b><br>
+  <br>
+  <br>
+<b><span style="font-size : 120%;">●「デバッグ文」の隠しコマンド2　【ピクチャ監視機能　PictureWatch】</span></b><br>
 <br>
 　たとえば「デバッグ文」機能で
 </p>
@@ -140,6 +145,32 @@ iframe {
 　【見本】　ピクチャ123を「表示」したとき<br>
 <b>　# PictureWatch=&gt; 123 &lt;New&gt;<br>
 　--&gt;[ｺﾓﾝ696/28行]</b><br>
+  <br>
+  <br>
+  <p><br>
+  <br>
+  <br>
+<b><span style="font-size : 120%;">●「デバッグ文」の隠しコマンド3　【動作指定の監視機能　MoveWatch】</span></b> (Ver3.645以降)<br>
+<br>
+　たとえば「デバッグ文」機能で
+
+  </p>
+  <table border="1">
+  <tbody>
+    <tr>
+      <td><b><span style="color : #ff0000;">MoveWatch:ON=-2</span></b>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+  <P>　と入れると以後「<b>主人公（-2）</b>」キャラを監視し、そのキャラになにか処理が行われるたびに、「デバッグウィンドウ」にそのIDと動作指定のコマンド数が表示されます。<br>
+  　「=<b>0</b>」以上の値を入れると、そのIDのマップイベントを監視します。<br>
+　　「ON」のところを「OFF」にしてデバッグ文を実行すると監視状態をオフに出来ます。<br>
+<br>
+  　【見本】　ID「-2(主人公）」を指定して、「9コマンド」の動作指定が実行されたとき<br>
+  <b>　# MoveWatch=&gt; ID -2 [ 9 moves ]<br>
+  　--&gt;[MapEv4/4行]</b><br>
+
+  <br>
 <br>
 <br>
 

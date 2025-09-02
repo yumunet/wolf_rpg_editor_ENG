@@ -300,7 +300,7 @@ A:hover.newstxA,A:active.newstxA{
 <table>
   <tbody class="ten">
     <tr>
-      <td width="630"> <b><span style="font-size : 150%;">Ver3.50</span></b>(2025/01/18)<b><span style="font-size : 150%;">～Ver3.644</span></b>(2025/08/24) <b><a href="#3.50-END" class="green">【最新の修正にジャンプ】</a></b><br>
+      <td width="630"> <b><span style="font-size : 150%;">Ver3.50</span></b>(2025/01/18)<b><span style="font-size : 150%;">～Ver3.646</span></b>(2025/08/29) <b><a href="#3.50-END" class="green">【最新の修正にジャンプ】</a></b><br>
       <br>
       　<b><span style="color : #cc0000;
 	font-size : 120%;
@@ -6313,7 +6313,80 @@ A:hover.newstxA,A:active.newstxA{
  →　「ゲーム基本設定」の「Game.exe動作バージョン調整」で<br>
 　　「旧Ver3.636時点の挙動で動作」に設定すると<br>
 　　従来の「マップイベント名を保存しない」挙動に戻せます。<br>
+      <br>
+      <hr size="1" noshade>
+      <span style="font-size : 120%;"><b>【Ver3.645 のアップデート内容】</b></span>　2025/08/27　 <a href="#top" class="green">↑トップへ</a><br>
+      <br>
+      <b><span style="font-size : 120%;"><br>
+      【新機能】</span></b><br>
+      <span style="color : #cc0000;
+	font-size : 120%;
+"><b><span style="font-size : 120%;"><br>
+      ●【システム変数/新機能】<br>
+      　「Sys34:ｷｬﾗ表示Y補正[-(ﾀｲﾙ-1)～0]px」を新たに実装。</span></b><br>
+      <br>
+      </span>→ 通常、全てのマップイベントや主人公、仲間のキャラクターチップは<br>
+　「タイルの一番下」を基準とした位置に立っていますが、<br>
+　このSys34にマイナスの値を入れると、そのpx分だけ<br>
+      　<b>【全キャラの「表示Y座標」が補正されて表示】</b>されます。<br>
+      　つまり、「少し上に表示させて、タイルの中央付近にキャラを立たせる」ことが簡単にできます。<br>
 <br>
+→　設定可能な範囲は「-(タイルサイズ-1）～0」までの範囲で、<br>
+　　マイナスにしたピクセル分だけ全キャラが上に移動します。<br>
+　（たとえばタイルサイズ「16」なら「-15～0」の範囲まで指定可能です。<br>
+　　もし値がはみ出していた場合は範囲内におさめられます）<br>
+<br>
+      →　なお、画像として「タイルセット」が設定されているイベントは、Sys34では表示Y座標は変化しません。<br>
+      　　Y座標がずれると、マップに重ねようとしても重ならなくなってしまうからです。<br>
+      <br>
+      　<img src="old_releaselog/image/20250827_Sys34.jpg" border="1"><br>
+      <br>
+      <hr size="1" noshade>
+      <span style="font-size : 120%;"><b>【Ver3.646 のアップデート内容】</b></span>　2025/08/29　 <a href="#top" class="green">↑トップへ</a><br>
+      <br>
+      <b><span style="font-size : 150%;"><br>
+      【新機能】</span></b><br>
+<br>
+      <b><span style="color : #cc0000;">●【デバッグ文/新機能】<br>
+      　「MoveWatch:ON=(イベントID)」機能を追加。</span><br>
+      　あるイベントや主人公に「動作指定」が行われたタイミングを</b><br>
+      <b>　監視し、検出することができます。<br>
+      　</b><br>
+→ たとえばデバッグ文で「MoveWatch:ON=-2」(-2:主人公)のように記入すると<br>
+　ゲーム中に主人公に対して「動作指定」コマンドが実行されたとき、<br>
+　デバッグウィンドウに以下のように表示されます。<br>
+<br>
+      <b># MoveWatch=&gt; ID -2 [ 9 moves ]<br>
+      --&gt;[MapEv4/4行]</b><br>
+<br>
+　※「9 moves」はその動作指定で指定されているコマンドが<br>
+　　9つあるという意味です<br>
+　※MoveWatch:OFF=? でその対象への監視を切ることができます。<br>
+<br>
+<br>
+<br>
+●【システム変数/新機能】<br>
+      　「イベント名」に「<b><span style="color : #cc0000;">&lt;Y=FIXED&gt;</span></b><span>」</span>（半角大文字のみ！）という文字列を含めると<br>
+　「Sys34:ｷｬﾗ表示Y補正[-(ﾀｲﾙ-1)～0]px」の影響を無視できる裏技を追加<br>
+　<br>
+→ たとえばマップイベントに「ドア&lt;Y=FIXED&gt;」という名前を付けると、<br>
+　Sys34にいかなる値が入っていてもY座標補正がかからなくなります。<br>
+　実質、マップチップ的なイベントを配置する場合にご利用ください。<br>
+      <br>
+<br>
+      <b><span style="font-size : 120%;"><br>
+      【エディター部の修正】</span></b><br>
+<br>
+●【リンク先URL/修正】<br>
+　ブラウザが開かれるボタンのリンク先URLを、<br>
+　全てGitHubアーカイブページ側<br>
+　( https://smokingwolf.github.io/tool_wolf_rpg_editor/ )のURLに変更。<br>
+→ ウディタ公式サイトはレンタルサーバーであり、作者の死後、<br>
+　 アクセスできなくなってしまう可能性が高いため、<br>
+      　 無料でサイトを置いておけるGitHubにマニュアルなどを置き直しました。<br>
+      → 公式サイトへのリンクもGitHubページを間にかませて、<br>
+      　 もし元ページがなくなった場合はアーカイブページに飛ぶようにしています。<br>
+      <br>
       </td>
     </tr>
     <tr>

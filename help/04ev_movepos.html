@@ -9,30 +9,33 @@
 
 
 <style>
-body {
+<!--
+
+body{
   margin: 0;
   display: flex;
   height: 100vh;
   overflow: hidden;
   font-family: sans-serif;
 }
-#menu-frame {
+#menu-frame{
   width: 185px;
   min-width: 185px;
   max-width: 185px;
   border-right: 1px solid #aaa;
   height: 100%;
 }
-#content {
+#content{
   flex-grow: 1;
   overflow-y: auto;
   padding: 16px;
 }
-iframe {
+iframe{
   width: 100%;
   height: 100%;
   border: none;
 }
+-->
 </style>
 </HEAD>
 <BODY>
@@ -41,18 +44,30 @@ iframe {
 <iframe src="00_menu.html" title="メニュー"></iframe>
 </div>
 <!--ここから右欄-->
-<div id="content" id="scroll-target">
+<div id="content">
 
 <P><BR>イベントコマンド　<B><FONT size=+1>【場所移動】</FONT></B><BR>
 <BR>
 　プレイヤーキャラクター（主人公）やイベントの場所移動を行います。<BR>
 <BR>
-<IMG src="Ev_move.png" border="0"><BR>
+<img src="Ev_move.png" border="0"><BR>
 <BR>
 <B><FONT size=+1>【各部の説明】</FONT></B><BR>
 <BR>
 <B>1.対象</B><BR>
-　場所移動させる対象を選択します。変数による指定も可能です。変数の内容を-1にした場合、移動対象はこのイベント（コモンなら呼び出し元イベント）になります。<BR>
+  　場所移動させる対象を選択します。変数による指定も可能です。<br>
+  　変数の内容を-1にした場合、移動対象はこのイベント（コモンなら呼び出し元イベント）になります。<br>
+  <br>
+  <b>【対象番号の見本】</b><br>
+  　<b>0以上の場合</b> ＝ その値のIDを持つイベント　（例：2が入ってたらID2番のイベントに動作させる）<br>
+  　<b>-1</b>＝このイベント<br>
+  　<b>-2</b>＝主人公(隊列先頭)<br>
+  　<b>-3</b>＝仲間1(2人目)<br>
+  　<b>-4</b>＝仲間2(3人目)<br>
+  　<b>-5</b>＝仲間3(4人目)<br>
+  　<b>-6</b>＝仲間4(5人目)<br>
+  　<b>-7</b>＝仲間5(6人目)<br>
+  <BR>
 <BR>
 <BR>
 <B>2.移動先を手動で入力する</B><BR>
@@ -73,7 +88,7 @@ iframe {
 　　移動させたいマップ/地点をマウスで選択し、「OK」を押すだけで「マップ番号」「X,Y座標」および各オプションが簡単にセットできます。<br>
 　なお、ここに表示されるマップは技術的な都合により<b><span style="color : #cc0000;">「保存」された時点のマップ</span></b>となっています。編集途中のマップがすぐここに反映されたりしないので注意してください。<BR>
 <BR>
-　　<IMG src="Ev_move2.png" border="0"><BR>
+　　<img src="Ev_move2.png" border="0"><BR>
 <BR>
 <BR>
 <B>5.場所移動時オプション</B><br>
@@ -82,34 +97,34 @@ iframe {
 　<b>【移動後の向き】</b>　(Ver3.50より)<br>
 　　移動後の向きを選択できます。<br>
 　　「<b>向きを変えない(0)</b>」のほか「<b>向き指定（1～9・テンキーに対応）</b>」、あるいは向きを「<b>変数（セルフ変数・通常変数・予備変数）</b>」で指定可能です。
-<TABLE border="0">
+<table border="0">
 <TBODY>
 <TR>
-<TD width="16"></TD>
-<TD width="55">
-<TABLE border="1" width="61">
+<td width="16"></td>
+<td width="55">
+<table border="1" width="61">
 <TBODY>
 <TR>
-<TD align="center" width="13">7</TD>
-<TD align="center" width="11">8</TD>
-<TD align="center" width="15">9</TD>
+<td align="center" width="13">7</td>
+<td align="center" width="11">8</td>
+<td align="center" width="15">9</td>
 </TR>
 <TR>
-<TD align="center" width="13">4</TD>
-<TD align="center" width="11"></TD>
-<TD align="center" width="15">6</TD>
+<td align="center" width="13">4</td>
+<td align="center" width="11"></td>
+<td align="center" width="15">6</td>
 </TR>
 <TR>
-<TD align="center" width="13">1</TD>
-<TD align="center" width="11">2</TD>
-<TD align="center" width="15">3</TD>
+<td align="center" width="13">1</td>
+<td align="center" width="11">2</td>
+<td align="center" width="15">3</td>
 </TR>
 </TBODY>
-</TABLE>
-　　<B>向き</B></TD>
+</table>
+　　<B>向き</B></td>
 </TR>
   </TBODY>
-</TABLE>
+</table>
 <P><br>
 　<b>【トランジション】</b><BR>
 　　「トランジションを行わない [最高速]」　…　実行した瞬間に移動を実行します。<BR>
