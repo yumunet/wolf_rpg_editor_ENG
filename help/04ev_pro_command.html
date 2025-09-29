@@ -10,30 +10,33 @@
 
 
 <style>
-body {
+<!--
+
+body{
   margin: 0;
   display: flex;
   height: 100vh;
   overflow: hidden;
   font-family: sans-serif;
 }
-#menu-frame {
+#menu-frame{
   width: 185px;
   min-width: 185px;
   max-width: 185px;
   border-right: 1px solid #aaa;
   height: 100%;
 }
-#content {
+#content{
   flex-grow: 1;
   overflow-y: auto;
   padding: 16px;
 }
-iframe {
+iframe{
   width: 100%;
   height: 100%;
   border: none;
 }
+-->
 </style>
 </HEAD>
 <BODY>
@@ -137,7 +140,8 @@ iframe {
 <br>
 　+ <b>[パッド]ゲームパッドを振動させる</b>　　(Ver3.50より)<br>
 　　　→　「強さ0～1000」「時間[ms]」<br>
-　　ゲームパッドを振動させます。強さを1000以下で、時間はミリ秒（1/1000秒）単位です。<br>
+  　　ゲームパッドを振動させます。強さを1000以下で、時間はミリ秒（1/1000秒）単位です。<br>
+  　　なおウディタに使用しているライブラリの仕様上、もともとPC用でないゲームパッド（「DUALSHOCK4」など）は振動させることができない、とのことです。<br>
 <br>
 <br>
 　+ <b>[処理]処理停止ｳｪｲﾄ（ﾐﾘ秒）</b><br>
