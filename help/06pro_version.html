@@ -9,30 +9,33 @@
 
 
 <style>
-body {
+<!--
+
+body{
   margin: 0;
   display: flex;
   height: 100vh;
   overflow: hidden;
   font-family: sans-serif;
 }
-#menu-frame {
+#menu-frame{
   width: 185px;
   min-width: 185px;
   max-width: 185px;
   border-right: 1px solid #aaa;
   height: 100%;
 }
-#content {
+#content{
   flex-grow: 1;
   overflow-y: auto;
   padding: 16px;
 }
-iframe {
+iframe{
   width: 100%;
   height: 100%;
   border: none;
 }
+-->
 </style>
 </HEAD>
 <BODY>
@@ -246,14 +249,20 @@ iframe {
 　このシステム文字列は、たとえば1ゲームデータで複数言語を切り替えられるゲームを作る際、以下のように使用できます。<br>
 　　※言語切り替え時には「再起動」が挟まる前提です（つまりゲーム中に動的に言語切り替えせず、起動時に切り替わる方式です）。<br>
 <br>
-1.複数の言語を入れるデータを「<b>主データ</b>」と呼ぶことにします。主データにはいま、「日本語版」の暗号化データだけ入ってるとします。<br>
+  1.複数の言語を入れるゲームデータを「<b>主データ</b>」と呼ぶことにします。主データにはいま、「日本語版」の暗号化データだけ入ってるとします。<br>
 　このゲームデータには「<b>言語切り替え機能（処理4で具体的に説明します）</b>」が搭載済みであると仮定します。<br>
 <br>
 2.<b><a href="https://silversecond.booth.pm/items/5151747" target="_blank">ウディタ翻訳サポートツール(新ウィンドウ/公式の有料ソフト)</a></b>などを利用し、別言語に翻訳されたゲームデータを別の場所に出力します。<br>
 <br>
-3.「2」のゲームデータ内に「<b>英語に翻訳されたBasicData.wolf</b>」が作れたとしたら、それを「<b>BasicData_EN.wolf</b>」にファイル名変更して、「<b>主データ</b>」に入れます。<br>
-　このとき、「<b>主データ</b>」には日本語版の「<b>BasicData.wolf</b>」と、英語版の「<b>BasicData_EN.wolf</b>」が一緒に入っていることになります。<br>
-<br>
+3.「2」のゲームデータ内に「<b>英語に翻訳されたBasicData.wolf</b>」が作れたとしたら、それを「<b>BasicData_EN.wolf</b>」にファイル名変更して、「<b>主データ</b>」のDataフォルダ内に入れます。<br>
+　このとき、「<b>主データ</b>」のDataには日本語版の「<b>BasicData.wolf</b>」と、英語版の「<b>BasicData_EN.wolf</b>」が一緒に入っていることになります。<br>
+  <br>
+  　Dataフォルダ<br>
+  　├ <b>BasicData.wolf</b><br>
+  　├ <b>BasicData_EN.wolf</b><br>
+  　└ その他の.wolfデータ<br>
+  <br>
+  <br>
 4.<span style="color : #cc0000;">主データを起動した際、日本語版のプレイ中にプレイヤーが言語を「<b>英語</b>」に切り替えたら<b>、</b></span><b><span style="font-size : 120%;
 	color : #cc0000;
 ">SysS74「[P]次起動Basicﾃﾞｰﾀﾌｫﾙﾀﾞ」</span></b><span style="color : #cc0000;">に「<b>BasicData_EN</b>」を代入して「<b>ゲーム再起動</b>」させるように処理を組みます（「<b>ゲーム再起動</b>」は「<b><a href="04ev_pro_command.html" target="B">プロ版機能</a></b>」コマンド内にあります）。</span><br>
