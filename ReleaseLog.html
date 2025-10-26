@@ -305,6 +305,45 @@ A:hover.newstxA,A:active.newstxA{
     <tr>
       <td style="width : 622px;"><br>
       <hr size="1" noshade>
+      <span style="font-size : 120%;"><b>【Ver3.661 のアップデート内容】</b></span>　2025/10/26　 <a href="#top" class="green" style="width:200px;">↑トップへ</a><br>
+      <br>
+      <b><span style="font-size : 120%;"><br>
+      【ゲーム部の修正】</span></b><br>
+<br>
+●【システム変数/不具合】<br>
+　「Sys97:再生中BGS音量(Ch=Sys99)[%]」が「Sys101:BGS音量補正[%]」の値を<br>
+　かけた数値になってしまっていたバグを修正。<br>
+→ 「Sys95:再生中BGM音量」の方は指定した「音量」値がそのまま返されるのに対し、<br>
+　　Sys97はSys101によって値が変化してしまうミスがありました。<br>
+　　今はどちらも指定された「音量」の値を返すようになっています。<br>
+<br>
+<br>
+      <b><span style="font-size : 120%;"><br>
+      【エディター部の修正】</span></b><br>
+<br>
+●【DB操作/新機能】<br>
+・「XY配列」かつ「名前」呼び出しにしたとき、<br>
+　[?]ボタンが出てきてXY配列名の削除の仕方が表示されるように<br>
+　(Editor_XY_array_Name.iniから不要な行を削除する）<br>
+・Shiftを押しながら[?]ボタンを押すとEditor_XY_array_Name.iniを<br>
+　直接開ける機能を追加<br>
+<br>
+●【DB操作/調整】<br>
+　Editor_XY_array_Name.ini（XY配列名リスト）を書き換えて<br>
+　コマンド欄を再アクティブにしたとき、XY配列の「名前」リストに<br>
+　ファイル内容がすぐ反映されるように修正<br>
+<br>
+●【ゲームデータの作成・プロ版/調整】<br>
+　「プロテクトキーが設定された状態」で「暗号化バージョン」を<br>
+　「ChaCha20暗号化」にして暗号化した場合、次に「ゲームデータを作成」を<br>
+　開いても暗号化バージョンが記憶されていないバグを修正<br>
+<br>
+●【マップ選択/不具合】<br>
+　特定条件でマップを削除した場合、マップ選択のツリー処理の問題で<br>
+　次回以降Editor.exeがクラッシュして起動できなくなることがあるバグを修正<br>
+      <br>
+      <br>
+      <hr size="1" noshade>
       <span style="font-size : 120%;"><b>【Ver3.660 のアップデート内容】</b></span>　2025/10/20　 <a href="#top" class="green" style="width:200px;">↑トップへ</a><br>
       <br>
       <b><span style="font-size : 120%;"><br>
