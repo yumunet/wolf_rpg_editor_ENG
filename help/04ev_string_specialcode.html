@@ -130,7 +130,7 @@ iframe{
 <iframe src="00_menu.html" title="メニュー"></iframe>
 </div>
 <!--ここから右欄-->
-<div id="content" id="scroll-target">
+<div id="content">
 
 
 
@@ -606,10 +606,12 @@ EDF</span>
 　　「&lt;&lt;LOAD_IMAGE_TO_XY/A=?/R=?/G=?/B=?&gt;&gt;(ファイル名)」とほぼ同じですが<br>
 　　(配列名1～4)で指定した「<b>名前(文字列)呼び出し</b>」のXY配列に画像情報が保存されます。<br>
 　 成功時は文字列変数に「<b>1</b>」が、ファイルが見つからなかった場合は「<b>&lt;&lt;NotFound&gt;&gt;</b>」が返されます。<br>
-<br>
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  ※なお[数値]でも[名前]呼び出しでも、一部の配列名を省略して一部の色情報またはアルファ値だけを取得することが可能です。<br>
+  　例：<b><span style="color : #cc0000;">&lt;&lt;LOAD_IMAGE_TO_XY/G=12&gt;&gt;CharaChip/Animal_Chicken.png</span></b>　→ G（緑）要素だけを取得<br>
+  <br>
+  <br>
 <br>
 <br>
 　<b><a id="IMG6"></a>【6】.4つのXY配列(ARGB)から画像出力</b>
@@ -631,11 +633,17 @@ EDF</span>
 　 成功時は文字列変数に「<b>1</b>」が、ファイルが見つからなかった場合は「<b>&lt;&lt;NotFound&gt;&gt;</b>」が返されます。<br>
 <br>
 <br>
-　　※ARGBのXY配列内の値は、0-255の範囲を格納してください。<br>
-　　※「暗号化されたフォルダ」内には出力できないので注意してください。<br>
-　　　<b><span style="color : #cc0000;">もしセーブフォルダ内に出力する場合は(ファイル名)を「../Save/aa.png」のように指定してください</span></b>。<br>
-　　
-<hr>
+  ※ARGBのXY配列内の値は、0-255の範囲を格納してください。<br>
+  <br>
+  ※「暗号化されたフォルダ」内には出力できないので注意してください。<br>
+  　<b><span style="color : #cc0000;">もしセーブフォルダ内に出力する場合は(ファイル名)を「../Save/aa.png」のように指定してください</span></b>。<br>
+  <br>
+  ※<b>ARGB</b>の各配列の指定は省略可能です。省略した場合は以下のようになります<br>
+  　Aを省略　→　全面のアルファ値が<b><span style="color : #cc0000;">255</span></b>になります。<br>
+  　R・G・Bを省略　→　全面のその色の値が<b><span style="color : #cc0000;">0</span></b>になります。<br>
+  　例：<b><span style="color : #cc0000;">&lt;&lt;SAVE_PNG_FROM_XY/B=2/G=3&gt;&gt;../Save/BlueGreen.png</span></b><br>
+  　　 → A(アルファ値)とR(赤)を省略した例。B(青)とG(緑)の色要素だけで描かれた全面アルファ値255の画像が出力されます。<br>
+  <hr>
 <P><b><span style="font-size : 150%;">【サウンド系】</span></b><br>
 <br>
 　<a id="SOUND1"></a><B>【1】音声ファイルの再生時間をミリ秒で得る　<span style="color : #cc0000;">&lt;&lt;GET_SOUNDTIME&gt;&gt;</span><span style="color : #0000ff;">(ファイル名[Data/から指定])</span> </B>
