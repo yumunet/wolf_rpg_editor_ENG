@@ -1,6 +1,6 @@
 BODY{background-color : #fdfffd;
-font-family : "ＭＳ Ｐゴシック" ;
-  font-size : 10pt;
+  font-family : Verdana;
+  font-size : 11pt;
   color : #437543;
   margin: 20px 0px 0px 5px;
 
@@ -23,6 +23,7 @@ TABLE{
 
 P.menu{
   line-height: 130%;
+  padding: 20px;
 }
 
 /*--線色--*/
