@@ -1,39 +1,38 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>選択肢が表示される位置を変更したい</TITLE>
+<TITLE>I Want to Change the Position Where Choices Are Displayed</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【選択肢が表示される位置を変更したい】</H2>
+<H2>【I Want to Change the Position Where Choices Are Displayed】</H2>
 <HR>
-　<B>【目標】</B><BR>
+　<B>[Goal]</B><BR>
 <HR>
 <P>
-　ウディタでは、選択肢はゲーム画面の中央に表示されます。<BR>
-　しかし、タイトル画面のニューゲーム/コンティニュー選択肢を<BR>
-　画面の右下など、中央ではない位置に表示しているゲームも<BR>
-　少なくありません。<BR>
+　In WOLF RPG Editor, choices are displayed in the center of the game screen.<BR>
+　However, quite a few games display their title screen's New Game/Continue choices<BR>
+　in a position other than the center, such as the bottom-right.<BR>
 <BR>
-　今回は、<B>選択肢を画面右下に表示</B>させるイベントを<BR>
-　作成することで、選択肢の表示位置の変え方を習得します。</P>
+　This time, by creating an event that <B>displays choices in the bottom-right of the screen</B>,<BR>
+　we will learn how to change the display position of choices.</P>
 <HR>
-　<B>【手順】</B><BR>
+　<B>【Steps】</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【1】 イベントの作成<BR>
+<TD nowrap>[1] Create the event<BR>
 <BR>
-　「サンプルマップA」の適当な場所にイベントを作成し、<BR>
-　ニワトリの画像を設定しておきます。<BR>
+　Create an event somewhere on "Sample Map A" and<BR>
+　set the chicken image.<BR>
 <BR>
-　やり方が分からない場合は、「<A href="http://www.silversecond.com/WolfRPGEditor/Guide/MUST_001x.html" target="_blank">新しいイベントを作ってみたい</A>」の<BR>
-　【1】～【5】を参考にしてみてください。<BR>
+　If you're unsure how, please refer to steps [1]～[5] of<BR>
+　"<A href="http://www.silversecond.com/WolfRPGEditor/Guide/MUST_001x.html" target="_blank">I want to create a new event</A>".<BR>
 </TD>
 <TD nowrap><IMG src="image/BASE_E008_2.png" width="325" height="234" border="0"></TD>
 </TR>
@@ -43,30 +42,29 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【2】 イベントコマンドの入力 ： 選択肢のX座標<BR>
+<TD nowrap>[2] Enter Event Command: X coordinate of the choice<BR>
 <BR>
-　イベントウィンドウの右下にある、<BR>
-　<B>「■ コマンド入力ウィンドウ表示 ■」</B>をクリックしてください。<BR>
+　Click <B>"■ Show Command Window ■"</B><BR>
+　in the bottom-right of the Event window.<BR>
 <BR>
-　ではいきなりですが、選択肢を入力する前に、<BR>
-　<B>選択肢の表示位置を変える</B>コマンドを入力します。<BR>
+　Right away, before entering the choice itself,<BR>
+　we will enter the command that <B>changes the display position of the choice</B>.<BR>
 <BR>
-　選択肢を表示する位置は、画面の中の座標で指定します。<BR>
-　ウディタのゲーム画面は、数学で扱うグラフと同じように<BR>
-　X軸とY軸のある平面ですが、ただしY座標については真逆で、<BR>
-　下に行くほど数字が大きくなりますのでご注意を。<BR>
-　画面のいちばん左上の座標が(x,y)=(0,0)で原点であり、<BR>
-　画面のいちばん右下の座標が(x,y)=(320,240)です。<BR>
+　The position where the choice is displayed is specified by coordinates on the screen.<BR>
+　WOLF RPG Editor's game screen is a plane with X and Y axes, similar to a graph in mathematics,<BR>
+　except that the Y coordinate is reversed — the further down you go, the larger the number. Please note this.<BR>
+　The coordinate at the very top-left of the screen is (x, y) = (0, 0) — the origin —<BR>
+　and the coordinate at the very bottom-right is (x, y) = (320, 240).<BR>
 <BR>
-　では座標をそれぞれ入力していきましょう。<BR>
-①イベントコマンド入力ウィンドウのタブを<BR>
-　<B>「3 変数操作」</B>に変更し、<BR>
-②変数の種類は<B>「Sys」</B>をボタンで選択してください。<BR>
-③プルダウンリストから<B>「Sys3:選択肢ｳｨﾝﾄﾞｳ X座標」</B>を選んで、<BR>
-④右辺に<B>「250」「＋」「0」</B>を入力します。<BR>
-⑤入力できたら、ウィンドウ右下の<B>「入力」</B>ボタンを押してください。<BR>
+　Now let's enter each coordinate.<BR>
+① Switch the Event Command Input window tab to<BR>
+　<B>"3 Variable Operation"</B>,<BR>
+② and select <B>"Sys"</B> using the button for the variable type.<BR>
+③ From the dropdown list, select <B>"Sys3: Choice Window X coordinate"</B>,<BR>
+④ and enter <B>"250", "+", "0"</B> on the right side.<BR>
+⑤ When done, click the <B>"Input"</B> button at the bottom-right of the window.<BR>
 <BR>
-　これで、<B>X座標</B>を<B>250</B>に設定できました。<BR>
+　This sets the <B>X coordinate</B> to <B>250</B>.<BR>
 </TD>
 <TD nowrap><IMG src="image/EV_012_1.png" width="470" height="255" border="0"></TD>
 </TR>
@@ -76,15 +74,15 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【3】 イベントコマンドの入力 ： 選択肢のY座標<BR>
+<TD nowrap>[3] Enter Event Command: Y coordinate of the choice<BR>
 <BR>
-　次に、Y座標も同様に設定します。<BR>
-①プルダウンリストから<B>「Sys4:選択肢ｳｨﾝﾄﾞｳ Y座標」</B>を選んで、<BR>
-②右辺に<B>「160」「＋」「0」</B>を入力します。<BR>
-③入力できたら、ウィンドウ右下の<B>「入力」</B>ボタンを押してください。<BR>
+　Next, configure the Y coordinate in the same way.<BR>
+① From the dropdown list, select <B>"Sys4: Choice Window Y coordinate"</B>,<BR>
+② and enter <B>"160", "+", "0"</B> on the right side.<BR>
+③ When done, click the <B>"Input"</B> button at the bottom-right of the window.<BR>
 <BR>
-　これで、<B>Y座標</B>を<B>160</B>に設定できました。<BR>
-　選択肢の表示座標を(x,y)=(250,160)に変更する設定は完了です。<BR>
+　This sets the <B>Y coordinate</B> to <B>160</B>.<BR>
+　The settings to change the choice display coordinate to (x, y) = (250, 160) are now done.<BR>
 </TD>
 <TD nowrap><IMG src="image/EV_012_2.png" width="470" height="255" border="0"></TD>
 </TR>
@@ -94,14 +92,14 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【4】 選択肢の入力<BR>
+<TD nowrap>[4] Enter the choice<BR>
 <BR>
-　あとは選択肢を入力してテストプレイするだけです。<BR>
-①イベントコマンド入力ウィンドウのタブを<B>「2 選択肢」</B>に変更し、<BR>
-②入力欄の上から２つにそれぞれ<B>「選択肢１」「選択肢２」</B>を入力します。<BR>
-③入力できたら、ウィンドウ右下の<B>「入力」</B>ボタンを押してください。<BR>
+　All that's left is to enter the choice and do a Test Play.<BR>
+① Switch the Event Command Input window tab to <B>"2 Choice"</B>,<BR>
+② and enter <B>"Choice 1"</B> and <B>"Choice 2"</B> in the top two input fields respectively.<BR>
+③ When done, click the <B>"Input"</B> button at the bottom-right of the window.<BR>
 <BR>
-　これで、画面の右下に選択肢を表示するイベントコマンドは完成です。<BR>
+　The Event Commands to display choices in the bottom-right of the screen are now complete.<BR>
 </TD>
 <TD nowrap><IMG src="image/EV_012_3.png" width="470" height="255" border="0"></TD>
 </TR>
@@ -112,15 +110,15 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【5】 確認<BR>
+<TD nowrap>[5] Confirm<BR>
 <BR>
-　テストプレイしてみましょう。イベントを起動すると、<BR>
-　画面の右下に選択肢が表示されるはずです。<BR>
-　もしうまく行かない場合は、入力したイベントコマンドの<BR>
-　順序を見直してみてください。<BR>
-　ウィンドウ座標の変数操作コマンドの入力位置は、<BR>
-　文章選択肢の前でないとうまく動きません。<BR>
-　お疲れ様でした！<BR>
+　Let's do a Test Play. When the event launches,<BR>
+　the choice should be displayed in the bottom-right of the screen.<BR>
+　If something goes wrong, review the order<BR>
+　of the entered Event Commands.<BR>
+　The Variable Operation commands for the window coordinate<BR>
+　must be entered before the choice for them to work correctly.<BR>
+　Great work!<BR>
 </TD>
 <TD nowrap><IMG src="image/EV_012_4.png" width="320" height="240" border="0"></TD>
 </TR>
@@ -128,24 +126,23 @@
 </TABLE>
 <HR>
 
-　<B>【余談】</B><BR>
+　<B>[Side Note]</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>　・選択肢まわりの設定について<BR>
+<TD nowrap>　・Regarding settings around choices<BR>
 <BR>
-　選択肢を起動した場合、最初にカーソルがある位置は一番上の<BR>
-　選択肢ですが、これを変更してそれより下にある選択肢に<BR>
-　カーソルを合わせておくこともできます。<BR>
-　変数操作で、<B>Sys7:選択肢次回初期位置(0,1,2...)</B>の右辺を<BR>
-　たとえば<B> 1 </B>にして入力すると、(選択肢は上から0番、1番、2番...と<BR>
-　番号がつけられているので)上から２つめの選択肢にカーソルが<BR>
-　合った状態で起動されます。<BR>
+　When a choice is launched, the cursor starts at the top choice,<BR>
+　but you can change this so the cursor starts on a choice<BR>
+　further down.<BR>
+　Using Variable Operation, if you set the right side of <B>Sys7: Choice next initial position (0, 1, 2...)</B><BR>
+　to, for example, <B>1</B> and enter it, (since choices are numbered 0, 1, 2... from the top)<BR>
+　the choice will launch with the cursor on the second choice from the top.<BR>
 <BR>
-・また、<B>Sys73:文･選択肢のﾏｳｽ入力(1なら受付)</B>の右辺を<BR>
-　<B> 1 </B>にして入力すると、選択肢をマウス操作で選択できるようになります。<BR>
-　マウス中心で操作をするゲームでは必須とも言える機能ですね。<BR>
+・Also, if you set the right side of <B>Sys73: Text/Choice mouse input (1 = accept)</B><BR>
+　to <B>1</B> and enter it, choices can be selected with mouse controls.<BR>
+　This is an essential feature for games centered around mouse operation.<BR>
 </TD>
 </TR>
 </TBODY>
@@ -154,16 +151,16 @@
 
 <HR>
 
-<P>＜執筆者：ウディタ公式ガイド執筆コミュ。＞
+<P><Author: WOLF RPG Editor Official Guide Writing Community>
     <ul>
-        <li>トピック原案：真波、<A href="http://hinezumi.velvet.jp/index.php" target="_blank">ユノ</A></li>
-        <li>HTML作成：真波</li>
+        <li>Topic concept: Manami, <A href="http://hinezumi.velvet.jp/index.php" target="_blank">Yuno</A></li>
+        <li>HTML creation: Manami</li>
     </ul>
 </P>
 <HR>
-【改訂履歴】<BR>
-　Ver1.00　2013/11/02 新規作成<BR>
-<HR><A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+[Revision History]<BR>
+　Ver1.00　2013/11/02 Initial creation<BR>
+<HR><A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 

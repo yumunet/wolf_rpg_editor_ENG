@@ -1,225 +1,223 @@
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
 <TITLE>
-マップに入った時点で起動するイベント
+An Event That Launches When Entering a Map
 </TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 
 <HR>
-	<H2>【マップに入った時点で起動するイベント】</H2>
+	<H2>【An Event That Launches When Entering a Map】</H2>
 <HR>
 
 	<P>
-		【目標】<BR>
-		　<b>マップに入った瞬間に、自動的に起動するイベント</b>を作ります。<br>
+		[Goal]<BR>
+		　We will create an event that <b>launches automatically the moment you enter a map</b>.<br>
 		　<br>
-		　ここでは、サンプルマップBに入ると<br>
-		　「ここは、サンプルマップBです」とメッセージを表示するイベントを作ります。<br>
+		　Here, we will create an event that displays the message<br>
+		　"This is Sample Map B" when you enter Sample Map B.<br>
 		　<br>
 		　<img src="image/EV_008_1.jpg" border="1" width="320" height="240"><br>
-		　こんな感じ。<br>
+		　Something like this.<br>
 	</P>
-	
+
 <HR>
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【1】<br>
-			　１．マップを「<B>サンプルマップB</B>」に切り替えます。<br>
+			[1]<br>
+			　1. Switch the map to "<B>Sample Map B</B>".<br>
 			　　　<br>
-			　　　・<b>マップ選択ボタン</b><IMG src="image/icon_mapselector.png" width="22" height="20" border="0">を押します。<br>
-			　　　・現れた<b>「マップ選択」ウィンドウ</b>から<br>
-			　　　　「<B>サンプルマップB</B>」を選択。<br>
+			　　　・Press the <b>Map Selector button</b><IMG src="image/icon_mapselector.png" width="22" height="20" border="0">.<br>
+			　　　・From the <b>"Map Selector" window</b> that appears,<br>
+			　　　　select "<B>Sample Map B</B>".<br>
 			　　　<br>
-			　　　
+
 			　<br>
-			　２．<b>適当な場所にイベントを新しく作成</b>します。<br>
+			　2. <b>Create a new event somewhere on the map</b>.<br>
 			　<br>
-			　　　・マップ上のイベントを新しく作りたいことろを<br>
-			　　　　<b>ダブルクリック</b>します。<br>
-			　　　・もしくは、作りたいところで<br>
-			　　　　<b>右クリック→「イベント作成／編集」</b>を選択。<br>
+			　　　・<b>Double-click</b> the location on the map<br>
+			　　　　where you want to create the event.<br>
+			　　　・Alternatively, right-click the desired location and<br>
+			　　　　select <b>"Create/Edit Event"</b>.<br>
 
 		</TD>
 		<TD nowrap>
 			<img src="image/EV_008_2.png" border="1" width="377" height="276">
 		</TD>
 	</TR></TBODY></TABLE>
-	
+
 <HR>
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【2】<br>
+			[2]<br>
 			<br>
-			　・グラフィックは今回は設定しません。<br>
-			　<br>			
-			　・<b>起動条件を「自動実行」</b>にします。<br>
-			　<br><br>
-			　　「自動実行」が今回の要点です。<br>
+			　・We will not set a graphic this time.<br>
 			　<br>
-			　　「自動実行」というのは、<br>
-			　　マップに入ったときに<br>
-			　　自動で起動するイベントのことです。<br>
+			　・Set the <b>Trigger Condition to "Auto-execute"</b>.<br>
+			　<br><br>
+			　　"Auto-execute" is the key point of this tutorial.<br>
+			　<br>
+			　　"Auto-execute" refers to an event that<br>
+			　　launches automatically<br>
+			　　when you enter the map.<br>
 			　　<br>
-			　　※ 詳細はこの頁の【余談】に<br>
-			　　　　記しておきましたので、<br>
-			　　　　そちらをご参照ください。<br>
+			　　※ For more details, please refer to the<br>
+			　　　　[Side Note] at the bottom of this page.<br>
 			　　<br>
-			　			
+
 		</TD>
 		<TD nowrap>
 			<img src="image/EV_008_3.gif" border="1" width="236" height="228">
 		</TD>
 	</TR></TBODY></TABLE>
-	
+
 <HR>
 
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【3】<br>
-			　続いてイベントの内容を設定していきます。<br>
+			[3]<br>
+			　Next, configure the event content.<br>
 			<br>
-			　<B>イベントウィンドウ</B>の右下にある<BR>
-			　「<B>■コマンドウィンドウ表示■</B>」を<BR>
-			　クリックしてください。<br>
+			　Click the<BR>
+			　"<B>■ Show Command Window ■</B>" button<BR>
+			　in the bottom-right of the <B>Event window</B>.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/window_evbase2.jpg" width="198" height="60" border="1">
 		</TD>
 	</TR></TBODY></TABLE>
-	
+
 <HR>
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【4】<br>
-			　・<b>「イベントコマンドの挿入」ウィンドウ</b>が<br>
-			　　出てくるので、上部タブにある<br>
-			　　「<b>文章の表示</b>」を選択して下さい。<br>
+			[4]<br>
+			　・When the <b>"Insert Event Command" window</b> appears,<br>
+			　　select "<b>Show Message</b>" from the tab at the top.<br>
 			<br>
-			　・<b>文章入力欄</b>に<br>
-			　　『ここは、サンプルマップBです』<br>
-			　　と入力します。<br>
+			　・In the <b>text input field</b>,<br>
+			　　enter 'This is Sample Map B'.<br>
 			<br>
-			　・入力できたら<b>「入力」ボタン</b>をクリック。<br>
+			　・When done, click the <b>"Input" button</b>.<br>
 			　<br><br>
-			　※　続けて別のコマンドを入力するので<br>
-			　　　　ウィンドウは閉じないでくださいね。<br>
-			　
+			　※ We will be entering another command next,<br>
+			　　　　so do not close the window yet.<br>
+
 		</TD>
 		<TD nowrap>
 			<img src="image/EV_008_4.jpg" border="1" width="320" height="273">
 		</TD>
 	</TR></TBODY></TABLE>
-	
+
 <HR>
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【5】<br>
-			　・続いて、上部タブを<br>
-			　　「<b>その他１</b>」に切り替えます。<br>
+			[5]<br>
+			　・Next, switch the tab at the top to<br>
+			　　"<b>Misc 1</b>".<br>
 			　<br>
-			　・下の方にある<br>
-			　　「<b>イベントの一時消去</b>」を選択。<br>
+			　・Select<br>
+			　　"<b>Temporarily Erase Event</b>" from the lower part.<br>
 			<br>
-			　・対象は「<b>このイベント</b>」にして、<br>
-			　　フェードは<b>［0］</b>を入力します。<br>
+			　・Set the target to "<b>This Event</b>" and<br>
+			　　enter <b>[0]</b> for the fade.<br>
 			<br>
-			　・設定できたら「<b>入力</b>」ボタンをクリック。&nbsp;<br>
+			　・Once configured, click the "<b>Input</b>" button.&nbsp;<br>
 			<br>
 			<br>
-			　ここで設定したコマンドは、イベントを<br>
-			　一時的に消去するコマンドです。<br>
-			　これをしてやらないと、延々と<br>
-			　メッセージが表示されてしまいます。<br>
+			　The command configured here<br>
+			　temporarily erases the event.<br>
+			　Without this, the message will<br>
+			　keep displaying endlessly.<br>
 			<br>
-			　入力するコマンドは以上です。<br>
-			　ウィンドウを閉じましょう。<br>
+			　That's all the commands to enter.<br>
+			　Close the window.<br>
 		</TD>
 		<TD nowrap>
 			<img src="image/EV_008_5.jpg" border="1" width="320" height="273">
 		</TD>
 	</TR></TBODY></TABLE>
-	
+
 <HR>
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【6】<br>
-			　確認します。<br>
-			　イベントコマンド表示欄は……
+			[6]<br>
+			　Let's confirm.<br>
+			　The Event Command display should show……
 			　<br>
               <hr>
-			　■文章：ここは、サンプルマップBです<br>
-			　■イベントの一時消去：このEv（0フレーム）<br>
+			　■ Message: This is Sample Map B<br>
+			　■ Temporarily Erase Event: This Ev (0 frames)<br>
 			　■
               <hr>
 			　<br>
-			　このようになっているでしょうか。<br>
+			　Does it look like this?<br>
 			　<br>
 			　<br>
-			　では、テストプレイに移ります。<br>
+			　Now let's do a Test Play.<br>
 			　<br>
-			　「<B>セーブ（マップ全体）</B>」をクリックした後、<BR>
-			　「<B>テストプレイ</B>」をクリックしてください。
-			
+			　Click "<B>Save (Entire Map)</B>", then<BR>
+			　click "<B>Test Play</B>".
+
 		</TD>
 		<TD nowrap>
 			<IMG src="image/window_evbase4.png" width="247" height="100" border="1">
 		</TD>
 	</TR></TBODY></TABLE>
-	
+
 <HR>
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【7】<br>
-			　・オープニングのデモが終わったら<br>
-			　　ずっと上に進み、<br>
-			　　<b>サンプルマップBに移動</b>します。<br>
+			[7]<br>
+			　・After the opening demo ends,<br>
+			　　keep moving upward to<br>
+			　　<b>move to Sample Map B</b>.<br>
 			　　<br>
-			　・移動すると即座に<br>
-			　　「ここは、サンプルマップBです」<br>
-			　　と1度だけ表示されたと思います。<br>
+			　・When you move there, you should immediately see<br>
+			　　"This is Sample Map B"<br>
+			　　displayed just once.<br>
 			　　<br>
-			　・一旦前のマップに戻って<br>
-			　　再度サンプルマップBに移動してくると、<br>
-			　　同じように表示されるはずです。<br>
-			　　
+			　・Go back to the previous map and then<br>
+			　　return to Sample Map B again,<br>
+			　　and it should display in the same way.<br>
+
 			　　<br><br>
-			　　これで完成となります。<br>
-			　　お疲れ様でした。<br>
+			　　This completes the tutorial.<br>
+			　　Great work!<br>
 			　　<br><br>
 		</TD>
 		<TD nowrap>
 			<img src="image/EV_008_1.jpg" border="1" width="320" height="240">
 		</TD>
 	</TR></TBODY></TABLE>
-	
+
 <HR>
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【うまくいかない人】<br>
+			【Troubleshooting】<br>
 			　<br>
-			　<b>・メッセージが表示されない！</b><br>
-			　　→起動条件が「自動実行」になっているか、確認してください。<br>
+			　<b>・The message isn't displayed!</b><br>
+			　　→ Please confirm that the Trigger Condition is set to "Auto-execute".<br>
 			　　<br>
-			　<b>・メッセージが何度も表示されて動けない！</b><br>
-			　　→■イベントの一時消去：このEv（0フレーム）<br>
-			　　　というコマンドが正しく入力されているか確認してください。<br>
-			　　　イベントの一時消去を行わないと何度も繰りかえしてしまいます。<br>
+			　<b>・The message keeps displaying repeatedly and I can't move!</b><br>
+			　　→ Check that the command<br>
+			　　　■ Temporarily Erase Event: This Ev (0 frames)<br>
+			　　　has been entered correctly.<br>
+			　　　Without the Temporarily Erase Event command, it will repeat endlessly.<br>
 		</TD>
 		<TD nowrap>
 
 		</TD>
 	</TR></TBODY></TABLE>
-	
+
 <HR>
 <br>
 <HR>
@@ -227,44 +225,44 @@
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【余談】自動実行イベントの詳細<br>
+			[Side Note] Details on Auto-execute Events<br>
 			　<br>
-			　自動実行イベントとは、設置されたマップに主人公が入ったときに、自動的にはじまるイベントのことです。<br>
+			　An Auto-execute event is an event that starts automatically when the player character enters the map where it is placed.<br>
 			　<br>
-			　「演出」のために使われることが多いようです。<br>
-			　たとえば、洞窟に入るなり悲鳴が聞こえる、とか、ボスの間でのやり取りとか…。<br>
+			　These are often used for staging/effects.<br>
+			　For example, hearing a scream upon entering a cave, or a scene playing out in a boss chamber...<br>
 			　<br>
-			　気をつけなければいけないのは……
+			　Important points to keep in mind:<br>
 			　<br>
-			　・実行中は主人公の操作ができません。また、他のイベントも起動できません。<br>
+			　・The player character cannot be controlled while it is running, and other events cannot be launched either.<br>
 			　<br>
-			　・自動実行のイベントは<b>条件を満たす限り、繰り返し続けます</b>。<br>
-			　　そのため、イベントが終わり次第、イベントを消してやる必要があります。<br>
-			　　基本的には以下の方法が考えられます。<br>
+			　・Auto-execute events <b>continue repeating as long as their conditions are met</b>.<br>
+			　　Therefore, the event must be removed as soon as it finishes.<br>
+			　　The following methods are generally considered:<br>
 			　　<br>
-			　　<b>１：「イベントの一時消去」で消す<br></b>
-			　　　　今回作ったイベントと同様に、一旦マップを出てから戻ってくると、再度表示されます。<br>
+			　　<b>1: Remove it with "Temporarily Erase Event"<br></b>
+			　　　　Just like the event created in this tutorial, it will display again if you leave and return to the map.<br>
 			　　<br>
-			　　<b>２：変数とイベント起動条件を使って、イベントを完全に消去する<br></b>
-                　　セルフ変数などを使うことでイベントページを切り替えて、起動しないようにすることで<br>
-                　　一旦マップから出て戻ってきても、実行されないイベントになります。<br>
-                　　→関連：<a href="EV_005.html">◆一度消えたら二度と出てこないイベント</a>
-			　　
+			　　<b>2: Use variables and the Event Trigger Condition to permanently erase the event<br></b>
+                　　By using self variables or similar to switch event pages, you can prevent the event from launching,<br>
+                　　so it won't run even if you leave and return to the map.<br>
+                　　→ Related: <a href="EV_005.html">◆An Event That Disappears Once and Never Returns</a>
+
 			　<br>
 		</TD>
 		<TD nowrap>
 
 		</TD>
 	</TR></TBODY></TABLE>
-	
+
 
 
 <HR>
 	<br>
 <HR>
-<div>＜執筆者：<A href="http://blog.livedoor.jp/mikenekonyanko/" target="_blank">ミケ</A>＞</div>
+<div><Author: <A href="http://blog.livedoor.jp/mikenekonyanko/" target="_blank">Mike</A>></div>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

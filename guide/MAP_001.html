@@ -1,29 +1,28 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
- 
-<HTML LANG="ja">
+
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>マップをきれいに作りたい</TITLE>
+<TITLE>I Want to Create Beautiful Maps</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【マップをきれいに作りたい】</H2>
+<H2>【I Want to Create Beautiful Maps】</H2>
 <HR>
 <P>
-		【はじめに】<br>
-		マップをきれいに作る方法はいろいろありますので<br>
-		一概には言えませんが、ここではそのうちの<br>
-		ひとつの方法である「レイヤーの使い方」について<br>
-		説明したいと思います。<br>
+		【Introduction】<br>
+		There are various ways to create beautiful maps,<br>
+		so it's hard to give a single answer, but here we'll describe<br>
+		one such method: "how to use layers".<br>
  <br>
-		【目次】<br>
-		・<A HREF="#1">レイヤーって？</A><br>
-		・<A HREF="#2">レイヤーの使い方</A><br>
-		・<A HREF="#3">レイヤーの使いどころ</A><br>
-		・<A HREF="#4">ゲーム上でどう表示されるか見たい</A><br>
-		・<A HREF="#5">レイヤーが３枚で足りないときは？</A><br>
-		・<A HREF="#6">自動ダンジョンマップ生成について</A>
+		【Table of Contents】<br>
+		・<A HREF="#1">What is a layer?</A><br>
+		・<A HREF="#2">How to use layers</A><br>
+		・<A HREF="#3">When to use layers</A><br>
+		・<A HREF="#4">I want to see how it looks in the game</A><br>
+		・<A HREF="#5">What if 3 layers aren't enough?</A><br>
+		・<A HREF="#6">About auto-dungeon map generation</A>
 </P>
 <A NAME="1"></A>
 <HR>
@@ -31,18 +30,19 @@
 <TBODY>
 	<TR>
 		<TD nowrap>
-		【レイヤーって？】<br>
-		レイヤーは、一枚のマップをつくるマップチップを<br>
-		異なる層に書き分けることのできる機能です。<br>
-		レイヤーは<br>
-		　・レイヤー１<br>
-		　・レイヤー２<br>
-		　・レイヤー３<br>
-		　・イベントレイヤー<br>
-		の４つがあります。このうち、主にレイヤー１～３が<br>
-		マップチップの配置、イベントレイヤーはイベントの<br>
-		設置という役割を持っています。<br>
-		
+		【What is a layer?】<br>
+		A layer is a feature that lets you draw<br>
+		the map chips that make up a single map<br>
+		on separate levels.<br>
+		There are 4 layers:<br>
+		　・Layer 1<br>
+		　・Layer 2<br>
+		　・Layer 3<br>
+		　・Event Layer<br>
+		Of these, Layers 1–3 are mainly used for<br>
+		placing map chips, while the Event Layer is used for<br>
+		placing events.<br>
+
 </TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_0.png" width="348" height="243" border="0">
@@ -54,20 +54,20 @@
 <TBODY>
 	<TR>
 		<TD nowrap>
-		主に、透明色を含むチップを配置するときに、<br>
-		レイヤーは必要不可欠なものとなります。<br>
-		レイヤーは数字の小さい方から下に表示されます。<br>
-		ですから、レイヤー３が一番上に表示されます。<br>
+		Layers become essential mainly when placing chips<br>
+		that contain transparent colors.<br>
+		Layers with smaller numbers are displayed lower (beneath).<br>
+		Therefore, Layer 3 is displayed on top.<br>
  <br>
-		ちなみに、ゲーム画面に表示されるものを<br>
-		並べてみたものが右の画像です。<br>
-		一番上にピクチャ(イベントで設定できます)、<br>
-		次にイベントや主人公などが表示され、<br>
-		その下にレイヤーが３、２、１と来て、<br>
-		レイヤー１の下には「遠景」が表示されます。<br>
-		遠景の下は一面黒色です。<br>
-		ただし、通行設定が「▲」や「★」のマップチップは<br>
-		イベントより上に表示されたりします。<br>
+		By the way, the image on the right shows<br>
+		everything displayed on the game screen arranged in order.<br>
+		Pictures (configurable via events) are at the very top,<br>
+		followed by events and the player character,<br>
+		then Layers 3, 2, and 1 below that,<br>
+		with the "panorama background" displayed below Layer 1.<br>
+		Below the panorama is solid black.<br>
+		However, map chips with a passability setting of "▲" or "★"<br>
+		are drawn above events in some cases.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_1.png" width="329" height="228" border="0">
@@ -80,16 +80,16 @@
 <TBODY>
 	<TR>
 		<TD nowrap>
-		【レイヤーの使い方】<br>
-		右の画像のマップは、レイヤーを使用して表示されています。<br>
-		このマップを、レイヤーごとに見てみましょう。<br>
+		【How to use layers】<br>
+		The map on the right is displayed using layers.<br>
+		Let's look at this map layer by layer.<br>
  <br>
-		下の３つの画像が、左からレイヤー１、２、３です。<br>
-		レイヤー１に、石畳と草地、砂地が、<br>
-		レイヤー２には水と、草地のふち、<br>
-		レイヤー３に女神像が、それぞれ分けて描かれています。<br>
-		実際のゲーム画面では、これら別個に描かれたレイヤーを<br>
-		１枚の絵として「上から見た図」で表示しています。(上の画像)<br>
+		The 3 images below are Layer 1, 2, and 3 from left to right.<br>
+		Layer 1 contains stone pavement, grass, and sand,<br>
+		Layer 2 contains water and the edges of grass,<br>
+		and Layer 3 contains the goddess statue — each drawn separately.<br>
+		In the actual game screen, these separately drawn layers<br>
+		are displayed as a single top-down view image. (top image)<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_5.png" width="288" height="288" border="0">
@@ -101,10 +101,10 @@
 <TBODY>
 	<TR>
 		<TD nowrap>
-		ここで気づいていただきたいのが、<br>
-		「レイヤー２以上には透明部分を含むチップが<br>
-		　置かれている」ことです。逆に言えば、透明部分の<br>
-		ないチップは基本的にレイヤー１に置くといいです。<br>
+		What we'd like you to notice here is that<br>
+		"chips placed on Layer 2 and above contain transparent areas".<br>
+		Conversely, chips with no transparent areas<br>
+		are generally best placed on Layer 1.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_6.png" width="144" height="144" border="0">
@@ -119,22 +119,22 @@
 <TBODY>
 	<TR>
 		<TD nowrap>
-		【レイヤーの使いどころ】<br>
-		レイヤーを使うポイントは主に、置きたい<br>
-		チップが透明色を含んでいる所です。<br>
- 
-		透明色は、文字通り下が透けて見えるので、<br> 
-		下(のレイヤー)にチップがあればそれを、<br> 
-		なければ「遠景」を表示します。<br> 
-		遠景が設定されていない場合、黒色になります。<br>
+		【When to use layers】<br>
+		The key point for using layers is mainly when the chip<br>
+		you want to place contains a transparent color.<br>
+
+		Transparent colors, as the name implies, make the area below visible,<br>
+		so if there's a chip on the layer below, that chip is shown;<br>
+		if not, the "panorama background" is displayed.<br>
+		If no panorama is set, it becomes black.<br>
  <br>
-		画像のマップでは、レイヤー１に透明な場所が<br>
-		作られていて、遠景が設定されている場合は<br>
-		表示されるようになっています。<br>
-		左の画像が遠景あり、右の画像が遠景無しです。<br>
+		In the map shown in the image, transparent areas are<br>
+		created on Layer 1, and if a panorama is set,<br>
+		it will be displayed there.<br>
+		The left image has a panorama, and the right image has no panorama.<br>
 </TD>
 		<TD nowrap>
-			
+
 			<IMG src="image/MAP_001_2.png" width="144" height="128" border="0">
 			<IMG src="image/MAP_001_3.png" width="144" height="128" border="0">
 	</TD>
@@ -147,29 +147,28 @@
 		<TD nowrap>
  <br>
  <br>
-		例えば、草地に池を作ってみます。<br>
-		ウディタのフルパッケージに入っている<br>
-		BaseChip.png と WaterChip.png を使用します。<br>
-		水チップには、チップの周囲に透明色が<br>
-		含まれていますので、下が透けて見えます。<br>
-		透ける部分に、草地が見えるようにしてみましょう。<br>
+		For example, let's try creating a pond in a grassy area.<br>
+		We'll use BaseChip.png and WaterChip.png,<br>
+		which are included in WOLF RPG Editor's full package.<br>
+		The water chip contains transparent colors around its edges,<br>
+		so the area below shows through.<br>
+		Let's make it so that the grass is visible through the transparent parts.<br>
  <br>
-		レイヤー１に草チップを敷いてから<br>
-		レイヤー２に水チップを広げると<br>
-		うまくいきます。(画像左)<br>
-		これをレイヤー１だけでやろうとすると、<br>
-		水辺の周りに黒いエリア(透明色の部分)が<br>
-		そのまま表示されて、見た目があまり<br>
-		きれいではなくなってしまいます。(画像右)<br>
+		Laying grass chips on Layer 1<br>
+		and then spreading water chips on Layer 2<br>
+		will do the trick nicely. (left image)<br>
+		If you try to do this on Layer 1 alone,<br>
+		the black areas (transparent color parts) around the water<br>
+		will be displayed as-is, which doesn't look great. (right image)<br>
  <br>
-		サンプルに入っているチップは、<br>
-		オートタイルでは滝以外は、全て<br>
-		レイヤー２か３に配置するチップです。<br>
-		オートタイルでなくても、草木や柵、家具や<br>
-		屋根などが透明色を含んでいます。これらの<br>
-		チップも、レイヤー２か３に配置してください。<br>
-		なお、透明を含まない、草地や砂地などのチップは、<br>
-		基本的にレイヤー１に置いた方がいいです。<br>
+		Among the chips included in the sample,<br>
+		all auto-tile chips except for the waterfall<br>
+		are chips to be placed on Layer 2 or 3.<br>
+		Even non-auto-tiles such as trees, fences, furniture,<br>
+		and roofs also contain transparent colors. Place these<br>
+		chips on Layer 2 or 3 as well.<br>
+		Note that chips without transparency, such as grass and sand,<br>
+		are generally better placed on Layer 1.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_4.png" width="352" height="352" border="0">
@@ -182,18 +181,18 @@
 <TBODY>
 	<TR>
 		<TD nowrap>
-		【ゲーム上でどう表示されるか見たい】<br>
-		各レイヤーには、そのレイヤーに置かれている<br>
-		チップが表示されており、他のレイヤーのチップは<br>
-		薄くなっているため、実際のゲーム画面では<br>
-		どう表示されているのか分かりにくい場合があります。<br>
-		そんなときは、(もちろんテストプレイでもいいですが、)<br>
-		「Ev」と書かれたボタンをクリックして<br>
-		「イベントレイヤー」に切り替えてみてください。<br>
-		イベントレイヤーでは、イベントの設置ができるほか、<br>
-		「実際のゲーム画面と同じ視点でマップを見る」ことができます。<br>
-		マップ作りは何度も確認しながらの作業ですので、<br>
-		イベントレイヤーでの確認は大変便利です。<br>
+		【I want to see how it looks in the game】<br>
+		Each layer displays the chips placed on that layer,<br>
+		while chips on other layers appear faded,<br>
+		which can make it hard to tell how the actual game screen<br>
+		will look.<br>
+		When that happens (though Test Play works too),<br>
+		try clicking the button labeled "Ev" to<br>
+		switch to the "Event Layer".<br>
+		In the Event Layer, you can place events, and also<br>
+		"view the map from the same perspective as the actual game screen".<br>
+		Map creation involves frequent checking, so<br>
+		confirming from the Event Layer is very convenient.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_9.png" width="350" height="294" border="0">
@@ -201,24 +200,25 @@
 	</TR>
 </TBODY>
 </TABLE>
-<A NAME="5"></A> 
+<A NAME="5"></A>
 <HR>
 <TABLE border="0">
 <TBODY>
 	<TR>
 		<TD nowrap>
-		【レイヤーが三枚で足りない時は？】<br>
-		WOLF RPGエディターVer2.00の段階では、<br>
-		レイヤーは３枚が上限です。ですが、<br>
-		イベントレイヤーを使ってレイヤーを四枚<br>
-		組み合わせた見せ方をすることは可能です。<br>
+		【What if 3 layers aren't enough?】<br>
+		In WOLF RPG Editor Ver2.00, the maximum<br>
+		number of layers is 3. However,<br>
+		it is possible to create a visual effect using<br>
+		4 layers by combining the Event Layer.<br>
  <br>
-		例えば、１[床]、２[テーブル]、３[皿]、４[ケーキ]のように<br>
-		置きたい場合、ケーキを「イベントの設置」を使って<br>
-		同じマスに配置することでそれっぽくなることがあります。<br>
- <br> 
-		右の図では、イベントレイヤーにケーキを置いて、<br>
-		「宿屋のテーブルの上の皿にケーキをのせる」を表現しています。<br>
+		For example, if you want to place<br>
+		1 [Floor], 2 [Table], 3 [Plate], 4 [Cake],<br>
+		placing the cake using "Event Placement" on the same tile<br>
+		can sometimes achieve the desired look.<br>
+ <br>
+		In the figure on the right, a cake is placed on the Event Layer<br>
+		to represent "placing a cake on a plate on a table in an inn".<br>
 </TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_10.png" width="350" height="267" border="0">
@@ -230,27 +230,27 @@
 <TBODY>
 	<TR>
 		<TD nowrap>
-		この方法を用いたときに、実際のゲーム画面で、イベントで<br>
-		配置したものが別のチップのうしろになっているよ！<br>
-		なんてことが起きていたら、マップチップの通行設定を<br>
-		確認してください。▲や★になっているチップがある場合、<br>
-		それらのチップはイベントの上に描画されます。<br>
-		ここでイベントで配置したものを一番前に表示したい場合に<br>
-		ついて対処法を書き出します。<br>
+		When using this method, if you find that what you placed via event<br>
+		appears behind another chip in the actual game screen,<br>
+		please check the passability settings of the map chip.<br>
+		If any chip is set to ▲ or ★,<br>
+		those chips are drawn above events.<br>
+		Here are solutions for when you want the event-placed item<br>
+		to be displayed in front of everything.<br>
  <br>
-		[1] ▲のチップがある場合<br>
-		イベントの設定で「主人公より上」にチェックをつけましょう。<br>
-		こうすれば、イベントで配置したチップが一番前に表示されます。<br> 
+		[1] When there is a ▲ chip<br>
+		Enable the "Above Player Character" setting in the event's settings.<br>
+		This will cause the event-placed chip to be displayed at the very front.<br>
  <br>
-		[2] ★のチップがある場合<br>
-		この場合は厄介です。<br>
-		今のところイベントを★チップより上に描画する方法がありません。<br>
-		支障がなければ、問題のチップの通行設定を▲などに<br>
-		変更することで対処はできます。<br>
+		[2] When there is a ★ chip<br>
+		This case is trickier.<br>
+		There is currently no way to draw an event above a ★ chip.<br>
+		If it doesn't cause any issues, you can work around it by changing<br>
+		the problematic chip's passability setting to ▲ or similar.<br>
  <br>
  <br>
-		なお、通行設定の▲や★については、パーフェクトガイド内の<br>
-		<a href="MATERIAL_001.html" target="B">マップチップの通行設定を変更したい</a>をご覧下さい。<br>
+		For details on passability settings ▲ and ★, please see<br>
+		<a href="MATERIAL_001.html" target="B">Change Map Chip Passability Settings</a> in the Perfect Guide.<br>
 
 		</TD>
 		<TD nowrap>
@@ -259,141 +259,148 @@
 	</TR>
 </TBODY>
 </TABLE>
-<A NAME="6"></A> 
+<A NAME="6"></A>
 <HR>
 <TABLE border="0">
 <TBODY>
 	<TR>
 		<TD nowrap>
-		【自動ダンジョンマップ生成について】<br>
-		ウディタには、Hetさん提供の自動マップ生成システムがあります。<br>
-		細かく入り組んだマップを作ることに特化しているので、<br>
-		主にダンジョンを作る場合にとても便利なツールです。<br>
-		右の画像のマップはこのシステムを使って生成したマップです。<br>
+		【About Auto-Dungeon Map Generation】<br>
+		WOLF RPG Editor includes an automatic map generation system provided by Het.<br>
+		Since it specializes in creating intricate and complex maps,<br>
+		it is a very convenient tool especially for creating dungeons.<br>
+		The map shown in the image on the right was generated using this system.<br>
  <br>
-		では、自動マップ生成を実際に使ってみましょう。<br>
+		Now let's actually try using auto map generation.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_12.png" width="321" height="253" border="0">
 		</TD>
 	</TR>
 </TBODY>
-</TABLE> 
+</TABLE>
 <HR width="70%">
 <TABLE border="0">
 <TBODY>
 	<TR>
 		<TD nowrap>
-		【1】まず新しくマップを作ってください。画面の上の方に<br>
-		「自動マップ生成」のアイコン<IMG src="image/MAP_001_13.png" width="22" height="20" border="0">があるので、クリックして下さい。<br>
+		[1] First, create a new map. Near the top of the screen,<br>
+		there is an "Auto Map Generation" icon<IMG src="image/MAP_001_13.png" width="22" height="20" border="0">, so click it.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_14.png" width="364" height="221" border="0">
 		</TD>
 	</TR>
 </TBODY>
-</TABLE> 
+</TABLE>
 <HR width="70%">
 <TABLE border="0">
 <TBODY>
 	<TR>
 		<TD nowrap>
-		【2】クリックすると、右の画像のようなウィンドウが開きます。<br>
-		自動マップ生成は「天井」「壁 上部」「壁 下部」「床」の４つの<br>
-		チップから成っています。「壁 上部」と「壁 下部」ですが、<br>
-		マップ自動生成では、全ての壁はチップ２つ分の高さで、<br>
-		上半分の「壁 上部」、下半分の「壁 下部」からできています。<br>
-		壁の１マス上は「天井」、１マス下は「床」と決まっていますが、<br>
-		それ以外の場所にはランダムな長さの直線で「床」が引かれます。<br>
-		壁と床以外の場所は、全て「天井」で埋められます。<br>
+		[2] Clicking it opens a window like the one on the right.<br>
+		Auto map generation consists of 4 chip types:<br>
+		"Ceiling", "Wall Upper", "Wall Lower", and "Floor".<br>
+		Regarding "Wall Upper" and "Wall Lower":<br>
+		in auto map generation, all walls are 2 chips tall,<br>
+		made up of "Wall Upper" for the top half and "Wall Lower" for the bottom half.<br>
+		The tile 1 row above a wall is always "Ceiling", and the tile 1 row below is "Floor",<br>
+		but in other locations, "Floor" is drawn in straight lines of random lengths.<br>
+		All areas that are neither wall nor floor are filled with "Ceiling".<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_15.png" width="350" height="291" border="0">
 		</TD>
 	</TR>
 </TBODY>
-</TABLE> 
+</TABLE>
 <HR width="70%">
 <TABLE border="0">
 <TBODY>
 	<TR>
 		<TD nowrap>
-		【3】それでは、使用するチップを登録します。<br>
-		「壁 上部」「壁 下部」「床」に、それぞれ画像と同じチップを<br>
-		登録してみてください。床に指定したチップは、チップセットの<br>
-		上から３段目で左から２番目 の位置にあります。<br>
-		「天井」には何も登録しないでください。<br>
-		登録してしまったら、「描画無し」にチェックすると消えます。<br>
+		[3] Now let's register the chips to use.<br>
+		Try registering the same chips as shown in the image for<br>
+		"Wall Upper", "Wall Lower", and "Floor".<br>
+		The chip designated for "Floor" is located in the<br>
+		position 3 rows from the top and 2nd from the left in the chip set.<br>
+		Do not register anything for "Ceiling".<br>
+		If you accidentally registered something, checking "No Drawing" will clear it.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_16.png" width="350" height="234" border="0">
 		</TD>
 	</TR>
 </TBODY>
-</TABLE> 
+</TABLE>
 <HR width="70%">
 <TABLE border="0">
 <TBODY>
 	<TR>
 		<TD nowrap>
-		【4】チップの設定が完了したら、早速自動生成してみましょう。<br>
-		まずはそのままで「マップ生成」をクリックしてみます。<br>
-		まだマップには描画されません。左の「プレビュー」欄に、<br>
-		自動生成した結果である図が表示されます。<br>
-		(右の画像の図は一例です)<br>
+		[4] Once the chip settings are done, let's try generating right away.<br>
+		First, just click "Generate Map" as-is.<br>
+		The map won't be drawn to the map yet. The generated result<br>
+		will be displayed in the "Preview" pane on the left.<br>
+		(The figure in the image on the right is just an example.)<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_17.png" width="350" height="290" border="0">
 		</TD>
 	</TR>
 </TBODY>
-</TABLE> 
+</TABLE>
 <HR width="70%">
 <TABLE border="0">
 <TBODY>
 	<TR>
 		<TD nowrap>
-		【5】「マップ生成」を押す度に別の図が生成しますので、何度か<br>
-		試してみてもいいでしょう。ウィンドウ右下の「これで塗りつぶす」を<br>
-		クリックすると、マップが図の通りに塗りつぶされます。<br>
+		[5] Each time you press "Generate Map", a different layout is generated,<br>
+		so feel free to try it several times.<br>
+		Clicking "Fill With This" at the bottom-right of the window<br>
+		will fill the map according to the generated layout.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_18.png" width="350" height="303" border="0">
 		</TD>
 	</TR>
 </TBODY>
-</TABLE> 
+</TABLE>
 <HR width="70%">
 <TABLE border="0">
 <TBODY>
 	<TR>
 		<TD nowrap>
-		【余談】<br>
-		これまで触れませんでしたが、チップ設定欄と<br>
-		「マップ生成」の間にある「対象レイヤー」「壁の多さ」「複雑さ」<br>
-		「なめらかな形にする」の項目について、少しお話ししたいと思います。<br>
+		[Side Note]<br>
+		We haven't mentioned it yet, but let's briefly talk about<br>
+		the "Target Layer", "Wall Density", "Complexity",<br>
+		and "Smooth Shapes" options between the chip settings area<br>
+		and "Generate Map".<br>
  <br>
-		・「対象レイヤー」<br>
-		そのままですが、マップを作るレイヤーを指定します。<br>
-		基本的にはレイヤー１にするのがおすすめですが、この記事の<br>
-		上の方で書いた通り、透明色を含むチップを使ってマップを<br>
-		作りたい場合はレイヤー２や３を使って下さい。<br>
+		・"Target Layer"<br>
+		As it says, this specifies which layer to generate the map on.<br>
+		Layer 1 is recommended in general, but as mentioned<br>
+		earlier in this article, if you want to create a map using<br>
+		chips that contain transparent colors, use Layer 2 or 3.<br>
  <br>
-		・「壁の多さ」<br>
-		壁の多さというより、「天井の多さ」と言った方がわかりやすいはずです。<br>
-		少ないとマップ中の床が多くなります。少し大きめのマップを作ってから、<br>
-		壁の多さを「10」%と「90」%で試していただけるとその差は歴然だと思います。<br>
+		・"Wall Density"<br>
+		"Wall Density" is perhaps better described as "Ceiling Density".<br>
+		Setting it low increases the amount of floor on the map.<br>
+		Try creating a slightly larger map and then comparing 10% and 90%<br>
+		— the difference should be very clear.<br>
  <br>
-		・「複雑さ」<br>
-		この複雑さを低く設定すると、床と床の間の壁が減ることで、<br>
-		マップが単純になります。「最も複雑」に設定するとかなり入り組んだ<br>
-		迷路のようになります。ただし、「壁の多さ」の影響をかなり受けますので、<br>
-		思ったほど複雑にならない場合は壁の多さを減らしてみて下さい。<br>
+		・"Complexity"<br>
+		Setting this complexity low reduces walls between floor areas,<br>
+		making the map simpler. Setting it to "Most Complex" creates a<br>
+		highly intricate maze-like layout. However, it is heavily influenced<br>
+		by "Wall Density", so if it's not as complex as expected,<br>
+		try reducing the wall density.<br>
  <br>
-		・「なめらかな形にする」<br>
-		ここにチェックを入れてマップを生成すると、壁や床に斜めの線で<br>
-		描画されるものが出現します。チェックがされていない場合、完全に直交する<br>
-		(通路の角が直角になる)直線のみでマップが描かれることになります。<br>
+		・"Smooth Shapes"<br>
+		Checking this box and generating the map will cause<br>
+		some walls and floors to be drawn with diagonal lines.<br>
+		Without the checkbox, the map is drawn entirely with<br>
+		straight lines that intersect at right angles (all corridor corners are 90 degrees).<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/MAP_001_19.png" width="346" height="297" border="0">
@@ -401,19 +408,19 @@
 </TR>
 </TBODY>
 </TABLE>
- 
+
 <HR>
-<P>＜執筆者：<A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">ウディタ公式ガイド執筆コミュ。</A>＞<br>
+<P><Author: <A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">WOLF RPG Editor Official Guide Writing Community</A>><br>
 	<ul>
-		<li>真波</li>
-		<li><A href="http://hinezumi.velvet.jp/" target="_blank">ユノ</A></li>
+		<li>Manami</li>
+		<li><A href="http://hinezumi.velvet.jp/" target="_blank">Yuno</A></li>
 		<li>Hdk103-Arch</li>
-		<li>のと</li>
+		<li>Noto</li>
 		<li>esc23</li>
 	</ul>
 </P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><br>
 </P>
 </BODY>

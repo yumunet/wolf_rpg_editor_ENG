@@ -1,101 +1,100 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>ゲームに、気に入ったフォントを使いたい</TITLE>
+<TITLE>Use a Preferred Font in Your Game</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【ゲームに、気に入ったフォントを使いたい】</H2>
+<H2>【Use a Preferred Font in Your Game】</H2>
 <HR>
-<P>【目標】 <BR>
-ウディタでは、文章表示やメニューなど、いろいろな<br>
-ところで使われるフォントを変えることができます。<br>
+<P>[Goal] <BR>
+In WOLF RPG Editor, you can change the font used in various places<br>
+such as message displays and menus.<br>
 <br>
-基本フォントを変更すると雰囲気ががらっと変わります。<br>
-例えばウディタのデフォルトに登録されているＭＳゴシックは<br>
-かっちりとしたフォントで使いどころを選びませんが、<br>
-明朝体のフォントは繊細な雰囲気や東洋的なイメージを与えます。<br>
-和風や中華風のようなアジアンテイストの作品では、<br>
-こちらの方がいいかもしれませんね。<br>
-こういったことも、まずフォントを使用できるように<br>
-ウディタ側で登録して初めて出来るようになります。<br>
+Changing the base font dramatically changes the atmosphere of your game.<br>
+For example, the MS Gothic font registered as the default in WOLF RPG Editor<br>
+is a crisp font that works in any context, but<br>
+a Mincho-style font gives a delicate, Eastern impression.<br>
+For works with a Japanese or Chinese-inspired Asian aesthetic,<br>
+Mincho might be preferable.<br>
+All of this becomes possible once you register the font for use<br>
+in WOLF RPG Editor.<br>
 <br>
-今回は、ウディタで基本フォントとして使用されている<br>
-「ＭＳ ゴシック」を「ＭＳ 明朝」に変更し、<br>
-フォントの登録の仕方を習得します。<br>
+This time, we will learn how to change the<br>
+base font "MS Gothic" used in WOLF RPG Editor to "MS Mincho",<br>
+and how to register fonts.<br>
 <br>
-なお、今回この記事でご紹介する技術は<br>
-「パソコンに入っているフォントをウディタで使えるように登録する」<br>
-であり、「すでに登録が出来たフォントを実用する」内容は<br>
-記事「<a href="EFFECT_005.html">メッセージ内のフォントを変えたい</a>」でどうぞ。<br>
+Note that the technique introduced in this article is<br>
+"registering a font installed on your computer for use in WOLF RPG Editor" —<br>
+for "using an already registered font in practice", see<br>
+the article "<a href="EFFECT_005.html">Change the Font in Messages</a>".<br>
 </P>
 <HR>
-<b>★注意！</b><br>
-　素材を使用するときは、その素材の<u>利用規約</u>を必ず読み、それに従って利用しましょう。<br>
-「<a href ="MATERIAL_007.html">素材利用のルールってどんな感じなの？</a>」も参照してください。<br>
-　特にフォント関係は規約が厳しいものが多いです。詳しくは<a href="#APPENDIX">余談</a>を参照してください。<br>
+<b>★Note!</b><br>
+　When using assets, always read and comply with the asset's <u>terms of use</u>.<br>
+Also see "<a href ="MATERIAL_007.html">What are the rules for using assets?</a>".<br>
+　Font-related terms of use are particularly strict. See the <a href="#APPENDIX">side note</a> for details.<br>
 <HR>
-【手順】
+【Steps】
 <HR>
 <P>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>１．基本フォントの登録<br><br>
-　「ゲーム設定」で「ゲーム基本設定を開く」を選択し、<br>
-　「ゲームの基本設定」ウィンドウを開きます。<br>
-　項目「基本ﾌｫﾝﾄ(空欄なら)「ＭＳ ゴシック」」で<br>
-　設定できます。「基本」の入力欄に、「ＭＳ 明朝」と<br>
-　入力してウィンドウ右下の「OK」ボタンを押してください。<br>
-　<b>「ＭＳ」は全角で、その後のスペースは半角で入力しましょう。</b><br>
-　ここを間違えると、おそらく認識されません。<br>
+<TD nowrap>1. Register the base font<br><br>
+　In "Game Settings", select "Open Game Basic Settings"<br>
+　to open the "Game Basic Settings" window.<br>
+　You can configure this in the item<br>
+　"Base Font (blank = MS Gothic)".<br>
+　Enter "MS Mincho" in the "Base" input field<br>
+　and press the "OK" button at the bottom right of the window.<br>
+　<b>Enter "MS" in full-width characters, and the space after it in half-width.</b><br>
+　Getting this wrong will likely cause it not to be recognized.<br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_006_1.png"><br>ここです。<br>くれぐれも<b>入力は正確に！</b></TD>
+<TD nowrap><img src="image/MATERIAL_006_1.png"><br>Right here.<br>Please make sure to <b>enter accurately!</b></TD>
 </TR>
 </TBODY>
 </TABLE>
 <HR>
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>２．確認<br><br>
-・テストプレイしてみましょう。タイトル画面の選択肢から<br>
-　もうフォントが変わっていることが分かると思います。<br>
-　しゃべるイベントやメニュー画面のフォントも、<br>
-　ＭＳ明朝フォントに変わっていると思います。<br><br>
-・もし「変わってないよ！」という場合は、<br>
-　手順１を見直してみてくださいね。<br>
-　入力した文字の全角、半角も判別されてしまいますよ。<br>
-　これで設定は完了です。お疲れ様でした！<br><br>
-・もし元のフォントに戻したい場合は、手順１と同様にして、<br>
-　「基本」の入力欄に「ＭＳ ゴシック」を入力して<br>
-　OKボタンを押すと元に戻ります。<br>
-　ここでも<b>「ＭＳ」は全角で、その後のスペースは半角で入力しましょう。</b><br>
+<TD nowrap>2. Verify<br><br>
+- Try Test Play. You should be able to tell that the font has already changed<br>
+　from the title screen choices.<br>
+　The font in talking events and the menu screen should also<br>
+　have changed to MS Mincho.<br><br>
+- If "It hasn't changed!", review step 1.<br>
+　Full-width and half-width characters are distinguished.<br>
+　With this, the configuration is done. Great work!<br><br>
+- If you want to return to the original font, follow step 1 again<br>
+　and enter "MS Gothic" in the "Base" input field,<br>
+　then press OK to restore it.<br>
+　Again, <b>enter "MS" in full-width characters, with a half-width space after it.</b><br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_006_2.png"><br>サンプルゲームの最初のシーン<br>イメージ変わりました？</TD>
+<TD nowrap><img src="image/MATERIAL_006_2.png"><br>The first scene of the sample game.<br>Does the atmosphere feel different?</TD>
 </TR>
 </TBODY>
 </TABLE>
 <HR>
 </P>
 <HR>
-<P><a name="APPENDIX">【余談】</a>
+<P><a name="APPENDIX">[Side Note]</a>
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>１．フォントを部分的に変える方法<br><br>
-今回は、基本フォントとして登録されていた「ＭＳ ゴシック」を<br>
-「ＭＳ 明朝」に変更したため、ＭＳゴシックが使用されていた<br>
-ところが全てＭＳ明朝に変わりました。<br>
-「変えたいフォントはそこじゃないのに…」ですとか、<br>
-「文章表示の一部分だけを変えたい」<br>
-という方には申し訳ありませんが、<br>
-好きなフォントを好きなところに使用する技術については、<br>
-記事「<a href="EFFECT_005.html">メッセージ内のフォントを変えたい</a>」で<br>
-述べていますので、そちらをご参照ください。<br>
+<TD nowrap>1. How to change fonts in specific parts only<br><br>
+This time, we changed the base font from "MS Gothic" to<br>
+"MS Mincho", so everywhere MS Gothic was used<br>
+is now MS Mincho.<br>
+For those who want to change only specific text sections<br>
+or "change only part of the message display",<br>
+the article "<a href="EFFECT_005.html">Change the Font in Messages</a>"<br>
+explains the technique for using a desired font wherever you want,<br>
+so please refer to that.<br>
 </TD>
 <TD nowrap></TD>
 </TR>
@@ -105,25 +104,27 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>２．パソコンに入ってないフォントの使い方<br><br>
-・ウェブ上でフリー公開および販売されているフォントは、<br>
-　その作者さんが使用を許可してくださっている場合は<br>
-　使うことができます。ですが、フォントの利用は<u>実はとても難解</u>で、<br>
-　利用規約が難しく、使用したゲームを配布できなかったり<br>、
-　使えるファイルのはずなのになぜか使えなかったり、<br>
-　導入したと思っても別のパソコンではうまく表示されなかったり。<br>
-　素材の中でも扱いが非常に難しいものです。<br><br>
-・まず何をおいても、利用規約はしっかり確認してください。<br>
-　特に難しいのが「<u>二次配布の禁止</u>」で、ウディタでは<br>
-　フォントを導入したまま、かつフォントの二次配布にならずに<br>
-　ゲームを公開するすべがありません。二次配布を全面的に<br>
-　禁止しているフォントは、ウディタでの使用をすっぱり諦めてください。<br><br>
-<!-- Dataフォルダの1つ上流の(Game.exeがある)フォルダに入れる場合はもちろん二次配布になり、一方Dataフォルダに入れる場合は暗号化すると読み込めなくなるため、
-ゲーム配布時にはフォントファイルは生きたままでないといけない。情報ソースはマニュアル -->
-・フォントファイルはGame.exeと同じ場所に入れるか、<br>
-　もしくはDataフォルダに入れてください。<br>
-　あとは、手順１と同様にしてフォントの名前を<b>正しく</b><br>
-　指定するとフォントを導入できます。<br>
+<TD nowrap>2. How to use fonts not installed on your computer<br><br>
+- Fonts freely released or sold on the web can be used<br>
+　if the author permits their use. However, font usage is<br>
+　<u>actually quite complex</u> —<br>
+　terms of use can be difficult, some may prevent you from distributing your game,<br>
+　or a file that should work somehow doesn't,<br>
+　or a font you installed doesn't display correctly on another computer.<br>
+　Fonts are among the most difficult assets to handle.<br><br>
+- First and foremost, check the terms of use carefully.<br>
+　Particularly tricky is "<u>prohibition of redistribution</u>" — in WOLF RPG Editor,<br>
+　there is no way to include a font while also<br>
+　avoiding redistribution of that font.<br>
+　If a font completely prohibits redistribution,<br>
+　you'll need to give up on using it in WOLF RPG Editor.<br><br>
+<!-- Placing it in the folder above the Data folder (where Game.exe is located) is of course redistribution,
+while placing it in the Data folder means it can't be loaded when encrypted.
+Therefore, when distributing a game, font files must remain unencrypted. Source: manual -->
+- Place the font file in the same location as Game.exe,<br>
+　or in the Data folder.<br>
+　Then, follow step 1 and specify the font name <b>correctly</b><br>
+　to install the font.<br>
 </TD>
 <TD nowrap></TD>
 </TR>
@@ -132,14 +133,14 @@
 </P><HR>
 
 <HR>
-<P>＜＜執筆者：<A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">ウディタ公式ガイド執筆コミュ。</A>＞＞<BR>
+<P>＜<Author: <A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">WOLF RPG Editor Official Guide Writing Community.</A>>＞<BR>
 <UL>
-	<LI>設計書作成：真波、ユノ</LI>
-	<LI>トピック執筆：Hdk103-Arch</LI>
+	<LI>Specification creation: Manami, Yuno</LI>
+	<LI>Topic writing: Hdk103-Arch</LI>
 </UL>
 </P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

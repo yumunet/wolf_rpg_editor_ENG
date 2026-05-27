@@ -1,29 +1,26 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-<HTML LANG="ja">
+<HTML LANG="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>主人公を別のマップに移動させたい</TITLE>
+<TITLE>I want to move the player character to a different map</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【主人公を別のマップに移動させたい】</H2>
+<H2>[I want to move the player character to a different map]</H2>
 <HR>
-<P>【目標】 <BR>
-　サンプルマップAのタルの横に、<BR>
-　<B>「さわるとサンプルマップBに移動する透明イベント」</B>を作ります。　　</P>
+<P>[Goal] <BR>
+　We will create an <B>invisible event next to the barrel in Sample Map A<BR>
+　that teleports the player to Sample Map B when touched</B>.</P>
 <TABLE border="0">
   <TBODY>
     <TR>
       <TD align="center"><IMG src="image/MUST_003_6.gif" width="161" height="143" border="0"><BR>
-      サンプルマップAにある<BR>
-      タルの横に行くと……。</TD>
+      Walk to the barrel in Sample Map A...</TD>
       <TD><B><FONT size="+3">&#160;→</FONT></B><FONT size="+3"> </FONT><B><FONT size="-1">.</FONT><BR>
       </B>　</TD>
       <TD align="center"><IMG src="image/MUST_003_7.gif" width="159" height="131" border="0"><BR>
-      ｻﾝﾌﾟﾙﾏｯﾌﾟBの女神像の前に<BR>
-      移動するイベントを作ります</TD>
+      ...and you are transported to in front of the goddess statue in Sample Map B.</TD>
     </TR>
   </TBODY>
 </TABLE>
@@ -32,60 +29,48 @@
 <HR>
 <TABLE border="0">
   <TBODY>
-
     <TR>
-      <TD nowrap>【1】　<BR>
-      　マップ選択<IMG src="image/icon_mapselector.png" width="22" height="20" border="0">を開き、<BR>
-      　「<B>1:サンプルマップA</B>」を選択します。<BR>
+      <TD nowrap>[1]　<BR>
+      　Open the Map Selector <IMG src="image/icon_mapselector.png" width="22" height="20" border="0"> and<BR>
+      　select "<B>1: Sample Map A</B>".<BR>
       　<BR>
-
       </TD>
       <TD nowrap><IMG src="image/mapselector.png" width="172" height="240" border="1"></TD>
     </TR>
-
   </TBODY>
 </TABLE>
 <HR>
 <TABLE border="0">
   <TBODY><TR>
-      <TD nowrap>【2】<BR>
-
-      　イベントレイヤー<IMG src="image/icon_eventlayer.png" width="22" height="20" border="0"> に切り替え、<BR>
-      　ゲーム開始地点すぐ右のタルの横で<BR>
-      　<B>右クリック</B>をすると、<B>→</B>のような<BR>
-      　メニューが表示されます。<BR>
-
+      <TD nowrap>[2]<BR>
+      　Switch to the Event Layer <IMG src="image/icon_eventlayer.png" width="22" height="20" border="0">,<BR>
+      　then <B>right-click</B> next to the barrel near the start position.<BR>
+      　A menu will appear as shown.<BR>
       <BR>
-      　ここでは「<B>イベント作成/編集</B>」を<BR>
-      　クリックして下さい。</TD>
+      　Select "<B>Create/Edit Event</B>".</TD>
       <TD nowrap><IMG src="image/MUST_003_1.gif" width="204" height="163" border="0"></TD>
     </TR>
   </TBODY>
 </TABLE>
-
 <HR>
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【3】　<BR>
-      　すると、右のような<BR>
-      　イベント設定ウィンドウが<BR>
-      　表示されます。<BR>
-
+      <TD nowrap>[3]　<BR>
+      　The Event Settings window<BR>
+      　shown on the right will appear.<BR>
       <BR>
       　</TD>
       <TD nowrap><IMG src="image/window_mapevent.jpg" width="415" height="187" border="0"></TD>
     </TR>
   </TBODY>
 </TABLE>
-
 <HR>
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【4】　<BR>
-起動条件を
-「プレイヤー接触」にします。<BR>
+      <TD nowrap>[4]　<BR>
+Set the Trigger Condition to "Player Touch".<BR>
       <BR>
       　</TD>
       <TD nowrap><IMG src="image/MUST_003_9.gif" border="1"></TD>
@@ -96,13 +81,11 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【5】　<BR>
-      　「<B>■コマンド入力ウィンドウの表示■</B>」<BR>
-      　をクリックし、「<B>イベントコマンドの挿入</B>」<BR>
-      　ウィンドウを開いて下さい。<BR>
+      <TD nowrap>[5]　<BR>
+      　Click "<B>■ Show Command Input Window ■</B>"<BR>
+      　to open the "Insert Event Command" window.<BR>
       <BR>
-      　そして、上にあるタブの「<B>場所移動</B>」を<BR>
-      　クリックします。</TD>
+      　Then click the "<B>Location Transfer</B>" tab at the top.</TD>
       <TD nowrap><IMG src="image/window_evbase3.jpg" width="300" height="254" border="0"></TD>
     </TR>
   </TBODY>
@@ -111,11 +94,10 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【6】<BR>
-      　右のようなウィンドウが<BR>
-      　表示されるので、<BR>
-      　「<B>移動先を見ながら指定</B>」を<BR>
-      　クリックします。</TD>
+      <TD nowrap>[6]<BR>
+      　The window shown on the right<BR>
+      　will appear. Click<BR>
+      　"<B>Specify while viewing destination</B>".</TD>
       <TD nowrap><IMG src="image/MUST_003_3.gif" width="287" height="204" border="0"></TD>
     </TR>
   </TBODY>
@@ -124,24 +106,21 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【7】　<BR>
-      　すると「<B>場所移動地点の選択</B>」<BR>
-      　ウィンドウが表示されるので、<BR>
-      　左の欄の「<B>2: サンプルマップB</B>」を<BR>
-      　クリックして、マップを切り替えます。<BR>
+      <TD nowrap>[7]　<BR>
+      　The "Select Location Transfer Destination"<BR>
+      　window will appear.<BR>
+      　Click "<B>2: Sample Map B</B>" in the left panel<BR>
+      　to switch maps.<BR>
       <BR>
-      　右のマップから<B>女神像の前を<BR>
-      　クリック</B>し、紅白のカーソルを<BR>
-      　セットします。<BR>
+      　<B>Click in front of the goddess statue</B><BR>
+      　on the right map to set<BR>
+      　the red-and-white cursor.<BR>
       <BR>
-      　終わったら「<B>OK</B>」をクリックして<BR>
-      　ください。<BR>
+      　Click "<B>OK</B>" when done.<BR>
       <BR>
       <BR>
-      　※<B>中クリックしながら右の<BR>
-      　　マップ画面をドラッグ</B>すると、<BR>
-      　　画面をスクロールさせることが<BR>
-      　　できます。便利ですよ。</TD>
+      　※<B>Middle-click and drag</B> on the right<BR>
+      　　map to scroll the view.</TD>
       <TD nowrap><IMG src="image/MUST_003_4.gif" width="411" height="300" border="0"></TD>
     </TR>
   </TBODY>
@@ -150,12 +129,11 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【8】<BR>
-      　<B>移動先マップ、移動先位置</B>に<BR>
-      　数値が入っているのが分かります。<BR>
+      <TD nowrap>[8]<BR>
+      　You can see that the destination map<BR>
+      　and destination position now have values.<BR>
       <BR>
-      　このまま「<B>入力</B>」をクリックして、<BR>
-      　イベントコマンドを登録しましょう。</TD>
+      　Click "<B>Input</B>" to register the event command.</TD>
       <TD nowrap><IMG src="image/MUST_003_5.gif" width="400" height="300" border="1"></TD>
     </TR>
   </TBODY>
@@ -164,10 +142,9 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【9】<BR>
-      　終わったら、「<B>セーブ（マップ全体）</B>」を<BR>
-      　クリックして保存し、<B>テストプレイ</B>を<BR>
-      　開始しましょう。</TD>
+      <TD nowrap>[9]<BR>
+      　When done, click "<B>Save (Entire Map)</B>"<BR>
+      　to save, then start <B>Test Play</B>.</TD>
       <TD nowrap><IMG src="image/window_evbase4.png" width="247" height="100" border="1"></TD>
     </TR>
   </TBODY>
@@ -176,9 +153,9 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【10】　<BR>
-      　ゲームを開始し、スタート地点の<BR>
-      　右のタルに近付いていくと……。</TD>
+      <TD nowrap>[10]　<BR>
+      　Start the game and walk toward<BR>
+      　the barrel to the right of the start point...</TD>
       <TD nowrap><IMG src="image/MUST_003_6.gif" width="161" height="143" border="0"></TD>
     </TR>
   </TBODY>
@@ -187,13 +164,12 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【11】　<BR>
-      　一瞬止まった後、<B>サンプルマップB</B>の<BR>
-      　<B>女神像の前</B>へ移動することが<BR>
-      　できました！<BR>
+      <TD nowrap>[11]　<BR>
+      　After a brief pause, you are transported to<BR>
+      　in front of the <B>goddess statue</B> in <B>Sample Map B</B>!<BR>
       <BR>
-      　これでマップとマップを繋げる<BR>
-      　場所移動イベントが完成です！</TD>
+      　The location transfer event connecting<BR>
+      　two maps is complete!</TD>
       <TD nowrap><IMG src="image/MUST_003_7.gif" width="159" height="131" border="0"></TD>
     </TR>
   </TBODY>
@@ -208,23 +184,23 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap><B>【余談】</B><BR>
-      <B>　【<A href="MUST_002.html">新しいマップはどうやって作るの？</A>】で作った<BR>
-      　「テスト」マップに移動させたいんだけど！</B><BR>
+      <TD nowrap><B>[Side Note]</B><BR>
+      <B>　I want to move to the "Test" map created in<BR>
+      　<A href="MUST_002.html">[How do I create a new map?]</A>!</B><BR>
       <BR>
       <BR>
-      　上と同じ要領で、「<B>サンプルマップA</B>」のタルの横から<BR>
-      　「<B>テスト</B>」マップに場所移動するイベントを<BR>
-      　作ってみましょう。<BR>
+      　Using the same method, create a location transfer event<BR>
+      　from the barrel area in "<B>Sample Map A</B>"<BR>
+      　to the "<B>Test</B>" map.<BR>
       <BR>
-      　しかし、「<B>サンプルマップA</B>」から「<B>テスト</B>」マップへ<BR>
-      　移動するイベントだけだと、今度は<BR>
-      　<B>「サンプルマップA」に戻れなくなってしまう</B>ので、<BR>
-      　「<B>テスト</B>」マップから「<B>サンプルマップA</B>」に移動する<BR>
-      　ための、<B>帰りのイベントも作っておく</B>必要があります。<BR>
+      　However, if you only have an event going from<BR>
+      　"<B>Sample Map A</B>" to "<B>Test</B>",<BR>
+      　<B>you won't be able to return to "Sample Map A"</B>.<BR>
+      　You also need to create a<BR>
+      　<B>return event from "Test" back to "Sample Map A"</B>.<BR>
       <BR>
-      　ちゃんとマップを繋げるには、<B>行きと帰りの、<BR>
-      　二つの場所移動イベントが必要</B>なんですね。</TD>
+      　To properly connect two maps, you need<BR>
+      　<B>two location transfer events: one to go and one to return</B>.</TD>
       <TD nowrap align="center"><IMG src="image/MUST_003_6.gif" width="161" height="143" border="0"><BR>
       <BR>
       <B><FONT size="+2">↓</FONT></B><BR>
@@ -234,9 +210,9 @@
   </TBODY>
 </TABLE>
 <HR>
-<P>＜執筆者：<A href="http://www.silversecond.net/" target="_blank">SmokingWOLF</A>＞　</P>
+<P>&lt;Author: <A href="http://www.silversecond.net/" target="_blank">SmokingWOLF</A>&gt;　</P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

@@ -1,86 +1,84 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
     <META http-equiv="Content-Style-Type" content="text/css">
     <meta charset="UTF-8">
-    <TITLE>PRO_001:◆並列イベントと自動イベントの使い方を詳しく知りたい</TITLE>
+    <TITLE>PRO_001: ◆Learn How to Use Parallel Events and Auto Events in Detail</TITLE>
     <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD>
 <BODY>
 <HR>
-<H2>【PRO_001:◆並列イベントと自動イベントの使い方を詳しく知りたい】</H2>
+<H2>【PRO_001: ◆Learn How to Use Parallel Events and Auto Events in Detail】</H2>
 <HR>
-<B>【目標】</B><BR>
+<B>[Goal]</B><BR>
 <HR>
 <P>
-    イベントの起動条件のうち、自動実行と並列実行は、<BR>
-    「条件が満たされた時点で実行され、条件が変わるまで実行され続ける」<BR>
-    という性質を持ちます。<BR>
+    Among event Trigger Conditions, Auto-execute and Parallel Process have the characteristic that<BR>
+    "they are executed when the condition is met, and continue running until the condition changes".<BR>
     <BR>
-    ここではそれぞれ、自動実行の開始条件を持ったイベントを「自動イベント」、<BR>
-    並列実行の開始条件を持ったイベントを「並列イベント」と呼ぶことにします。<BR>
+    Here, we will refer to events with an Auto-execute start condition as "auto events",<BR>
+    and events with a Parallel Process start condition as "parallel events".<BR>
 </P>
 
 <P>
-    自動イベントが実行中の場合では「並列イベント」以外の他の開始条件イベント<BR>
-    （決定キーで実行、プレイヤー接触、イベント接触、自動実行）は起動できませんが、<BR>
-    並列イベントが実行中の場合では「並列イベント」を含む全ての開始条件イベントが<BR>
-    起動できるという違いがあります。<BR>
+    When an auto event is running, no other trigger condition events<BR>
+    (Execute on Confirm key, Player Touch, Event Touch, Auto-execute) can launch except "parallel events",<BR>
+    but when a parallel event is running, all trigger condition events including "parallel events" can<BR>
+    launch — this is the key difference.<BR>
 </P>
 <IMG src="image/PRO_001_0.png">
 <P>
-    自動イベントと並列イベントの使い方がわかることで、<BR>
-    ゲームにシーンイベントを挟んだり、探索イベント中にギミックを仕掛けたりすることができます。<BR>
-    また、戦闘システムやメッセージ表示など自作をする際には避けては通れない内容でもあります。<BR>
+    By understanding how to use auto events and parallel events,<BR>
+    you can insert scene events into your game or set up gimmicks during exploration events.<BR>
+    They are also unavoidable when creating your own combat system or message display system.<BR>
 </P>
 
 <P>
-    今回は「ダンジョンに入るとタイマーが起動され時間が来ると外に出てしまう機能」<BR>
-    というものを作成し、自動イベントと並列イベントについて、<BR>
-    基本的な使い方を習得することを目標とします。<BR>
+    This time, we will create a function "that starts a timer when entering the dungeon and teleports the player outside when time is up",<BR>
+    and use it to learn the basic usage of auto events and parallel events.<BR>
 </P>
 
 <HR>
-<B>【手順】</B>
+<B>【Steps】</B>
 <HR>
-<B>【1】今回作る機能に必要なもの</B>
+<B>[1] What is needed for the function we will create</B>
 <HR>
 <P>
-    今回のイベント作成では2つの通常変数と、<BR>
-    3つのページを持つ新規のイベント「タイマーイベント」、<BR>
-    既存のイベント「入口場所移動」が関係します。<BR>
+    For this event creation, we will use 2 regular variables,<BR>
+    a new event "Timer Event" with 3 pages,<BR>
+    and the existing event "Entrance Location Transfer".<BR>
 </P>
 
 <TABLE border="1">
 <TBODY>
     <TR>
-        <TD nowrap colspan="2">■■■通常変数■■■</TD>
+        <TD nowrap colspan="2">■■■Regular Variables■■■</TD>
     </TR>
     <TR>
-        <TD nowrap>■イベント管理フラグ</TD>
+        <TD nowrap>■Event Management Flag</TD>
         <TD nowrap>
-            3つのイベントの状態を管理する変数です。下記のように決めておきます。
+            A variable that manages the state of the three events. Set as follows:
             <ul>
                 <LI>
-                    0：タイマーが起動されていない状態です。<BR>
-                    この状態でダンジョンに入った際にタイマー開始イベントが起動されます。<BR>
+                    0: Timer is not running.<BR>
+                    When entering the dungeon in this state, the timer start event launches.<BR>
                 </LI>
                 <LI>
-                    1:タイマーが起動されている状態です。<BR>
-                    この状態ではタイマー変数が増加していきます。<BR>
+                    1: Timer is running.<BR>
+                    In this state, the timer variable increases.<BR>
                 </LI>
                 <LI>
-                    2:タイマーが指定の値に達した状態です。<BR>
-                    この状態になるとタイマーが停止し、タイマー終了イベントが起動します。<BR>
+                    2: Timer has reached the specified value.<BR>
+                    When this state is reached, the timer stops and the timer exit event launches.<BR>
                 </LI>
             </ul>
         </TD>
     </TR>
     <TR>
-        <TD nowrap>■タイマー変数</TD>
+        <TD nowrap>■Timer Variable</TD>
         <TD nowrap>
-            1フレーム（デフォルトの設定では1/60秒です）毎に1ずつ増加していく変数です。<BR>
-            この値が1800（30秒）になった時点で、「イベント管理フラグ」を2(タイマー終了)状態にします。<BR>
+            A variable that increases by 1 each frame (1/60 second by default).<BR>
+            When this value reaches 1800 (30 seconds), the "Event Management Flag" is set to state 2 (timer exit).<BR>
         </TD>
     </TR>
 </TBODY>
@@ -89,16 +87,16 @@
 <TABLE border="1">
 <TBODY>
     <TR>
-        <TD nowrap colspan="2">■■■タイマーイベント■■■</TD>
+        <TD nowrap colspan="2">■■■Timer Event■■■</TD>
     </TR>
     <TR>
-        <TD nowrap colspan="2">ダンジョン内に設置される、タイマー処理のメインイベントです。</TD>
+        <TD nowrap colspan="2">The main timer process event placed inside the dungeon.</TD>
     </TR>
     <TR>
         <TD nowrap>
-            ■ページ1：タイマー開始イベント<BR>
-            自動実行の、プレイヤーにタイマーが開始されたことを伝えるイベントです。<BR>
-            メッセージ表示の後、タイマーを起動します。<BR>
+            ■Page 1: Timer Start Event<BR>
+            An Auto-execute event that notifies the player that the timer has started.<BR>
+            After displaying a message, it starts the timer.<BR>
         </TD>
         <TD nowrap>
             <IMG src="image/PRO_001_22.png">
@@ -106,10 +104,10 @@
     </TR>
     <TR>
         <TD nowrap>
-            ■ページ2：タイマー処理イベント<BR>
-            並列実行の、タイマー変数を増加させるイベントです。<BR>
-            また、タイマー変数を増加させた後に、その値が1800（30秒）以上になったかどうかを判定し、<BR>
-            タイマー終了イベントを呼ぶかどうかを判断します。<BR>
+            ■Page 2: Timer Process Event<BR>
+            A Parallel Process event that increases the timer variable.<BR>
+            After increasing the timer variable, it checks whether the value has reached 1800 (30 seconds) or more,<BR>
+            and determines whether to call the timer exit event.<BR>
         </TD>
         <TD nowrap>
             <IMG src="image/PRO_001_23.png">
@@ -117,10 +115,10 @@
     </TR>
     <TR>
         <TD nowrap>
-            ■ページ3：タイマー終了イベント<BR>
-            自動実行の、プレイヤーに時間切れを伝えるイベントです。<BR>
-            メッセージ表示の後、主人公をダンジョンの外に場所移動して、<BR>
-            タイマーの実行状態（=イベント管理フラグ）を初期状態（=0）に戻します。<BR>
+            ■Page 3: Timer Exit Event<BR>
+            An Auto-execute event that notifies the player that time is up.<BR>
+            After displaying a message, it teleports the player character outside the dungeon<BR>
+            and resets the timer run state (= Event Management Flag) back to the initial state (= 0).<BR>
         </TD>
         <TD nowrap>
             <IMG src="image/PRO_001_24.png">
@@ -132,16 +130,16 @@
 <TABLE border="1">
 <TBODY>
     <TR>
-        <TD nowrap colspan="2">■■■入口場所移動■■■</TD>
+        <TD nowrap colspan="2">■■■Entrance Location Transfer■■■</TD>
     </TR>
     <TR>
-        <TD nowrap colspan="2">既に設置されているダンジョンからサンプルマップAへの移動イベントです。</TD>
+        <TD nowrap colspan="2">An existing movement event from the dungeon to Sample Map A.</TD>
     </TR>
     <TR>
         <TD nowrap>
-            ■ページ1：サンプルマップAへ移動<BR>
-            セーブを許可し、サンプルマップAへ移動するコマンドが既に入力されています。<BR>
-            今回はここにタイマーイベントの途中でダンジョンから抜けた場合のリセット処理を追加します。<BR>
+            ■Page 1: Move to Sample Map A<BR>
+            Save is enabled and the command to move to Sample Map A is already entered.<BR>
+            This time, we will add a timer reset process here for when the player exits the dungeon midway through the timer.<BR>
         </TD>
         <TD nowrap>
             <IMG src="image/PRO_001_25.png">
@@ -151,17 +149,17 @@
 </TABLE>
 
 <HR>
-<B>【2】機能の作成</B>
+<B>[2] Creating the function</B>
 <HR>
 <TABLE border="1">
 <TBODY>
     <TR>
-        <TD nowrap colspan="2"><B>■通常変数の作成</B></TD>
+        <TD nowrap colspan="2"><B>■Creating the regular variables</B></TD>
     </TR>
     <TR>
         <TD nowrap>
-            システムデータベースより、タイプ14：「通常変数名」を開きます。<BR>
-            ID：1に「イベント管理フラグ」、ID：2に「タイマー変数」を設定します。<BR>
+            From the System Database, open type 14: "Regular Variable Names".<BR>
+            Set ID: 1 to "Event Management Flag" and ID: 2 to "Timer Variable".<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_1.png"></TD>
     </TR>
@@ -171,203 +169,202 @@
 <TABLE border="1">
 <TBODY>
     <TR>
-        <TD nowrap colspan="2"><B>■タイマーイベントの作成</B></TD>
+        <TD nowrap colspan="2"><B>■Creating the Timer Event</B></TD>
     </TR>
     <TR>
         <TD nowrap>
-            マップ3「ダンジョンの」座標(0,0)(左上)に新規イベントを作成します。<BR>
-            イベントの名前を「タイマーイベント」にし、グラフィックは「指定無し」に設定します。<BR>
+            Create a new event at coordinate (0,0) (top-left) of Map 3 "Dungeon".<BR>
+            Set the event name to "Timer Event" and set the graphic to "None".<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_2.png"></TD>
     </TR>
     <TR>
-        <TD nowrap colspan="2"><B>■ページ1：タイマー開始イベントの作成</B></TD>
+        <TD nowrap colspan="2"><B>■Page 1: Creating the Timer Start Event</B></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (1)イベント起動条件の設定<BR>
-            イベントページが「ページ1」になっていることを確認します。<BR>
-            起動条件を「自動実行」として、<BR>
-            「v1:イベント管理フラグ」が「0」と「同じ」時に実行するように設定します。<BR>
+            (1) Setting the event Trigger Condition<BR>
+            Confirm that the event page is "Page 1".<BR>
+            Set the Trigger Condition to "Auto-execute",<BR>
+            and configure it to run when "v1: Event Management Flag" is "equal to" "0".<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_3.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (2)ピクチャ表示<BR>
-            コマンド「A ピクチャ」より、ピクチャ番号1番、<BR>
-            ピクチャを文字列として描画、文字列「\v[2]」として<BR>
-            ピクチャ表示を設定します。<BR>
+            (2) Picture display<BR>
+            Using the command "A Picture", set picture number 1,<BR>
+            display picture as text, with text "\v[2]".<BR>
             <BR>
-            ※タイマー変数の中身を画面に表示しています。<BR>
+            ※This displays the value of the timer variable on screen.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_4.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (3)文章の表示
-            ①コマンド「1 文章の表示」より、下記メッセージを設定します。<BR>
+            (3) Show Message<BR>
+            ①Using the command "1 Show Message", configure the following message:<BR>
             <BR>
             -----<BR>
-            ※タイマーを開始します。<BR>
-            ウルファール達はこのダンジョンに<BR>
-            30秒以上いられないようだ。<BR>
+            ※The timer is starting.<BR>
+            It seems Wolfar and friends cannot<BR>
+            stay in this dungeon for more than 30 seconds.<BR>
             -----<BR>
             <BR>
-            ※プレイヤーにタイマーが開始されたことを伝えるメッセージを表示します。<BR>
+            ※This displays a message notifying the player that the timer has started.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_5.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (4)変数操作：V1[イベント管理フラグ]<BR>
-            ①下記のように変数操作を設定します。<BR>
+            (4) Variable Operation: V1 [Event Management Flag]<BR>
+            ①Configure the Variable Operation as follows:<BR>
             <BR>
-            V1:イベント管理フラグ、=、1<BR>
+            V1: Event Management Flag, =, 1<BR>
             <BR>
-            ※イベント管理フラグを1にしてタイマーを開始します。<BR>
+            ※Sets the Event Management Flag to 1 to start the timer.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_6.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (5)変数操作：V2[タイマー変数]<BR>
-            ①下記のように変数操作を設定します。<BR>
+            (5) Variable Operation: V2 [Timer Variable]<BR>
+            ①Configure the Variable Operation as follows:<BR>
             <BR>
-            V2:タイマー変数、=、0<BR>
+            V2: Timer Variable, =, 0<BR>
             <BR>
-            ※タイマー変数の値を0にして、始めの状態にセット（=初期化）しています。<BR>
+            ※Sets the timer variable to 0, initializing it to the starting state.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_7.png"></TD>
     </TR>
     <TR>
-        <TD nowrap colspan="2"><B>■ページ2：タイマー処理イベントの作成</B></TD>
+        <TD nowrap colspan="2"><B>■Page 2: Creating the Timer Process Event</B></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (1)イベント起動条件の設定<BR>
-            イベントページが「ページ2」になっていることを確認します。<BR>
-            起動条件を「並列実行」として、<BR>
-            「v1:イベント管理フラグ」が「1」と「同じ」時に実行するように設定します。<BR>
+            (1) Setting the event Trigger Condition<BR>
+            Confirm that the event page is "Page 2".<BR>
+            Set the Trigger Condition to "Parallel Process",<BR>
+            and configure it to run when "v1: Event Management Flag" is "equal to" "1".<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_8.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (2)変数操作：V2[タイマー変数]<BR>
-            ①下記のように変数操作を設定します。<BR>
+            (2) Variable Operation: V2 [Timer Variable]<BR>
+            ①Configure the Variable Operation as follows:<BR>
             <BR>
-            V2:タイマー変数、+=、1<BR>
+            V2: Timer Variable, +=, 1<BR>
             <BR>
-            ※イベントが呼ばれるたびに、タイマー変数の値を1ずつ増やしています。<BR>
+            ※Each time the event is called, the timer variable value increases by 1.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_9.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (3)ピクチャ表示<BR>
-            ①下記ピクチャの表示設定をします。<BR>
+            (3) Picture display<BR>
+            ①Configure the following picture display settings:<BR>
             <BR>
-            ピクチャ番号1番、ピクチャを文字列として描画、文字列「\v[2]」<BR>
+            Picture number 1, display picture as text, text "\v[2]"<BR>
             <BR>
-            ※イベントが呼ばれるたびに、タイマー変数の値を表示しなおしています。<BR>
+            ※Each time the event is called, the timer variable value is re-displayed.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_10.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (4)条件分岐(変数)<BR>
-            ①下記のように条件分岐を設定します。<BR>
+            (4) Conditional Branch (variable)<BR>
+            ①Configure the Conditional Branch as follows:<BR>
             <BR>
-            「V2:タイマー変数」が「1800」「以上」のとき<BR>
+            "V2: Timer Variable" is "1800" "or more"<BR>
             <BR>
-            ※タイマー変数の値を見て、フラグ変更の処理をするかどうかを判断しています。<BR>
-            数直線を思い浮かべて、条件を自然な形で設定するとよいでしょう。<BR>
+            ※Checks the timer variable value to determine whether to perform the flag change process.<BR>
+            Visualize a number line and set the condition naturally.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_11.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (5)変数操作：V1[イベント管理フラグ]<BR>
-            ①上記で設定した条件分岐内に、下記のように変数操作を設定します。<BR>
+            (5) Variable Operation: V1 [Event Management Flag]<BR>
+            ①Inside the Conditional Branch configured above, set up the Variable Operation as follows:<BR>
             <BR>
-            V1:イベント管理フラグ、=、2<BR>
+            V1: Event Management Flag, =, 2<BR>
             <BR>
-            ※イベント管理フラグを2にしてタイマーを終了します。<BR>
+            ※Sets the Event Management Flag to 2 to exit the timer.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_12.png"></TD>
     </TR>
     <TR>
-        <TD nowrap colspan="2"><B>■ページ3：タイマー終了イベントの作成</B></TD>
+        <TD nowrap colspan="2"><B>■Page 3: Creating the Timer Exit Event</B></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (1)イベント起動条件の設定<BR>
-            イベントページが「ページ1」になっていることを確認します。<BR>
-            起動条件を「自動実行」として、<BR>
-            「v1:イベント管理フラグ」が「2」と「同じ」時に実行するように設定します。<BR>
+            (1) Setting the event Trigger Condition<BR>
+            Confirm that the event page is "Page 3".<BR>
+            Set the Trigger Condition to "Auto-execute",<BR>
+            and configure it to run when "v1: Event Management Flag" is "equal to" "2".<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_13.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (2)文章の表示<BR>
-            ①下記メッセージを設定します。<BR>
+            (2) Show Message<BR>
+            ①Configure the following message:<BR>
             <BR>
             -----<BR>
-            ※タイマーを終了します。<BR>
-            30秒経ち、ウルファール達は<BR>
-            ダンジョンの入り口に飛ばされてしまった。<BR>
+            ※The timer has ended.<BR>
+            30 seconds passed, and Wolfar and friends<BR>
+            were sent flying to the dungeon entrance.<BR>
             -----<BR>
             <BR>
-            ※プレイヤーにタイマーが終了されたことを伝えるメッセージを表示します。<BR>
+            ※This displays a message notifying the player that the timer has ended.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_14.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (3)ピクチャ消去<BR>
-            ①下記ピクチャの表示設定をします。<BR>
+            (3) Picture erase<BR>
+            ①Configure the following picture settings:<BR>
             <BR>
-            ピクチャ番号1番<BR>
+            Picture number 1<BR>
             <BR>
-            ※タイマー変数を表示しているピクチャを消去しています。<BR>
+            ※Erases the picture displaying the timer variable.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_15.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (4)場所移動<BR>
-            ①下記のように場所移動を設定します。<BR>
+            (4) Location Transfer<BR>
+            ①Configure the Location Transfer as follows:<BR>
             <BR>
-            対象：主人公<BR>
-            移動先マップ：1、サンプルマップA<BR>
-            移動先位置：X：34、Y：12<BR>
-            場所移動時オプション：トランジションを行う [暗転有り・遅い]<BR>
+            Target: player character<BR>
+            Destination map: 1, Sample Map A<BR>
+            Destination position: X: 34, Y: 12<BR>
+            Transfer option: Perform transition [with fade-out, slow]<BR>
             <BR>
-            ※プレイヤーダンジョンの入り口に移動します。<BR>
+            ※Moves the player to the dungeon entrance.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_16.png"></TD>
     </TR>
         <TR>
         <TD nowrap>
-            (5)変数操作：V1[イベント管理フラグ]<BR>
-            ①下記のように変数操作を設定します。<BR>
+            (5) Variable Operation: V1 [Event Management Flag]<BR>
+            ①Configure the Variable Operation as follows:<BR>
             <BR>
-            V1:イベント管理フラグ、=、0<BR>
+            V1: Event Management Flag, =, 0<BR>
             <BR>
-            ※イベント管理フラグの値を0にして、始めの状態にセット（=初期化）しています。<BR>
+            ※Sets the Event Management Flag to 0, resetting it to the initial state.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_17.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (6)変数操作：V2[タイマー変数]<BR>
-            ①下記のように変数操作を設定します。<BR>
+            (6) Variable Operation: V2 [Timer Variable]<BR>
+            ①Configure the Variable Operation as follows:<BR>
             <BR>
-            V2:タイマー変数、=、0<BR>
+            V2: Timer Variable, =, 0<BR>
             <BR>
-            ※タイマー変数の値を0にして、始めの状態にセット（=初期化）しています。<BR>
+            ※Sets the timer variable to 0, resetting it to the initial state.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_18.png"></TD>
     </TR>
@@ -377,38 +374,38 @@
 <TABLE border="1">
 <TBODY>
     <TR>
-        <TD nowrap colspan="2"><B>■入口場所移動の変更</B></TD>
+        <TD nowrap colspan="2"><B>■Modifying the Entrance Location Transfer</B></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (1)ピクチャ消去<BR>
-            下記ピクチャの表示設定をします。<BR>
+            (1) Picture erase<BR>
+            Configure the following picture settings:<BR>
             <BR>
-            ピクチャ番号1番<BR>
+            Picture number 1<BR>
             <BR>
-            ※タイマー変数を表示しているピクチャを消去しています。<BR>
+            ※Erases the picture displaying the timer variable.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_19.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (2)変数操作：V1[イベント管理フラグ]<BR>
-            下記のように変数操作を設定します。<BR>
+            (2) Variable Operation: V1 [Event Management Flag]<BR>
+            Configure the Variable Operation as follows:<BR>
             <BR>
-            V1:イベント管理フラグ、=、0<BR>
+            V1: Event Management Flag, =, 0<BR>
             <BR>
-            ※イベント管理フラグの値を0にして、始めの状態にセット（=初期化）しています。
+            ※Sets the Event Management Flag to 0, resetting it to the initial state.
         </TD>
         <TD nowrap><IMG src="image/PRO_001_20.png"></TD>
     </TR>
     <TR>
         <TD nowrap>
-            (3)変数操作：V2[タイマー変数]<BR>
-            下記のように変数操作を設定します。<BR>
+            (3) Variable Operation: V2 [Timer Variable]<BR>
+            Configure the Variable Operation as follows:<BR>
             <BR>
-            V2:タイマー変数、=、0<BR>
+            V2: Timer Variable, =, 0<BR>
             <BR>
-            ※タイマー変数の値を0にして、始めの状態にセット（=初期化）しています。<BR>
+            ※Sets the timer variable to 0, resetting it to the initial state.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_21.png"></TD>
     </TR>
@@ -418,88 +415,87 @@
 <TABLE border="1">
 <TBODY>
     <TR>
-        <TD nowrap colspan="2"><B>■動作の確認</B></TD>
+        <TD nowrap colspan="2"><B>■Verifying the behavior</B></TD>
     </TR>
     <TR>
         <TD nowrap>
-            １．テストプレイをして動作を確認します。<BR>
-            確認のポイントは下記の通りです。<BR>
+            1. Do a Test Play to verify the behavior.<BR>
+            Key points to verify:<BR>
             <BR>
-            (1)タイマー開始<BR>
-            ・ダンジョンに移動した直後に、タイマー開始のメッセージが表示されること。<BR>
+            (1) Timer start<BR>
+            - A timer start message is displayed immediately upon moving to the dungeon.<BR>
             <BR>
-            (2)タイマー処理<BR>
-            ・左上に「タイマー変数」の値が表示され、増加していること。<BR>
+            (2) Timer process<BR>
+            - The "Timer Variable" value is displayed in the upper left and increases.<BR>
             <BR>
-            (3)タイマー終了
-            ・左上の数字が1800になった時にタイマー終了のメッセージが表示され、<BR>
-            主人公がダンジョンの入り口に移動すること。<BR>
+            (3) Timer exit<BR>
+            - When the number in the upper left reaches 1800, a timer exit message is displayed,<BR>
+            and the player character moves to the dungeon entrance.<BR>
             <BR>
-            上手く行かなかったときは設定内容を再度確認してみてください。<BR>
-            処理の流れを一つずつ追いかけて、落ち着いて設定しましょう。<BR>
+            If something goes wrong, re-check the settings content.<BR>
+            Trace through the flow of the process one step at a time, and set it calmly.<BR>
         </TD>
         <TD nowrap><IMG src="image/PRO_001_26.png"></TD>
     </TR>
 </TBODY>
 </TABLE>
 <HR>
-<B>【余談】</B>
+<B>[Side Note]</B>
 <HR>
-<B>本当に30秒？</B>
+<B>Is it really exactly 30 seconds?</B>
 <P>
-    実は正確に30秒とは言えないかもしれません。<BR>
-    ゲームのタイトルバーの情報を変更してみると、実際にゲームがいくらのFPSで動作しているかを確認できます。<BR>
-    FPS（Frames Per Second）とは1秒当たりいくつのフレーム(コマ)が処理されているかという値です。<BR>
+    Actually, it may not be exactly 30 seconds.<BR>
+    By changing the title bar information of the game, you can check how many FPS the game is actually running at.<BR>
+    FPS (Frames Per Second) is the value indicating how many frames are processed per second.<BR>
     <BR>
-    ちょっと雑な言い方になってしまいますが、<BR>
-    WOLF RPGエディターは凄く高速なパラパラマンガ（！）をやっていることになります。<BR>
-    並列処理が起動されるのはパラパラマンガの1コマの単位（1/60秒に1回）で、<BR>
-    1回呼び出される毎にタイマー変数を数える（+1する）、1800まで数えたらフラグを立てる、<BR>
-    というのが今回のイベントの仕掛けになります。<BR>
+    To put it roughly,<BR>
+    WOLF RPG Editor is running an extremely fast flip-book animation (!).<BR>
+    The parallel process is triggered once per frame of this flip-book (once per 1/60 second),<BR>
+    and the setup of this event is: count the timer variable (+1) each time it is called, and raise the flag when it reaches 1800.<BR>
     <BR>
-    並列イベントをいくつも起動したりすると処理内容によっては<BR>
-    期待通りのコマ送りスピードが出なくて30秒より長くなってしまうことがありますが、<BR>
-    今回の処理のような小規模な並列イベントの場合はほとんど気にしなくてもよいでしょう。<BR>
+    If you run many parallel events at once, depending on what they do,<BR>
+    the expected frame rate may not be achieved and it may take longer than 30 seconds,<BR>
+    but for a small-scale parallel event like this one, you generally don't need to worry about it.<BR>
 </P>
 <HR>
-<B>タイマーイベント実行時に気をつけることは？</B>
+<B>What to watch out for while the Timer Event is running?</B>
 <P>
-    複数のイベントにわたる処理がある時にはどのような場合もそうですが、<BR>
-    イベントの終了条件を気にする必要があります。<BR>
+    Whenever there is a process spanning multiple events, you need to consider the exit conditions,<BR>
+    and this situation is no different.<BR>
     <BR>
-    タイマーイベントの途中で別の場所に移動したりする場合は、<BR>
-    イベントを途中で終了する処理を入れないと、移動先にタイマー変数のピクチャ表示が残ったり、<BR>
-    値がリセットされないまま残ってしまったりします。<BR>
-    自由に町に戻れるようなワープの魔法のような機能を作っている場合は要注意です。<BR>
+    If the player moves to another location midway through the timer event,<BR>
+    without a process to exit the event midway, the timer variable's picture display may remain at the destination,<BR>
+    or the value may remain without being reset.<BR>
+    If you are creating a warp spell that lets you return to town freely, take special note.<BR>
     <BR>
-    今回のサンプルゲームの場合は、<BR>
-    既存のイベント「入口場所移動」にタイマーをリセットする処理を入れないと<BR>
-    不具合が発生してしまいます。<BR>
+    In this sample game's case,<BR>
+    if a timer reset process is not added to the existing event "Entrance Location Transfer",<BR>
+    bugs will occur.<BR>
 </P>
 <HR>
-<B>参考トピック</B>
+<B>Reference topics</B>
 <P>
-    今回のイベント作成の参考になるトピックをまとめました。<BR>
+    Here are the reference topics for the event creation in this tutorial.<BR>
 </P>
 <UL>
-    <LI><A HREF="MUST_001x.html" TARGET="_blank">◆新しいイベントを作ってみたい</A></LI>
-    <LI><A HREF="MUST_003.html" TARGET="_blank">◆主人公を別のマップに移動させたい</A></LI>
-    <LI><A HREF="EV_005.html" TARGET="_blank">◆一度消えたら二度と出てこないイベント</A></LI>
-    <LI><A HREF="EV_007.html" TARGET="_blank">◆会話した回数を覚えているイベント</A></LI>
-    <LI><A HREF="EV_008.html" TARGET="_blank">◆マップに入った時点で起動するイベント</A></LI>
-    <LI><A HREF="EV_009.html" TARGET="_blank">◆普通のイベントと並行して動作するイベント</A></LI>
+    <LI><A HREF="MUST_001x.html" TARGET="_blank">◆Create a New Event</A></LI>
+    <LI><A HREF="MUST_003.html" TARGET="_blank">◆Move the Player Character to Another Map</A></LI>
+    <LI><A HREF="EV_005.html" TARGET="_blank">◆An Event That Disappears and Never Returns</A></LI>
+    <LI><A HREF="EV_007.html" TARGET="_blank">◆An Event That Remembers How Many Times You've Talked to It</A></LI>
+    <LI><A HREF="EV_008.html" TARGET="_blank">◆An Event That Launches When You Enter the Map</A></LI>
+    <LI><A HREF="EV_009.html" TARGET="_blank">◆An Event That Runs Alongside Normal Events</A></LI>
 </UL>
 <HR>
-<P>＜執筆者：ウディタ公式ガイド執筆コミュ。＞
+<P><Author: WOLF RPG Editor Official Guide Writing Community.>
     <ul>
-        <li>トピック原案：<A href="http://hinezumi.velvet.jp/index.php" target="_blank">ユノ</A></li>
-        <li>HTML作成：ユノ</li>
+        <li>Topic concept: <A href="http://hinezumi.velvet.jp/index.php" target="_blank">Yuno</A></li>
+        <li>HTML creation: Yuno</li>
     </ul>
 </P>
 <HR>
-【改訂履歴】<BR>
-　Ver1.00　2013/11/23 新規作成<BR>
-<HR><A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+[Revision History]<BR>
+　Ver1.00　2013/11/23 Initial creation<BR>
+<HR><A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 

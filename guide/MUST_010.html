@@ -1,252 +1,223 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-<HTML LANG="ja">
+<HTML LANG="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>変数に名前を付けたい</TITLE>
+<TITLE>I want to name my variables</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【変数に名前を付けたい】</H2>
+<H2>[I want to name my variables]</H2>
 <HR>
-<P><pre>【目標】
-セルフ変数、システム変数を除く
+<P><pre>[Goal]
+Excluding Self variables and System variables,
 
-<b>コモンセルフ変数・通常変数
-通常予備変数・文字変数</b> に
-好きな名前を付け、見分けやすくする
+assign names to <b>Common Self variables, normal variables,
+normal spare variables, and string variables</b>
+to make them easier to tell apart.
 
-使用バージョン[2.x系]
+Version used: [2.x series]
 
-<a href="#1">やり方その１</a>
-<a href="#3">やり方その２</a>
+<a href="#1">Method 1</a>
+<a href="#3">Method 2</a>
 
 </pre></p>
-
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre><a target="B" name="1">【1】やり方その１</a>
-　・まずマップ選択<IMG height=20 src="image/icon_mapselector.png" width=22 border=0>で
-　「イベントを作成したいマップ」
-　に切り替えて下さい。
+<TD nowrap><pre><a target="B" name="1">[1] Method 1</a>
+　· Open the Map Selector <IMG height=20 src="image/icon_mapselector.png" width=22 border=0>
+　  and switch to the map where you want to create an event.
 
-　・適当な場所にイベントを作成します。
-　イベントの画像は別に指定しなくてもかまいません。
+　· Create an event somewhere.
+　  You don't need to set an image for the event.
 
-　手順は<a target="B" href="EV_001.html" target="B">◆決定キーで起動するイベント</a>の
-　【1】～【5】を参考にしてください。
-<pre></TD>
+　Refer to steps [1]–[5] of <a target="B" href="EV_001.html" target="B">◆An event that activates with the Confirm key</a>.
+</pre></TD>
 <TD nowrap><pre><a target="B" href="image/BASE_E012_1.png"><img src="image/BASE_E012_1.png" border="1"></a>
-<pre></TD>
+</pre></TD>
 </TR>
 </TBODY>
 </TABLE>
-
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【2】
-　作成したら、イベントウィンドウの右下にある
-　<b>「■コマンド入力ウィンドウ表示■」</b>を
-　クリックしてください。
+<TD nowrap><pre>[2]
+　Once created, click
+　<b>"■ Show Command Input Window ■"</b>
+　at the bottom-right of the Event window.
 
-　1.「イベントコマンドの挿入」ウィンドウが出たら
-　　<b>3 変数操作</b> をクリックして選択します。
+　1. When the "Insert Event Command" window appears,
+　   click and select <b>3 Variable Operation</b>.
 
-　2.変数名の設定 と書いてある部分がありますね。
-　　こちらを使用して変数に名前をつけます。
-　　※ <b>5 文字列操作</b> にも
-　　　 同様の設定項目があります。
-　　
-　3.名前を付けたい変数を指定します。
-　　<b>3 変数操作</b> の場合は
-　　<b>V n</b>「通常変数」
-　　<b>V n-j</b>「通常予備変数」
-　　
-　　<b>5 文字列操作</b> の場合は
-　　<b>S n</b>「文字変数」
-　　
-　　
-　　コモン編集時の場合なら
-　　<b>3 変数操作</b> の場合は
-　　<b>CSelf n</b>「コモンセルフ変数」
-　　<b>V n</b>「通常変数」
-　　
-　　<b>5 文字列操作</b> の場合は
-　　<b>CSelf n</b>「コモンセルフ変数」
-　　<b>S n</b>「文字変数」
-　　
-　　※ n と j は数値が入ります。
-　　
-　4.付けたい名前を入力し、すぐ右にある
-　「名前を付ける」をクリックすれば完了です。
-　
-　　3.の横にある コピー は、3.で指定した変数名を
-　　4.の項目にコピーできる機能です
-　　
-　　サイズ+1 は
-　　Vn「通常変数」の場合はnの上限が
-　　Vn-j「通常予備変数」の場合は
-　　　指定したn の j の上限が
-　　Sn「文字変数」の場合はnの上限が
-　　それぞれ増えます。
-　　
-　　これで変数に名前を付けることができました。
-　　やり方その２を知りたい方は
-　　そのまま進んでください。
-　　
-　　それ以外の方はこれで終了です
-　　お疲れ様でした。
-<pre></TD>
+　2. You will see a section labeled "Variable Name Setting".
+　   Use this to assign a name to a variable.
+　   ※ <b>5 String Operation</b> also has
+　      a similar setting field.
+
+　3. Specify the variable you want to name.
+　   For <b>3 Variable Operation</b>:
+　   <b>V n</b> = "Normal variable"
+　   <b>V n-j</b> = "Normal spare variable"
+
+　   For <b>5 String Operation</b>:
+　   <b>S n</b> = "String variable"
+
+　   When editing a Common Event:
+　   For <b>3 Variable Operation</b>:
+　   <b>CSelf n</b> = "Common Self variable"
+　   <b>V n</b> = "Normal variable"
+
+　   For <b>5 String Operation</b>:
+　   <b>CSelf n</b> = "Common Self variable"
+　   <b>S n</b> = "String variable"
+
+　   ※ n and j represent numbers.
+
+　4. Type the name you want and click
+　   "Assign Name" to the right of the field.
+
+　   The "Copy" button next to step 3 copies
+　   the variable name from step 3 into the step 4 field.
+
+　   "Size +1" increases:
+　   - For V n: the upper limit of n
+　   - For V n-j: the upper limit of j for the specified n
+　   - For S n: the upper limit of n
+
+　   You've now assigned a name to a variable.
+　   If you want to know Method 2, continue reading.
+　   Otherwise, you're done — great work!
+</pre></TD>
 <TD nowrap><pre><a target="B" href="image/MUST_010_1.png"><img width="360" src="image/MUST_010_1.png"></a>
-<pre></TD>
+</pre></TD>
 </TR>
 </TBODY>
 </TABLE>
-
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre><a name="3">【3】やり方その２</a>
+<TD nowrap><pre><a name="3">[3] Method 2</a>
 
-　まずはコモンセルフ(CSelf)変数以外の設定方法です。
-　
-　（画像１）赤い円で囲んだ<IMG src="image/icon_sysDB.png" width="22" height="20" border="0">をクリックし
-　（画像２）システムデータベースを開きます。
-<pre></TD>
-<TD nowrap>画像１<br>
+　First, here is how to set names for everything except Common Self (CSelf) variables.
+
+　(Image 1) Click the <IMG src="image/icon_sysDB.png" width="22" height="20" border="0"> highlighted by the red circle
+　(Image 2) to open the System Database.
+</pre></TD>
+<TD nowrap>Image 1<br>
 <pre><a target="B" href="image/MUST_010_2.png"><IMG src="image/MUST_010_2.png" width="332" border="1"></a><br><br>
-画像２<br>
+Image 2<br>
 <a target="B" href="image/window_SystemDB.jpg"><IMG src="image/window_SystemDB.jpg" width="332" height="291" border="1"></a>
-<pre></TD>
+</pre></TD>
 </TR>
 </TBODY>
 </TABLE>
-
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【4】対応するタイプ
- 　 　 　4:文字変数名「S n」
-　 　　14:通常変数名「V n」
-　15～23:予備変数名「V n-j」
-　※ n と j は数値が入ります。
-　
-　変更したい変数名に対応している
-　タイプの<b>データ</b>に名前を付けます
-　
-　変更したらウィンドウの右下にある
-　「ＯＫ」か「更新」をクリック
-　もしくは「ＣＴＲＬ＋Ｓ」を押します。
-　そうすると変更した内容が
-　保存されます。
-　
-　これで変更と反映が完了しました。
-<pre></TD>
+<TD nowrap><pre>[4] Corresponding types:
+　 　 　4: String variable names "S n"
+　 　　14: Normal variable names "V n"
+　15–23: Spare variable names "V n-j"
+　※ n and j represent numbers.
+
+　Assign names to the <b>data</b> in the type
+　corresponding to the variable names you want to change.
+
+　After making changes, click "OK" or "Update"
+　at the bottom-right of the window,
+　or press Ctrl+S.
+　This saves your changes.
+
+　The changes are now saved and applied.
+</pre></TD>
 <TD nowrap><pre><a target="B" href="image/MUST_010_3.png"><img src="image/MUST_010_3.png"></a>
-<pre></TD>
+</pre></TD>
 </TR>
 </TBODY>
 </TABLE>
-
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【5】コモンセルフ(CSelf)変数の場合
+<TD nowrap><pre>[5] For Common Self (CSelf) variables
 
-　<a target="B" href="MUST_009.html">新しいコモンを作ってみたい</a> の
-　手順【1】を参考に
-　<b>コモンイベントエディタ</b> を
-　開いてください。
-　
-　ウィンドウ右上にある
-　「セルフ変数使用状況」を
-　クリックしてください。
-<pre></TD>
+　Refer to step [1] of <a target="B" href="MUST_009.html">I want to try creating a new Common Event</a>
+　to open the <b>Common Event Editor</b>.
+
+　Click "Self Variable Usage" in the top-right of the window.
+</pre></TD>
 <TD nowrap><pre><a target="B" href="image/MUST_010_4.png"><IMG src="image/MUST_010_4.png" width="332" height="291" border="1"></a>
-<pre></TD>
+</pre></TD>
 </TR>
 </TBODY>
 </TABLE>
-
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【6】
+<TD nowrap><pre>[6]
 
-　右の画像のような
-　ウィンドウが出ましたか？
-　
-　その項目一つ一つが
-　<b>コモンセルフ(CSelf)変数</b> の
-　名前を入力できるところです。
-　
-　項目内を変更したら、忘れずに右下の
-　「設定完了」をクリックしましょう。
+　Did the window shown on the right appear?
 
-　キャンセルだと変更した
-　内容が保存されません。
-　
-　
-　※ 左下のコピーペースト機能について
-　<b>全てコピー</b> は
-　　<b>現在編集しているコモン</b> の
-　　CSelf00～CSelf99全ての
-　　文字列をコピーします。
-　　
-　<b>全て貼り付け</b> は
-　　全てコピーで得た内容を
-　　丸々上書きします。
-　　
-　<b>空欄にだけ貼り付け</b> は
-　　項目にスペースでもいいので
-　　何かしらの文字が入っていれば
-　　その部分はそのままで、他の空欄
-　　にのみ全てコピーで得た内容を
-　　上書きしていきます。
-　
-<pre></TD>
+　Each entry in that window is a field
+　where you can enter a name for a
+　<b>Common Self (CSelf) variable</b>.
+
+　After changing entries, don't forget to
+　click "Settings Complete" at the bottom-right.
+
+　Clicking Cancel will discard your changes.
+
+
+　※ About the copy/paste buttons at the bottom-left:
+　<b>Copy All</b>
+　   Copies the text of all CSelf00–CSelf99
+　   from the <b>currently edited Common Event</b>.
+
+　<b>Paste All</b>
+　   Overwrites everything with what was copied
+　   using Copy All.
+
+　<b>Paste to Empty Fields Only</b>
+　   Only fills in empty fields (fields that have
+　   at least a space are considered non-empty)
+　   with the content from Copy All.
+</pre></TD>
 <TD nowrap><pre><a target="B" href="image/MUST_010_5.png"><IMG src="image/MUST_010_5.png" width="332" height="291" border="1"></a>
-<pre></TD>
+</pre></TD>
 </TR>
 </TBODY>
 </TABLE>
-
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【7】確認
-　【5】か【6】で変更した名前が
-　きちんと反映されているか確認しましょう。
-　
-　コマンド一覧から
-　<b>3 変数操作</b> や
-　<b>5 文字列操作</b> を選び
-　変更したコモンセルフ変数を指定
-　変数に名前がついているか確認できたら完了です。
-　
-　おつかれさまでした。
-<pre></TD>
+<TD nowrap><pre>[7] Verify
+　Check that the name you set in [5] or [6]
+　has been applied correctly.
+
+　From the command list, select
+　<b>3 Variable Operation</b> or
+　<b>5 String Operation</b>,
+　then specify the Common Self variable you changed.
+　If the variable now shows a name, you're done!
+
+　Great work!
+</pre></TD>
 <TD nowrap></TD>
 </TR>
 </TBODY>
 </TABLE>
-
 <HR>
-
 <HR>
-<P>＜執筆者：きじこ</A>＞　</P>
+<P>&lt;Author: Kijiko&gt;　</P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

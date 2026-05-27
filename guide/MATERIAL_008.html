@@ -1,41 +1,37 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>◆基本ｼｽﾃﾑﾊﾞｸﾞ修正版の読み込み方は？</TITLE>
+<TITLE>◆How to Load a Basic System Bug Fix Version</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【◆基本ｼｽﾃﾑﾊﾞｸﾞ修正版の読み込み方は？】</H2>
+<H2>【◆How to Load a Basic System Bug Fix Version】</H2>
 <HR>
 <P>
-	【目標】<br>
-	基本システムは公式サイトの「バグ報告スレッド」などで報告を受けた情報を元に<br>
-	WOLF RPGエディター作者の SmokingWOLF さんが修正しています。<br>
-	大きなバージョンアップなどがあった時などは、<br>
-	今自分で使っている基本システムにあった不具合が修正されていることがあります。<br>
-	
-	このトピックでは、古い基本システムを読み直して、<br>
-	最新版の基本システムを導入する方法を解説します。<br>
+	[Goal]<br>
+	The Basic System is updated with bug fixes by WOLF RPG Editor's creator SmokingWOLF,<br>
+	based on reports received through the official site's "bug report thread" and similar channels.<br>
+	When there is a major version update or similar event,<br>
+	bugs that existed in your current Basic System may have been fixed.<br>
+
+	This topic explains how to re-load the Basic System and introduce the latest version.<br>
 </P>
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
 <TD nowrap>
-	【1】導入前の準備<br>
-	公式サイトの「WOLF RPGエディターのダウンロード」<br>
-	ページより、『基本システム　バグ修正版』<br>
-	をダウンロードします。<br>
-	（必要があれば『データベース更新分』<br>
-	もダウンロードしてください）<br>
+	[1] Preparation before installation<br>
+	From the official site's "WOLF RPG Editor Download"<br>
+	page, download the "Basic System Bug Fix Version".<br>
+	(If necessary, also download the "Database Update")<br>
 	<br>
-	また、今回は大幅にシステムを<br>
-	変更することになります。 <br>
-	こういう大きな変更をするときは、<br>
-	バックアップを取ることが大事です。 <br>
+	Also, this process involves making significant changes to the system.<br>
+	When making large changes like this,<br>
+	taking a backup is important.<br>
 	<br>
 </TD>
 <TD nowrap>
@@ -44,9 +40,9 @@
 </TR>
 <TR>
 <TD nowrap>
-	①ゲームデータ全体のバックアップ <br>
-	製作中のゲームをフォルダごとコピーするなどして、 <br>
-	バックアップを作成します。<br>
+	①Back up the entire game data<br>
+	Copy the game being developed as a whole folder,<br>
+	or otherwise create a backup.<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_2.png" width="330" height="259" border="0"><br>
@@ -54,16 +50,16 @@
 </TR>
 <TR>
 <TD nowrap>
-	②コモンイベントのバックアップ <br>
-	これから修正版の基本システムを読みこむことになりますが、 <br>
-	コモンイベントの0-80番は全て上書きされてしまいます。 <br>
-	自分で改造した所があればその部分の保存をします。 <br>
+	②Back up Common Events<br>
+	We will now load the bug fix version of the Basic System,<br>
+	but Common Events 0–80 will all be overwritten.<br>
+	If you have made any modifications, save those parts.<br>
 	<br>
-	例としてコモンイベント036番の<br>
-	○[変更可] 戦闘開始時処理を保存します。 <br>
+	As an example, save Common Event 036,<br>
+	○[Modifiable] Combat Start Process.<br>
 	<br>
-	コモンイベントエディタより、<br>
-	036番の○[変更可] 戦闘開始時処理を選択します。 <br>
+	From the Common Event editor,<br>
+	select event 036 ○[Modifiable] Combat Start Process.<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_3.png" width="330" height="259" border="0"><br>
@@ -72,9 +68,9 @@
 </TR>
 <TR>
 <TD nowrap>
-	左下の「単体保存」をクリックします。 <br>
-	バックアップ場所（自分でわかりやすいところ）に<br>
-	.commonファイルとして保存します。 <br>
+	Click "Save (Single)" at the bottom left.<br>
+	Save to a backup location (somewhere easy for you to find)<br>
+	as a .common file.<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_4.png" width="330" height="259" border="0"><br>
@@ -83,8 +79,8 @@
 </TR>
 <TR>
 <TD nowrap>
-	※改造したコモンイベントが連続している場合は<br>
-	「複数保存」を使うとよいでしょう。<br>
+	※If the modified Common Events are consecutive,<br>
+	using "Save Multiple" is a good option.<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_5.png" width="330" height="259" border="0"><br>
@@ -96,21 +92,21 @@
 <TABLE border="0">
 <TBODY><TR>
 <TD nowrap>
-	【2】ファイルの中身について<br>
-	ダウンロードしてきたファイルの中身を確認します。<br>
+	[2] About the contents of the downloaded files<br>
+	Check the contents of the downloaded files.<br>
 	<br>
-	※2011年2月13日現在の「WOLF RPGエディターのダウンロード」ページにある<br>
-	データで説明いたします。<br>
+	※The following description uses data from the "WOLF RPG Editor Download" page<br>
+	as of February 13, 2011.<br>
 	<br>
-	『基本システム　バグ修正版』<br>
-	・コモン000で呼出_基本システムVer144.common<br>
+	"Basic System Bug Fix Version"<br>
+	- Common000_CallBasicSystemVer144.common<br>
 	<br>
-	『データベース更新分』<br>
-	・システムDB23_予備変数9_データ0番で呼出[Ver1.41で更新].dbtype<br>
-	・ユーザDB015_ベースシステム設定[Ver1.40で更新].dbtypeset<br>
+	"Database Update"<br>
+	- SystemDB23_SparseVariable9_data0_Call[UpdatedInVer1.41].dbtype<br>
+	- UserDB015_BaseSystemSettings[UpdatedInVer1.40].dbtypeset<br>
 </TD>
 <TD nowrap>
-	<!-- 画像なし -->
+	<!-- No image -->
 </TD>
 </TR>
 </TBODY>
@@ -119,11 +115,11 @@
 <TABLE border="0">
 <TR>
 <TD nowrap>
-	【3】「基本システム　バグ修正版」の更新<br>
-	通常の更新ではこちらのみで大丈夫です。<br>
+	[3] Update the "Basic System Bug Fix Version"<br>
+	For standard updates, this alone is sufficient.<br>
 	<br>
-	①コモンイベントエディタより、<br>
-	コモンイベント000番（○アイテム増減）を選択します。<br>
+	①From the Common Event editor,<br>
+	select Common Event 000 (○Item Increase/Decrease).<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_6.png" width="330" height="259" border="0"><br>
@@ -131,7 +127,7 @@
 </TR>
 <TR>
 <TD nowrap>
-	②左下にある「読込」をクリックします。<br>
+	②Click "Load" at the bottom left.<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_7.png" width="330" height="259" border="0"><br>
@@ -139,7 +135,7 @@
 </TR>
 <TR>
 <TD nowrap>
-	③「コモン000で呼出_基本システムVer144.common」を開きます。<br>
+	③Open "Common000_CallBasicSystemVer144.common".<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_8.png" width="330" height="259" border="0"><br>
@@ -147,8 +143,7 @@
 </TR>
 <TR>
 <TD nowrap>
-	④「複数コモンイベントデータです。コモンイベント0～80を<br>
-	上書きしてよろしいですか？」と表示されるので「OK」を選択します。<br>
+	④A message will display saying "This is multiple Common Event data. Overwrite Common Events 0 to 80?" — select "OK".<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_9.png" width="330" height="259" border="0"><br>
@@ -156,9 +151,9 @@
 </TR>
 <TR>
 <TD nowrap>
-	正しく更新されたかどうかを確認は、<br>
-	コモンイベント080番の【基本ｼｽﾃﾑVerx.xx説明書】のバージョンや、<br>
-	内容を確認するとよいでしょう。<br>
+	To verify the update was applied correctly,<br>
+	check the version and contents of<br>
+	Common Event 080 【Basic System VerX.XX Description】.<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_10.png" width="330" height="259" border="0"><br>
@@ -166,11 +161,11 @@
 </TR>
 <TR>
 <TD nowrap>
-	⑤基本システムが正しく更新されたのを確認して、<br>
-	右下の「更新」をクリックします。<br>
-	※この操作を行わないと更新が反映されないので気をつけてください。<br>
+	⑤After confirming the Basic System was correctly updated,<br>
+	click "Update" at the bottom right.<br>
+	※If this operation is not performed, the update will not take effect, so be careful.<br>
 	<br>
-	以上で更新はおしまいです。<br>
+	That's all for the update.<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_11.png" width="330" height="259" border="0"><br>
@@ -183,22 +178,22 @@
 <TBODY>
 <TR>
 <TD nowrap>
-	【4】『データベース更新分』の更新 <br>
-	WOLF RPGエディターに大きな更新があったときなどには、 <br>
-	こちらも更新する必要があります。 <br>
-	今回更新するのは「システムデータベース」と<br>
-	「ユーザデータベース」になります。 <br>
+	[4] Update the "Database Update"<br>
+	When there is a major update to WOLF RPG Editor,<br>
+	this also needs to be updated.<br>
+	This time we will update the "System Database" and<br>
+	"User Database".<br>
 </TD>
 <TD nowrap>
-	<!-- 画像なし --><br>
+	<!-- No image --><br>
 </TD>
 </TR>
 <TR>
 <TD nowrap>
-	【システムデータベースの更新】 <br>
-	①システムデータベースエディタより、 <br>
-	システムDBタイプ23番（予備変数9）、<br>
-	データ0番（◆◆[判定結果]◆◆）を選択します。 <br>
+	【Updating the System Database】<br>
+	①From the System Database editor,<br>
+	select System DB type 23 (Spare Variable 9),<br>
+	data 0 (◆◆[Judgment Result]◆◆).<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_12.png" width="330" height="259" border="0"><br>
@@ -206,7 +201,7 @@
 </TR>
 <TR>
 <TD nowrap>
-	②左下にある「読み込み」をクリックします。 <br>
+	②Click "Load" at the bottom left.<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_13.png" width="330" height="259" border="0"><br>
@@ -214,8 +209,7 @@
 </TR>
 <TR>
 <TD nowrap>
-	③「システムDB23_予備変数9_データ0番で呼出[Ver1.41で更新].dbtype」<br>
-	を開きます。 <br>
+	③Open "SystemDB23_SparseVariable9_data0_Call[UpdatedInVer1.41].dbtype".<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_14.png" width="330" height="259" border="0"><br>
@@ -223,9 +217,8 @@
 </TR>
 <TR>
 <TD nowrap>
-	④「dbtypeはタイプ設定＆フルデータのファイルです。 <br>
-	タイプをデータごと全て置き換えてよろしいですか？」と<br>
-	表示されるので「OK」を選択します。 <br>
+	④A message will display saying "This dbtype is a type settings &amp; full data file.<br>
+	Replace the entire type including all data?" — select "OK".<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_15.png" width="330" height="259" border="0"><br>
@@ -233,9 +226,9 @@
 </TR>
 <TR>
 <TD nowrap>
-	⑤システムDBタイプ23番が正しく更新されたのを確認して<br>
-	右下の「更新」をクリックします。 <br>
-	※この操作を行わないと更新が反映されないので気をつけてください。 <br>
+	⑤After confirming that System DB type 23 was correctly updated,<br>
+	click "Update" at the bottom right.<br>
+	※If this operation is not performed, the update will not take effect, so be careful.<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_16.png" width="330" height="259" border="0"><br>
@@ -248,10 +241,10 @@
 <TBODY>
 <TR>
 <TD nowrap>
-	【ユーザデータベースの更新】 <br>
-	①ユーザーデータベースエディタより、 <br>
-	ユーザDBタイプ15番（ベースシステム設定）、<br>
-	データ0番（システム）を選択します。 <br>
+	【Updating the User Database】<br>
+	①From the User Database editor,<br>
+	select User DB type 15 (Base System Settings),<br>
+	data 0 (System).<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_17.png" width="330" height="259" border="0"><br>
@@ -259,7 +252,7 @@
 </TR>
 <TR>
 <TD nowrap>
-	②左下にある「読み込み」をクリックします。 <br>
+	②Click "Load" at the bottom left.<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_18.png" width="330" height="259" border="0"><br>
@@ -267,8 +260,7 @@
 </TR>
 <TR>
 <TD nowrap>
-	③「ユーザDB015_ベースシステム設定[Ver1.40で更新].dbtypeset」<br>
-	を開きます。 <br>
+	③Open "UserDB015_BaseSystemSettings[UpdatedInVer1.40].dbtypeset".<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_19.png" width="330" height="259" border="0"><br>
@@ -276,9 +268,8 @@
 </TR>
 <TR>
 <TD nowrap>
-	④「dbtypesetはタイプ設定ファイルです。 <br>
-	タイプ設定を置き換えてよろしいですか？」と<br>
-	表示されるので「OK」を選択します。 <br>
+	④A message will display saying "This dbtypeset is a type settings file.<br>
+	Replace the type settings?" — select "OK".<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_20.png" width="330" height="259" border="0"><br>
@@ -286,10 +277,10 @@
 </TR>
 <TR>
 <TD nowrap>
-	⑤ユーザDBタイプ15番が正しく更新されたのを<br>
-	確認して右下の「更新」をクリックします。 <br>
-	※この操作を行わないと更新が反映されないので気をつけてください。<br>
-	以上になります、お疲れ様でした。<br>
+	⑤After confirming that User DB type 15 was correctly updated,<br>
+	click "Update" at the bottom right.<br>
+	※If this operation is not performed, the update will not take effect, so be careful.<br>
+	That's all. Great work!<br>
 </TD>
 <TD nowrap>
 	<IMG src="./image/MATERIAL_008_21.png" width="330" height="259" border="0"><br>
@@ -298,14 +289,14 @@
 </TBODY>
 </TABLE>
 <HR>
-<P>＜執筆者：<A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">ウディタ公式ガイド執筆コミュ。</A>＞<br>
+<P><Author: <A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">WOLF RPG Editor Official Guide Writing Community.</A>><br>
 	<ul>
-		<li><A href="http://hinezumi.velvet.jp/" target="_blank">ユノ</A></li>
-		<li>真波</li>
+		<li><A href="http://hinezumi.velvet.jp/" target="_blank">Yuno</A></li>
+		<li>Manami</li>
 	</ul>
 </P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

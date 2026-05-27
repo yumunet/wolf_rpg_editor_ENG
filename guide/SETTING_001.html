@@ -1,35 +1,35 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>使うキャラ素材を、4方向用か8方向用に切り替えたい</TITLE>
+<TITLE>I want to switch the character assets used between 4-direction and 8-direction</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【使うキャラ素材を、4方向用か8方向用に切り替えたい】</H2>
+<H2>【I want to switch the character assets used between 4-direction and 8-direction】</H2>
 <HR>
-　<B>【目標】</B><BR>
+　<B>[Goal]</B><BR>
 <HR>
 <P>
-　ウディタ基本システムに同梱されている素材には、<BR>
-　斜めも向ける8方向素材が多いですが、他の場所から借りられる<BR>
-　素材には4方向しか向けないものも数多くあります。<BR>
-　これらを自動で識別して設定し分けるようなことはゲームには<BR>
-　出来ませんので、手動で選択してあげる必要があります。<BR>
-　今回はこれらの設定の仕方を習得します。</P>
+　Many of the assets bundled with WOLF RPG Editor's Basic System<BR>
+　are 8-direction assets that support diagonal facing, but many assets available<BR>
+　from other sources only support 4 directions.<BR>
+　The game cannot automatically identify and configure these separately,<BR>
+　so you need to select the correct type manually.<BR>
+　This time we will learn how to configure these settings.</P>
 <HR>
-　<B>【手順】</B><BR>
+　<B>【Steps】</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【1】 設定画面を開く<BR>
+<TD nowrap>[1] Open the Settings screen<BR>
 <BR>
-　<B>「ゲーム設定」で<B>「ゲーム基本設定を開く」</B>を選択し、<BR>
-　<B>「ゲームの基本設定」</B>ウィンドウを開きます。<BR>
+　Select <B>"Open Game Basic Settings"</B> from <B>"Game Settings"</B>,<BR>
+　and open the <B>"Game Basic Settings"</B> window.<BR>
 </TD>
 <TD nowrap><IMG src="image/SETTING_001_1.png" width="355" height="208" border="0"></TD>
 </TR>
@@ -39,13 +39,13 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【2】 設定の変更<BR>
+<TD nowrap>[2] Change the setting<BR>
 <BR>
-　項目「キャラクター画像方向のタイプ」で設定できます。<BR>
-　斜めを向けるタイプの画像素材なら<B>「8方向対応」</B>を、<BR>
-　そうでない場合は<B>「4方向対応」</B>を選択して、<BR>
-　ウィンドウ右下の<B>「OK」</B>ボタンを押してください。<BR>
-　これで設定は完了です。お疲れ様でした！<BR>
+　You can configure this under the item "Character Image Direction Type".<BR>
+　If the image asset supports diagonal facing, select <B>"8-Direction Support"</B>;<BR>
+　otherwise select <B>"4-Direction Support"</B>,<BR>
+　then press the <B>"OK"</B> button at the bottom-right of the window.<BR>
+　The settings are now done. Great work!<BR>
 </TD>
 <TD nowrap><IMG src="image/SETTING_001_2.png" width="617" height="410" border="0"></TD>
 </TR>
@@ -53,28 +53,28 @@
 </TABLE>
 <HR>
 
-　<B>【余談】</B><BR>
+　<B>[Side Note]</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>　■キャラクターの表示がおかしくなったら<BR>
+<TD nowrap>　■ If the character display looks wrong<BR>
 <BR>
-・さきほどの手順で設定を変更されたあとのテストプレイで、<BR>
-　<B>「キャラクターが半分しか表示されなくなった！」</B>とか、<BR>
-　その逆で<B>「キャラクターが2人に分身した！」</B>という不具合が<BR>
-　起こって焦った方もいらっしゃるかもしれません。<BR>
-　<B>デメリットなく直せますのでご安心ください</B>。<BR>
-　それは、8方向素材を使用しているのに4方向設定にしてしまったか、<BR>
-　あるいはその逆で4方向素材を8方向設定で使用してしまったこと、<BR>
-　つまり正しかった設定を間違った設定に変更してしまったことが原因です。<BR>
-　上述の手順に従って<B>正しい設定に直せば元に戻ります</B>よ。<BR>
-・もし8方向用の画像を使用しているのに設定を4方向対応にしたり、<BR>
-　その逆で4方向用の画像の設定を8方向対応に設定してしまうと、<BR>
-　記事「<A href="http://www.silversecond.com/WolfRPGEditor/Guide/ERROR_001.html" target="_blank">キャラが半分になる/2キャラに分身する</A>」でも扱われていますが、<BR>
-　キャラクターが2人に分身したり、縦半分しか表示されないといった<BR>
-　不具合が出ますので、ポイントは<B>「斜めを向けるキャラ画像かどうか」</B>、<BR>
-　<B>素材のタイプをしっかり確認しておいてください</B>ね。<BR>
+· After changing the settings in the steps above, you may have panicked during Test Play<BR>
+　if the character was<BR>
+　<B>"only showing half of the character!"</B> or conversely<BR>
+　<B>"the character split into two people!"</B>.<BR>
+　<B>Please be reassured that this can be fixed without any downside</B>.<BR>
+　The cause is either using an 8-direction asset with 4-direction settings,<BR>
+　or conversely using a 4-direction asset with 8-direction settings —<BR>
+　in other words, you changed the previously correct settings to the wrong ones.<BR>
+　<B>Simply correcting it to the right settings as described in the steps above will restore it</B>.<BR>
+· If you use an 8-direction image with 4-direction settings,<BR>
+　or conversely configure a 4-direction image with 8-direction settings,<BR>
+　as also covered in the article "<A href="http://www.silversecond.com/WolfRPGEditor/Guide/ERROR_001.html" target="_blank">Character splits in half / character splits into 2</A>",<BR>
+　issues will occur such as the character splitting into two people or only the top half being displayed.<BR>
+　The key point is <B>"whether the character image supports diagonal facing"</B> —<BR>
+　<B>please verify the asset type carefully</B>.<BR>
 </TD>
 </TR>
 </TBODY>
@@ -83,21 +83,21 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>　■8方向素材と4方向素材の違い<BR>
+<TD nowrap>　■ The difference between 8-direction assets and 4-direction assets<BR>
 <BR>
-・<B>8方向素材は、斜めを向けることが特長の、横6×縦4にキャラクターが並んだ画像</B>です。<BR>
-　CharaChipフォルダに入っているキャラチップ素材の大部分と、<BR>
-　ウディタ基本システムのデータ集に圧縮されて同梱されている<BR>
-　グラフィック合成器で作れるキャラチップがこれです。<BR>
-・<B>4方向素材は、斜めを向けないことが特徴の、横3×縦4にキャラクターが並んだ画像</B>です。<BR>
-　CharaChipフォルダに入っている画像「[Animal]Halcyon_ipu」が<BR>
-　これですし、他の素材サイトさんから借りられる画像もほとんどが<BR>
-　4方向素材です。<BR>
-・このように、8方向素材と4方向素材は似て非なるものなので、<BR>
-　Ver2.02現在、どうやっても<B>混ぜて使うことができません</B>。<BR>
-　8方向素材を加工して無理やり使うのは、<BR>
-　その素材の製作者さんから画像の加工が許可されていない場合は<BR>
-　当然ながらルール違反になりますので気をつけてくださいね。<BR>
+· <B>An 8-direction asset is an image with characters arranged in 6 columns × 4 rows, capable of facing diagonally</B>.<BR>
+　Most of the character chip assets in the CharaChip folder, and<BR>
+　the character chips that can be created with the graphic composer bundled (compressed) in<BR>
+　WOLF RPG Editor's Basic System data collection are of this type.<BR>
+· <B>A 4-direction asset is an image with characters arranged in 3 columns × 4 rows, incapable of facing diagonally</B>.<BR>
+　The image "[Animal]Halcyon_ipu" in the CharaChip folder is<BR>
+　one of these, and most images available from other asset sites are also<BR>
+　4-direction assets.<BR>
+· As shown, 8-direction assets and 4-direction assets are similar but fundamentally different, and<BR>
+　as of Ver2.02, they <B>cannot be mixed and used together</B> by any means.<BR>
+　Modifying 8-direction assets to force their use is,<BR>
+　of course, a rule violation if the asset's creator has not permitted image modification,<BR>
+　so please be careful.<BR>
 </TD>
 </TR>
 </TBODY>
@@ -106,16 +106,16 @@
 
 <HR>
 
-<P>＜執筆者：ウディタ公式ガイド執筆コミュ。＞
+<P><Author: WOLF RPG Editor Official Guide Writing Community>
     <ul>
-        <li>トピック原案：真波、<A href="http://hinezumi.velvet.jp/index.php" target="_blank">ユノ</A></li>
-        <li>HTML作成：真波</li>
+        <li>Topic concept: Manami, <A href="http://hinezumi.velvet.jp/index.php" target="_blank">Yuno</A></li>
+        <li>HTML creation: Manami</li>
     </ul>
 </P>
 <HR>
-【改訂履歴】<BR>
-　Ver1.00　2013/11/09 新規作成<BR>
-<HR><A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+[Revision History]<BR>
+　Ver1.00　2013/11/09 Initial creation<BR>
+<HR><A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 

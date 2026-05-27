@@ -1,88 +1,90 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>顔グラフィックを使いたい ＜※基本ｼｽﾃﾑ＞</TITLE>
+<TITLE>Use Face Graphics &lt;※Basic System&gt;</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【顔グラフィックを使いたい ＜※基本ｼｽﾃﾑ＞】</H2>
+<H2>【Use Face Graphics &lt;※Basic System&gt;】</H2>
 <HR>
-<P>【目標】 <BR>
-顔グラフィックはただ見て楽しいだけでなく、<br>
-キャラクターの表情をキャラチップよりも繊細に、<br>
-そして伝わりやすく表現でき、会話中も今誰が<br>
-しゃべっているのかを明確にする役割があります。<br>
-また、主人公のような重要なキャラクターと、<br>
-ストーリー上あまり重要でないNPCとの立場をはっきり<br>
-分けるという意味もあります。<br>
-さらに、キャラチップやマップチップなどと比べて<br>
-自作しやすく、手軽に導入できます。<br>
-適切な素材を用意することさえできれば、<br>
-あとは簡単な設定で顔グラフィックを出すことができます。<br>
+<P>[Goal] <BR>
+Face graphics are not just enjoyable to look at —<br>
+they allow you to express a character's emotions<br>
+more subtly and clearly than character chips,<br>
+and they serve to make it clear who is<br>
+speaking during a conversation.<br>
+They also serve to clearly distinguish<br>
+player characters and other important characters<br>
+from less important NPCs in the story.<br>
+Furthermore, they are easier to create yourself<br>
+than character chips or map chips, and easy to introduce.<br>
+As long as you can prepare the appropriate asset,<br>
+you can display face graphics with a simple configuration.<br>
 </P>
 <HR>
-<b><a name="WOLFARL">●使用画像について</a></b><br>
-今回は、サンプルゲームに入っている画像「FaceGraphic_Wolfarl.png」を<br>
-顔グラフィックとしてメッセージウィンドウに表示させる方法と、<br>
-以下の画像「Wolfarl.png」をメニュー画面や戦闘画面に顔グラフィックを表示させる方法を習得します。<br>
+<b><a name="WOLFARL">●About the images used</a></b><br>
+This time, we will learn how to display the image "FaceGraphic_Wolfarl.png" included in the sample game<br>
+as a face graphic in the message window,<br>
+and how to display the image "Wolfarl.png" below<br>
+as a face graphic on the menu screen and in combat.<br>
 <img src="image/Wolfarl.png"><br>
-なお、この画像の利用規約は<a href="#RULE">末尾</a>にございます。<br>
+The terms of use for this image are at the <a href="#RULE">bottom of this page</a>.<br>
 <HR>
-<b>★注意！</b><br>
-　素材を使用するときは、その素材の<u>利用規約</u>を必ず読み、それに従って利用しましょう。<br>
-「<a href ="MATERIAL_007.html">◆素材利用のルールってどんな感じなの？</a>」も参照してください。<br>
+<b>★Note!</b><br>
+　When using assets, always read and comply with the asset's <u>terms of use</u>.<br>
+Also see "<a href ="MATERIAL_007.html">◆What are the rules for using assets?</a>".<br>
 <HR>
-【手順】
+【Steps】
 <HR><P>
-　【メッセージウィンドウに表示する】
+　【Displaying in the Message Window】
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>１．画像ファイルの選択と設定<br>
-・今回の設定はシステムデータベースの24番<br>
-　「顔グラフィック名」で行います。<br>
-　システムデータベースを開き、タイプは<br>
-　「24:顔グラフィック名」を選択してください。<br>
-　　ウィンドウの中ほどにデータ一覧があります。<br>
-　データはこの中から「4:　」を選択してください。<br><br>
-・次に、ウィンドウに使われる画像を設定します。<br>
-　顔画像ファイルの入力欄の右にある[File]ボタンを押すと<br>
-　素材が入っているフォルダが開かれますので、<br>
-　「FaceGraphic_Wolfarl.png」を選択し、ウィンドウ右下の<br>
-　ボタン「OK」を押してください。<br>
-　画像ファイル名に「Picture/FaceGraphic_Wolfarl.png」が<br>
-　入力されました。<br><br>
-　これで、ウルファールさんの画像を呼び出せるようになりました。<br>
+<TD nowrap>1. Select the image file and configure settings<br>
+- The settings for this tutorial are done in System Database type 24,<br>
+　"Face Graphic Names".<br>
+　Open the System Database and select<br>
+　type "24: Face Graphic Names".<br>
+　There is a data list in the middle of the window.<br>
+　Select "4:　" from this data list.<br><br>
+- Next, set the image to use in the window.<br>
+　Press the [File] button to the right of the face image filename input field,<br>
+　and the folder containing assets will open.<br>
+　Select "FaceGraphic_Wolfarl.png" and press<br>
+　the "OK" button at the bottom right of the window.<br>
+　"Picture/FaceGraphic_Wolfarl.png" has been<br>
+　entered as the image filename.<br><br>
+　Wolfarl's image can now be called up.<br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_004_1.png"><br>赤枠部分です</TR>
+<TD nowrap><img src="image/MATERIAL_004_1.png"><br>This is the red-outlined area.</TR>
 
 </TBODY>
 </TABLE>
 <HR>
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>２．顔グラフィックへの名づけ方<br>
-・ついでに、今後の管理のために、これがどんな<br>
-　画像ファイルなのか名前を付けておきましょう。<br>
-　今から編集するところは、ウィンドウの中ほどにある<br>
-　データ一覧の上です。横長の入力欄で、そのすぐ左に<br>
-　「ID」と書いてある、ちょうどその入力欄です。<br>
-　下のデータ一覧でデータ0～3のどれかを選択すると、<br>
-　入力欄に書いてある文字が変わると思います。<br><br>
-・見るべきところがどこなのか、なんとなくでも理解して<br>
-　いただけたところで、4番の顔グラフィックに名前を付けましょう。<br>
-　データ一覧で「4:　」を選択し、<br>
-　入力欄には「ウルファール」と入力してください。<br>
-　入力できたら、忘れずにウィンドウ右下のボタン<br>
-　「OK」か「更新」を押して上書きします。<br>
-　するとデータ一覧の「4:　」であった所が「4:ウルファール」に<br>
-　変わっていると思います。これを覚えておくととても便利ですよ。<br><br>
+<TD nowrap>2. Naming the face graphic<br>
+- While we're at it, let's give this a name for future management to indicate what kind<br>
+　of image file it is.<br>
+　The area we will edit is above the data list<br>
+　in the middle of the window — the wide input field<br>
+　with "ID" written just to its left.<br>
+　Selecting data 0–3 from the data list below<br>
+　will change the text in the input field.<br><br>
+- Now that you understand roughly where to look,<br>
+　let's give a name to face graphic number 4.<br>
+　Select "4:　" from the data list,<br>
+　and enter "Wolfar" in the input field.<br>
+　After entering it, don't forget to press<br>
+　"OK" or "Update" at the bottom right of the window to save.<br>
+　"4:　" in the data list should now show "4: Wolfar".<br>
+　Remembering this will be very helpful.<br><br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_004_1.png"><br>青枠部分、分かりやすく名付けましょう</TD>
+<TD nowrap><img src="image/MATERIAL_004_1.png"><br>The blue-outlined area — name things clearly for easy reference.</TD>
 </TR>
 </TBODY>
 </TABLE>
@@ -90,41 +92,39 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>３．文章表示で顔グラフィック呼び出し<br>
-・次に、ウルファールさんの画像を呼び出す設定をします。<br>
-　サンプルマップAの適当な位置にイベントを作成し、<br>
-　ニワトリの画像を設定します。<br>
-　コマンド入力ウィンドウを開き、タブを「1 文章の表示」に<br>
-　変更してください。<br><br>
-・入力の前に、便利な情報をひとつご紹介しておきます。<br>
-　ウィンドウの中央下に注目してみてください。<br>
-　「顔番号確認(SysDB 24から読み込み)」と書いてあり、<br>
-　その中に数字入力欄と、その右に「0:ウィンドウ表示なし」と<br>
-　書いてあると思います。この入力欄の数字を4にしてみましょう。<br>
-　半角数字を直接入力しても、また入力欄についている上下ボタンで<br>
-　カチカチ動かしても、マウスカーソルを合わせてマウスホイールで<br>
-　数字をスクロールしてもいいです。<br>
-　さて、数字が 4 のときは「4:ウルファール」と表示されますね。<br>
-　これが先述の手順２「顔グラフィックへの名づけ方」で<br>
-　設定した顔グラフィック名で、ここに来て力を発揮するんです。<br>
-　逆に言うと、顔グラフィックに名前を付けていなかったり、<br>
-　または自分さえ分からないような変な名前にしてしまうと、<br>
-　一体何の顔グラなのかわからなくなってしまいますよ。<br><br>
-・ウルファールさんの顔グラが4番であると確認できたところで、<br>
-　入力欄の1行目に「@4」だけを入力して改行します。<br>
-　<b>半角です</b>。<u>@も4も半角でないと命令文になりません</u>。<br>
-　これが、「4番の顔グラフィックを呼び出す」という命令です。<br>
-　あとは2行目以降に好きに文字を入力してくださって構いません。<br>
-　ただし、しつこいようですが好きにしていいのは2行目以降だけで、<br>
-　1行目は命令文の特等席ですよ。@と数字以外が入ると思った動作をしませんよ。<br>
-　2行目以降の内容は何でも(空欄でも)いいですが、<br><br>
-　　ウルファール<br>
-　　「こんにちは！」<br><br>
-　とでも入力しておきましょうか。入力できたら、<br>
-　ウィンドウ右下の「入力」ボタンを押してコマンドを入力します。<br>
+<TD nowrap>3. Calling the face graphic in Show Message<br>
+- Next, configure settings to call Wolfarl's image.<br>
+　Create an event at a suitable position in Sample Map A<br>
+　and set the chicken image.<br>
+　Open the Command Input window and change the tab to "1 Show Message".<br><br>
+- Before entering, here is one useful piece of information.<br>
+　Look at the lower center of the window.<br>
+　It says "Face number confirmation (loaded from SysDB 24)"<br>
+　with a number input field, and to its right "0: No window display".<br>
+　Try setting the number in that field to 4.<br>
+　You can type a half-width number directly, use the up/down buttons on the field,<br>
+　or scroll with the mouse wheel.<br>
+　When the number is 4, "4: Wolfar" should be displayed.<br>
+　This is the face graphic name set in steps 2 above,<br>
+　and it proves its value right here.<br>
+　Conversely, if you didn't name the face graphic,<br>
+　or if you gave it a strange name you yourself can't remember,<br>
+　you won't know which face graphic it is.<br><br>
+- Now that you've confirmed that Wolfar's face graphic is number 4,<br>
+　enter "@4" alone on the first line of the input field and press Enter.<br>
+　<b>Use half-width characters</b>. <u>Both @ and 4 must be half-width for the command to work</u>.<br>
+　This is the command to "call face graphic number 4".<br>
+　You can enter whatever you like on the second line onward.<br>
+　But as emphasized, only lines 2 onward are free — the first line is reserved for commands.<br>
+　If anything other than @ and a number is on the first line, it won't work as expected.<br>
+　The content of lines 2 onward can be anything (even blank), but let's enter:<br><br>
+　　Wolfar<br>
+　　"Hello!"<br><br>
+　After entering it, press the "Input" button at<br>
+　the bottom right of the window to enter the command.<br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_004_2.png"><br>下部にご注目！<br>
-そして1行目は半角@と半角数字だけですよ！</TD>
+<TD nowrap><img src="image/MATERIAL_004_2.png"><br>Pay attention to the bottom!<br>
+And the first line is half-width @ and half-width number only!</TD>
 </TR>
 </TBODY>
 </TABLE>
@@ -132,19 +132,19 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>４．確認<br>
-　ではテストプレイしてみましょう。<br>
-　作成したイベントに話しかけると、出てきたメッセージウィンドウの<br>
-　右の方に、ウルファールさんの画像が一緒に出てきていると思います。<br>
-　お疲れ様でした！<br>
-　なお、この「@(番号)」の顔グラフィック指定は文章表示のたびに<br>
-　指定できますので、交互に番号を変えるとその通りに顔グラフィックも<br>
-　変わり、会話しているという雰囲気がより強く演出できます。<br>
-　デフォルトでは「@3」にニワトリの画像が入っていますので、<br>
-　余力があれば手順２と同様にやってみてくださいね。<br>
+<TD nowrap>4. Verify<br>
+　Let's do a Test Play.<br>
+　When you talk to the event you created, Wolfarl's image should<br>
+　appear alongside the message window on the right side.<br>
+　Great work!<br>
+　Note that the "@(number)" face graphic specification can be set<br>
+　each time a message is shown, so alternating numbers will change the<br>
+　face graphic accordingly, enhancing the sense of a conversation taking place.<br>
+　By default, the chicken image is in "@3",<br>
+　so if you have time, try doing the same as steps 2.<br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_004_3.png"><br>ちゃんと表示されていますね？<br>
-<br>にしてもニワトリ怯え過ぎ…でもなかったりして…<!--ウルファールが狼だったら、確実に怯えすぎではなくなる--></TD>
+<TD nowrap><img src="image/MATERIAL_004_3.png"><br>It's displaying correctly, right?<br>
+<br>The chicken sure looks scared... or maybe not...<!--If Wolfar is a wolf, it definitely wouldn't be an overreaction--></TD>
 </TR>
 </TBODY>
 </TABLE>
@@ -152,14 +152,14 @@
 </P>
 
 <P>
-　【メニュー画面・戦闘画面で表示する】
+　【Displaying on the Menu Screen and in Combat】
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>１．画像ファイルの保存<br>
-・この記事の<a href="#WOLFARL">最初にある画像</a>が、「Picture」フォルダにあることを確認してください。<br>
-　なければダウンロードの上、「Picture」フォルダに移動させましょう。<br>
+<TD nowrap>1. Save the image file<br>
+- Confirm that the <a href="#WOLFARL">image at the top of this article</a> is in the "Picture" folder.<br>
+　If it isn't, download it and move it to the "Picture" folder.<br>
 </TD>
 <TD nowrap></TR>
 
@@ -168,27 +168,27 @@
 <HR>
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>２．画像ファイルの選択と設定<br>
-・今回の設定は可変データベースの0番<br>
-　「主人公ステータス」で行います。<br>
-　可変データベースを開き、タイプは<br>
-　「0:主人公ステータス」を選択してください。<br>
-　　ウィンドウの中ほどにデータ一覧があります。<br>
-　データはこの中から「12:ウルファール」を選択してください。<br><br>
-・次に、メニュー・戦闘画面で使われる画像を設定します。<br>
-　項目「顔画像 [ﾊﾞﾄﾙ･ｽﾃｰﾀｽ用]」に入力します。<br>
-　入力欄の右にある[File]ボタンを押すと<br>
-　素材が入っているフォルダが開かれますので、<br>
-　「Wolfarl.png」を選択し、ウィンドウ右下の<br>
-　ボタン「OK」を押してください。<br>
-　画像ファイル名に「Picture/Wolfarl.png」が<br>
-　入力されました。ウィンドウ右下のボタン<br>
-　「OK」か「更新」を押して上書きします。<br>
-　これで、ウルファールさんの顔グラフィックを<br>
-　呼び出せるようになりました。この設定さえすれば<br>
-　あとは自動で呼び出してくれますので、便利です。<br><br>
+<TD nowrap>2. Select the image file and configure settings<br>
+- The settings for this tutorial are done in Changeable Database type 0,<br>
+　"Player Character Status".<br>
+　Open the Changeable Database and select<br>
+　type "0: Player Character Status".<br>
+　There is a data list in the middle of the window.<br>
+　Select "12: Wolfar" from this data list.<br><br>
+- Next, set the image to use in the menu/combat screen.<br>
+　Enter it in the item "Face Image [For Battle/Status]".<br>
+　Press the [File] button to the right of the input field,<br>
+　and the folder containing assets will open.<br>
+　Select "Wolfarl.png" and press<br>
+　the "OK" button at the bottom right of the window.<br>
+　"Picture/Wolfarl.png" has been<br>
+　entered as the image filename. Press<br>
+　"OK" or "Update" at the bottom right of the window to save.<br>
+　Wolfarl's face graphic can now be called up.<br>
+　With this configuration, it will be called automatically,<br>
+　which is very convenient.<br><br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_004_4.png"><br>ここを設定すれば後は自動です</TD>
+<TD nowrap><img src="image/MATERIAL_004_4.png"><br>Set this here and everything else is automatic.</TD>
 </TR>
 </TBODY>
 </TABLE>
@@ -196,43 +196,43 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>３．確認<br>
-　ではテストプレイしてみましょう。<br>
-　メニュー画面を開いたり、戦闘に入ってみると<br>
-　顔グラフィックが表示されるようになっています。<br>
-　もしうまく行かない場合は、手順を見直してみてくださいね。<br>
-　お疲れ様でした！<br>
+<TD nowrap>3. Verify<br>
+　Let's do a Test Play.<br>
+　Open the menu screen or enter combat and the<br>
+　face graphic should now be displayed.<br>
+　If it doesn't work, review the steps.<br>
+　Great work!<br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_004_5.png"><br>メニューでもバトルでも</TD>
+<TD nowrap><img src="image/MATERIAL_004_5.png"><br>In both menu and battle.</TD>
 </TR>
 </TBODY>
 </TABLE>
 <HR>
 </P>
-<b>★注意！</b><br>
-顔グラフィックを含めて、ウディタでは使ってはいけない画像が存在します。<br>
-それは「素材でないもの」と「RPGツクールシリーズのRTP素材とその改変素材」です。<br>
-詳しいことは「<a href ="MATERIAL_007.html">◆素材利用のルールってどんな感じなの？</a>」に記載されていますのでご確認ください。<br>
+<b>★Note!</b><br>
+Including face graphics, there are images that cannot be used in WOLF RPG Editor.<br>
+These are "non-assets" and "RPG Maker series RTP assets and their derivatives".<br>
+For details, see "<a href ="MATERIAL_007.html">◆What are the rules for using assets?</a>".<br>
 <HR>
-<P>【余談】
+<P>[Side Note]
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>■表情差分のデメリットについて<br>
-顔グラフィックを使うなら用意したいのが表情差分ですね。<br>
-表情の豊かな顔グラフィックはそのメリットも無視できませんが、<br>
-<u>実はこれは作成も管理も、表情１つだけの時の何倍も大変になります</u>。<br>
-4人のキャラクターに5つずつの表情を用意すると考えると、<br>
-実際の人間の表情の多様さと比べたりしてしまって、あまり<br>
-多くないように感じたりしますが、20枚も用意するのはかなり大変です。<br>
-はじめての制作では真顔や無表情といった汎用性の高い１表情だけとか、<br>
-多くても喜怒哀楽ぐらいをおすすめします。<br>
-また、表情を使うなら名前を分かりやすくつけることが重要です。<br>
-喜怒哀楽までなら「鶏喜」だけでもなんとかなりますが、<br>
-1キャラに5～6表情用意するとなると「夕一目笑口開け」と付けるなど。<br>
-工夫もスキルのひとつで、今後の制作に役立つものですから、<br>
-是非 試行錯誤してみてください。<br>
+<TD nowrap>■On the drawbacks of facial expression variations<br>
+If you're using face graphics, you'll probably want to create expression variants.<br>
+The benefits of expressive face graphics are undeniable, but<br>
+<u>creating and managing them is actually several times more work than having just one expression</u>.<br>
+Thinking about preparing 5 expressions for each of 4 characters,<br>
+compared to the variety of real human expressions, 20 illustrations might not seem like many —<br>
+but it's actually quite a lot to prepare.<br>
+For a first game, we recommend just one generic expression like a neutral face,<br>
+or at most the four basic emotions (happy, angry, sad, happy).<br>
+If you do use multiple expressions, naming them clearly is important.<br>
+For up to four basic emotions, "chick-happy" alone might work,<br>
+but if you have 5–6 expressions per character, naming conventions like "sunset-one-eye-smile-open-mouth" are needed.<br>
+Devising systems is itself a skill, and something useful for future projects —<br>
+please give it a try through trial and error.<br>
 </TD>
 <TD nowrap></TD>
 </TR>
@@ -242,17 +242,17 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>■顔グラフィックの規格について<br>
-実は顔グラフィックの規格については明確には定まっていません。<br>
-作る人のやり方によっていろんな表現ができるとも言えます。<br>
-ただ、何の決まりも無い状態では描きにくいと思いますから、<br>
-初めの一歩として下記のような形をおすすめします。<br>
+<TD nowrap>■About face graphic specifications<br>
+In truth, there are no firm specifications defined for face graphics.<br>
+Depending on the creator's method, many different expressions are possible.<br>
+However, without any rules, it can be difficult to know where to start, so<br>
+here are some recommended forms as a first step:<br>
 <br>
-・基本システムの設定は「[0]標準サイズに合わせる」を使用する。<br>
-・脇役はドット系の顔グラフィックを使用し、「24*24」で作成する。<br>
-（今回メッセージウィンドウで表示した画像と同じ形式です）<br>
-・主役はイラスト系の顔グラフィックを使用し、「96*96の枠付き」で作成する。<br>
-（今回メニュー画面・戦闘画面で使用した画像と同じ形式です）<br>
+- Use "[0] Fit to standard size" in Basic System settings.<br>
+- Use dot-style face graphics for supporting characters, created at "24×24".<br>
+(Same format as the image displayed in the message window in this tutorial.)<br>
+- Use illustration-style face graphics for main characters, created at "96×96 with border".<br>
+(Same format as the image used on the menu screen and in combat in this tutorial.)<br>
 </TD>
 <TD nowrap></TD>
 </TR>
@@ -261,22 +261,22 @@
 </P><HR>
 
 <HR>
-<P>＜＜執筆者：<A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">ウディタ公式ガイド執筆コミュ。</A>＞＞<BR>
+<P>＜<Author: <A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">WOLF RPG Editor Official Guide Writing Community.</A>>＞<BR>
 <UL>
-	<LI>設計書作成：真波、ユノ</LI>
-	<LI>トピック執筆：Hdk103-Arch</LI>
+	<LI>Specification creation: Manami, Yuno</LI>
+	<LI>Topic writing: Hdk103-Arch</LI>
 </UL>
 
-＜素材提供者＞
+＜Asset providers＞
 <UL>
-	<li>Wolfarl.png：ユノ</li>
+	<li>Wolfarl.png: Yuno</li>
 </UL><a name="RULE"></a>
-本トピックで使用されている素材に関しましては、<BR>
-ウディタ素材スレッドの利用規約に準じて使用することができます。<BR>
+The assets used in this topic may be used in accordance with<BR>
+the WOLF RPG Editor asset thread terms of use.<BR>
 
 </P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

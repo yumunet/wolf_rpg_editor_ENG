@@ -1,38 +1,38 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>キャラの一歩を半マス/1マス単位にしたい</TITLE>
+<TITLE>I want to set a character's step to half-tile or 1-tile units</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【キャラの一歩を半マス/1マス単位にしたい】</H2>
+<H2>【I want to set a character's step to half-tile or 1-tile units】</H2>
 <HR>
-　<B>【目標】</B><BR>
+　<B>[Goal]</B><BR>
 <HR>
 <P>
-　キャラクターの一歩単位には、全マス(1歩が1マス)設定と<BR>
-　半マス(1歩が半マス、2歩で1マス)設定があります。<BR>
-　全マス移動設定のゲームはマップチップの通行設定がすごく楽だったり、<BR>
-　半マス移動設定のゲームは全マス設定より細かい表現ができたり、<BR>
-　それぞれに長所があります。<BR>
+　A character's step unit can be set to full-tile (1 step = 1 tile)<BR>
+　or half-tile (1 step = half a tile, 2 steps = 1 tile).<BR>
+　Full-tile movement games make setting tile passability very easy,<BR>
+　while half-tile movement games allow finer expression than full-tile settings —<BR>
+　each has its own advantages.<BR>
 <BR>
-　今回は、キャラクターの一歩単位を半マス/全マスに<BR>
-　切り替える方法を習得します。</P>
+　This time, we will learn how to switch<BR>
+　a character's step unit between half-tile and full-tile.</P>
 
 <HR>
-　<B>【手順】</B><BR>
+　<B>【Steps】</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【1】 設定画面を開く<BR>
+<TD nowrap>[1] Open the Settings screen<BR>
 <BR>
-　<B>「ゲーム設定」で<B>「ゲーム基本設定を開く」</B>を選択し、<BR>
-　<B>「ゲームの基本設定」</B>ウィンドウを開きます。<BR>
+　Select <B>"Open Game Basic Settings"</B> from <B>"Game Settings"</B>,<BR>
+　and open the <B>"Game Basic Settings"</B> window.<BR>
 </TD>
 <TD nowrap><IMG src="image/SETTING_001_1.png" width="355" height="208" border="0"></TD>
 </TR>
@@ -42,12 +42,12 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【2】 設定の変更<BR>
+<TD nowrap>[2] Change the setting<BR>
 <BR>
-　項目「デフォルトのキャラクター移動幅」で設定できます。<BR>
-　<B>0.5マス</B>と<B>1マス</B>のお好きな方をラジオボタンで選択し、<BR>
-　ウィンドウ右下の<B>「OK」</B>ボタンを押してください。<BR>
-　これで設定は完了です。<BR>
+　You can configure this under the item "Default Character Movement Width".<BR>
+　Select either <B>0.5 tile</B> or <B>1 tile</B> with the radio button,<BR>
+　then press the <B>"OK"</B> button at the bottom-right of the window.<BR>
+　The settings are now done.<BR>
 </TD>
 <TD nowrap><IMG src="image/SETTING_002_1.png" width="540" height="359" border="0"></TD>
 </TR>
@@ -57,13 +57,13 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【3】 テストプレイ<BR>
+<TD nowrap>[3] Test Play<BR>
 <BR>
-　テストプレイしてみましょう。<BR>
-　全マス設定だと、マス全体が通行可能な部分しか歩けませんので、<BR>
-　たとえばサンプルマップAの右下にある建物の生暖かいベッドには<BR>
-　乗ることはできなくなっています。<BR>
-　お疲れ様でした！<BR>
+　Let's do a Test Play.<BR>
+　With full-tile settings, you can only walk on tiles that are fully passable,<BR>
+　so for example the warm bed in the building at the lower-right of Sample Map A<BR>
+　can no longer be stepped on.<BR>
+　Great work!<BR>
 </TD>
 <TD nowrap><IMG src="image/SETTING_002_2.png" width="320" height="470" border="0"></TD>
 </TR>
@@ -71,33 +71,33 @@
 </TABLE>
 <HR>
 
-　<B>【余談】</B><BR>
+　<B>[Side Note]</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>　■全マスと半マスそれぞれの長所と短所<BR>
+<TD nowrap>　■ Advantages and disadvantages of full-tile vs. half-tile<BR>
 <BR>
-・<B>全マス移動設定は、半マス移動に比べてとにかく設定が<BR>
-　何倍も楽になる</B>ことが最大の長所です。<BR>
-　まだ制作に慣れていない方にはこちらをおすすめします。<BR>
-　でも全マス移動は0.5マスの位置に立てないので、<BR>
-　左右対称のマップのちょうど中央を歩くことはできなかったり、<BR>
-　半マス移動用に作られたマップで全マス移動設定にすると<BR>
-　通れていた細い道が通れなくなったりします。<BR>
-・<B>半マス移動設定は繊細な設定ができる</B>ことが強みで、<BR>
-　全マス移動設定では通れない道が作れたりします。<BR>
-　0.5マスを扱うのが得意で、マップ制作でも場所移動でも<BR>
-　半マスを使った細やかな挙動ができます。<BR>
-　ただそのぶん設定が大変で、思わぬ抜け道が発見されてしまったり、<BR>
-　マップの歩けるところのテストプレイに時間がかかったりします。<BR>
-　また、移動が細かすぎて、乗れないマスにひっかかったりするのも<BR>
-　人によってはストレスになるかもしれません。<BR>
-・ゲーム制作において、一歩単位をどちらに設定して制作するか<BR>
-　決めるべきタイミングは、<B>制作を開始する最初の段階で、<BR>
-　マップを作り始める前に決めてしまうのがおすすめ</B>です。<BR>
-　あとで変更してしまうと、それまでに作成した<BR>
-　マップやマップイベント全ての見直しが必要になるので大変です。<BR>
+· The greatest advantage of <B>full-tile movement settings is that configuration<BR>
+　is many times easier compared to half-tile movement</B>.<BR>
+　This is recommended for those who are not yet experienced with game creation.<BR>
+　However, full-tile movement means you can't stand at 0.5-tile positions,<BR>
+　so you can't walk exactly through the center of a symmetrical map,<BR>
+　and roads that were passable in a half-tile map will become impassable<BR>
+　if full-tile settings are applied to them.<BR>
+· The strength of <B>half-tile movement settings is that it allows more precise configuration</B>,<BR>
+　and you can create passages that wouldn't be accessible with full-tile settings.<BR>
+　It handles 0.5-tile precision well and enables fine-grained behavior<BR>
+　in both map creation and Location Transfers using half-tiles.<BR>
+　However, the settings are correspondingly more demanding — unexpected shortcuts may be discovered,<BR>
+　and testing passable areas in the map can take more time.<BR>
+　Also, the fine movement may cause the character to get caught on impassable tiles,<BR>
+　which could be frustrating depending on the player.<BR>
+· When making a game, the best time to decide which step unit to use is<BR>
+　<B>at the very beginning of development,<BR>
+　before you start creating maps</B>.<BR>
+　Changing it later means you will need to review all maps and map events created so far,<BR>
+　which is a lot of work.<BR>
 </TD>
 </TR>
 </TBODY>
@@ -106,23 +106,23 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>　■デフォルトの当たり判定<BR>
+<TD nowrap>　■ Default collision detection<BR>
 <BR>
-・基本設定の「デフォルトのキャラクター移動幅」の枠の中に、<BR>
-　「デフォルトの当たり判定」がありました。<BR>
-　この「当たり判定」は、イベントやマップチップに<BR>
-　主人公が触れる判定エリアを決めるもので、<BR>
-　デフォルトのキャラクター移動幅が0.5マスのときに設定出来ます。<BR>
-　移動幅が</B>1マスのときは問答無用で「1×1ﾏｽ」の当たり判定になります</B>が、<BR>
-　移動幅が<B>半マスのときは「1×0.5ﾏｽ」と「1×1ﾏｽ」を選ぶことが出来ます</B>。<BR>
-　これは横×縦ですので、どちらの設定でも<BR>
-　主人公は横方向には1マス分の当たり判定を持つことになります。<BR>
-・この設定で<B>変わるのは縦の当たり判定の大きさ</B>で、<BR>
-　試しにそれぞれの設定で、主人公のすぐ上か下にある壁やイベントに<BR>
-　くっついてみると、どこまで主人公が接近するかで分かると思います。<BR>
-　1x1マスだと、主人公の影とオブジェクト(壁やイベント)の間に<BR>
-　半マス分のすきまがあるように見える位置で止まりますが、<BR>
-　0.5マスだと影とオブジェクトの間にほとんどすきまがなくなります。<BR>
+· Inside the "Default Character Movement Width" section of Basic Settings,<BR>
+　there is a "Default Collision Detection" setting.<BR>
+　This "collision detection" determines the area in which<BR>
+　the player character is considered to be touching events or map tiles,<BR>
+　and it can be configured when the default character movement width is 0.5 tile.<BR>
+　When the movement width is <B>1 tile, the collision detection is unconditionally "1×1 tile"</B>,<BR>
+　but when the movement width is <B>half-tile, you can choose between "1×0.5 tile" and "1×1 tile"</B>.<BR>
+　This is width × height, so in either setting<BR>
+　the player character has 1 tile of collision detection in the horizontal direction.<BR>
+· What changes with this setting is <B>the size of the vertical collision detection</B>.<BR>
+　Try each setting and stand right next to a wall or event directly above or below the player character —<BR>
+　you can tell the difference by how close the player character approaches.<BR>
+　With 1×1 tile, the player character stops at a position where there appears to be<BR>
+　a half-tile gap between the character's shadow and the object (wall or event),<BR>
+　while with 0.5 tile, there is almost no gap between the shadow and the object.<BR>
 </TD>
 <TD nowrap><IMG src="image/SETTING_002_3.png" width="320" height="426" border="0"></TD>
 </TR>
@@ -132,16 +132,16 @@
 
 <HR>
 
-<P>＜執筆者：ウディタ公式ガイド執筆コミュ。＞
+<P><Author: WOLF RPG Editor Official Guide Writing Community>
     <ul>
-        <li>トピック原案：真波、<A href="http://hinezumi.velvet.jp/index.php" target="_blank">ユノ</A></li>
-        <li>HTML作成：真波</li>
+        <li>Topic concept: Manami, <A href="http://hinezumi.velvet.jp/index.php" target="_blank">Yuno</A></li>
+        <li>HTML creation: Manami</li>
     </ul>
 </P>
 <HR>
-【改訂履歴】<BR>
-　Ver1.00　2013/11/16 新規作成<BR>
-<HR><A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+[Revision History]<BR>
+　Ver1.00　2013/11/16 Initial creation<BR>
+<HR><A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 

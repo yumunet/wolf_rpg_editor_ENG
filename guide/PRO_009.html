@@ -1,41 +1,41 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>複数のキーが同時に押されたかどうかを取得したい</TITLE>
+<TITLE>I want to detect whether multiple keys are pressed simultaneously</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【複数のキーが同時に押されたかどうかを取得したい】</H2>
+<H2>【I want to detect whether multiple keys are pressed simultaneously】</H2>
 <HR>
 <BR>
-　キー入力の<B>受け付け先を変える</B>事で、<B>複数のキー</B>が押されたかどうかを同時に調べる事ができます。
+　By <B>changing the assignment destination</B> of key input, you can simultaneously check whether <B>multiple keys</B> have been pressed.
 　<BR>
-<P>【目標】<BR>
+<P>[Goal]<BR>
 <BR>
-　１．キー入力で、複数のキーが押されたかどうか（同時押し）を調べる。<BR>
-　　（今回は左Shiftキーと決定キーの同時押しを判定するイベントを作成します）<BR>
+　1. Use key input to check whether multiple keys are pressed simultaneously.<BR>
+　　(This time we will create an event that detects simultaneous pressing of Left Shift and the Confirm key.)<BR>
 　　<BR>
-　２．同時押しした時に、文書を表示する。</P>
+　2. Display a message when the keys are pressed simultaneously.</P>
 　<BR>
 
-　【関連項目】<BR>
-　　<a href="PRO_005.html" target="B">特定のキーが押されたかどうかを取得したい</a><BR>
+　【Related topics】<BR>
+　　<a href="PRO_005.html" target="B">I want to detect whether a specific key has been pressed</a><BR>
 
 　<BR>
 <HR>
-<P>【手順】</P>
+<P>【Steps】</P>
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap valign="top">―― 【1】イベント作成 ――<BR>
+      <TD nowrap valign="top">―― [1] Create the event ――<BR>
       <BR>
-　まずマップ選択<img height=20 src="image/icon_mapselector.png" width=22 border=0>で「サンプルマップA」に切り替えてください。<BR>
-　分かりやすいところに、決定キーで起動するイベントを作成します。<BR>
-　グラフィックはニワトリにしましょう。<BR>
-　（参考：<a href="EV_001.html" target="B">【決定キーで起動するイベント】</a>）<BR>
+　First, switch to "Sample Map A" using the Map Selector<img height=20 src="image/icon_mapselector.png" width=22 border=0>.<BR>
+　Create an event that launches with the Confirm key in an easy-to-find location.<BR>
+　Set the graphic to a chicken.<BR>
+　(Reference: <a href="EV_001.html" target="B">【Event that launches with the Confirm key】</a>)<BR>
 　<BR>
       </TD>
       <TD nowrap></TD>
@@ -46,20 +46,20 @@
 <TABLE border="0">
   <TBODY><TR>
       <TD nowrap valign="top"><BR>
-      ―― 【2】ループコマンド ――　<BR>
+      ―― [2] Loop command ――　<BR>
       <BR>
-　イベントウィンドウの右下にある<BR>
-　「■ コマンド入力ウィンドウ表示 ■」をクリックして、<BR>
-　イベントコマンド入力ウィンドウを開いてください。<BR>
+　Click the<BR>
+　"■ Show Command Input Window ■" button at the bottom-right of the Event window<BR>
+　to open the Event Command Input Window.<BR>
 　<BR>
-　左側一覧から「H イベント制御」を選択します。<BR>
-　左上辺りにある「ループ(繰り返し)」をクリックして入力してください。<BR>
+　Select "H Event Control" from the list on the left.<BR>
+　Click "Loop (Repeat)" near the upper-left and enter it.<BR>
 　<BR>
 　<BR>
-　<font color="#696969" style="font-size:9pt">※今回ループを使うのは、決定キーで起動するイベントだからです。<BR>
-　　　また、キー入力を2つ使用するため片一方で処理が止まってしまわないよう、<BR>
-　　　「キーが押されるまで待つ」にチェックは入れられない、という理由もあります。<BR>
-　　　そのため、毎フレーム実行される並列イベントなどでは、ループは必要ありません。<BR>
+　<font color="#696969" style="font-size:9pt">※ The reason we use a Loop this time is because this is an event launched with the Confirm key.<BR>
+　　　Also, since we are using two key inputs, we cannot check "Wait until key is pressed"<BR>
+　　　(as the process would get stuck on one of them).<BR>
+　　　Therefore, for parallel events that run every frame, a Loop is not necessary.<BR>
 　</font>
       </TD>
       <TD nowrap><IMG src="image/PRO_009_1.png" width="300" height="260" border="1"></TD>
@@ -71,24 +71,23 @@
   <TBODY>
     <TR>
       <TD nowrap valign="top"><BR>
-      ―― 【3】キー入力1（左Shift） ――<BR>
+      ―― [3] Key input 1 (Left Shift) ――<BR>
       <BR>
-　ループ内にイベントを入力していきます。<BR>
-　ウィンドウの左側から、<B>「9 キー入力」</B>を選択しましょう。<BR>
+　Enter commands inside the Loop.<BR>
+　Select <B>"9 Key Input"</B> from the left side of the window.<BR>
 　<BR>
-　代入先は「このEv:セルフ0」のまま変更しません。<BR>
-　キー種をクリックして「キーボード全キー（100～）」を選んでください。<BR>
-　そのすぐ下にある「特定キーのみ判定」にチェックを入れ、<BR>
-　キーコード欄には「142」と入力しましょう。<BR>
+　Leave the assignment destination as "This Ev: Self0" without changing it.<BR>
+　Click the key type and select "All Keyboard Keys (100+)".<BR>
+　Check "Detect Specific Key Only" just below it,<BR>
+　and enter "142" in the key code field.<BR>
 　<BR>
-　また、「キーが押されるまで待つ」にチェックが<B>入っていない</B>事を、<BR>
-　確認しておいてください。<BR>
+　Also confirm that "Wait until key is pressed" is <B>not</B> checked.<BR>
 　<BR>
-　最後に、ウィンドウ右下の「入力」ボタンをクリックします。<BR>
+　Finally, click the "OK" button at the bottom-right of the window.<BR>
 　<BR>
-　<font color="#696969" style="font-size:9pt">※キーコードの数値は、マニュアルの<BR>
-　　　イベントの作成→キー入力の項目に一覧があります。<BR>
-　　　また、エディタに打ち込むと、下部に対応したキーの名前が表示されます。<BR></font>
+　<font color="#696969" style="font-size:9pt">※ The key code values are listed under<BR>
+　　　Event Creation → Key Input in the manual.<BR>
+　　　You can also enter them in the editor and the corresponding key name will be displayed at the bottom.<BR></font>
 　<BR>
       </TD><TD nowraph><IMG src="image/PRO_009_2.png" width="460" height="290" border="1"></TD>
     </TR>
@@ -99,18 +98,18 @@
   <TBODY>
     <TR>
       <TD nowrap valign="top"><BR>
-      ―― 【4】キー入力2（決定キー） ――<BR>
+      ―― [4] Key input 2 (Confirm key) ――<BR>
       <BR>
-　続いて2つ目のキー入力コマンドを入れていきます。<BR>
+　Now enter the second key input command.<BR>
 　<BR>
-　そのままキー入力受け付けの、<B>代入先を変更</B>してください。<BR>
-　代入先は「このEv:セルフ1」を選びます。<BR>
+　In the same key input setting, <B>change the assignment destination</B>.<BR>
+　Select "This Ev: Self1" as the assignment destination.<BR>
 　<BR>
-　そしてキー種は「基本」に戻しましょう。<BR>
-　決定キーの項目のみチェックを入れ、他は外してください。<BR>
-　方向キーも必要ありませんので、「受け付けない」にします。<BR>
+　Then change the key type back to "Basic".<BR>
+　Check only the Confirm key entry and uncheck everything else.<BR>
+　The direction key is also not needed, so set it to "Do Not Accept".<BR>
 　<BR>
-　出来ましたらウィンドウ右下の「入力」です。<BR>
+　When done, click "OK" at the bottom-right of the window.<BR>
 　<BR>
       </TD><TD nowrap><IMG src="image/PRO_009_3.png" width="540" height="175" border="1"></TD>
     </TR>
@@ -123,20 +122,19 @@
   <TBODY>
     <TR>
       <TD nowrap valign="top"><BR>
-      ―― 【5】条件分岐の設定 ――<BR>
+      ―― [5] Configuring the Conditional Branch ――<BR>
       <BR>
-　今度は左側一覧から「7 条件(変数)」を選んでください。<BR>
+　This time select "7 Condition (Variable)" from the list on the left.<BR>
 <BR>
-　3変数を連動のチェックは外しましょう。<BR>
-　1つ目の条件分岐は「このイベント:Self0が0と同じ」<BR>
-　2つ目の条件分岐を「このイベント:Self1が10と同じ」<BR>
-　に設定します。<BR>
+　Uncheck "Link 3 Variables".<BR>
+　Set the 1st Conditional Branch to "This Event: Self0 equals 0"<BR>
+　and the 2nd Conditional Branch to "This Event: Self1 equals 10".<BR>
 　<BR>
-　1つ目の分岐内は空のままいじりません。<BR>
-　2つ目の分岐内に「文章の表示」で、<BR>
-　キーが同時押しされた時に表示する文章を入力してください。<BR>
+　Leave the inside of the 1st branch empty and don't touch it.<BR>
+　Inside the 2nd branch, use "Show Message" to enter the message<BR>
+　to display when the keys are pressed simultaneously.<BR>
 　<BR>
-　<font color="#696969" style="font-size:9pt"><a href="#k">※この分岐の解説は、ページ下部で行っています</a>
+　<font color="#696969" style="font-size:9pt"><a href="#k">※ Explanation of this branch is provided at the bottom of the page</a>
       </TD><TD nowrap><IMG src="image/PRO_009_4.png" width="550" height="300" border="1"></TD>
     </TR>
   </TBODY>
@@ -146,13 +144,13 @@
   <TBODY>
     <TR>
       <TD nowrap valign="top"><BR>
-      ―― 【6】ウェイトを入れる ――<BR>
+      ―― [6] Adding a wait ――<BR>
       <BR>
-　最後に<B>「分岐終了」の下、「ループここまで」</B>との間に<BR>
-　カーソルを移動してください。<BR>
+　Finally, move the cursor to between<BR>
+　<B>"End Branch" and "End Loop"</B>.<BR>
 　<BR>
-　もう一度ウィンドウ左から「H イベント制御」をクリックします。<BR>
-　ウェイトの項目をクリックして、1フレーム入力しましょう。<BR>
+　Click "H Event Control" from the left side of the window again.<BR>
+　Click the Wait item and enter 1 frame.<BR>
 　<BR>
       </TD><TD nowrap><IMG src="image/PRO_009_5.png" width="420" height="340" border="1"></TD>
     </TR>
@@ -163,19 +161,19 @@
   <TBODY>
     <TR>
       <TD nowrap><BR>
-　以上で<B>完成</B>です。<BR>
-　セーブしてテストプレイをしてみましょう。<BR>
+　This is now <B>complete</B>.<BR>
+　Save and do a Test Play.<BR>
 　<BR>
 　<BR>
-　イベントに話しかけると移動が出来なくなりますが、<BR>
-　問題はありません。<BR>
+　When you talk to the event your movement is disabled,<BR>
+　but that is not a problem.<BR>
 　<BR>
-　まず決定キーのみを押してください。<BR>
-　決定キー単独では文章が<B>表示されない</B>事を確認します。<BR>
+　First, press only the Confirm key.<BR>
+　Confirm that the message is <B>not displayed</B> with Confirm key alone.<BR>
 　<BR>
-　次に、左Shiftと同時に決定キーを押してください。<BR>
-　入力した<B>文章が表示されたら</B>成功です。<BR>
-　お疲れ様でした。<BR>
+　Next, press the Confirm key while simultaneously holding Left Shift.<BR>
+　If the <B>message you entered is displayed</B>, you succeeded!<BR>
+　Great work.<BR>
 　<BR>
      </TD> <TD nowrap><IMG src="image/PRO_009_6.png" width="320" height="240" border="1"></TD>
     </TR>
@@ -185,27 +183,27 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【問題が発生した場合】<BR>
+      <TD nowrap>【If a problem occurs】<BR>
       <BR>
-<font color="#ee6600">◆イベントに話しかけると「1フレームあたりの処理が500000個を超えました！」という緑帯が出る</font><BR>
-　ウェイトを入れ忘れているか、ウェイトの位置が間違っています。<BR>
-　確認しましょう。<BR>
+<font color="#ee6600">◆ Talking to the event shows a green banner saying "Processing exceeded 500,000 per frame!"</font><BR>
+　You forgot to add a wait, or the wait is in the wrong position.<BR>
+　Please verify.<BR>
 　<BR>
-<font color="#ee6600">◆左Shiftや決定キーだけを押しても文章が表示されてしまう</font><BR>
-　条件分岐の設定を間違えているか、<BR>
-　文章の挿入位置を間違えている可能性があります。<BR>
-　分岐の設定と、文章の位置を見直してください。<BR>
+<font color="#ee6600">◆ Pressing only Left Shift or Confirm key causes the message to be displayed</font><BR>
+　The Conditional Branch settings are wrong,<BR>
+　or the message may be inserted in the wrong position.<BR>
+　Review the branch settings and the position of the message.<BR>
 　<BR>
-<font color="#ee6600">◆キーを入力しても、<B>たまにしか</B>反応してくれない</font><BR>
-　ウェイトの数値が大きすぎる可能性があります。<BR>
-　毎フレーム判定するためには、1フレーム（並列なら0）、あるいはそれに近い数値にしてください。<BR>
+<font color="#ee6600">◆ When a key is pressed, it only responds <B>occasionally</B></font><BR>
+　The wait value may be too large.<BR>
+　To check every frame, set it to 1 frame (0 for parallel) or close to that value.<BR>
 　<BR>
-<font color="#ee6600">◆キーを<B>同時押し</B>しても反応してくれない</font><BR>
-　　・キー入力の受け付け先を間違えている<BR>
-　　・条件分岐の設定を間違えている<BR>
-　　・キーコードの数値を間違えている<BR>
-　などが考えられます。<BR>
-　それぞれ確認しましょう。<BR>
+<font color="#ee6600">◆ <B>Simultaneous key press</B> produces no response</font><BR>
+　　· The key input assignment destination is wrong<BR>
+　　· The Conditional Branch settings are wrong<BR>
+　　· The key code value is wrong<BR>
+　are possible causes.<BR>
+　Verify each one.<BR>
 　<BR>
       <TD nowrap></TD>
     </TR>
@@ -217,37 +215,37 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【余談】<BR>
+      <TD nowrap>[Side Note]<BR>
       <BR>
-      <a href="#5">【5】の条件分岐</a>は何してる？<BR>
+      What is the <a href="#5">Conditional Branch in [5]</a> doing?<BR>
       <BR>
-　正しいキーが入力されると、代入先変数にその値が代入されます。<BR>
-　今回の場合ですと、セルフ0には左Shiftの「142」が、<BR>
-　セルフ1には決定キーの「10」が代入される事になります。<BR>
-　そして、それ以外の時には<B>常に「0」が</B>代入されています。<BR>
+　When the correct key is pressed, its value is assigned to the assignment destination variable.<BR>
+　In this case, Self0 gets Left Shift's value "142",<BR>
+　and Self1 gets the Confirm key's value "10".<BR>
+　At all other times, <B>"0" is always</B> assigned.<BR>
 　<BR>
-　つまり、1つ目の分岐は左Shiftキーが<B>押されていない時</B>に満たされます。<BR>
-　その為、左Shiftが押されていると条件を満たさずに、2つ目以降の判定へと進みます。<BR>
+　In other words, the 1st branch is satisfied when Left Shift is <B>not pressed</B>.<BR>
+　Therefore, when Left Shift is pressed the condition is not met, and the check proceeds to the 2nd branch and beyond.<BR>
 　<BR>
-　そこで2つ目に決定キーの条件を記入してやると、<BR>
-　<B>左Shiftが押され、尚且つ決定キーも押されている</B>状態のみを、<BR>
-　<B>1つの条件分岐コマンドで</B>判別する事が可能です。</font><BR>
+　By writing the Confirm key condition in the 2nd branch,<BR>
+　you can detect the state where <B>Left Shift is pressed and the Confirm key is also pressed</B><BR>
+　<B>using a single Conditional Branch command</B>.</font><BR>
 　<BR>
-　もちろん、制作時に<B>分かりやすい</B>事が第一ですので、<BR>
-　画像上のように2つの分岐を使用しても構いません。<BR>
+　Of course, <B>clarity</B> is the first priority when creating,<BR>
+　so it is fine to use two separate branches as shown in the image.<BR>
 　　<BR>
 　　<BR>
-      
-      
+
+
       <TD nowrap><IMG src="image/PRO_009_7.png" width="380" height="240" border="1"></TD>
     </TR>
   </TBODY>
 </TABLE>
 <HR>
 <HR>
-<P>＜執筆者：七海＞　</P>
+<P><Author: Nanami>　</P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

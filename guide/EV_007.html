@@ -1,104 +1,106 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML LANG="ja"><HEAD><META http-equiv="Content-Style-Type" content="text/css"><meta charset="UTF-8"><TITLE>会話した回数を覚えているイベント</TITLE><LINK REL="stylesheet" HREF="manual.css" TYPE="text/css"></HEAD><BODY><HR><H2>【会話した回数を覚えているイベント】</H2><HR>
-<P>【目標】 <BR>
-	ニワトリのイベントに話しかけると「話すのは○○回目だね！」と表示され、<BR>
-	10回話しかけると、新たな文章が追加されるイベントを作りたいと思います。<BR>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML lang="en"><HEAD><META http-equiv="Content-Style-Type" content="text/css"><meta charset="UTF-8"><TITLE>An Event That Remembers How Many Times You've Talked</TITLE><LINK REL="stylesheet" HREF="manual.css" TYPE="text/css"></HEAD><BODY><HR><H2>【An Event That Remembers How Many Times You've Talked】</H2><HR>
+<P>[Goal] <BR>
+	When you talk to the chicken event, it will display "This is the ○○th time we've talked!", and<BR>
+	we want to create an event where new dialogue is added after talking 10 times.<BR>
 	<IMG src="./image/EV_007_2.png">　<b>→</b>　<IMG src="./image/EV_007_3.png"><br>
 </P><HR><TABLE border="0"><TBODY><TR><TD nowrap>
-【1】・まずマップ選択<IMG src="image/icon_mapselector.png" width="22" height="20" border="0">で「<B>サンプルマップA</B>」に切り替えて下さい。<BR>
+[1]・First, use the Map Selector<IMG src="image/icon_mapselector.png" width="22" height="20" border="0"> to switch to "<B>Sample Map A</B>".<BR>
 　<BR>
-　・適当な場所にイベントを新しく作成して下さい。<BR>
-<BR>　・適当な場所にイベントを作成して<br>
- 　ニワトリの画像を設定しておきます。<br>
-　　（ここでは右の画像の位置に設置）<br>
- 
+　・Create a new event somewhere on the map.<BR>
+<BR>　・Create an event somewhere and<br>
+ 　set the chicken image.<br>
+　　（In this example, place it at the position shown in the image on the right）<br>
+
 <br>
-　→ 分からないときは、<br><B><A href="MUST_001x.html" target="B">◆新しいイベントを作ってみたい</A></B>の【1】～【3】を参考に。<BR>
+　→ If you're not sure how, refer to steps [1]～[3] of<br><B><A href="MUST_001x.html" target="B">◆I want to create a new event</A></B>.<BR>
 <TD nowrap>
 	<IMG src="./image/EV_007_1.png">
 <TD></TR></TBODY></TABLE><HR><TABLE border="0"><TBODY><TR><TD nowrap>
-【2】<B>イベントウィンドウ</B>の右下にある<BR>
-　　 「<B>■コマンドウィンドウ表示■</B>」を<BR>
-　　 クリックしてください。
+[2]Click the<BR>
+　　 "<B>■ Show Command Window ■</B>" button<BR>
+　　 in the bottom-right of the <B>Event window</B>.
 </TD><TD nowrap>
 	<IMG src="./image/EV_007_4.png" width="198" height="60" border="1">
 </TD><TD nowrap><BR><TR></TR></TBODY></TABLE><HR><TABLE border="0"><TBODY><TR><TD nowrap>
-【3】変数操作のタブに変更し、<br>
-　　 画像と同じように変更します。<br>
-　　 そして入力をクリックします。<br>
-　　 これが、話した回数になるのです！<BR>
+[3]Switch to the Variable Operations tab and<br>
+　　 make changes as shown in the image.<br>
+　　 Then click input.<br>
+　　 This will track the number of times you've talked!<BR>
 	<BR>
-　　 ここでは「このイベント:Self0」を<BR>
-　　 話しかけた回数として使用します。<BR>
-　　 このイベントを起こすたびにｾﾙﾌ変数0に<BR>
-　　 １ずつ足していく(+=  1)ことで、<BR>
-　　 「話しかけた回数」も１ずつ増えて<BR>
-　　 いくのです。<BR>
+　　 Here we use "This Event: Self0"<BR>
+　　 as the counter for how many times you've talked.<BR>
+　　 Each time this event is triggered, Self Variable 0<BR>
+　　 is incremented by 1 (+= 1), so<BR>
+　　 the "number of times talked" also increases<BR>
+　　 by 1 each time.<BR>
 </TD><TD nowrap>
 	<IMG src="./image/EV_007_6.PNG"></TD>
 </TR></TBODY></TABLE><HR><TABLE border="0"><TBODY><TR><TD nowrap>
-【4】&nbsp;<B><A href="MUST_001x.html" target="B">◆新しいイベントを作ってみたい</A></B>の<BR>
-　　 【7】～【10】の手順をまねて、<br>
-　　 「話すのは、\self[0]回目だね！」と入力します。<BR>
+[4]&nbsp;Following steps [7]～[10] from<BR>
+　　 <B><A href="MUST_001x.html" target="B">◆I want to create a new event</A></B>,<br>
+　　 enter the text "This is the \self[0]th time we've talked!".<BR>
 	<BR>
-　　 <B>\self[0]</B>は特殊文字のひとつで、<BR>
-　　 「このイベントのセルフ変数０に入っている数」を<BR>
-　　 表します。ここまでで、○回話しかけると<BR>
-　　 「話すのは、○回目だね！」としゃべるイベントが<BR>
-　　 できました。次に、10回以上話すと会話内容が<BR>
-　　 変わるようにします。<BR>
+　　 <B>\self[0]</B> is a special character that represents<BR>
+　　 "the number stored in Self Variable 0 of this event".<BR>
+　　 At this point, you have an event that says<BR>
+　　 "This is the ○th time we've talked!" for each conversation.<BR>
+　　 Next, we'll make the dialogue change<BR>
+　　 after 10 or more conversations.<BR>
 </TD></TD><TD nowrap>
 	<IMG src="./image/EV_007_5.PNG">
 </TD></TR></TBODY></TABLE><HR><TABLE border="0"><TBODY><TR><TD nowrap>
-【5】次に「条件分岐」のタブをクリックします。<br>
-　　 そして、画像のように設定します。<br>
-　　 これは、10 回以上話したということを <br>
-　　 確認しています。
+[5]Next, click the "Conditional Branch" tab.<br>
+　　 Then configure the settings as shown in the image.<br>
+　　 This checks whether the player<br>
+　　 has talked 10 or more times.
 </TD></TD><TD nowrap>
 	<IMG src="./image/EV_007_7.PNG">
 </TD></TR></TBODY></TABLE><HR><TABLE border="0"><TBODY><TR><TD nowrap>
-【6】カーソルの場所を画像の場所に移動します、</TD>
+[6]Move the cursor to the position shown in the image.</TD>
 <TD nowrap><TD nowrap>
 	<IMG src="./image/EV_007_8.PNG">
 </TD></TD></TR></TBODY></TABLE><HR><TABLE border="0"><TBODY><TR><TD nowrap>
- 【7】10回以上話した後の文章を入力します。<br>
-　　 「もう、\self[0]回も話したんだね！」と、<br>
-　　 入力します。
+ [7]Enter the dialogue for after 10 or more conversations.<br>
+　　 Enter "We've already talked \self[0] times now!".
 </TD></TD><TD nowrap>
 	<IMG src="./image/EV_007_9.PNG">
 </TD></TR></TBODY></TABLE><HR><TABLE border="0"><TBODY><TR><TD nowrap>
-【8】最終的に、画像のように<br>
-　　 なっていたら成功です。<br>
-　　 是非テストプレイをして確かめてみてください。<br>
-　　 お疲れさまでした！<BR>
+[8]If the final result looks like the image,<br>
+　　 you've succeeded.<br>
+　　 Please do a Test Play to confirm.<br>
+　　 Great work!<BR>
 </TD><TD nowrap>
 	<IMG src="./image/EV_007_10.PNG">
-</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><TABLE border="0"><TBODY><TR><TD nowrap>	
+</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><TABLE border="0"><TBODY><TR><TD nowrap>
 　　 <BR>
-　　 もしもうまくいかない場合は、以下の症状と原因をチェックしてみて下さい。<BR>
+　　 If something isn't working, check the following symptoms and causes.<BR>
 	<BR>
-　　 ・会話文の中の数が増えない。<BR>
-　　┣【3】変数操作を確認して下さい。<BR>
-　　┃　　 変数は<B>このイベント:Self0</B>、演算記号は<B>＋＝</B>になっていますか？<BR>
-　　┗【4】もしくは文章表示の中の特殊文字が<B>\self[0]</B>になっているか確認して下さい。<BR>
+　　 ・The number in the dialogue doesn't increase.<BR>
+　　┣Check the Variable Operations in [3].<BR>
+　　┃　　 Is the variable set to <B>This Event: Self0</B> and the operator set to <B>+=</B>?<BR>
+　　┗Check that the special character in the [4] message display is <B>\self[0]</B>.<BR>
 	<BR>
-　　 ・10回以上話したのに文章が変わらない。<BR>
-　　┣【5】条件分岐を確認して下さい。<BR>
-　　┃　　 変数は<B>このイベント:Self0</B>になっていますか？<BR>
-　　┗【6】【7】また、条件分岐の内部に文章が入っているか確認してください。
+　　 ・The dialogue doesn't change even after talking 10+ times.<BR>
+　　┣Check the Conditional Branch in [5].<BR>
+　　┃　　 Is the variable set to <B>This Event: Self0</B>?<BR>
+　　┗Also check [6] and [7] to confirm that the dialogue is inside the Conditional Branch.
 </TD><TD nowrap>
-	<!-- 画像なし -->
+	<!-- no image -->
 </TD></TR></TBODY></TABLE><HR></TD></TR></TBODY></TABLE><HR><TABLE border="0"><TBODY><TR><TD nowrap>
-	【余談】<BR>
-「\self[0]」とかって、何よ！！<br>
-これは、特殊文字と言って、WOLF_RPG_エディター内でテキスト等に使用できる文字のことをいいます。<br>なので今回も特殊文字で話した回数を表示しているのです。<br>特殊文字は、たくさんあります、例を紹介します。<br><br>
-<b>・\self[X]=セルフ変数X</b><br>
-<b>・\s[XXX]=文字列変数XXX</b>　など<br>
-<br>これらは、ウディタのヘルプの中にある「変数呼出値/特殊文字一覧」<br>でいつでも確認できます。これらを応用してゲーム作りがんばってください！！<br>
- 
+	[Side Note]<BR>
+What's this "\self[0]" thing?!<br>
+This is called a special character — a character that can be used in text and other places within WOLF RPG Editor.<br>
+That's why we used a special character to display the number of times talked in this tutorial.<br>
+There are many special characters. Here are some examples:<br><br>
+<b>・\self[X] = Self Variable X</b><br>
+<b>・\s[XXX] = String Variable XXX</b>　etc.<br>
+<br>These can be looked up at any time in the WOLF RPG Editor help under "Variable Call Values / Special Character List".<br>
+Use these to enhance your game creation!<br>
+
 </TD></TR></TBODY></TABLE><HR>
-<P>＜執筆者：<A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">ウディタ公式ガイド執筆コミュ。</A>＞<br>
+<P><Author: <A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">WOLF RPG Editor Official Guide Writing Community</A>><br>
 	<ul>
-		<li>のと</li>
-		<li>真波</li>
+		<li>Noto</li>
+		<li>Manami</li>
 	</ul>
-</P><HR><A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A><P><BR></P></BODY></HTML>
+</P><HR><A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A><P><BR></P></BODY></HTML>

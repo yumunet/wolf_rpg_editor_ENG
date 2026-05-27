@@ -1,65 +1,64 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>一度開いたら空きっぱなしの宝箱</TITLE>
+<TITLE>A treasure chest that stays open once opened</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 
 <HR>
-	<H2>【一度開いたら空きっぱなしの宝箱】</H2>
+	<H2>【A treasure chest that stays open once opened】</H2>
 <HR>
 
 	<P>
-		【目標】<BR>
-		　サンプルゲーム内の「サンプルマップA」内に、一度開いたら開きっぱなしの宝箱を作ります。<br>
-		　具体的な目標は下記。<br>
+		[Goal]<BR>
+		　Inside "Sample Map A" in the sample game, create a treasure chest that stays open once opened.<br>
+		　The specific goals are listed below.<br>
 		<br>
-<b>		　　・ 調べるとアイテムを入手できるようにする<br>
-		　　・ 入手後、グラフィックが「開いた宝箱」にかわるようにする<br>
-		　　・ その後調べても「空っぽだ」と表示されるようにする（アイテムを何度でも入手できるのを防ぐ）<br>
-</b>		<br>　　
+<b>		　　・ Examining it lets you obtain an item<br>
+		　　・ After obtaining it, the graphic changes to "open treasure chest"<br>
+		　　・ Examining it afterwards displays "It's empty." (prevents obtaining the item repeatedly)<br>
+</b>		<br>
 		<img src="image/EV_006_1.jpg" border="1" width="320" height="251">
 		→
 		<img src="image/EV_006_2.jpg" border="1" width="320" height="251">
 		<br>
-		　こんな感じ。<br>
+		　Like this.<br>
 		<br>
-		　少し複雑ですが、必須の技術ですので覚えてしまいましょう。<br>
+		　It is a bit complex, but it is an essential technique, so let's learn it.<br>
 	</P>
-	
+
 <HR>
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【1】<BR>
-			　まずはイベントを用意しましょう。<br><br>
-			　・マップ選択<IMG src="image/icon_mapselector.png" width="22" height="20" border="0">で「<B>サンプルマップA</B>」に切り替えます。<BR><br>
-			　１．適当な場所にイベントを新しく作成して下さい<br>
+			[1]<BR>
+			　First, prepare the event.<br><br>
+			　・Use the Map Selector<IMG src="image/icon_mapselector.png" width="22" height="20" border="0"> to switch to "<B>Sample Map A</B>".<BR><br>
+			　1. Create a new event at a suitable location.<br>
 			　<br>
-			　２．グラフィックに「閉じた宝箱」を設定します
+			　2. Set the graphic to "closed treasure chest".<br>
 			　<br>
 			<BR>
-			　→ 分からないときは<br>
-              　　　<B><A href="EV_001.html" target="B">◆決定キーで起動するイベント</A></B>の【1】～【4】を参考に。<BR>
+			　→ If you are unsure,<br>
+              　　　refer to steps [1]～[4] of <B><A href="EV_001.html" target="B">◆ Event launched by Confirm key</A></B>.<BR>
 		</TD>
 		<TD nowrap>
 			<img src="image/EV_006_3.jpg" border="1" width="320" height="262">
 		</TD>
 	</TR></TBODY></TABLE>
-	
+
 <HR>
-	
+
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【2】<BR>
-			　続いて、イベントの中身を作っていきます。<br>
+			[2]<BR>
+			　Next, create the event contents.<br>
 			　<br>
-			　<B>イベントウィンドウ</B>の右下にある<BR>
-			　「<B>■コマンドウィンドウ表示■</B>」を<BR>
-			　クリックしてください。
+			　Click "<B>■ Show Command Window ■</B>"<br>
+			　at the bottom right of the <B>Event window</B>.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="image/window_evbase2.jpg" width="198" height="60" border="1">
@@ -70,20 +69,20 @@
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【3】<BR>
-			　「<B>イベントコマンドの挿入</B>」ウィンドウが出てきたと思います。<BR>
-			  アイテムを入手する処理を作っていきましょう。<br>
+			[3]<BR>
+			　The "<B>Insert Event Command</B>" window should appear.<br>
+			  Let's create the process for obtaining an item.<br>
 			　<br>
-			　１．上部のタブから「<b>その他２</b>」を見つけてクリックします。<br><br>
-			　２．丸で囲まれた「<b>イベントの挿入</b>」が選ばれているか、確認します。<br>
-			　　　文字の左の白丸に黒丸がついていれば、選択されています。<br>
-			　　　　※ もし、選ばれてなかったらクリックして選択して下さい。<br><br>
-			　３．四角で囲まれた場所をクリックすると、<br>
-			　　　選ぶことができるコモンイベントのリストが表示されます。<br>
-			　　　今回はアイテム入手のイベントなので、<br>
-			　　　「<b>コモン0：○アイテム増減</b>」を選択しましょう。<br>
+			　1. Find and click "<b>Other 2</b>" from the top tabs.<br><br>
+			　2. Confirm that the circled "<b>Event Insertion</b>" is selected.<br>
+			　　　If the white circle to the left of the text has a black dot in it, it is selected.<br>
+			　　　　※ If it is not selected, click it to select it.<br><br>
+			　3. Clicking the square-enclosed area will display a list of<br>
+			　　　Common Events you can choose from.<br>
+			　　　Since this is an item-obtaining event,<br>
+			　　　select "<b>Common 0: ○ Item Increase/Decrease</b>".<br>
 			　<br>
-	　
+
 		</td>
 		<TD nowrap>
 			<img src="image/EV_006_4.jpg" border="1" width="320" height="262">
@@ -94,45 +93,43 @@
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【4】<BR>
-			　続いて、コモンイベントの詳細を設定していきます。<br>
-			　<b>コモンEv入力（数値）</b>という欄をいじります。<br>
-			　説明に従って入力していきましょう。<br>
-			　この欄の説明はコモンイベントごとにさまざまです。<br>
+			[4]<BR>
+			　Next, configure the Common Event details.<br>
+			　Edit the "<b>Common Ev Input (value)</b>" area.<br>
+			　Follow the descriptions to enter values.<br>
+			　The description in this area varies by Common Event.<br>
 			　<br>
-			　１．「<b>アイテム番号</b>」では<br>
-			　　　<b>入手するアイテムを選択</b>します。<br>
-			　　　今回は「<b>薬ビン</b>」を選んでおきます。<br>
-			　　　　※　末尾の［ユーザー２］という表記は<br>
-			　　　　　　　気にする必要ありません<br>
+			　1. In "<b>Item Number</b>",<br>
+			　　　<b>select the item to obtain</b>.<br>
+			　　　This time, select "<b>Medicine Bottle</b>".<br>
+			　　　　※　The notation "[User 2]" at the end<br>
+			　　　　　　　can be ignored.<br>
 			　<br>
-			　２．「<b>増減数</b>」は１のアイテムを<br>
-			　　　<b>いくつ増やすか・減らすかを設定</b>します。<br>
-			　　　マイナスの数値を設定すれば<br>
-			　　　アイテムを減らすこともできますが、<br>
-			　　　ここでは当然、増やします。<br>
-			　　　［<b>1</b>］を設定しておきましょう。<br>
+			　2. "<b>Increase/Decrease Amount</b>" sets<br>
+			　　　<b>how many of item 1 to increase or decrease</b>.<br>
+			　　　Setting a negative value will decrease<br>
+			　　　the item count,<br>
+			　　　but here we naturally want to increase it.<br>
+			　　　Set it to <b>[1]</b>.<br>
 			　<br>
-			　３．次の「<b>入手メッセージ</b>」ですが、これは<br>
-			　　　「「○○」を○個手に入れた。」という<br>
-			　　　<b>メッセージを表示するかどうか</b>、を<br>
-			　　　設定する欄です。<br>
-			　　　ここで表示せず、後ほど「文章の表示」で<br>
-			　　　表示することもできますが、<br>
-			　　　どうせなので使いましょう。<br>
-			　　　リストからアイテムの数え方を選択します。<br>
-			　　　オーソドックスに○個としましょう。<br>
-			　　　「<b>1：あり［単位：～個］</b>」を選択します。<br>
+			　3. "<b>Obtain Message</b>" is the field that sets<br>
+			　　　<b>whether to display a message</b> saying<br>
+			　　　"Obtained X [item name].".<br>
+			　　　You could skip it here and display it later with "Show Message",<br>
+			　　　but let's use it since it's available.<br>
+			　　　Select the counting unit from the list.<br>
+			　　　Let's go with the standard "X item(s)".<br>
+			　　　Select "<b>1: Yes [unit: ~items]</b>".<br>
 			　<br>
-			　４．最後に矢印の「<b>入力</b>」ボタンを押します。<br>
+			　4. Finally, press the arrow "<b>input</b>" button.<br>
 			　<br><br>
-			　なお、<B>「イベントコマンドの挿入」ウィンドウ</B>は<br>
-			　まだ使いますので閉じないで下さいね。<br>
+			　Note: keep the <B>"Insert Event Command" window</B> open<br>
+			　as we will use it again.<br>
 			　<br>
-			　　　さて、長くなりましたが、これで<br>
-			　　　アイテム「薬ビン」を1つ<br>
-			　　　手に入れる処理が完成しました。<br>
-			　
+			　　　So, after all that, the<br>
+			　　　process to obtain 1 of the item "Medicine Bottle"<br>
+			　　　is now complete.<br>
+
 		</td>
 		<TD nowrap>
 			<img src="image/EV_006_5.jpg" border="1" width="387" height="255">
@@ -143,33 +140,33 @@
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【5】<BR>
-			　<b>変数</b>を扱います。<br>
-			　なんのための処理かは特に考えず<br>
-			　下記の通りに設定しましょう。<br>
-			　※ 後ほど説明いたしますのでご安心を。<br>
+			[5]<BR>
+			　Now handle the <b>variable</b>.<br>
+			　Don't worry about the purpose of this process for now;<br>
+			　just configure it as described below.<br>
+			　※ It will be explained later, so don't worry.<br>
 			　<br>
-			　・まずは表示したままにしておいた<br>
-			　　ウィンドウの上部にあるタブから<br>
-			　　「<b>変数操作</b>」を見つけてクリックします。<br>
+			　・First, from the top tabs of the window<br>
+			　　you kept open,<br>
+			　　find and click "<b>Variable Operation</b>".<br>
 			　　<br>
-			　・右と同じ画面になったはずです。<br>
-			　　これが「変数操作」画面です。<br>
+			　・You should now see the same screen as the one on the right.<br>
+			　　This is the "Variable Operation" screen.<br>
 			　　<br>
-			　・画面の詳しい説明は省きますが、あしからず。<br>
-			　　すべての<b>チェックボックス（白い正方形）に<br>
-			　　チェックがついていないことを確認</b>してください。<br>
+			　・We'll skip the detailed screen description, sorry.<br>
+			　　<b>Confirm that all checkboxes (white squares)<br>
+			　　have no checkmarks</b>.<br>
 			　<br>
-			　・<b>赤いラインを引いた箇所を確認</b>します。<br>
-			　　<b>右の画像と同じになるように</b>設定してください。<br>
+			　・<b>Check the areas highlighted in red</b>.<br>
+			　　<b>Configure them to match the image on the right</b>.<br>
 			　<br>
-			　・できたら右下の入力を押します。<br>
+			　・When done, press "input" at the lower right.<br>
 			　<br><br>
-			　ちなみに、ここで設定したのは<br><br>
-			　「このイベントのセルフ変数0番」に<br>
-			　［1］+［0］した答え（つまり[1]）を<br>
-			　代入するという処理です。<br><br>
-			　
+			　By the way, what was configured here is:<br><br>
+			　"Assign the answer of<br>
+			　[1] + [0] (which is [1])<br>
+			　to this event's Self Variable 0."<br><br>
+
 		</TD>
 		<TD nowrap>
 			<img src="image/EV_006_6.gif" border="1" width="459" height="391">
@@ -181,9 +178,9 @@
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-			【6】<BR>
-			　<B>「イベントコマンドの挿入」ウィンドウ</B>を閉じます。<br>
-			　下の図のようになっていれば成功です。<br>
+			[6]<BR>
+			　Close the <B>"Insert Event Command" window</B>.<br>
+			　If it looks like the figure below, you succeeded.<br>
 			　<br>
 			  　<img src="image/EV_006_7.gif" border="1" width="453" height="98"><br>
 		</td>
@@ -193,27 +190,27 @@
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-		【7】<BR>
-		　さて、ここまでで「<b>アイテムを入手するイベント</b>」が完成しました。<br>
-		　しかし、今の状態では<b>なんどでもアイテムを入手出来てしまいます</b>。<br>
+		[7]<BR>
+		　So far, the "<b>event to obtain an item</b>" is complete.<br>
+		　However, in the current state, <b>you can obtain the item any number of times</b>.<br>
 		　<br>
-		　一度入手したらもう入手できないようにするには、<b>イベントのページの切り替えをします</b>。<br>
+		　To prevent obtaining it more than once, <b>switch the event's page</b>.<br>
 		　<br>
-		　1ページ目にはアイテムを入手する「閉じた宝箱」を、<br>
-		　2ページ目には「からっぽだ」と表示する「開いた宝箱」を設定します。<br>
+		　Page 1 will have the "closed treasure chest" to obtain the item,<br>
+		　and page 2 will have the "open treasure chest" that displays "It's empty.".<br>
 		　<br>
-		　宝箱からアイテムを入手したときに「宝箱を開けた」とわかるように記録しておきます。<br>
-		　その記録が、先程設定した「セルフ変数0」＝[1]+[0]　なのです。<br>
+		　When the item is obtained from the chest, we record that "the chest was opened".<br>
+		　That record is the "Self Variable 0" = [1]+[0] we set earlier.<br>
 		　<br>
-		　2ページ目が現れるのは「セルフ変数0」が[1]のとき、と設定してやることで<br>
-		　イベントは宝箱を調べるまではページ1を、<br>
-		　調べてアイテムを手に入れたあとはページ2の内容を実行するようになります。<br>
+		　By setting page 2 to appear when "Self Variable 0" is [1],<br>
+		　the event will run page 1's content until the chest is examined,<br>
+		　and page 2's content after the item has been obtained.<br>
 		　<br>
-		　少し説明が難しくなってしまい、申し訳ありませんが<br>
-		　理解できなくても構いません。慣れてくればわかるでしょう。<br>
+		　The description became a bit difficult — apologies,<br>
+		　but it is fine if you don't fully understand right now. It will make sense with experience.<br>
 		　<br>
-		　とりあえず、先に進むことにしましょう。<br>
-		　　
+		　Anyway, let's move on.<br>
+
 		</TD>
 		<TD nowrap>
 		</TD>
@@ -226,32 +223,31 @@
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-		【8】<BR>
-		　イベントウィンドウの左上です。<br>
-		　黄色の四角で囲んだ部分に注目してください。<br>
+		[8]<BR>
+		　Look at the upper left of the Event window.<br>
+		　Pay attention to the area enclosed in the yellow box.<br>
 		　<br>
-		　これらはイベントのページを追加・削除したり、<br>
-		　切り替えたりするボタンです。<br>
+		　These are buttons to add, delete, and<br>
+		　switch between event pages.<br>
 		　<br>
-		　それぞれのページは<br>
-		　下の青枠で囲った部分「<b>イベント起動条件</b>」<br>
-		　というものをもっています。<br>
+		　Each page has something called<br>
+		　"<b>Event Trigger Condition</b>",<br>
+		　shown in the area enclosed in the blue box below.<br>
 <br>
-		　この「<b>イベント起動条件</b>」というのは<br>
-		　「<b>存在条件</b>」とか「<b>出現条件</b>」という意味です。<br>
-		　<b>条件を満たしているときにそのページが<br>
-		　存在する（出現する）</b>というものです。<br>
+		　This "<b>Event Trigger Condition</b>" means<br>
+		　"<b>existence condition</b>" or "<b>appearance condition</b>".<br>
+		　<b>When the condition is met, that page<br>
+		　exists (appears)</b>.<br>
 		　<br>
 		　<br>
-		　さて、2ページ目を作ります。<br>
+		　Now, create page 2.<br>
 		　<br>
-		　１．「<b>新規ページ</b>」ボタンをクリックします。<br>
+		　1. Click the "<b>New Page</b>" button.<br>
 		　<br>
-		　２．「<b>ページ2</b>」ボタンをクリックして<br>
-		　　　　ページ2を開きます。<br>
+		　2. Click the "<b>Page 2</b>" button to<br>
+		　　　open page 2.<br>
 
-		　
-		　
+
 		</td>
 		<TD nowrap>
 			<img src="image/EV_006_8.gif" border="1" width="376" height="343">
@@ -263,22 +259,21 @@
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-		【9】<BR>
-		　グラフィックやイベントが設定されていない<br>
-		　新しいページができました。<br>
+		[9]<BR>
+		　A new page with no graphic or event content<br>
+		　has been created.<br>
 		　<br>
-		　<b>2ページ目は「宝箱を開いた後」の状態</b>のイベントです。<br>
-		　グラフィックを「開いた宝箱」に設定します。<br>
+		　<b>Page 2 is the state of "after the chest was opened"</b>.<br>
+		　Set the graphic to "open treasure chest".<br>
 		　<br>
-		　１．四角をダブルクリック<br>
+		　1. Double-click the square.<br>
 		　<br>
-		　２．（タイルセット）を選択<br>
+		　2. Select (Tile Set).<br>
 		　<br>
-		　３．「開いた宝箱」を選択<br>
+		　3. Select "open treasure chest".<br>
 		　<br>
-		　できたら「OK」ボタンを押します<br>
-		　
-		　
+		　Then press the "OK" button.<br>
+
 		</td>
 		<TD nowrap>
 <img src="image/EV_006_9.gif" border="1" width="320" height="207">
@@ -289,24 +284,23 @@
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-		【10】<BR>
-		　「<b>イベント起動条件</b>」を設定しましょう。<br>
-		　紫の四角で囲んだ箇所に注目してください。<br>
+		[10]<BR>
+		　Set the "<b>Event Trigger Condition</b>".<br>
+		　Pay attention to the area enclosed in the purple box.<br>
 		　<br>
-		　１．<b>一番左のチェックボックス</b>をクリックして<br>
-		　　　チェックをつけます。<br>
+		　1. Click the <b>leftmost checkbox</b> to<br>
+		　　　check it.<br>
 		　<br>
-		　２．「<b>Self</b>」ボタンをクリックして選択。<br>
+		　2. Click the "<b>Self</b>" button to select it.<br>
 		　<br>
-		　３．「<b>セルフ変数0</b>」を選びます。<br>
+		　3. Select "<b>Self Variable 0</b>".<br>
 		　<br>
-		　４．数値［<b>1</b>］を入力します。<br>
-		　　　右の▲をクリックして設定してもOK。<br>
+		　4. Enter the value <b>[1]</b>.<br>
+		　　　You can also click the ▲ on the right to set it.<br>
 		　<br>
-		　５．「<b>と同じ</b>」を選びます。<br>
-		　　　別のにしてしまうと意味が変わるので注意。<br>
-		　　　　　
-		　<br>
+		　5. Select "<b>Is equal to</b>".<br>
+		　　　Choosing something else will change the meaning, so be careful.<br>
+
 		</td>
 		<TD nowrap>
 			<img src="image/EV_006_10.gif" border="1" width="380" height="210">
@@ -317,21 +311,21 @@
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-		【11】<BR>
-		　イベント内容を設定していきます。<br>
+		[11]<BR>
+		　Set the event content.<br>
 		　<br>
-		　・「<B>■コマンドウィンドウ表示■</B>」をクリック。<br>
+		　・Click "<B>■ Show Command Window ■</B>".<br>
 		　<br>
-		　・上部のタブから「<b>文章の表示</b>」を選びます。<br>
+		　・Select "<b>Show Message</b>" from the top tabs.<br>
 		　<br>
-		　・四角で囲んだ入力欄に<br>
-		　　「宝箱は空っぽだ。」と入力します。<br>
+		　・In the input field enclosed in the box,<br>
+		　　enter "The treasure chest is empty."<br>
 		　<br>
-		　・「<b>入力</b>」ボタンをクリックします。<br>
+		　・Click the "<b>input</b>" button.<br>
 		　<br>
 		　<br>
-		　ページ2に設定するイベントはこれだけです。<br>
-		　
+		　The event content for page 2 is just this.<br>
+
 		</td>
 		<TD nowrap>
 <img src="image/EV_006_11.gif" border="1" width="320" height="289">
@@ -342,53 +336,53 @@
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-		【12】<BR>
-		　まとめましょう。<br>
+		[12]<BR>
+		　Let's summarize.<br>
 			<table border="0">
 				<tr valign="top">
 					<td>
-					<b>ページ1：</b><br>
-					　グラフィック<br>
-					　　「閉まっている宝箱」<br>
-					　イベント内容<br>
-					　　・アイテムを入手する<br>
-					　　・<b>「セルフ変数0」を[1]にする</b><br>
-					　イベント起動条件<br>
-					　　（指定なし）<br>
+					<b>Page 1:</b><br>
+					　Graphic<br>
+					　　"Closed treasure chest"<br>
+					　Event content<br>
+					　　・Obtain an item<br>
+					　　・<b>Set "Self Variable 0" to [1]</b><br>
+					　Event Trigger Condition<br>
+					　　（None specified）<br>
 					</td>
 					<td>
-					　<b>ページ2：</b><br>
-					　グラフィック<br>
-					　　「開いている宝箱」<br>
-					　イベント内容<br>
-					　　・「空っぽだ」と表示する<br><br>
-					　イベント起動条件<br>
-					　　<b>「セルフ変数0」が[1]と同じ</b><br>
+					　<b>Page 2:</b><br>
+					　Graphic<br>
+					　　"Open treasure chest"<br>
+					　Event content<br>
+					　　・Display "It's empty."<br><br>
+					　Event Trigger Condition<br>
+					　　<b>"Self Variable 0" equals [1]</b><br>
 					</td>
 				</tr>
 			</table>
 		　<br><br>
-		どんなイベントなのか解説しますと……<br>
+		Let me explain how this event works...<br>
 		<br>
-		　ゲーム開始時、セルフ変数はすべて［0］です。<br>
-		　ページ2はイベント起動条件を満たしていないので出現しません。<br>
-		　よって、条件が指定されていないページ1がこのイベントとして現れます。<br>
+		　At the start of the game, all Self Variables are [0].<br>
+		　Page 2's Trigger Condition is not met, so it does not appear.<br>
+		　Therefore, page 1 — which has no condition specified — appears as this event.<br>
 		　<br>
-		　ページ1のイベントを実行すると、アイテムを入手して<br>
-		　「セルフ変数0」が［1］になります。<br><br>
-		　すると、ページ2の起動条件が満たされるので<br>
-		　これ以降このイベントは「ページ2」で指定したイベントになります。<br>
+		　Running page 1's event obtains the item and<br>
+		　sets "Self Variable 0" to [1].<br><br>
+		　Then, page 2's Trigger Condition is met,<br>
+		　so from that point on this event will run page 2.<br>
 		　<br>
 		　<br>
-		※ちなみに、<b>ページは番号が大きいものが優先されます</b>。<br>
-		　　条件を満たしているページが複数ある場合、<br>
-		　　一番後のイベントが出現するということです。<br>
+		※ Note that <b>pages with higher numbers take priority</b>.<br>
+		　　If multiple pages have their conditions met,<br>
+		　　the last page appears.<br>
 		　<br>
-		　　今回のイベントも、ページ1とページ2はどちらも条件を満たしています。<br>
-		　　（条件なし＝常に条件を満たしている）<br>
+		　　In this event too, both page 1 and page 2 have their conditions met.<br>
+		　　(No condition = condition is always met.)<br>
 		　<br>
-		　　なんとなく気持ちが悪い場合はページ1に条件を設定してもかまいません。<br>
-		　　例：「セルフ変数0」が［0］と同じ<br>
+		　　If that feels uncomfortable, it is fine to add a condition to page 1 as well.<br>
+		　　Example: "Self Variable 0" equals [0]<br>
 		</td>
 		<TD nowrap>
 <img src="image/EV_006_12.gif" border="1" width="416" height="378">
@@ -397,63 +391,62 @@
 <HR>
 
 	<TABLE border="0"><TBODY><TR><TD nowrap>
-		【13】<BR>
-		　さあ、マップをセーブして、<BR>
-		　作ったイベントをテストしてみましょう。<BR>
+		[13]<BR>
+		　Now save the map and<BR>
+		　test the event you created.<BR>
 		<BR>
-		　「<B>セーブ（マップ全体）</B>」をクリックした後、<BR>
-		　「<B>テストプレイ</B>」をクリックしてください。</TD>
+		　After clicking "<B>Save (Entire Map)</B>",<BR>
+		　click "<B>Test Play</B>".</TD>
 		<TD nowrap>
 			<IMG src="image/window_evbase4.png" width="247" height="100" border="1">
 		</TD>
 	</TR></TBODY></TABLE>
-	
+
 <HR>
 
 	<TABLE border="0"><TBODY><TR><TD nowrap>
-	【14】　<BR>
-	
-		１：<br>
-		　まずはアイテムが空っぽか確認しておきます。<br>
-		　キャンセルキー（Escキー/BackSpaceキー/[X]キー）を<br>
-		　押すと、メニュー画面が表示されます。<br>
+	[14]　<BR>
+
+		1:<br>
+		　First, confirm that your items are empty.<br>
+		　Press the Cancel key (Esc / Backspace / [X])<br>
+		　to display the menu screen.<br>
 		　<br>
-		　アイテムを選択して、<br>
-		　何も持っていないことを確認します。<br>
+		　Select items and<br>
+		　confirm that you are not holding anything.<br>
 		　<br>
-		２：<br>
-		　作成したイベントに近づいて<br>
-		　決定キー（Enterキー/スペースキー/[Z]キー）を<br>
-		　押してみましょう。<br>
+		2:<br>
+		　Approach the created event and<br>
+		　press the Confirm key (Enter / Space / [Z]).<br>
 		<br>
-		　「「薬ビン」を1個手に入れた。」と<br>
-		　表示されましたか？<br>
+		　Did "Obtained 1 'Medicine Bottle'."<br>
+		　display?<br>
 		　<br>
-		　さらに、メッセージが終わると、<br>
-		　宝箱のグラフィックが<br>
-		　「開いた宝箱」にかわったはずです。<br>
+		　Also, after the message ends,<br>
+		　the treasure chest graphic<br>
+		　should have changed to "open treasure chest".<br>
 		　<br>
-		３：<br>
-		　もう一度、決定キーを押して<br>
-		　イベントを起動してみましょう。<br>
+		3:<br>
+		　Press the Confirm key again to<br>
+		　trigger the event.<br>
 		　<br>
-		　「宝箱は空っぽだ。」と表示されましたか？<br>
+		　Did "The treasure chest is empty." display?<br>
 		　<br>
-		４：<br>
-		　ちゃんとアイテムを入手できたか確認します。<br>
-		　キャンセルキーでメニューを開き、<br>
-		　アイテム欄を表示します。<br>
+		4:<br>
+		　Confirm that you obtained the item correctly.<br>
+		　Open the menu with the Cancel key and<br>
+		　display the items list.<br>
 		　<br>
-		　図のように「薬ビン」が1つ、追加されてますか？<br>
+		　Is there 1 "Medicine Bottle" added, as shown in the figure?<br>
 		<br>
 		<br>
-		もしなんどもアイテムが入手できてしまう場合は<br>
-		ページの切り替えがうまくいっていません。<br>
-		このページの画像と見比べて間違いを探しましょう。<br>
-		
+		If you can obtain the item multiple times,<br>
+		the page switching is not working correctly.<br>
+		Compare with the images on this page and find the mistake.<br>
+
 		<br>
-		<b>これで宝箱が完成しました。</b><br>
-		大変、お疲れ様でした。<br>
+		<b>The treasure chest is now complete.</b><br>
+		Excellent work!<br>
 		　</TD>
 	<TD nowrap>
 		<img src="image/EV_006_13.jpg" border="1" width="195" height="613">
@@ -468,26 +461,24 @@
 
 	<TABLE border="0"><TBODY><TR>
 		<TD nowrap>
-<b>		【補講】セルフ変数ってなあに？<br><br>
-</b>		　　セルフ変数とは、イベントが持っている変数のことです。<br>
-		　　基本的には、そのイベントの状態を記録するのに使います。<br>
-		　　（「開いている」とか「○回話した」とか）<br>
+<b>		【Supplementary Lesson】 What are Self Variables?<br><br>
+</b>		　　Self Variables are variables that an event possesses.<br>
+		　　They are basically used to record the state of that event.<br>
+		　　(Such as "is it open?" or "talked X times")<br>
 		　　<br>
-		　　今回の宝箱のように「開けたかどうか」というフラグとして使うこともできますし、<br>
-		　　そのイベントに何回話しかけたか、ということを記録しておくこともできます。<br>
+		　　Like the treasure chest in this example, you can use them as a flag for "whether it was opened",<br>
+		　　or you can record how many times the player has talked to that event.<br>
 <br>
-		　　すべてのイベントがそれぞれ10個ずつ持っています。<br>
-		　　他のイベントから参照したり数値をいじったりすることもできますが、<br>
-		　　複雑になるのであまりお勧めはしません。<br>
+		　　Every event has 10 of them each.<br>
+		　　You can reference them from other events or modify their values,<br>
+		　　but it gets complex so it is not generally recommended.<br>
 		　　<br>
-		　　共通で使う変数は「<b>通常変数</b>」を、<br>
-		　　そのイベントだけで使う変数は「<b>セルフ変数</b>」を使うことを推奨します。<br>
+		　　It is recommended to use "<b>Normal Variables</b>" for variables shared between events,<br>
+		　　and "<b>Self Variables</b>" for variables used only by that event.<br>
 		　　<br>
-		　　慣れれば非常に便利な変数です。<br>
-		　　いろいろいじって試して、ぜひ覚えましょう。<br>
-　　
-		　　
-		　　
+		　　These become very convenient variables once you are used to them.<br>
+		　　Try various things and learn them well.<br>
+
 		</td>
 	</TR></TBODY></TABLE>
 
@@ -496,9 +487,9 @@
 <br><br><br>
 
 <HR>
-<P>＜執筆者：<A href="http://blog.livedoor.jp/mikenekonyanko/" target="_blank">ミケ</A>＞　</P>
+<P><Author: <A href="http://blog.livedoor.jp/mikenekonyanko/" target="_blank">Mike</A>>　</P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

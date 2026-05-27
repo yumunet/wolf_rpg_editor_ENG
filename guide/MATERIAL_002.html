@@ -1,60 +1,60 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>違うマップチップ素材をゲームで使いたい</TITLE>
+<TITLE>Use a Different Map Chip Asset in Your Game</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【違うマップチップ素材をゲームで使いたい】</H2>
+<H2>【Use a Different Map Chip Asset in Your Game】</H2>
 <HR>
-<P>【目標】 <BR>
+<P>[Goal] <BR>
 <TABLE border="0">
 <TBODY>
 <TR>
 <TD nowrap>
-デフォルトで使用されているマップチップ素材とは異なる素材を使用する方法を紹介します。<br>
-今回紹介するのは、講座用にベースチップ、オートタイルを用意して、それを導入し、使えるようにする手順です。<br>
-新しくマップを作るときに、登録したマップチップが使えるようになれば成功です。<br>
-ちなみに、今回の素材を使いますと、右にあるようなマップが作成できます。<br>
-さらに、タイル設定ファイルについても説明いたします。<br>
+This article introduces how to use map chip assets different from the default ones.<br>
+This tutorial covers how to prepare base chips and auto-tiles, import them, and make them usable.<br>
+Success means the registered map chips can be used when creating new maps.<br>
+By the way, using the assets from this tutorial you can create a map like the one shown on the right.<br>
+Additionally, this article also covers tileset files.<br>
 </TD>
 <TD nowrap><img src="image/MATERIAL_002_1.png" width="400" height="300"><BR>
-この記事の作成者はかなりの凝り性です(笑)。<br>ここに使用されているテクニックについては、<br>「<a href="MAP_005.html">◆オートタイルの境界を自由に描きたい</a>」を参照下さい。</TD>
-<!--この例は20×15のサイズのマップです。またレイヤー3は使っておりません。-->
+The creator of this article is quite a perfectionist (lol).<br>For the techniques used here, see<br>"<a href="MAP_005.html">◆Draw Auto-Tile Borders Freely</a>".</TD>
+<!--This example uses a 20×15 size map. Layer 3 is not used.-->
 </TR>
 
 </TBODY>
 </TABLE>
 </P><HR><P>
-【手順】
+【Steps】
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【1】　マップチップ素材をまずは用意する<br>
-　こちらより、必要になるチップ類をダウンロードしてください。<br>
-　今回入手したチップは「MapChip」フォルダに入れると登録する際に便利です。<br>
-　(なお、Sample.tileはおき場所は問いません、管理しやすいところにどうぞ）<br><br>
-<!--ただし、ゲームデータとして使われることはないので、使った後はDataフォルダから移動させても構いません、
-もっとも、そこまで容量は大きくはないですが。-->
-　なお、今回の素材は、解像度が320×240に対応した素材です。<br>
-　「ゲームの基本設定」にて、解像度を設定しておきましょう。<br>
+<TD nowrap>[1]　First, prepare the map chip assets<br>
+　Download the necessary chip files from here.<br>
+　Placing the downloaded chips in the "MapChip" folder makes registration more convenient.<br>
+　(Note: The placement of Sample.tile is flexible — put it wherever is easy for you to manage.)<br><br>
+<!--However, since this data is not used as game data, you can move it out of the Data folder after use.
+Though it doesn't take up that much space.-->
+　Note that the assets in this tutorial are designed for a resolution of 320×240.<br>
+　Set the resolution in "Game Basic Settings".<br>
 </TD>
 <TD nowrap><img src="image/Base.png" width="128" height="32" border="0">  <img src="image/Carpet.png" width="16" height="80" border="0">
   <img src="image/Grass.png" width="16" height="80" border="0">  <img src="image/Water.png" width="64" height="80" border="0"><BR>
-お使いのブラウザの機能で「画像を保存」してください。<br>なお、タイルセットは<a href="image/Sample.tile">こちら</a>です。<br>「リンク先のファイルを保存」してください。</TD>
+Use your browser's "Save Image" function to save them.<br>The tileset file is available <a href="image/Sample.tile">here</a>.<br>Please use "Save Link As".</TD>
 </TR>
 </TBODY>
 </TABLE>
 <HR>
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【2】　登録するために<br>
-　<img src="image/icon_tileset.png" width="22" height="20" border="0">のアイコンをクリックし、マップチップ設定画面を開きます。<br>
-　その後、空いている番号をクリックします。<br>
+<TD nowrap>[2]　To register<br>
+　Click the <img src="image/icon_tileset.png" width="22" height="20" border="0"> icon to open the map chip settings screen.<br>
+　Then click on an empty number slot.<br>
 </TD>
 <TD nowrap><img src="image/MATERIAL_002_2.png" width="312" height="287"></TD>
 </TR>
@@ -64,11 +64,11 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【3】　名前を登録しましょう。<br>
-　名前の欄に書き込まれた文字が、チップセットの識別の為に使われます。<br>
-　ここでは「テスト」という名前で登録してみましょう。<br>
+<TD nowrap>[3]　Register a name.<br>
+　The text entered in the name field is used to identify the chip set.<br>
+　Here, let's register it with the name "test".<br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_002_3.png" width="312" height="287"><br>ここです。</TD>
+<TD nowrap><img src="image/MATERIAL_002_3.png" width="312" height="287"><br>Right here.</TD>
 </TR>
 </TBODY>
 </TABLE>
@@ -76,14 +76,14 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【4】　登録したいベースチップを登録しましょう。<br>
-　「基本タイルセットファイル」の欄に、ベースチップを登録します。<br>
-　ここでは「Base.png」を登録しましょう。<br>
-　空欄の隣の「読込」ボタンを押すと、ダイアログが出現しますので、<br>
-　そこから使いたいマップチップを選択します。<br>
-　右の画面に選んだマップチップが表示されればOKです。<br>
+<TD nowrap>[4]　Register the base chip you want to register.<br>
+　Register the base chip in the "Base Tileset File" field.<br>
+　Here, let's register "Base.png".<br>
+　Press the "Load" button next to the blank field, and a dialog will appear,<br>
+　from which you can select the map chip you want to use.<br>
+　If the selected map chip is displayed on the right side of the screen, you're done.<br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_002_4.png" width="312" height="287"><br>Base.pngの中身が右側に出てきましたか？</TD>
+<TD nowrap><img src="image/MATERIAL_002_4.png" width="312" height="287"><br>Did the contents of Base.png appear on the right?</TD>
 </TR>
 </TBODY>
 </TABLE>
@@ -91,13 +91,13 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【5】　オートタイルを登録しましょう。<br>
-　ここでは、「Carpet.png」「Grass.png」「Water.png」を登録しましょう。<br>
-　「オートタイルファイル」の下にある欄に使用したいオートタイルを登録します。<br>
-　登録方法はベースチップと同じです。<br>
-　右の画面の上の方に、選択したオートタイルの一部が表示されればOKです。<br>
+<TD nowrap>[5]　Register the auto-tiles.<br>
+　Here, register "Carpet.png", "Grass.png", and "Water.png".<br>
+　Register the auto-tiles you want to use in the fields below "Auto-tile File".<br>
+　The registration method is the same as for base chips.<br>
+　If part of the selected auto-tile appears at the top of the right side of the screen, you're done.<br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_002_5.png" width="312" height="287"><br>選んだオートタイルが右側に出てきましたか？</TD>
+<TD nowrap><img src="image/MATERIAL_002_5.png" width="312" height="287"><br>Did the selected auto-tile appear on the right?</TD>
 </TR>
 </TBODY>
 </TABLE>
@@ -105,12 +105,12 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>※通行設定も忘れんと<br>
-　通行設定をきっちりしないと、実際のゲームで思った動作をしません。<br>
-　通行設定のやり方や詳細については、「<a href="MATERIAL_001.html">◆マップチップの通行設定を変更したい</a>」を参照してください。<br>
-　今回は、この画面にあるように設定すればOKです。<br>
+<TD nowrap>※Don't forget passability settings<br>
+　Without proper passability settings, the game won't behave as expected.<br>
+　For details and how to configure passability settings, see "<a href="MATERIAL_001.html">◆Change Map Chip Passability Settings</a>".<br>
+　For this tutorial, set them as shown in the screen here and you'll be fine.<br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_002_6.png" width="312" height="287"><br>通行設定はこんな風に<br>なお、通行方向などは変更なしでOKです</TD>
+<TD nowrap><img src="image/MATERIAL_002_6.png" width="312" height="287"><br>Configure passability like this.<br>Direction settings can be left as-is.</TD>
 </TR>
 </TBODY>
 </TABLE>
@@ -118,41 +118,41 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【6】　登録したマップチップは使えますか？<br>
-　登録が済んだら、実際に使ってみましょう。<br>
+<TD nowrap>[6]　Can you use the registered map chips?<br>
+　Once registration is complete, let's try using them.<br>
 　<br>
-　新しくマップを作成し(<img src="image/icon_newmap.png" width="22" height="20" border="0">のアイコンをクリック)、<br>
-　出てきたダイアログの「タイルセット」のリストを開いてみます。<br>
-　ここで先ほど登録したチップの名前「テスト」が現れていれば成功です。<br>
-　それを選択し、OKをクリックしてください。<br>
-　これで、登録した「テスト」のチップを使ってマップを描くことができます。<br>
+　Create a new map (click the <img src="image/icon_newmap.png" width="22" height="20" border="0"> icon),<br>
+　and open the "Tileset" list from the dialog that appears.<br>
+　If the name "test" you registered earlier appears here, you've succeeded.<br>
+　Select it and click OK.<br>
+　You can now draw maps using the registered "test" chips.<br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_002_7.png" width="199" height="300"> <img src="image/MATERIAL_002_8.png" width="300" height="250"><br>こうなればOK!右のように使えるようになります。</TD>
+<TD nowrap><img src="image/MATERIAL_002_7.png" width="199" height="300"> <img src="image/MATERIAL_002_8.png" width="300" height="250"><br>If it looks like this, you're done! You can now use them as shown on the right.</TD>
 </TR>
 </TBODY>
 </TABLE>
 </P><HR><P>
-【余談】
+[Side Note]
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【A】　タイル設定ファイル(.tileファイル)だと全部一発で済みまっせ！<br>
-　ウディタでは、マップチップ設定で設定した内容を、タイル設定ファイルとして出力することができます。<br>
-　そこには、名前、ベースチップ、オートタイル、通行設定などが登録されており、<br>
-　そのファイルを読み込みますと、これらの項目が自動で読み込まれます。<br>
-　通行設定については、「<a href="MATERIAL_001.html">◆マップチップの通行設定を変更したい</a>」を参照してください。<br>
-　ただし、これを読み込むにあたり、使用するチップは、<u>予め「MapChip」フォルダに置きましょう</u>。<br>
+<TD nowrap>【A】　Tileset files (.tile files) let you do everything at once!<br>
+　In WOLF RPG Editor, the settings configured in the map chip settings can be exported as a tileset file.<br>
+　It contains the name, base chips, auto-tiles, passability settings, and more,<br>
+　and loading the file will automatically load all of these items.<br>
+　For passability settings, see "<a href="MATERIAL_001.html">◆Change Map Chip Passability Settings</a>".<br>
+　However, when loading this file, the chips used must be <u>placed in the "MapChip" folder in advance</u>.<br>
 　<br>
-　今回は「Sample.tile」を読み込みましょう。<br>
-　画面上のタイルセット「読込」をクリックし、上記のタイル設定ファイルを選択しましょう。<br>
-　こうすると、名前、ベースチップ、オートタイル、通行設定などが、<b>一気に</b>読み込まれたことが分かります。<br>
+　This time, let's load "Sample.tile".<br>
+　Click "Load" for the tileset on screen and select the tileset file above.<br>
+　This will load the name, base chips, auto-tiles, passability settings, etc. <b>all at once</b>.<br>
 　<br>
-　なお、タイルセット「単体保存」をクリックすると、今選択されているマップの設定情報<br>
-　（名前、ベースチップ、オートタイル、通行設定など）を、タイル設定ファイルとして<br>
-　.tileファイルに出力することができます。<br>
+　Also, clicking "Save (Single)" for the tileset exports the settings information<br>
+　(name, base chips, auto-tiles, passability settings, etc.) of the currently selected map<br>
+　as a tileset file in .tile format.<br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_002_9.png" width="312" height="287"><br>ここで読み込めます。</TD>
+<TD nowrap><img src="image/MATERIAL_002_9.png" width="312" height="287"><br>You can load it here.</TD>
 </TR>
 </TBODY>
 </TABLE>
@@ -160,41 +160,41 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【B】　オートタイルの読み込み個数<br>
-　ウディタがVer.2以上なら、最大で15個のオートタイルを登録できます。<br>
-　但し、登録欄は一度に8つ分までしか表示されません。<br>
-　8番目以降のオートタイルを登録したいのならば、「オートタイルファイル」の隣にある「2」をクリックします。<br>
-　すると登録できるオートタイルが8～15に切り替わります(1～7に戻すときは「1」をクリック)。<br>
+<TD nowrap>【B】　Number of auto-tiles that can be loaded<br>
+　If WOLF RPG Editor is Ver.2 or later, you can register up to 15 auto-tiles.<br>
+　However, only 8 registration slots are displayed at a time.<br>
+　To register auto-tiles from slot 8 onward, click "2" next to "Auto-tile File".<br>
+　This switches the available auto-tile slots to 8–15 (click "1" to switch back to 1–7).<br>
 　<br>
-　<b>＊注意！</b><br>
-　<u>0番には登録できません</u>。(×がついています)<br>
-　このチップはチップ消去(いわゆる消しゴム)のために使われるからです。<br>
+　<b>※Note!</b><br>
+　<u>Slot 0 cannot be registered</u>. (It is marked with ×.)<br>
+　This chip is reserved for chip erasing (the eraser tool).<br>
 </TD>
-<TD nowrap><img src="image/MATERIAL_002_10.png" width="312" height="287"><br>ここです。</TD>
+<TD nowrap><img src="image/MATERIAL_002_10.png" width="312" height="287"><br>Right here.</TD>
 </TR>
 </TBODY>
 </TABLE>
 <HR>
 </P>
 <HR>
-<P>＜＜執筆者：<A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">ウディタ公式ガイド執筆コミュ。</A>＞＞<BR>
+<P>＜<Author: <A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">WOLF RPG Editor Official Guide Writing Community.</A>>＞<BR>
 <UL>
-	<LI>設計書作成：Hdk103-Arch、ユノ</LI>
-	<LI>トピック執筆：Hdk103-Arch</LI>
+	<LI>Specification creation: Hdk103-Arch, Yuno</LI>
+	<LI>Topic writing: Hdk103-Arch</LI>
 </UL>
-＜素材提供者＞<br>
+＜Asset providers＞<br>
 <UL>
-	<li>Base.png：ユノ</li>
-	<li>Carpet.png：ユノ</li>
-	<li>Grass.png：ユノ</li>
-	<li>Water.png：ユノ</li>
-	<li>Sample.tile：ユノ</li>
+	<li>Base.png: Yuno</li>
+	<li>Carpet.png: Yuno</li>
+	<li>Grass.png: Yuno</li>
+	<li>Water.png: Yuno</li>
+	<li>Sample.tile: Yuno</li>
 </UL>
-本トピックで使用されている素材に関しましては、<br>
-ウディタ素材スレッドの利用規約に準じて使用することができます。<br>
+The assets used in this topic may be used in accordance with the<br>
+WOLF RPG Editor asset thread terms of use.<br>
 </P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

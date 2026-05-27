@@ -1,99 +1,98 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
 
-<TITLE>プレイヤーが触れると起動するイベント</TITLE>
+<TITLE>Event launched when the player touches it</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD>
 <BODY>
 <HR />
-<H2>【プレイヤーが触れると起動するイベント】</H2>
+<H2>【Event launched when the player touches it】</H2>
 <HR />
 
-<P>【目標】 <BR />
-イベント起動条件の内「プレイヤー接触」について、とりあえず使えるようになりましょう。</p>
-<p>これらのイベントは、その名の通りプレイヤーからイベントに接触した場合に起動します。<br />
-ここでは練習として、サンプルゲーム内の「サンプルマップA」内に<br />
-<b>プレイヤーが触れると「コケコッコー」と文章が表示される、ニワトリ姿のイベント</b>を作ってみましょう。<BR />
-<img src="image/EV_002_1.JPG" alt="ニワトリのイベント"/ >
+<P>[Goal] <BR />
+Let's get to the point where we can use the "Player Touch" event Trigger Condition.</p>
+<p>As the name suggests, these events launch when the player character comes into contact with them.<br />
+As practice, inside "Sample Map A" in the sample game, let's create<br />
+<b>a chicken-shaped event that displays the text "Ko-ke-kok-koo!" when the player touches it</b>.<BR />
+<img src="image/EV_002_1.JPG" alt="Chicken event"/ >
 <BR />
-※<A href="MUST_001x.html"><b>◆新しいイベントを作ってみたい</b></A>も参考にしてください。<BR /></P>
+※ Also use <A href="MUST_001x.html"><b>◆ I want to create a new event</b></A> as a reference.<BR /></P>
 
 <HR />
 
-【1】<br />　
-まずマップ選択<IMG src="image/icon_mapselector.png">で<br />
-・「<b>サンプルマップA</b>」に切り替えて下さい。<br /><br />
-・適当な場所にイベントを新しく作成して下さい。<br /><br />
+[1]<br />
+First, use the Map Selector<IMG src="image/icon_mapselector.png"> to<br />
+・Switch to "<b>Sample Map A</b>".<br /><br />
+・Create a new event at a suitable location.<br /><br />
 
-　→ 分からないときは、<a href="MUST_001x.html"><b>◆新しいイベントを作ってみたい</b></a>の【1】～【3】を参考に。<BR />
-　　　
+　→ If you are unsure, refer to steps [1]～[3] of <a href="MUST_001x.html"><b>◆ I want to create a new event</b></a>.<BR />
+
 <HR />
 
-【2】<BR />
-イベントのグラフィックを設定しましょう。赤い枠で囲まれた部分をダブルクリックして下さい。<br />
+[2]<BR />
+Let's set the event's graphic. Double-click the area enclosed in a red box.<br />
 
 <img src="image/MUST_001xev1.jpg">
 <HR />
 
-【3】<br />
-下図のようなウィンドウが表示されます。<br />
-・ウィンドウの左側のリストから「<b>Chicken.png</b>」を選びます。<br />
+[3]<br />
+A window like the one shown below will appear.<br />
+・From the list on the left side of the window, select "<b>Chicken.png</b>".<br />
 <img src="image/EV_003_2.jpg">
 <HR />
-【4】<br />
-ニワトリをイベントのグラフィックに設定できました。続いて、キャラの接触時にイベントが起動するように、<br />
-「<b>起動条件</b>」の設定を「<b>プレイヤー接触</b>」に変更します。<br />
+[4]<br />
+The chicken has been set as the event graphic. Next, change the<br />
+"<b>Trigger Condition</b>" setting to "<b>Player Touch</b>" so the event launches when the player comes into contact with the character.<br />
 <img src="image/EV_002_2.JPG"><br />
-これで、今作っているイベントは「プレイヤーがイベントに接触した時に起動する」設定になりました。<br />
+This makes the current event launch "when the player comes into contact with the event".<br />
 <HR />
 
-【5】<br />
-最後にイベントの中身を作っていきます。<b>イベントウィンドウ</b>の右下にある「<b>■コマンドウィンドウ表示■</b>」をクリックしてください。<br />
+[5]<br />
+Finally, create the event contents. Click "<b>■ Show Command Window ■</b>" at the bottom right of the <b>Event window</b>.<br />
 <img src="image/window_evbase2.jpg">
 <HR />
 
-【6】<br />
-「<b>イベントコマンドの挿入</b>」ウィンドウが出てくるので、上部タブにある「<b>文章の表示</b>」になっていることを確認して下さい。<br />
-・中央の文字入力欄に『<b>「コケコッコー」</b>』と打ち込み、「<b>入力</b>」ボタンをクリックします。<br />
+[6]<br />
+When the "<b>Insert Event Command</b>" window appears, confirm that the top tab shows "<b>Show Message</b>".<br />
+・Type '<b>"Ko-ke-kok-koo!"</b>' in the text input field in the center, and click the "<b>input</b>" button.<br />
 <img src="image/window_evbase3.jpg">
 <hr />
-【7】<br />
-これでイベントは完成です。完成したイベントの設定は、下記のようになっていますでしょうか。<br />
+[7]<br />
+The event is now complete. Does the completed event settings look like the following?<br />
 <img src="image/EV_002_3.JPG"><br />
-1：グラフィックは「<b>ニワトリ</b>」<br />
-2：起動条件が「<b>プレイヤー接触</b>」<br />
-3：右側のイベントコマンド表示欄に<br />
-<b>■文章：「コケコッコー」</b><br />
+1: Graphic is "<b>chicken</b>"<br />
+2: Trigger Condition is "<b>Player Touch</b>"<br />
+3: The Event Command display on the right shows:<br />
+<b>■ Message: "Ko-ke-kok-koo!"</b><br />
 ■<br />
-と表示されている。<br />
 <hr />
-【8】<br />
-さて、マップをセーブして、作ったイベントをテストしてみましょう。「<b>セーブ（マップ全体）</b>」をクリックした後、「<b>テストプレイ</b>」をクリックしてください。<br />
+[8]<br />
+Now save the map and test the event you created. After clicking "<b>Save (Entire Map)</b>", click "<b>Test Play</b>".<br />
 <img src="image/window_evbase4.png">
 <hr />
-【9】<br />
-静止画からは分かりにくいですが、プレイヤーがニワトリに接触した瞬間に<br />
-「コケコッコー」と表示されましたか？<br />
-<img src="image/EV_002_1.JPG" alt="ニワトリのイベント"/ ><br />
-以上で「プレイヤーが触れると起動するイベント」は完成です。お疲れ様でした。
+[9]<br />
+It's hard to tell from a still image, but did<br />
+"Ko-ke-kok-koo!" display at the moment the player came into contact with the chicken?<br />
+<img src="image/EV_002_1.JPG" alt="Chicken event"/ ><br />
+The "Event launched when the player touches it" is now complete. Good work!
 <hr />
 <br /><br />
 <hr />
-上記の記事は9割方<a href="EV_003.html"><b>◆相手が触ってくると起動するイベント</b></a>のコピペで制作しました。<br />
-「プレイヤー接触」と「イベント接触」の違いですが、基本的には、「場所移動など、主にプレイヤーから触れて起動するイベント」を前者、<br />
-「シンボルエンカウントなど、イベント側から触れて起動するイベント」を後者という、そのまんまな使い分けで良いと思います。<br />
-これを逆にしてしまうとイベントの動作やプレイヤーの操作感が少し変になる事がある、という事だけ頭の片隅に置いておいてください。
+The above article was created by copying about 90% from <a href="EV_003.html"><b>◆ Event launched when the opponent touches you</b></a>.<br />
+The difference between "Player Touch" and "Event Touch" is: basically, use the former for "events mainly launched when the player touches from their side, such as Location Transfers",<br />
+and use the latter for "events mainly launched when the event side touches, such as symbol encounters". That's pretty much the straightforward usage.<br />
+Reversing these can make event behavior and player controls feel slightly off — just keep that in the back of your mind.
 <hr />
 
-<P>＜執筆者：斗米ナギ＞</P>
+<P><Author: Toma Nagi></P>
 
 <HR />
 
-<p><A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<p><A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <BR>
 </P>
 </BODY>

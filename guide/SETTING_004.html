@@ -1,47 +1,46 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>メッセージ待ちの画像を変更したい</TITLE>
+<TITLE>I want to change the message-wait image</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【メッセージ待ちの画像を変更したい】</H2>
+<H2>【I want to change the message-wait image】</H2>
 <HR>
-　<B>【目標】</B><BR>
+　<B>[Goal]</B><BR>
 <HR>
 <P>
-　イベントコマンド「文章の表示」で表示できる<BR>
-　メッセージウィンドウの中央下に、<BR>
-　赤い下向き三角形の画像が表示されていますね。<BR>
-　これは「入力待ちポーズ画像」といって、<BR>
-　この画像を変更することで、簡単に<BR>
-　ゲームの雰囲気を変えることが出来ます。<BR>
+　In the message window displayed by the Event Command "Show Message",<BR>
+　a red downward-pointing triangle image is shown at the center-bottom.<BR>
+　This is called the "input-wait pause image",<BR>
+　and changing this image can easily<BR>
+　alter the atmosphere of your game.<BR>
 <BR>
-　今回は、入力待ちポーズ画像を、用意した画像に変更<BR>
-　することでシステム画像の変更の仕方を習得します。<BR>
+　This time, we will learn how to change system images by replacing<BR>
+　the input-wait pause image with a prepared image.<BR>
 <BR>
 　　<IMG src="image/Text_Pause01.png" border="0" alt="Text_Pause01.png"><BR>
 <BR>
-　この画像は基本ルールに則った素材として利用可能です。<BR>
-　使用される場合は、素材利用基本ルールの詳細が<BR>
-　記事「<A href="http://www.silversecond.com/WolfRPGEditor/Guide/MATERIAL_007.html" target="_blank">素材を使うためのルールってどんな感じなの？</A>」<BR>
-　に記載されていますのでご確認下さい。</P>
+　This image is available for use as an asset under the basic usage rules.<BR>
+　If you wish to use it, the details of the basic asset usage rules are described in<BR>
+　the article "<A href="http://www.silversecond.com/WolfRPGEditor/Guide/MATERIAL_007.html" target="_blank">What are the rules for using assets?</A>"<BR>
+　— please check it.</P>
 
 <HR>
-　<B>【手順】</B><BR>
+　<B>【Steps】</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【1】 素材の用意<BR>
+<TD nowrap>[1] Prepare the asset<BR>
 <BR>
-　今回使用する画像<B>「Text_Pause01.png」</B>(上の【目標】内にあります)を右クリックで、<BR>
-　<B>「名前を付けて保存」</B>を行ってください。保存する場所は、<BR>
-　Dataフォルダ内の<B>「SystemFile」</B>フォルダを指定してください。<BR>
+　Right-click the image <B>"Text_Pause01.png"</B> (found in the [Goal] section above) and<BR>
+　perform <B>"Save As"</B>. Save it to the<BR>
+　<B>"SystemFile"</B> folder inside the Data folder.<BR>
 </TD>
 </TR>
 </TBODY>
@@ -51,10 +50,10 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【2】 システムDBを開く<BR>
+<TD nowrap>[2] Open the System DB<BR>
 <BR>
-　システムデータベース<IMG src="image/icon_sysDB.png" width="22" height="20" border="0">をクリックすると、<BR>
-　右のようなウィンドウが表示されます。<BR>
+　Clicking System Database<IMG src="image/icon_sysDB.png" width="22" height="20" border="0"> will display<BR>
+　a window like the one on the right.<BR>
 </TD>
 <TD nowrap><IMG src="image/window_SystemDB.jpg" width="332" height="291" border="0"></TD>
 </TR>
@@ -64,12 +63,12 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【3】 編集するタイプの選択<BR>
+<TD nowrap>[3] Select the type to edit<BR>
 <BR>
-　①ウィンドウが開いた直後は「タイプ」が「マップ設定」になっています。<BR>
-　　<B>「10:ウィンドウ画像」</B>をクリックして下さい。<BR>
-　②ウィンドウの中ほどにデータ一覧があります。<BR>
-　　データはこの中から<B>「○入力待ちﾎﾟｰｽﾞ画像」</B>を選択してください。<BR>
+　① Right after the window opens, the "Type" is set to "Map Settings".<BR>
+　　Click <B>"10: Window Image"</B>.<BR>
+　② There is a data list in the middle of the window.<BR>
+　　Select <B>"○ Input-Wait Pause Image"</B> from this list.<BR>
 </TD>
 <TD nowrap><IMG src="image/SETTING_004_1.png" width="346" height="330" border="0"></TD>
 </TR>
@@ -79,19 +78,18 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【3】 画像を設定<BR>
+<TD nowrap>[3] Set the image<BR>
 <BR>
-　　次に、ウィンドウに使われる画像を設定します。<BR>
+　　Next, set the image to be used for the window.<BR>
 <BR>
-　①画像ファイル名の右にある<B>[File]</B>ボタンを押すと<BR>
-　　素材が入っているフォルダが開かれますので、<BR>
-　②<B>「Text_Pause01.png」</B>を選択し、ウィンドウ右下の<BR>
-　③ボタン<B>「OK」</B>を押してください。<BR>
-　　画像ファイル名に<B>「SystemFile/Text_Pause01.png」</B>が<BR>
-　　入力されました。<BR>
-　④次に、画像ファイル名の１つ下の項目<B>「縦分割数(一部のみ)」</B>に<BR>
-　　<B> 6 </B>を入力し(初期設定では既に 6 になっています)、<BR>
-　⑤ウィンドウ右下のボタン<B>「OK」か「更新」</B>を押して上書きします。<BR>
+　① Press the <B>[File]</B> button to the right of the image filename;<BR>
+　　this opens the folder containing assets.<BR>
+　② Select <B>"Text_Pause01.png"</B>, and press the<BR>
+　③ <B>"OK"</B> button at the bottom-right of the window.<BR>
+　　<B>"SystemFile/Text_Pause01.png"</B> has now been entered as the image filename.<BR>
+　④ Next, in the item just below the image filename, <B>"Vertical Division Count (some only)"</B>,<BR>
+　　enter <B>6</B> (it is already set to 6 in the initial settings),<BR>
+　⑤ then press the <B>"OK" or "Update"</B> button at the bottom-right to save.<BR>
 </TD>
 <TD nowrap><IMG src="image/SETTING_004_2.png" width="582" height="480" border="0"></TD>
 </TR>
@@ -101,12 +99,12 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【4】 画像を設定<BR>
+<TD nowrap>[4] Verify<BR>
 <BR>
-　ではテストプレイして、メッセージウィンドウの中央下を見てみましょう。<BR>
-　変更前は赤い三角形がちまちま縦に動いていましたが、<BR>
-　変更後は<B>銀色の三角形が横方向にくるくると回っている</B>と思います。<BR>
-　お疲れ様でした！<BR>
+　Let's do a Test Play and look at the center-bottom of the message window.<BR>
+　Before the change, a small red triangle was moving up and down, but<BR>
+　after the change you should see <B>a silver triangle spinning horizontally</B>.<BR>
+　Great work!<BR>
 </TD>
 <TD nowrap><IMG src="image/SETTING_004_3.png" width="433" height="111" border="0"></TD>
 </TR>
@@ -114,27 +112,27 @@
 </TABLE>
 <HR>
 
-　<B>【余談】</B><BR>
+　<B>[Side Note]</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>１．縦分割数について<BR>
+<TD nowrap>1. About the vertical division count<BR>
 <BR>
-・ウディタでは、一部の画像はアニメーションさせることができ、<BR>
-　1枚の画像をアニメーションのそれぞれのコマに分割して<BR>
-　連続的に表示していく設定が「分割数」です。<BR>
-　表示されるときに擬似的に分割されているだけなので、<BR>
-　フォルダの中にある画像が切り刻まれていたりは<BR>
-　全くしませんのでご安心を。<BR>
-・入力待ちポーズ画像は縦にのみ分割してアニメーションさせることができ、<BR>
-　「縦分割数(一部のみ)」の設定が 2 以上だと、画像は縦幅だけが<BR>
-　その数に均等に分割されます。横幅は変わりません。<BR>
-　縦分割数が 1 以下だとアニメーションしません。<BR>
-　デフォルトの赤い下向き三角形の画像「Text_Pause.png」を<BR>
-　見てみると、三角形は縦に6つ並んでいます。<BR>
-　縦分割数の設定は 6 でしたので、この三角形が一枚ずつに<BR>
-　分割されて表示されているのでした。<BR>
+· In WOLF RPG Editor, some images can be animated by dividing<BR>
+　a single image into frames for the animation<BR>
+　and displaying them sequentially — this is the "division count" setting.<BR>
+　The image in the folder is not actually cut up;<BR>
+　it is only divided pseudographically when displayed,<BR>
+　so please be reassured.<BR>
+· The input-wait pause image can only be divided vertically for animation.<BR>
+　If the "Vertical Division Count (some only)" setting is 2 or more,<BR>
+　the image's height is divided equally by that number. The width does not change.<BR>
+　If the vertical division count is 1 or less, no animation occurs.<BR>
+　Looking at the default red downward-pointing triangle image "Text_Pause.png",<BR>
+　you can see six triangles arranged vertically.<BR>
+　Since the vertical division count was set to 6, these triangles are<BR>
+　displayed one frame at a time.<BR>
 </TD>
 </TR>
 </TBODY>
@@ -143,18 +141,18 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>２．メッセージウィンドウの背景を変える<BR>
+<TD nowrap>2. Changing the message window background<BR>
 <BR>
-　今回はメッセージウィンドウの下に表示されるポーズカーソルを<BR>
-　変更しましたが、メッセージウィンドウの背景となっている<BR>
-　画像も変更することが出来ます。<BR>
-　これはユーザデータベースのタイプ16番「画像/音声設定」で、<BR>
-　項目2番「ﾒｯｾｰｼﾞｳｨﾝﾄﾞｳ ﾍﾞｰｽ画像」で変更することができます。<BR>
+　This time we changed the pause cursor displayed at the bottom of the message window,<BR>
+　but you can also change the image that serves as the background<BR>
+　of the message window.<BR>
+　This can be changed in User Database Type 16 "Image/Audio Settings",<BR>
+　Item 2 "Message Window Base Image".<BR>
 <BR>
 　　　<IMG src="image/WindowBase01.png" border="0" alt="WindowBase01.png"><BR>
 <BR>
-　この画像も基本ルールに則った素材として利用可能です。<BR>
-　余力があればやってみてくださいね。<BR>
+　This image is also available for use as an asset under the basic rules.<BR>
+　Give it a try if you have the time!<BR>
 </TD>
 </TR>
 </TBODY>
@@ -163,16 +161,16 @@
 
 <HR>
 
-<P>＜執筆者：ウディタ公式ガイド執筆コミュ。＞
+<P><Author: WOLF RPG Editor Official Guide Writing Community>
     <ul>
-        <li>トピック原案：真波、<A href="http://hinezumi.velvet.jp/index.php" target="_blank">ユノ</A></li>
-        <li>HTML作成：真波</li>
+        <li>Topic concept: Manami, <A href="http://hinezumi.velvet.jp/index.php" target="_blank">Yuno</A></li>
+        <li>HTML creation: Manami</li>
     </ul>
 </P>
 <HR>
-【改訂履歴】<BR>
-　Ver1.00　2013/11/22 新規作成<BR>
-<HR><A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+[Revision History]<BR>
+　Ver1.00　2013/11/22 Initial creation<BR>
+<HR><A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 
