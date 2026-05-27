@@ -1,34 +1,33 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/tr/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>バトルを発生させたい</TITLE>
+<TITLE>I want to trigger a battle</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【バトルを発生させたい】</H2>
+<H2>【I want to trigger a battle】</H2>
 <HR>
-<P>【目標】 <BR>
-　サンプルゲームの「サンプルマップA」に、<BR>
-　<B>「ゴブリン3体」とのバトルを発生させるニワトリのイベント</B>を作ります。</P>
+<P>[Goal] <BR>
+　In "Sample Map A" of the sample game, we will create<BR>
+　<B>a chicken event that triggers a battle against "3 Goblins"</B>.</P>
 <HR>
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【1】<BR>
-      　・まずマップ選択<IMG src="image/icon_mapselector.png" width="22" height="20" border="0">で「<B>サンプルマップA</B>」に<BR>
-      　　切り替えて下さい。<BR>
+      <TD nowrap>[1]<BR>
+      　&bull; First, use the Map Selector<IMG src="image/icon_mapselector.png" width="22" height="20" border="0"> to switch to <B>"Sample Map A"</B>.<BR>
       <BR>
-      　・適当な場所に<B>イベントを作成して<BR>
-      &#160;　ニワトリの画像を設定</B>しておきます。<BR>
-      　　（ここでは右の画像の位置に設置）<BR>
+      　&bull; <B>Create an event somewhere suitable and<BR>
+      &#160;set it to the chicken image</B>.<BR>
+      　　(Placed at the position shown in the image on the right.)<BR>
       <BR>
       <BR>
-      &#160;→ 分からないときは、<BR>
-      　 &#160;<B><A href="MUST_001x.html" target="B">◆新しいイベントを作ってみたい</A></B>の<BR>
-      　　【1】～【5】までの手順をまねてください。<BR>
+      &#160;&rarr; If you are unsure, follow<BR>
+      　 &#160;<B><A href="MUST_001x.html" target="B">◆ I want to try creating a new event</A></B><BR>
+      　　steps [1] through [5].<BR>
       </TD>
       <TD nowrap><IMG src="image/window_evbase.jpg" width="289" height="240" border="1"></TD>
     </TR>
@@ -38,10 +37,9 @@
 <HR>
 <TABLE border="0">
   <TBODY><TR>
-      <TD nowrap>【2】　<BR>
-      　<B>イベントウィンドウ</B>の右下にある<BR>
-      　「<B>■コマンドウィンドウ表示■</B>」を<BR>
-      　クリックしてください。</TD>
+      <TD nowrap>[2]<BR>
+      　Click <B>"■ Show Command Window ■"</B><BR>
+      　at the bottom right of the <B>Event window</B>.</TD>
       <TD nowrap><IMG src="image/window_evbase2.jpg" width="198" height="60" border="1"></TD>
     </TR>
   </TBODY>
@@ -50,10 +48,10 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【3】　<BR>
-      　「<B>イベントコマンドの挿入</B>」ウィンドウが<BR>
-      　出てくるので、上部タブにある<BR>
-      　「<B>その他2</B>」を選択して下さい。</TD>
+      <TD nowrap>[3]<BR>
+      　When the <B>"Insert Event Command"</B> window<BR>
+      　appears, select the tab at the top<BR>
+      　labeled <B>"Other 2"</B>.</TD>
       <TD nowrap><IMG src="image/window_evbase3.jpg" width="300" height="254" border="0"></TD>
     </TR>
   </TBODY>
@@ -62,10 +60,9 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【4】<BR>
-      　「<B>イベントの挿入</B>」を選び、<BR>
-      　コモン24「<B>◆バトルの発生</B>」を<BR>
-      　選択します。</TD>
+      <TD nowrap>[4]<BR>
+      　Select <B>"Insert Event"</B> and<BR>
+      　choose Common 24 <B>"◆ Battle Trigger"</B>.</TD>
       <TD nowrap><IMG src="image/BASE_E001_1.png" width="445" height="323" border="0"></TD>
     </TR>
   </TBODY>
@@ -74,19 +71,18 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【5】<BR>
-      　次に、「コモンEv入力（数値）」の欄を、<BR>
-      　以下のように設定します。<BR>
+      <TD nowrap>[5]<BR>
+      　Next, configure the "Common Event Input (Value)" fields as follows.<BR>
       <BR>
-      <B>・出現させたい敵グループ　[1:ゴブリン3体]<BR>
-      ・逃走可能に「0:逃走可能」<BR>
-      ・敗北時処理処理 「0:ゲームオーバーEv」<BR>
-      </B> ※[0:ゲームオーバー処理 / 1:イベント続行]<BR>
-      &#160;　の2つがありますが、ここでは負けると<BR>
-      &#160;　ゲームオーバーイベントが起きるようにします。<BR>
-      <B>・BGMに「3:戦闘BGM」<BR>
+      <B>&bull; Enemy group to appear: [1: 3 Goblins]<BR>
+      &bull; Can flee: "0: Can Flee"<BR>
+      &bull; On defeat process: "0: Game Over Event"<BR>
+      </B> ※ There are two options [0: Game Over Process / 1: Continue Event],<BR>
+      &#160;but here we set it so that losing<BR>
+      &#160;triggers the Game Over event.<BR>
+      <B>&bull; BGM: "3: Combat BGM"<BR>
       </B><BR>
-      　設定したら「<B>入力</B>」をクリックしてください。</TD>
+      　Once configured, click <B>"Input"</B>.</TD>
       <TD nowrap><IMG src="image/BASE_E001_2.png" width="387" height="275" border="0"></TD>
     </TR>
   </TBODY>
@@ -95,9 +91,9 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【6】<BR>
-      　最終的に、右のような状態に<BR>
-      　なっていれば成功です。</TD>
+      <TD nowrap>[6]<BR>
+      　If it ends up looking like the<BR>
+      　image on the right, you have succeeded.</TD>
       <TD nowrap><IMG src="image/BASE_E001_3.jpg" width="399" height="180" border="0"></TD>
     </TR>
   </TBODY>
@@ -106,12 +102,11 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【7】　<BR>
-      　さて、マップをセーブして、<BR>
-      　作ったイベントをテストしてみましょう。<BR>
+      <TD nowrap>[7]<BR>
+      　Now let's save the map and test the event.<BR>
       <BR>
-      　「<B>セーブ（マップ全体）</B>」をクリックした後、<BR>
-      　「<B>テストプレイ</B>」をクリックしてください。</TD>
+      　Click <B>"Save (Entire Map)"</B>, then<BR>
+      　click <B>"Test Play"</B>.</TD>
       <TD nowrap><IMG src="image/window_evbase4.png" width="247" height="100" border="1"></TD>
     </TR>
   </TBODY>
@@ -120,16 +115,16 @@
 <TABLE border="0">
   <TBODY>
     <TR>
-      <TD nowrap>【8】<BR>
-      　テストプレイを開始し、<BR>
-      　<B>ニワトリに向かって決定キー</B>を押すと、<BR>
-      　無事、ゴブリン3体と戦闘になりました！<BR>
+      <TD nowrap>[8]<BR>
+      　Start the Test Play and<BR>
+      　press the <B>Confirm key facing the chicken</B><BR>
+      　— a battle against 3 Goblins now starts!<BR>
       <BR>
       <BR>
-      　これで、話しかけるたびに<BR>
-      　何度でもこの戦闘が発生する、<BR>
-      　シンプルな戦闘イベントが完成しました。<BR>
-      　おつかれさまです。</TD>
+      　This completes a simple combat event<BR>
+      　that triggers every time you interact<BR>
+      　with the chicken.<BR>
+      　Good work!</TD>
       <TD nowrap><IMG src="image/BASE_E001_4.jpg" width="320" height="240" border="0"></TD>
     </TR>
   </TBODY>
@@ -137,9 +132,9 @@
 <HR>
 
 <HR>
-<P>＜執筆者：<A href="http://www.silversecond.net/" target="_blank">SmokingWOLF</A>＞　</P>
+<P><Author: <A href="http://www.silversecond.net/" target="_blank">SmokingWOLF</A>>　</P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

@@ -1,9 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="ja">
+<html lang="en">
 <head>
 <meta http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<title>主人公にゲーム中に技能を覚えさせたい</title>
+<title>I want to teach a player character a skill during the game</title>
 <link rel="stylesheet" href="manual.css" type="text/css">
 <style type="text/css">
 body { width : 95%; }
@@ -13,212 +13,207 @@ td { position:relative; left:15px; }
 </head>
 <body>
 <hr>
-<H2>【主人公にゲーム中に技能を覚えさせたい】</H2>
+<H2>【I want to teach a player character a skill during the game】</H2>
 <hr>
-<br>【目標】<br>
+<br>[Goal]<br>
 <br>
-<table border="0"><tr><td valign="top">・調べると技能を覚えられるようにする<br>
+<table border="0"><tr><td valign="top">&bull; Make it so that examining an event teaches the player character a skill.<br>
 <br>
-※おまけ<br>
-・技能を覚えたらイベントの内容を変化させる<br>
+Bonus:<br>
+&bull; Change the event's dialogue after the skill is learned.<br>
 <br>
-・関連項目<br>
-<a href="BASE_S006.html" target="B">◆主人公の技の習得レベルを設定したい</a><br>
-<a href="BASE_S007.html" target="B">◆技能（魔法）の種類を増やしたい</a><br>
+Related topics:<br>
+<a href="BASE_S006.html" target="B">◆ I want to set a player character's skill learn level</a><br>
+<a href="BASE_S007.html" target="B">◆ I want to add more skill (magic) types</a><br>
 </td></tr></table><br>
 
 <hr>
 <br>
-【1】<br>
+[1]<br>
 <br>
-<table border="0"><tr><td valign="top"><img src="image/BASE_E012_1.png" border="0" style="float:right; position:relative; left:15px;">・まずマップ選択<IMG height=20 src="image/icon_mapselector.png" width=22 border=0>で「イベントを作成したいマップ」に切り替えて下さい。<br>
+<table border="0"><tr><td valign="top"><img src="image/BASE_E012_1.png" border="0" style="float:right; position:relative; left:15px;">&bull; First, use the Map Selector<IMG height=20 src="image/icon_mapselector.png" width=22 border=0> to switch to the <b>"map where you want to create the event"</b>.<br>
 <br>
-・適当な場所にイベントを作成してニワトリの画像を設定しておきます。<br>
+&bull; Create an event somewhere suitable and set it to the chicken image.<br>
 <br>
-手順は<a href="EV_001.html" target="B">◆決定キーで起動するイベント</a>の【1】～【5】を参考にしてください。  <br>
+For steps, refer to [1]–[5] of <a href="EV_001.html" target="B">◆ An event launched by the Confirm key</a>.<br>
 </td></tr></table><br>
 
 <hr>
 <br>
-【2】<br>
+[2]<br>
 <br>
-<table border="0"><tr><td valign="top"><img src="image/EV_006_4.jpg" border="0" style="float:right; position:relative; left:15px;">作成したら、イベントウィンドウの右下にある<b>「■コマンド入力ウィンドウ表示■」</b>をクリックしてください。<br>
+<table border="0"><tr><td valign="top"><img src="image/EV_006_4.jpg" border="0" style="float:right; position:relative; left:15px;">Once created, click <b>"■ Show Command Input Window ■"</b> at the bottom right of the Event window.<br>
 <br>
-1.「イベントコマンドの挿入」ウィンドウが出たら、<br>
-　<b>その他2</b>タブをクリックします。画像の1<br>
+1. When the "Insert Event Command" window appears,<br>
+　click the <b>Other 2</b> tab. <b>(Image 1)</b><br>
 <br>
-2.丸で囲まれた「イベントの挿入」が選ばれてい<br>
-　るか、確認します。画像2<br>
-　文字の左の白丸に黒丸がついていれば、選択<br>
-　されています。<br>
-　※ もし、選ばれてなかったらクリックして選択し<br>
-　て下さい。<br>
+2. Confirm that "Insert Event" (circled in the image) is selected. <b>(Image 2)</b><br>
+　If the circle next to the text has a dot in it, it is selected.<br>
+　※ If it is not selected, click it to select it.<br>
 <br>
-3.四角3で囲まれた場所をクリックすると、選ぶこ<br>
-　とができるコモンイベントのリストが表示されま<br>
-　す。<br>
-　画像3今回は技能習得のイベントなので、<br>
-　<b>「コモン8：○特殊技能増減」</b>を選択しましょう。<br>
+3. Clicking the area circled by box 3 will display a list<br>
+　of available Common Events.<br>
+　Since this is a skill-learning event, <b>(Image 3)</b><br>
+　select <b>"Common 8: ○ Special Skill Increase/Decrease"</b>.<br>
 </td></tr></table><br>
 
 <hr>
 <br>
-<a name="BASE_E007_1">【3】</a><br>
+<a name="BASE_E007_1">[3]</a><br>
 <br>
-<table border="0"><tr><td valign="top"><img src="image/BASE_E007_1.png" border="0" style="float:right; position:relative; left:15px;">続いてコモンEv入力（数値）という欄をいじります。<br>
+<table border="0"><tr><td valign="top"><img src="image/BASE_E007_1.png" border="0" style="float:right; position:relative; left:15px;">Next, edit the "Common Event Input (Value)" fields.<br>
 <br>
-1.<b>対象主人公</b>では技能を覚えさせたいキャラクターを選択します。<br>
+1. <b>Target Player Character</b>: Select the character who will learn the skill.<br>
 <br>
-2.<b>どの技能？</b>では覚えさせたい技能を選択します。<br>
+2. <b>Which Skill?</b>: Select the skill to be learned.<br>
 <br>
-3.<b>どうする？</b>では技能を修得するか、忘れさせるかを選択できます。<br>
-今回は習得するので「0:習得する」を選択します。<br>
+3. <b>What to do?</b>: Choose whether to learn or forget the skill.<br>
+Since we are learning here, select <b>"0: Learn"</b>.<br>
 <br>
-4.最後に右下の<b>入力ボタン</b>をクリックします。<br>
+4. Finally, click the <b>Input button</b> at the bottom right.<br>
 <br>
-これで技能の習得処理が完成しました。<br>
+The skill-learning process is now complete.<br>
 </td></tr></table><br>
 
 <hr>
 <br>
-【4】<br>
+[4]<br>
 <br>
 <table border="0"><tr><td valign="top"><br>
-ここまでで技能を覚えるイベントは出来ました。<br>
-しかし、このままでは調べるたびに同じ技能を覚えてしまいます。<br>
-実際には同じ技能は複数覚えられませんので、そのままでも構わないのですが、<br>
-せっかくなので技能習得後は専用のセリフを喋るようにします。<br>
-<font id="c1">※興味がない方は<a href="#BASE_E007_3" target="B">ここをクリック</a></font><br>
+The skill-learning event is complete up to this point.<br>
+However, as-is the player will learn the same skill every time they examine the event.<br>
+Since you cannot actually learn the same skill more than once, this is fine as-is,<br>
+but let's also make the event display different dialogue after the skill has been learned.<br>
+<font id="c1">※ <a href="#BASE_E007_3" target="B">Click here</a> if you are not interested in this part.</font><br>
 <br>
-以降の処理の詳細は、<a href="EV_006.html" target="B">◆一度空いたら空きっぱなしの宝箱</a>の【5】以降を参照してください。<br>
+For more details on the following process, refer to [5] onwards in <a href="EV_006.html" target="B">◆ A treasure chest that stays open once opened</a>.<br>
 </td></tr></table><br>
 
 <hr>
 <br>
-【5】<br>
+[5]<br>
 <br>
 <table border="0"><tr><td valign="top"><br>
-<img src="image/EV_006_6.gif" border="0" style="float:right; position:relative; left:15px;">・「コモンイベントの挿入ウィンドウ」から<b>「変数操作」</b>を見つけてクリックします。<br>
+<img src="image/EV_006_6.gif" border="0" style="float:right; position:relative; left:15px;">&bull; Find and click <b>"Variable Operation"</b> in the "Insert Event Command" window.<br>
 <br>
-・赤いラインを引いた箇所を確認します。右の画像と同じになるように設定してください。<br>
+&bull; Confirm the parts highlighted with red lines. Configure them to match the image on the right.<br>
 　<br>
-・最後に右下の入力を押します。<br>
+&bull; Finally press <b>Input</b> at the bottom right.<br>
 <br>
-ここで設定したのは「このイベントのセルフ変数0番」に「1+0=1」を代入するという処理です。 <br>
+What was configured here is a process that assigns "1+0=1" to "Self Variable 0 of this event".<br>
 </td></tr></table><br>
 
 <hr>
 <br>
-【6】<br>
+[6]<br>
 <br>
 <table border="0"><tr><td valign="top"><br>
-<img src="image/EV_006_8.gif" border="0" style="float:right; position:relative; left:15px;">画像はイベントウィンドウの左上です。<br>
-黄色の四角で囲んだ部分に注目してください。<br>
+<img src="image/EV_006_8.gif" border="0" style="float:right; position:relative; left:15px;">The image shows the top-left of the Event window.<br>
+Pay attention to the part enclosed in yellow.<br>
 <br>
-1.<b>「新規ページ」</b>ボタンをクリックします。<br>
+1. Click the <b>"New Page"</b> button.<br>
 <br>
-2.<b>「ページ2」</b>ボタンをクリックしてページ2を開きます。  <br>
+2. Click the <b>"Page 2"</b> button to open Page 2.<br>
 </td></tr></table><br>
 
 <hr>
 <br>
-【7】<br>
+[7]<br>
 <br>
 <table border="0"><tr><td valign="top"><br>
-<img src="image/EV_006_9.gif" border="0" style="float:right; position:relative; left:15px;">2ページ目は<b>技能を覚えた後</b>の状態のイベントです。<br>
-このままでは透明なイベントになってしまいますので、グラフィックをページ1と同じ「ニワトリ」に設定します。<br>
+<img src="image/EV_006_9.gif" border="0" style="float:right; position:relative; left:15px;">Page 2 is the state of the event <b>after the skill has been learned</b>.<br>
+As-is it would become a transparent event, so set the graphic to the same "chicken" as Page 1.<br>
 <br>
-1.グレーの四角をダブルクリック<br>
+1. Double-click the gray square.<br>
 <br>
-2.[CharaChip]からChicken.pngを選択<br>
+2. Select Chicken.png from [CharaChip].<br>
 <br>
-できたら「OK」ボタンをクリックします。<br>
+Once done, click the "OK" button.<br>
 </td></tr></table><br>
 
 <hr>
 <br>
-【8】<br>
+[8]<br>
 <br>
 <table border="0"><tr><td valign="top"><br>
-<img src="image/EV_006_10.gif" border="0" style="float:right; position:relative; left:15px;">「イベント起動条件」を設定しましょう。<br>
-紫の四角で囲んだ箇所に注目してください。<br>
+<img src="image/EV_006_10.gif" border="0" style="float:right; position:relative; left:15px;">Let's configure the "Event Trigger Condition".<br>
+Pay attention to the part enclosed in purple.<br>
 　<br>
-1.一番左のチェックボックスをクリックしてチェックをつけます。<br>
+1. Click the leftmost checkbox to add a checkmark.<br>
 <br>
-2.「Self」ボタンをクリックして選択。<br>
+2. Click the "Self" button to select it.<br>
 <br>
-3.「セルフ変数0」を選びます。<br>
+3. Select "Self Variable 0".<br>
 <br>
-4.数値の「1」を入力します。<br>
+4. Enter the value "1".<br>
 <br>
-5.「と同じ」を選択します。<br>
+5. Select "Same as".<br>
 <br>
-これは、このイベントのセルフ変数0が1と同じ場合のみページ2が起動する。<br>
-という意味です。<br>
+This means Page 2 will only launch when Self Variable 0 of this event equals 1.<br>
 </td></tr></table><br>
 
 <hr>
 <br>
-<a name="BASE_E007_2">【9】</a> <br>
+<a name="BASE_E007_2">[9]</a> <br>
 <br>
 <table border="0"><tr><td valign="top"><br>
-<img src="image/BASE_E007_2.png" border="0" style="float:right; position:relative; left:15px;">セリフを入力していきます。<br>
+<img src="image/BASE_E007_2.png" border="0" style="float:right; position:relative; left:15px;">Now let's enter the dialogue.<br>
 <br>
-「■コマンド入力ウィンドウ表示■」をクリックしてください。<br>
+Click "■ Show Command Input Window ■".<br>
 <br>
-1.<b>文章の表示タブ</b>をクリックします。<br>
+1. Click the <b>Show Message</b> tab.<br>
 <br>
-2.文字列の入力欄に、表示させたいセリフを入力します。<br>
+2. Enter the dialogue you want to display in the text input field.<br>
 <br>
-3.最後に入力ボタンをクリックします。<br>
+3. Finally, click the Input button.<br>
 </td></tr></table><br>
 
 <hr>
 <br>
-【セーブ】<br>
+【Save】<br>
 <br>
 <table border="0"><tr><td valign="top"><br>
-<img src="image/window_evbase4.png" border="0" style="float:right; position:relative; left:15px;">マップをセーブしてテストプレイをしましょう！<br>
-イベントウィンドウの<b>テストプレイボタン</b>をクリックすると、<b>自動でセーブ</b>されます。 <br>
+<img src="image/window_evbase4.png" border="0" style="float:right; position:relative; left:15px;">Save the map and do a Test Play!<br>
+Clicking the <b>Test Play button</b> in the Event window will <b>save automatically</b>.<br>
 </td></tr></table><br>
 
 <hr>
 <br>
-<a name="BASE_E007_3">【テストプレイ1】</a><br>
+<a name="BASE_E007_3">【Test Play 1】</a><br>
 <br>
 <table border="0"><tr><td valign="top"><br>
-<img src="image/BASE_E007_3.png" border="0" style="float:right; position:relative; left:15px;">アイテムと違い技能の習得時は、<b>文章が表示されません。</b><br>
-（文章を表示したい場合は<a href="#BASE_E007_2" target="B">【9】</a>を参考に、ページ1に文章を追加してください）<br>
-なのでキャンセルキーを押して、メニューの<b>特殊技能</b>から確認します。<br>
+<img src="image/BASE_E007_3.png" border="0" style="float:right; position:relative; left:15px;">Unlike items, <b>no message is displayed</b> when a skill is learned.<br>
+(If you want a message to appear, refer to <a href="#BASE_E007_2" target="B">[9]</a> and add a message to Page 1.)<br>
+Press the Cancel key to open the menu and confirm from <b>Special Skills</b>.<br>
 <br>
-※うまくいかなかったら……。<br>
-<a href="#BASE_E007_1" target="B">【3】</a>の設定内容を確認してください。<br>
+※ If something goes wrong...<br>
+Check the settings in <a href="#BASE_E007_1" target="B">[3]</a>.<br>
 </td></tr></table><br>
 
 <hr>
 <br>
-【テストプレイ2】<br>
+【Test Play 2】<br>
 <br>
 <table border="0"><tr><td valign="top"><br>
-<img src="image/BASE_E007_4.png" border="0" style="float:right; position:relative; left:15px;">技能の習得は確認できましたので、続いてセリフが変わっているか確認します。<br>
+<img src="image/BASE_E007_4.png" border="0" style="float:right; position:relative; left:15px;">Now that we have confirmed the skill was learned, let's also check whether the dialogue has changed.<br>
 <br>
-イベントをもう一度調べてみましょう。<br>
-入力した文章が表示されていたら成功です。<br>
+Examine the event again.<br>
+If the text you entered is displayed, you have succeeded.<br>
 </td></tr></table><br>
 <br>
 <table border="0"><tr><td valign="top"><br>
-以上で「主人公にゲーム中に技能を覚えさせたい」は終了です。<br>
-お疲れ様でした。<br>
+This concludes "I want to teach a player character a skill during the game".<br>
+Great work!<br>
 </td></tr></table><br>
 <hr>
 <br><br><br>
 <hr>
 <br>
-＜執筆者：七海＞<br>
+<Author: Nanami><br>
 <br>
 <hr>
 <a href="index.html" target="_top">
-【←フレームが表示されていない方はここをクリック】
+[If you don't see the navigation frame on the left, click here]
 </a><br><br><br>
 </body>
 </html>

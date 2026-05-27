@@ -1,37 +1,36 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>主人公を回復させたりダメージを与えたい</TITLE>
+<TITLE>I want to heal or deal damage to a player character</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【主人公を回復させたりダメージを与えたい】</H2>
+<H2>【I want to heal or deal damage to a player character】</H2>
 <HR>
-<P><pre>【目標】
-　イベントと接触するとダメージを受けたり
-　回復したりするようにしたい
-　
-　<a href="#5">おまけ</a>
-　使用バージョン[2.x系]
+<P><pre>[Goal]
+　Make it so that touching an event causes the player to take damage
+　or be healed.
+
+　<a href="#5">Bonus</a>
+　Version used: [2.x series]
 </pre></p>
 
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【1】
-　・まずマップ選択<IMG height=20 src="image/icon_mapselector.png" width=22 border=0>で
-　「イベントを作成したいマップ」
-　に切り替えて下さい。
+<TD nowrap><pre>[1]
+　&bull; First, use the Map Selector<IMG height=20 src="image/icon_mapselector.png" width=22 border=0> to switch to
+　the "map where you want to create the event".
 
-　・適当な場所にイベントを作成して
-　ニワトリの画像を設定しておきます。
-　
-　手順は<a href="EV_001.html" target="B">◆決定キーで起動するイベント</a>の
-　【1】～【5】を参考にしてください。
+　&bull; Create an event somewhere suitable
+　and set it to the chicken image.
+
+　For steps, refer to [1]–[5] of
+　<a href="EV_001.html" target="B">◆ An event launched by the Confirm key</a>.
 <pre></TD>
 <TD nowrap><pre><a href="image/BASE_E012_1.png"><img src="image/BASE_E012_1.png" border="1"></a>
 <pre></TD>
@@ -43,33 +42,30 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【2】
-　1.作成したら、イベントの起動条件を
-　「イベント接触」にしてください。
-　
-　2.イベントコマンドから
-　<b>I コモンイベント</b> を選択し
-　「コモンEv名で呼出」が
-　選ばれているか、確認します。
-　
-　今回は 
-　「<b>主人公を回復させたりダメージを与えたい</b> 」
-　イベントなので、
-　<b>「○能力値増減」</b>を選択しましょう。
-　
-　3.<b>対象主人公</b> にはてきとうな
-　キャラを撰びましょう。
-　テストプレイ時にパーティ内に
-　存在するキャラを指定するといいです。
-　
-　<b>どの能力値を</b> には「22:HP」を選択
-　
-　<b>何ポイント</b> には「-10」を入力
-　　ダメージを与える場合は負の値(-1以下)
-　　回復させる場合は正の値(1以上)を入力
-　
-　<b>メッセージ</b> はとりあえず
-　「有り」にしておきましょう
+<TD nowrap><pre>[2]
+　1. Once created, set the event's Trigger Condition
+　to "Event Contact".
+
+　2. From Event Commands, select
+　<b>I Common Event</b> and confirm
+　that "Call by Common Event Name" is selected.
+
+　Since this is an event to
+　"<b>heal or deal damage to a player character</b>",
+　select <b>"○ Status Increase/Decrease"</b>.
+
+　3. For <b>Target Player Character</b>, choose a
+　suitable character. It's best to specify
+　a character that exists in the party during Test Play.
+
+　For <b>Which Stat</b>, select "22: HP".
+
+　For <b>By How Many Points</b>, enter "-10".
+　　To deal damage, enter a negative value (-1 or less).
+　　To heal, enter a positive value (1 or more).
+
+　For <b>Message</b>, set it to
+　"Yes" for now.
 <pre></TD>
 <TD nowrap><pre><a target="B" href="image/BASE_E005_1.png"><img width="400" src="image/BASE_E005_1.png" border="1"></a>
 <pre></TD>
@@ -81,23 +77,22 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【3】テストプレイ、の前に
+<TD nowrap><pre>[3] Before the Test Play
 
-　1.「イベントの一時消去」を
-　追加しておきましょう。
-　このままだと何度も回復・ダメージ処理が
-　されてしまいます、なので一度処理されれば
-　イベントを消去し何度も処理しないようにします。
-　
-　
-　2.イベントを消去せずに１度だけ処理したい場合は
-　条件（変数）を使いましょう。
-　
-　分岐内で、分岐に使った変数を
-　条件に一致しないように変更します。
-　
-　これで１度だけしか
-　回復・ダメージ処理されないようになりました。
+　1. Let's also add "Temporarily Erase This Event".
+　As-is, the heal/damage process would trigger
+　repeatedly; by erasing the event once it runs,
+　we prevent it from running multiple times.
+
+
+　2. If you want to run the process once without erasing
+　the event, use a Condition (Variable) instead.
+
+　Inside the branch, change the variable used in the
+　condition so it no longer matches the condition.
+
+　This way the heal/damage process will only
+　run once.
 <pre></TD>
 <TD nowrap><pre><a target="B" href="image/BASE_E005_2.png"><img width="400" src="image/BASE_E005_2.png" border="1"></a>
 <pre></TD>
@@ -109,22 +104,22 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【4】テストプレイ
-　早速作成したイベントに接触されてみましょう。
-　接触される前にメニューを開き
-　パーティにいるキャラが
-　【2】で <b>対象主人公</b> に指定されて
-　いるか確認します。
-　
-　されているキャラがいなければ
-　【2】でパーティ内にいるキャラを
-　指定し直しましょう。
-　
-　それでは早速イベントに接触されてみましょう。
-　接触されたときに画像のように
-　文章が表示されれば成功です。
-　
-　おつかれさまでした。
+<TD nowrap><pre>[4] Test Play
+　Let's touch the event we created right away.
+　Before touching it, open the menu and
+　confirm that the character specified in
+　[2] as the <b>Target Player Character</b>
+　is in the party.
+
+　If there is no such character in the party,
+　go back to [2] and specify a character
+　that is in the party.
+
+　Now touch the event.
+　If text is displayed as shown in the image
+　when touched, you have succeeded.
+
+　Great work! You're done.
 <pre></TD>
 <TD nowrap><pre><a target="B" href="image/BASE_E005_3.png"><img width="320" src="image/BASE_E005_3.png"></a>
 <pre></TD>
@@ -136,13 +131,11 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre><a name="5">【5】おまけ</a>
-　メッセージ表示でいちいち止まるのは 嫌だ！
-　という人向けの処理の作り方です。
-　
-　ピクチャを使用してメッセージを表示
-　メッセージを移動
-　少ししたら移動しつつ消去させます。
+<TD nowrap><pre><a name="5">[5] Bonus</a>
+　For those who don't want the message window
+　to stop the action every time it appears.
+　Here is how to create the process using a picture to display the message,
+　make it move, and then fade out while moving.
 <pre></TD>
 <TD nowrap><pre><a target="B" href=""><img src=""></a>
 <pre></TD>
@@ -154,25 +147,24 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【6】処理の設定その１
-　
-　画像のとおりに設定していきましょう。
-　1.<b>3 変数操作</b> で
-　<b>このｾﾙﾌ変数0 = 0 + 0</b> を追加
-　※ これは「対象主人公」の
-　　 データ位置をです。
-　
-　2.<b>3 変数操作</b> で
-　<b>このｾﾙﾌ変数1 = -10 + 0</b> を追加
-　※ これは「何ポイント」の値です。
-　
-　3.赤い下線を引いた部分に 1. と 2. で
-　作成した変数を指定しましょう。
-　
-　<B>現在のイベントのｾﾙﾌ変数0</b> を指定するなら
-　<b>「1100000」</b>を入力
-　<b>現在のイベントのｾﾙﾌ変数1</b> を指定するなら
-　<b>「1100001」</b>を入力
+<TD nowrap><pre>[6] Process Setup Part 1
+
+　Configure according to the image.
+　1. Using <b>3 Variable Operation</b>,
+　add <b>This Self Variable 0 = 0 + 0</b>.
+　※ This is the data position of the "Target Player Character".
+
+　2. Using <b>3 Variable Operation</b>,
+　add <b>This Self Variable 1 = -10 + 0</b>.
+　※ This is the "By How Many Points" value.
+
+　3. In the red-underlined parts, specify the variables
+　created in steps 1 and 2.
+
+　To specify <b>Self Variable 0 of the current event</b>,
+　enter <b>"1100000"</b>.
+　To specify <b>Self Variable 1 of the current event</b>,
+　enter <b>"1100001"</b>.
 
 <pre></TD>
 <TD nowrap><pre><a target="B" href="image/BASE_E005_4.png"><img width="360" src="image/BASE_E005_4.png"></a>
@@ -185,19 +177,16 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【7】処理の設定その２
-　
-　1.変数操作 で <b>Self2 絶対値= Self1 + 0</b> を指定
-　　絶対値は 0 を基点にどれだけ数値の差があるか
-　　計算するものです。
-　　今回は Self1 には -10 を入力したので
-　　10 という数値が Self2 に代入(=)されます。
-　　
-　2.▲メンバー情報取得[文字列]を呼び出し
-　　対象主人公の名前を取得します。
-　　下の赤線の「結果【取得文字列】」の
-　　項目に指定した変数に
-　　対象主人公の名前が代入されます。
+<TD nowrap><pre>[7] Process Setup Part 2
+
+　1. Using Variable Operation, specify <b>Self2 Absolute Value = Self1 + 0</b>.
+　　Absolute value calculates how far the value is from 0.
+　　Since Self1 has -10 entered, the value 10 is assigned (=) to Self2.
+
+　2. Call ▲ Get Member Info [String] to get the
+　　target player character's name.
+　　The target player character's name is assigned to the variable
+　　specified in the "Result [Retrieved String]" entry below the red line.
 <pre></TD>
 <TD nowrap><pre><a target="B" href="image/BASE_E005_5.png"><img width="360" src="image/BASE_E005_5.png"></a>
 <pre></TD>
@@ -209,22 +198,20 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【8】処理の設定その３
-　
-　1.<b>このEvのSelf1</b> を使い分岐処理させます。
-　　<b>Self1</b> が <b>-1 以下</b> の場合と
-　　<b>Self1</b> が <b>0 以上</b> の場合の
-　　２つの条件で分岐させます。
-　　
-　2.<b>Self1</b> が <b>-1 以下</b> の分岐内へ移動し
-　　<b>5 文字列操作</b> で <b>S1</b> に
-　　「<b> は \self[2] の ダメージを受けた！</b>」
-　　と代入(=)しましょう。
-　　
-　3.<b>Self1</b> が <b>0 以上</b> の分岐内へ移動し
-　　<b>5 文字列操作</b> で <b>S1</b> に
-　　「<b> は \self[2] 回復した！</b>」
-　　と代入(=)しましょう。
+<TD nowrap><pre>[8] Process Setup Part 3
+
+　1. Branch using <b>Self1 of this event</b>.
+　　Branch on two conditions:
+　　<b>Self1</b> is <b>-1 or less</b>, and
+　　<b>Self1</b> is <b>0 or more</b>.
+
+　2. Move into the branch where <b>Self1</b> is <b>-1 or less</b>
+　　and use <b>5 String Operation</b> to assign (=) to <b>S1</b>:
+　　"<b> took \self[2] damage!</b>"
+
+　3. Move into the branch where <b>Self1</b> is <b>0 or more</b>
+　　and use <b>5 String Operation</b> to assign (=) to <b>S1</b>:
+　　"<b> recovered \self[2] HP!</b>"
 <pre></TD>
 <TD nowrap><pre><a target="B" href="image/BASE_E005_6.png"><img width="360" src="image/BASE_E005_6.png"></a>
 <pre></TD>
@@ -236,16 +223,16 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【9】ピクチャ表示
+<TD nowrap><pre>[9] Picture display
 
-　画像のとおりに入力してください
-　Xには画面サイズXの半分を
-　Yには画面サイズYよりも少々少ない値を
-　パターンは必ず１、透明度は０を
-　※ 透明状態から徐々に文字が
-　　 不透明になるようにするためです
-　処理時間と発動ディレイは０を
-　拡大率とカラーは１００を入力して完了
+　Enter values according to the image.
+　For X, enter half of the screen width X.
+　For Y, enter a value slightly less than the screen height Y.
+　Pattern must be 1, and opacity 0.
+　※ This is so the text gradually becomes
+　　 opaque from a transparent state.
+　Process time and activation delay are 0.
+　Zoom and color are 100. Done.
 <pre></TD>
 <TD nowrap><pre><a target="B" href="image/BASE_E005_7.png"><img width="420" src="image/BASE_E005_7.png"></a>
 <pre></TD>
@@ -257,19 +244,19 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【10】文字を徐々に表示
+<TD nowrap><pre>[10] Gradually display the text
 
-　こちらも画像のとおりに入力してください
-　赤線以外の場所は変わりません。
-　
-　移動を選択します
-　Yには【9】で入力した値よりも小さい値を
-　透明度は255を、処理時間は20を入力
-　
-　これで画面下部から、徐々に不透明になり
-　つつ、文字が上へ滑るように表示されます
-　
-　
+　Enter values according to the image here too.
+　Only the red-lined parts change.
+
+　Select "Move".
+　For Y, enter a value smaller than what was entered in [9].
+　Set opacity to 255 and process time to 20.
+
+　This makes the text slide upward from the bottom
+　of the screen while gradually becoming opaque.
+
+
 <pre></TD>
 <TD nowrap><pre><a target="B" href="image/BASE_E005_8.png"><img width="420" src="image/BASE_E005_8.png"></a>
 <pre></TD>
@@ -281,17 +268,16 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【11】一定時間表示後に消す
-　
-　こちらも画像のとおりに入力してください
-　赤線以外の場所は変わりません。
-　
-　Yには【10】で入力した値よりも小さい値を
-　透明度は0を、発動ディレイは50を入力
-　※ 発動ディレイは【9】の処理が
-　　 完全に終わってから、30フレーム後に
-　　 【10】の処理が起こるようにする
-　　 ためのものです。
+<TD nowrap><pre>[11] Erase after displaying for a certain time
+
+　Enter values according to the image here too.
+　Only the red-lined parts change.
+
+　For Y, enter a value smaller than what was entered in [10].
+　Set opacity to 0 and activation delay to 50.
+　※ The activation delay makes [10]'s process
+　　 start 30 frames after [9]'s process is
+　　 fully complete.
 　　 50 - 20 = 30
 <pre></TD>
 <TD nowrap><pre><a target="B" href="image/BASE_E005_9.png"><img width="420" src="image/BASE_E005_9.png"></a>
@@ -304,15 +290,14 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【12】後始末
-　1.最後はピクチャの「消去」を選択し
-　処理時間は０を入力
-　発動ディレイには70を入力
-　
-　2.【3】と同じように１回しか処理
-　しないように調整したら完成です。
-　
-　画像は処理の全体像です。
+<TD nowrap><pre>[12] Cleanup
+　1. Finally, select "Erase" for the picture
+　and set process time to 0.
+　Set activation delay to 70.
+
+　2. Adjust so it only runs once, the same as [3], and you are done.
+
+　The image shows the overall process.
 <pre></TD>
 <TD nowrap><pre><a target="B" href="image/BASE_E005_10.png"><img width="420" src="image/BASE_E005_10.png"></a>
 <pre></TD>
@@ -324,29 +309,28 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【13】テストプレイ
-　Self1の値を -10 から色々な数値に変えて
-　きちんと動作するか試しましょう
-　
-　
-　文字列が画面下部から上へ向かって移動し
-　途中で少し止まったあとに
-　また上へ向けて移動しつつ消えていき
-　
-　指定したキャラクターのＨＰが
-　Self1の値の分だけ増減していたら成功です。
-　※ ただし最大ＨＰ以上には増えません。
-　
-　文字の滑る時間を長くしたいのなら
-　【10】と【11】の処理時間を増やす
-　
-　文字が止まってからの表示時間を長くするなら
-　【11】の発動ディレイを増やし
-　増やした分だけ【12】で指定する
-　<b>発動ディレイ</b>も増やすこと
-　
-　拙い説明ですがこれで終了です
-　おつかれさまでした。
+<TD nowrap><pre>[13] Test Play
+　Try changing the value of Self1 from -10 to various values
+　to make sure it works correctly.
+
+
+　If the text slides from the bottom of the screen upward,
+　pauses briefly,
+　then moves upward again while disappearing,
+
+　and the specified character's HP has increased or decreased
+　by the value of Self1, you have succeeded.
+　※ However, HP will not exceed the maximum HP.
+
+　To make the text slide for longer,
+　increase the process time in [10] and [11].
+
+　To extend the display time after the text pauses,
+　increase the activation delay in [11]
+　and also increase the <b>activation delay</b> in [12] by the same amount.
+
+　This description is rough but we are done here.
+　Great work! You're done.
 <pre></TD>
 <TD nowrap><pre>
 <pre></TD>
@@ -356,9 +340,9 @@
 <HR>
 
 <HR>
-<P>＜執筆者：きじこ</A>＞　</P>
+<P><Author: Kijiko>　</P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

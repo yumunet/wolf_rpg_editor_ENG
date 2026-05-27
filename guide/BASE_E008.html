@@ -1,50 +1,50 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>イベント内で、メニューやセーブ画面を出したい</TITLE>
+<TITLE>I want to open the menu or save screen from within an event</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【イベント内で、メニューやセーブ画面を出したい】</H2>
+<H2>【I want to open the menu or save screen from within an event】</H2>
 <HR>
-　<B>【目標】</B><BR>
+　<B>[Goal]</B><BR>
 <HR>
 <P>
-　長いイベントの間に戦闘が発生する場合に、<BR>
-　メニュー画面を呼び出してプレイヤーに準備をさせたい場合があります。<BR>
-　また、特定の場所でしかセーブが出来ないダンジョンなどのマップを作る時には、<BR>
-　「セーブポイント」としてセーブ画面を呼び出すイベントが必要になります。<BR>
-　そんな時に役立つのが本トピックの内容です。<BR>
+　When a battle occurs in the middle of a long event,<BR>
+　you may want to call up the menu screen to let the player prepare.<BR>
+　Also, when creating a dungeon or other map where saving is only allowed at certain spots,<BR>
+　you will need an event that calls up the save screen as a "save point".<BR>
+　That's exactly what this topic covers.<BR>
 <BR>
-　今回は、「話しかけるとメニュー画面を出してくれるイベント」と、<BR>
-　「話しかけるとセーブ画面を出してくれるイベント」を作成し、<BR>
-　メインメニューやサブメニューの起動の仕方を習得します。</P>
+　This time, we will create an event "that opens the menu screen when spoken to" and<BR>
+　an event "that opens the save screen when spoken to",<BR>
+　learning how to launch the main menu and sub-menus.</P>
 <HR>
-　<B>【手順】</B><BR>
+　<B>【Steps】</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><B>■メインメニューとサブメニュー</B><BR>
+<TD nowrap><B>■ Main Menu and Sub-Menus</B><BR>
 <BR>
 <BR>
-　イベントを作成する前に、ウディタ基本システムの<BR>
-　メインメニューとサブメニューについて説明します。<BR>
+　Before creating the events, let's describe the<BR>
+　main menu and sub-menus of the WOLF RPG Editor Basic System.<BR>
 <BR>
-　メインメニューとは、ゲーム中で「x」ボタンを押した時に表示される、<BR>
-　各メニューの入り口となる大元のメニューのことです。<BR>
+　The main menu is the root menu that appears when you press the "X" button during the game,<BR>
+　serving as the entry point for all menus.<BR>
 <BR>
-　サブメニューとは、メインメニューからさらに選択できる、<BR>
-　アイテム、特殊技能、装備、セーブ、システムといった<BR>
-　詳細設定をするメニューのことです。<BR>
+　Sub-menus are the menus accessible from the main menu,<BR>
+　such as Items, Special Skills, Equipment, Save, and System,<BR>
+　which allow detailed settings.<BR>
 <BR>
 <BR>
-　メインメニューとサブメニューでは<BR>
-　呼び出し方が異なりますので、それぞれを解説します。<BR>
+　The main menu and sub-menus are launched differently,<BR>
+　so each will be explained separately.<BR>
 <BR>
 <BR>
 <BR>
@@ -62,18 +62,18 @@
 </TABLE>
 <HR>
 
-　<B>■メインメニュー起動</B><BR>
+　<B>■ Launching the Main Menu</B><BR>
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【1】 イベントの作成<BR>
+<TD nowrap>[1] Create the Event<BR>
 <BR>
-　「サンプルマップA」の適当な場所にイベントを作成し、<BR>
-　ニワトリの画像を設定しておきます。<BR>
+　Create an event at a suitable spot in "Sample Map A" and<BR>
+　set it to the chicken image.<BR>
 <BR>
-　やり方が分からない場合は、「<A href="http://www.silversecond.com/WolfRPGEditor/Guide/MUST_001x.html" target="_blank">新しいイベントを作ってみたい</A>」の<BR>
-　【1】～【5】を参考にしてみてください。<BR>
+　If you are unsure how, refer to steps [1]–[5] of<BR>
+　"<A href="http://www.silversecond.com/WolfRPGEditor/Guide/MUST_001x.html" target="_blank">I want to try creating a new event</A>".<BR>
 </TD>
 <TD nowrap><IMG src="image/BASE_E008_2.png" width="325" height="234" border="0"></TD>
 </TR>
@@ -83,16 +83,16 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【2】 イベントの入力<BR>
+<TD nowrap>[2] Enter the Event Command<BR>
 <BR>
-　イベントウィンドウの右下にある、<BR>
-　<B>「■ コマンド入力ウィンドウ表示 ■」</B>をクリックしてください。<BR>
+　Click <B>"■ Show Command Input Window ■"</B><BR>
+　at the bottom right of the Event window.<BR>
 <BR>
-　①タブを<B>「I コモンイベント」</B>に変更し、イベント操作処理の欄を設定します。<BR>
-　②ラジオボタンで<B>「イベントの挿入」</B>を選択し<BR>
-　　 (デフォルトではここが選択されています)<BR>
-　③右のプルダウンリストで<B>「ｺﾓﾝ127:X[移]メニュー起動」</B>を選択してください。<BR>
-　④最後に、ウィンドウ右下の<B>「入力」</B>ボタンを押します。<BR>
+　① Change the tab to <B>"I Common Event"</B> and configure the event operation process fields.<BR>
+　② Select <B>"Insert Event"</B> using the radio button<BR>
+　　 (this is selected by default).<BR>
+　③ From the dropdown list on the right, select <B>"Common 127: X [Move] Menu Launch"</B>.<BR>
+　④ Finally, press the <B>"Input"</B> button at the bottom right of the window.<BR>
 </TD>
 <TD nowrap><IMG src="image/BASE_E008_3.png" width="412" height="363" border="0"></TD>
 </TR>
@@ -102,16 +102,16 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【3】 イベントの確認<BR>
+<TD nowrap>[3] Confirm the Event<BR>
 <BR>
-　これで<B>「話しかけるとメニュー画面を出してくれるイベント」</B>が作れました。<BR>
-　イベントの内容は右の画像のようになっているでしょうか。<BR>
+　You have now created an <B>event that opens the menu screen when spoken to</B>.<BR>
+　Does the event content look like the image on the right?<BR>
 <BR>
-　イベントコマンド入力ウィンドウを閉じて、<BR>
-　テストプレイをしてみてください。<BR>
-　<B>決定キーで話しかけるとメニュー画面を<BR>
-　出してくれるイベント</B>になっていれば成功です。<BR>
-　お疲れ様でした！<BR>
+　Close the Event Command Input window and<BR>
+　do a Test Play.<BR>
+　If pressing the <B>Confirm key to talk to the event<BR>
+　opens the menu screen</B>, you have succeeded.<BR>
+　Great work!<BR>
 </TD>
 <TD nowrap><IMG src="image/BASE_E008_4.png" width="302" height="276" border="0"></TD>
 </TR>
@@ -119,21 +119,21 @@
 </TABLE>
 <HR>
 
-　<B>■サブメニュー呼出</B><BR>
+　<B>■ Calling a Sub-Menu</B><BR>
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
 <TD nowrap>
-　今回は「起動するとセーブ画面を出してくれるイベント」を作成します。<BR>
+　This time we will create an "event that opens the save screen when launched".<BR>
 <BR>
-【1】 イベントの作成<BR>
+[1] Create the Event<BR>
 <BR>
-　「サンプルマップA」の適当な場所にイベントを作成し、<BR>
-　ニワトリの画像を設定しておきます。<BR>
+　Create an event at a suitable spot in "Sample Map A" and<BR>
+　set it to the chicken image.<BR>
 <BR>
-　やり方が分からない場合は、「<A href="http://www.silversecond.com/WolfRPGEditor/Guide/MUST_001x.html" target="_blank">新しいイベントを作ってみたい</A>」の<BR>
-　【1】～【5】を参考にしてみてください。
+　If you are unsure how, refer to steps [1]–[5] of<BR>
+　"<A href="http://www.silversecond.com/WolfRPGEditor/Guide/MUST_001x.html" target="_blank">I want to try creating a new event</A>".
 </TD>
 <TD nowrap><IMG src="image/BASE_E008_2.png" width="325" height="234" border="0"></TD>
 </TR>
@@ -143,18 +143,18 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【2】 イベントの入力<BR>
+<TD nowrap>[2] Enter the Event Command<BR>
 <BR>
-　イベントウィンドウの右下にある、<BR>
-　<B>「■ コマンド入力ウィンドウ表示 ■」</B>をクリックしてください。<BR>
+　Click <B>"■ Show Command Input Window ■"</B><BR>
+　at the bottom right of the Event window.<BR>
 <BR>
-　①タブを<B>「I コモンイベント」</B>に変更し、イベント操作処理の欄を設定します。<BR>
-　②ラジオボタンで<B>「イベントの挿入」</B>を選択し<BR>
-　　 (デフォルトではここが選択されています)<BR>
-　③右のプルダウンリストで<B>「ｺﾓﾝ14:○各種メニュー呼出」</B>を選択してください。<BR>
-　④セーブ画面を呼び出す処理を入れます。<B>【コモンEv入力(数値)】</B>の欄で、<BR>
-　　<B>「呼び出すメニュー」</B>を<B>「0:セーブ画面」</B>にしてください。<BR>
-　⑤最後に、ウィンドウ右下の<B>「入力」</B>ボタンを押します。<BR>
+　① Change the tab to <B>"I Common Event"</B> and configure the event operation process fields.<BR>
+　② Select <B>"Insert Event"</B> using the radio button<BR>
+　　 (this is selected by default).<BR>
+　③ From the dropdown list on the right, select <B>"Common 14: ○ Call Various Menus"</B>.<BR>
+　④ Enter the process to call the save screen. In the <B>[Common Event Input (Value)]</B> field,<BR>
+　　set <B>"Menu to Call"</B> to <B>"0: Save Screen"</B>.<BR>
+　⑤ Finally, press the <B>"Input"</B> button at the bottom right of the window.<BR>
 </TD>
 <TD nowrap><IMG src="image/BASE_E008_5.png" width="412" height="368" border="0"></TD>
 </TR>
@@ -164,16 +164,16 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【3】 イベントの確認<BR>
+<TD nowrap>[3] Confirm the Event<BR>
 <BR>
-　これで<B>「話しかけるとセーブ画面を出してくれるイベント」</B>が作れました。<BR>
-　イベントの内容は右の画像のようになっているでしょうか。<BR>
+　You have now created an <B>event that opens the save screen when spoken to</B>.<BR>
+　Does the event content look like the image on the right?<BR>
 <BR>
-　イベントコマンド入力ウィンドウを閉じて、<BR>
-　テストプレイをしてみてください。<BR>
-　<B>決定キーで話しかけるとセーブ画面を<BR>
-　出してくれるイベント</B>になっていれば成功です。<BR>
-　お疲れ様でした！<BR>
+　Close the Event Command Input window and<BR>
+　do a Test Play.<BR>
+　If pressing the <B>Confirm key to talk to the event<BR>
+　opens the save screen</B>, you have succeeded.<BR>
+　Great work!<BR>
 </TD>
 <TD nowrap><IMG src="image/BASE_E008_6.png" width="304" height="278" border="0"></TD>
 </TR>
@@ -181,25 +181,25 @@
 </TABLE>
 <HR>
 
-　<B>【余談】</B><BR>
+　<B>[Side Note]</B><BR>
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
 <TD nowrap>
-<B>■呼び出すことのできるサブメニューについて</B><BR>
+<B>■ About Sub-Menus That Can Be Called</B><BR>
 <BR>
-　手順ではセーブ画面を呼び出しましたが、<BR>
-　<B>「呼び出すメニュー」の数値</B>を変えることで<BR>
-　他のサブメニューを呼び出すことができます。<BR>
+　In the steps above we called the save screen, but<BR>
+　you can call other sub-menus by changing the<BR>
+　<B>value of "Menu to Call"</B>.<BR>
 <BR>
-　呼び出すことのできるサブメニューは下記の通りです。<BR>
-　　 0 : セーブ画面<BR>
-　　-1 : ロード画面<BR>
-　　 1 : アイテム画面<BR>
-　　 2 : 技能画面<BR>
-　　 3 : 装備画面<BR>
-　　 4 : システム画面<BR>
+　The sub-menus that can be called are as follows:<BR>
+　　  0 : Save screen<BR>
+　　 -1 : Load screen<BR>
+　　  1 : Item screen<BR>
+　　  2 : Skill screen<BR>
+　　  3 : Equipment screen<BR>
+　　  4 : System screen<BR>
 </TD>
 </TR>
 </TBODY>
@@ -208,16 +208,16 @@
 
 <HR>
 
-<P>＜執筆者：ウディタ公式ガイド執筆コミュ。＞
+<P><Author: WOLF RPG Editor Official Guide Writing Community>
     <ul>
-        <li>トピック原案：真波、<a href="http://hinezumi.velvet.jp/" target="_blank">ユノ</a></li>
-        <li>HTML作成：真波</li>
+        <li>Topic concept: Manami, <a href="http://hinezumi.velvet.jp/" target="_blank">Yuno</a></li>
+        <li>HTML creation: Manami</li>
     </ul>
 </P>
 <HR>
-【改訂履歴】<BR>
-　Ver1.00　2013/08/11 新規作成<BR>
-<HR><A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+[Revision History]<BR>
+　Ver1.00　2013/08/11 Initial creation<BR>
+<HR><A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

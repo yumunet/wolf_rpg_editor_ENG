@@ -1,112 +1,111 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>メッセージ内のフォントを変えたい</TITLE>
+<TITLE>I want to change the font in a message</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【メッセージ内のフォントを変えたい】</H2>
+<H2>【I want to change the font in a message】</H2>
 <HR>
-<P>【目標】 <BR>
-ウディタでは、ゲームの好きなところに<br>
-好きなフォントを使用することができます。<br>
+<P>[Goal] <BR>
+In WOLF RPG Editor, you can use any<br>
+font you like anywhere in the game.<br>
 <br>
-または、「迷いの森」とか「魔王城」など、キーワードを<br>
-少し違うフォントにして目立たせたり。<br>
-魔法使いがイベントで魔法を使うときに、<br>
-特殊な文字のフォントを使って呪文のようなことをしゃべらせたり。<br>
-他にも、記号のような読めないフォントで表示された文章が、<br>
-アイテム「古文書」を持っているときだけ、<br>
-読めるフォントで表示されるようにしたり。<br>
-フォントの変更が出来ると、いろいろなことができるようになります。<br>
+For example, you could make keywords like "Forest of Confusion" or "Demon King's Castle"<br>
+stand out by displaying them in a slightly different font.<br>
+Or have a magic user speak incantations using<br>
+a special character font during a magic-use event.<br>
+Another idea: display text in an unreadable symbolic font,<br>
+and only show it in a readable font when the player<br>
+has the item "Ancient Manuscript".<br>
+Being able to change fonts opens up many possibilities.<br>
 <br>
-今回は、イベントコマンドの文章表示を用いてメッセージ内の<br>
-フォントの変更を行うことで、その方法を習得します。<br>
+This time, we will learn how to change the font in a message<br>
+by using the Show Message Event Command.<br>
 <br>
-なお、ここでご紹介するのは、すでにウディタで使用できるよう<br>
-登録設定が完了したフォントを使用する方法です。<br>
-登録設定の仕方は<br>
-「<a href="MATERIAL_006.html">ゲームに、気に入ったフォントを使いたい</a>」でどうぞ。<br>
+Note that what we introduce here is how to use a font that has already been<br>
+registered for use in WOLF RPG Editor.<br>
+For how to register a font,<br>
+see "<a href="MATERIAL_006.html">I want to use a font I like in my game</a>".<br>
 <br>
 </P>
 <HR>
-【手順】
+【Steps】
 <HR>
 <P>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>１．フォントの変更<br>
-・「サンプルマップA」の適当な場所にイベントを<br>
-　作成してニワトリの画像を設定しておきます。<br>
-・イベントウィンドウの右下にある<br>
-　「■ コマンド入力ウィンドウ表示 ■」を<br>
-　クリックしてください。<br>
-・イベントコマンド入力ウィンドウのタブを<br>
-　「1 文章の表示」に変更してください。<br>
-　次に内容を入力します。<br>
-　\font[1]鍵A　\font[0]鍵A<br>
-　と入力し、「入力」ボタンを押してください。<br>
-　　「鍵A」の部分には実はあんまり意味はなく、<br>
-　　重要なのは「<b>\font[(数字)]</b>」です。<br>
-　　これは、それ以降の文字のフォントを切り替える<br>
-　　特殊文字の命令文で、数字の部分には<br>
-　　「ゲーム設定」から開ける「ゲームの基本設定」の<br>
-　　項目「使用ﾌｫﾝﾄ(空欄なら「ＭＳ ゴシック」)」<br>
-　　に登録されているフォントの登録番号が入ります(0～3)。<br>
-　　基本～サブ3がありますが、登録番号は上から順に0,1,2,3です。<br>
-　　デフォルトの状態では、基本フォントに「ＭＳ ゴシック」が、<br>
-　　サブフォント1に「Arial Black」が入っていますので、<br>
-　　「\font[1]」の後がArial Blackで表示され、<br>
-　　「\font[0]」の後がＭＳ ゴシックで<br>
-　　表示されるようになります。<br>
+<TD nowrap>1. Changing the font<br>
+・Create an event at a suitable location in "Sample Map A"<br>
+　and set the chicken image.<br>
+・Click "■ Show Command Input Window ■" in the lower right<br>
+　of the Event window.<br>
+・Change the tab in the Event Command Input window<br>
+　to "1 Show Message".<br>
+　Then enter the content:<br>
+　\font[1]Key A　\font[0]Key A<br>
+　and press the "input" button.<br>
+　　The "Key A" part doesn't really matter;<br>
+　　what's important is "<b>\font[(number)]</b>".<br>
+　　This is a special character command that switches the font<br>
+　　for subsequent text. The number corresponds to<br>
+　　the registration number of a font registered in<br>
+　　"Game Basic Settings" (opened from "Game Settings")<br>
+　　under the item "Fonts Used (blank = 'MS Gothic')" (0～3).<br>
+　　There are Basic through Sub 3, with registration numbers 0, 1, 2, 3 from top to bottom.<br>
+　　By default, "MS Gothic" is in the basic font slot and<br>
+　　"Arial Black" is in Sub Font 1,<br>
+　　so text after "\font[1]" will be displayed in Arial Black,<br>
+　　and text after "\font[0]" will be displayed<br>
+　　in MS Gothic.<br>
 </TD>
-<TD nowrap><img src="image/EFFECT_005_1.png"><br>ここに登録されています<br>
-<img src="image/EFFECT_005_2.png"><br>こんな風に打ちましょう</TD>
+<TD nowrap><img src="image/EFFECT_005_1.png"><br>This is where they are registered<br>
+<img src="image/EFFECT_005_2.png"><br>Enter it like this</TD>
 </TR>
 </TBODY>
 </TABLE>
 <HR>
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>２．確認<br>
-　では、テストプレイしてイベントに話しかけてみましょう。<br>
-　「鍵A」は２つ入力しましたが、Arial Blackフォントの方では<br>
-　鍵という文字がRのような記号に変わってしまっています。<br>
-　これはArial Blackが欧米言語用フォントであるため、日本語は<br>
-　正しく表示できないのです。そのため漢字やひらがなを<br>
-　入力すると、記号やフランス語文字などが出てきたりします。<br>
-　Aのほうは正しい表記ですが、太さや高さ、横幅が明らかに<br>
-　違うことが分かります。<br>
-　もしうまく行かない場合は、手順1を見直してみてくださいね。<br>
-　お疲れ様でした！<br>
+<TD nowrap>2. Confirm<br>
+　Now Test Play and talk to the event.<br>
+　We entered "Key A" twice, but in the Arial Black font version,<br>
+　the character for "key" has been changed to a symbol resembling the letter R.<br>
+　This is because Arial Black is a font for Western languages and cannot<br>
+　display Japanese characters correctly. As a result, when you enter kanji or hiragana,<br>
+　symbols or French characters may appear.<br>
+　The "A" in the other one is correctly displayed, but you can clearly see<br>
+　differences in weight, height, and width.<br>
+　If it doesn't work correctly, review step 1.<br>
+　Good work!<br>
 </TD>
-<TD nowrap><img src="image/EFFECT_005_3.png"><br>フォントの違いですね<!--このRのマークは…意味なんだっけ？--></TD>
+<TD nowrap><img src="image/EFFECT_005_3.png"><br>That's the font difference<!--What does that R mark mean again?--></TD>
 </TR>
 </TBODY>
 </TABLE>
 <HR>
 </P>
 <HR>
-<P>【余談】
+<P>[Side Note]
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>\font[0]で指定できる「基本フォント」は、<br>
-命令文無しで普通に入力した時に使われるフォントと同じです。<br>
-ですので、\font[0]の使いどころは、今回のように、<br>
-一度別のフォントを使用した文字列の後ろの方で、<br>
-基本フォントを使用したい場合、それに戻すために使用します。<br>
+<TD nowrap>The "basic font" specified by \font[0] is the same as the font used<br>
+when text is entered normally without any command.<br>
+Therefore, the use case for \font[0] is, as in this example,<br>
+when you want to return to the basic font after using a different font<br>
+in a string.<br>
 <br>
-今回は、すでにウディタで使用できるようにゲーム設定で<br>
-登録したフォントを実際に使用する方法について<br>
-ご紹介しましたが、この登録の方法は<br>
-「<a href="MATERIAL_006.html">ゲームに、気に入ったフォントを使いたい</a>」<br>
-でご説明していますので、必要な方はこちらもどうぞ。<br>
+This time we introduced how to actually use a font that has already been<br>
+registered in Game Settings for use in WOLF RPG Editor.<br>
+The registration method is described in<br>
+"<a href="MATERIAL_006.html">I want to use a font I like in my game</a>",<br>
+so if you need that, please check there too.<br>
 </TD>
 <TD nowrap></TD>
 </TR>
@@ -115,14 +114,14 @@
 </P><HR>
 
 <HR>
-<P>＜＜執筆者：<A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">ウディタ公式ガイド執筆コミュ。</A>＞＞<BR>
+<P>＜<Author: <A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">WOLF RPG Editor Official Guide Writing Community.</A>>＞<BR>
 <UL>
-	<LI>設計書作成：真波、ユノ</LI>
-	<LI>トピック執筆：Hdk103-Arch</LI>
+	<LI>Design document creation: Manami, Yuno</LI>
+	<LI>Topic writing: Hdk103-Arch</LI>
 </UL>
 </P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

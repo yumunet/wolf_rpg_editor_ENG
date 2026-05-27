@@ -1,21 +1,21 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>キャラ名を変更したい</TITLE>
+<TITLE>I want to change a character's name</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【キャラ名を変更したい】</H2>
+<H2>【I want to change a character's name】</H2>
 <HR>
-<P><pre>【目標】
-イベントを用いて、キャラクターの名前を変更する
-使用バージョン[2.x系]
+<P><pre>[Goal]
+Change a character's name using an event.
+Version used: [2.x series]
 
->>> 応用編 <<<
-<a href="EV_014.html" target="B">◆キャラ名をキーボード入力で指定した名前に変更する</a>
+>>> Advanced <<<
+<a href="EV_014.html" target="B">◆ Change a character's name to one entered via keyboard input</a>
 
 </pre></p>
 
@@ -23,12 +23,12 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【1】
-　・まずマップ選択<IMG height=20 src="image/icon_mapselector.png" width=22 border=0>で「イベントを作成したいマップ」に切り替えて下さい。
+<TD nowrap><pre>[1]
+　&bull; First, use the Map Selector<IMG height=20 src="image/icon_mapselector.png" width=22 border=0> to switch to the "map where you want to create the event".
 
-　・適当な場所にイベントを作成してニワトリの画像を設定しておきます。
+　&bull; Create an event somewhere suitable and set it to the chicken image.
 
-　手順は<a href="EV_001.html" target="B">◆決定キーで起動するイベント</a>の【1】～【5】を参考にしてください。
+　For steps, refer to [1]–[5] of <a href="EV_001.html" target="B">◆ An event launched by the Confirm key</a>.
 <pre></TD>
 <TD nowrap><pre><a href="image/BASE_E012_1.png"><img src="image/BASE_E012_1.png" border="1"></a>
 <pre></TD>
@@ -40,26 +40,25 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【2】
-　作成したら、イベントウィンドウの右下にある
-　<b>「■コマンド入力ウィンドウ表示■」</b>を
-　クリックしてください。
+<TD nowrap><pre>[2]
+　Once created, click
+　<b>"■ Show Command Input Window ■"</b>
+　at the bottom right of the Event window.
 
-1.「イベントコマンドの挿入」ウィンドウが出たら
-　<b>I コモンイベント</b> をクリックして選択します。
+1. When the "Insert Event Command" window appears,
+　click <b>I Common Event</b> to select it.
 
-2.丸で囲まれた「コモンEv名で呼出」が選ばれてい
-　るか、確認します。
-　文字の左の白丸の中に黒丸がついていれば
-　選択されています。
-　※ もし、選ばれてなかったら
-　クリックして選択して下さい。
+2. Confirm that "Call by Common Event Name" (circled)
+　is selected.
+　If the circle next to the text has a dot in it,
+　it is selected.
+　※ If it is not selected,
+　click it to select it.
 
-3.四角3で囲まれた場所をクリックすると、選ぶこ
-　とができるコモンイベントのリストが表示されま
-　す。
-　今回は <b>キャラ名変更</b> のイベントなので、
-　<b>「○主人公情報の変更」</b>を選択しましょう。
+3. Clicking the area circled by box 3 will display
+　a list of available Common Events.
+　Since this is a <b>character name change</b> event,
+　select <b>"○ Change Player Character Info"</b>.
 <pre></TD>
 <TD nowrap><pre><a href="image/BASE_E013_1.png"><img width="418" src="image/BASE_E013_1.png"></a>
 <pre></TD>
@@ -71,26 +70,25 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【3】
-　1,変更したいキャラクターを選択
-　白い四角の中にチェックが入ってないか確認します
-　チェックが入っていたら、四角をクリックして
-　チェックを外します。
-　項目をクリックするとキャラ名一覧が表示されますので
-　変更したいキャラクタを選びましょう。
-　
-　2,設定するのは？の項目に「0:キャラ名」を選択
-　1,と同じように四角を確認しましょう。
-　今回変更するのはキャラクタの名前なので
-　「0:キャラ名」を撰びましょう。
-　
-　3,新しい文字列に <b>新しいキャラ名</b>を入力します。
-　今回は「しゅじんこういちさん」に変更しましょう。
-　
-　4,最後に入力を左クリックしたら完了です。
-　
-　これでキャラクタ名を変更する処理が完成しました！
-　
+<TD nowrap><pre>[3]
+　1. Select the character you want to change.
+　Check that the white checkbox is unchecked.
+　If it is checked, click the checkbox to uncheck it.
+　Clicking the field will display a character name list —
+　select the character you want to change.
+
+　2. For "What to Set?", select "0: Character Name".
+　Check the checkbox just like in step 1.
+　Since we are changing the character's name,
+　select "0: Character Name".
+
+　3. Enter the <b>new character name</b> in the "New String" field.
+　In this example, we are changing it to "MainHeroPerson".
+
+　4. Finally, left-click Input and you are done.
+
+　The process to change the character's name is now complete!
+
 <pre></TD>
 <TD nowrap><pre><a href="image/BASE_E013_2.png"><img width="380" src="image/BASE_E013_2.png"></a>
 <pre></TD>
@@ -102,23 +100,23 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【4】テストプレイ
-　今回は
-　対象主人公:「ヒーローさん」の
-　設定するのは？:「キャラ名」を
-　新しい文字列:「しゅじんこういちさん」に
-　変更させてみました。
-　
-　画像のようにメニュー画面で
-　変化しているのを確認できたら成功です。
-　
-　※もし上手くいかなかったら……
-　【3】の入力時に入力箇所や
-　対象が間違っていないか
-　確認してみましょう。
-　
-　おつかれさまでした。
-　
+<TD nowrap><pre>[4] Test Play
+　In this example:
+　Target Player Character: "Hero"
+　What to Set?: "Character Name"
+　New String: "MainHeroPerson"
+
+　If you can confirm in the menu screen
+　that the name has changed as shown in the image,
+　you have succeeded.
+
+　※ If something goes wrong...
+　Check whether the input fields and
+　target were set correctly
+　when configuring in [3].
+
+　Great work! You're done.
+
 <pre></TD>
 <TD nowrap><pre><a href="image/BASE_E013_3.png"><img src="image/BASE_E013_3.png"></a>
 <pre></TD>
@@ -126,9 +124,9 @@
 </TBODY>
 </TABLE>
 <HR>
-<P>＜執筆者：きじこ</A>＞　</P>
+<P><Author: Kijiko>　</P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

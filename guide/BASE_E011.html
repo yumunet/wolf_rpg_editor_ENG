@@ -1,50 +1,49 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
- 
- 
-<HTML LANG="ja">
+
+
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
- 
+
 <meta charset="UTF-8">
- 
-<TITLE>ゲームオーバーの処理をちゃんと作りたい</TITLE>
- 
+
+<TITLE>I want to properly set up the Game Over process</TITLE>
+
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
- 
+
 </HEAD><BODY>
 <HR>
-<H2>【ゲームオーバーの処理をちゃんと作りたい】</H2>
- 
+<H2>【I want to properly set up the Game Over process】</H2>
+
 <HR>
-<P>【目標】 <BR>
-　　　戦闘中に味方全員のHPが０になると<br>
-　　　『「ゲームオーバー」と表示されて画面が暗転し、タイトル画面に戻る』<br>
-　　　処理を作ります。<BR>
+<P>[Goal] <BR>
+　　　We will create a process where, when all allies' HP reaches 0 during combat,<br>
+　　　"Game Over" is displayed, the screen fades to black, and the game returns to the title screen.<BR>
 <BR>
- 
- 
+
+
 </P>
- 
+
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
- 
-<TD nowrap>【1】　『コモンイベントの設定』<img src="./image/BASE_E011_1.png">を開き、<BR>
-　　　コモン82を選択し、開きます。<br>	
+
+<TD nowrap>[1] Open "Common Event Settings" <img src="./image/BASE_E011_1.png">,<BR>
+　　　select Common 82, and open it.<br>
 </TD>
 <TD nowrap><img src="./image/BASE_E011_2.png"><BR>
 </TD>
 </TR>
- 
+
 </TBODY>
 </TABLE>
 <HR>
 <TABLE border="0">
 <TBODY><TR>
- 
-<TD nowrap>【2】　次に、コモンイベントエディタの下のほうにある<br>
-　　　『イベントコマンド挿入ウィンドウを表示』をクリックします。</TD>
+
+<TD nowrap>[2] Next, click "Show Event Command Insert Window"<br>
+　　　at the bottom of the Common Event editor.</TD>
 <TD nowrap><img src="./image/BASE_E011_3.png"><BR>
 </TD>
 </TR>
@@ -54,10 +53,10 @@
 <TABLE border="0">
 <TBODY>
 <TR>
- 
-<TD nowrap>【3】　『イベントコマンドの挿入』の<br>
-　　　「画面処理」タブを選択し、画面の色調変更から、<br>
-　　　「真っ黒に」を押し、処理時間を10フレームにして、入力を押します。<br></TD>
+
+<TD nowrap>[3] In the "Insert Event Command" window,<br>
+　　　select the "Screen Process" tab, click "Fade to Black" under Screen Color Adjustment,<br>
+　　　set the process time to 10 frames, and press Input.<br></TD>
 <TD nowrap><img src="./image/BASE_E011_4.png"></TD>
 </TR>
 </TBODY>
@@ -66,9 +65,9 @@
 <TABLE border="0">
 <TBODY>
 <TR>
- 
-<TD nowrap>【4】　最初からあった、文章を『BackSpace』キーで消去し<br>
-　　　新たに『ゲームオーバーになってしまった！』と入力します。<br><br><A href="http://www.silversecond.com/WolfRPGEditor/Guide/" target="_blank">新しいイベントを作ってみたい</A>の【8】【9】参照<br></TD>
+
+<TD nowrap>[4] Delete the text that was there from the start using the Backspace key,<br>
+　　　then enter "Game Over!".<br><br>Refer to [8][9] of <A href="http://www.silversecond.com/WolfRPGEditor/Guide/" target="_blank">I want to try creating a new event</A>.<br></TD>
 <TD nowrap><img src="./image/BASE_E011_5.png"></TD>
 </TR>
 </TBODY>
@@ -77,16 +76,16 @@
 <TABLE border="0">
 <TBODY>
 <TR>
- 
-<TD nowrap>【5】　画面の色調変更で10フレームかかるので、<br>　　　その他1のタブから「ウェイト」10フレーム入力します。</TD>
+
+<TD nowrap>[5] Since the screen color adjustment takes 10 frames,<br>　　　enter a Wait of 10 frames from the Other 1 tab.</TD>
 <TD nowrap><img src="./image/BASE_E011_6.png"></TD>
 </TR>
 </TBODY>
 </TABLE>
 <HR>
 <TABLE border="0">
- 
-<TD nowrap>【6】　タイトルに戻る処理としてその他1から、<br>　　　『タイトル画面へ』を押します。</TD>
+
+<TD nowrap>[6] As the process to return to the title, from Other 1,<br>　　　press "Go to Title Screen".</TD>
 <TD nowrap><img src="./image/BASE_E011_7.png"></TD>
 </TR>
 </TBODY>
@@ -95,8 +94,8 @@
 <TABLE border="0">
 <TBODY>
 <TR>
- 
-<TD nowrap>【7】　『画面処理』から、画面の色調変更で<br>　　　「色リセット」を押し、入力します。</TD>
+
+<TD nowrap>[7] From "Screen Process", click "Reset Color" under Screen Color Adjustment,<br>　　　and press Input.</TD>
 <TD nowrap><img src="./image/BASE_E011_8.png"></TD>
 </TR>
 </TBODY>
@@ -105,8 +104,8 @@
 <TABLE border="0">
 <TBODY>
 <TR>
- 
-<TD nowrap>【8】　次に、『ユーザーデータベースエディタ』<img src="./image/BASE_E011_9.png">を開きます。</TD>
+
+<TD nowrap>[8] Next, open the "User Database Editor" <img src="./image/BASE_E011_9.png">.</TD>
 <TD nowrap><img src="./image/BASE_E011_10.png"></TD>
 </TR>
 </TBODY>
@@ -115,22 +114,22 @@
 <TABLE border="0">
 <TBODY>
 <TR>
- 
-<TD nowrap>【9】　「15:ﾍﾞｰｽｼｽﾃﾑ設定」を開き、「ページ3」<img src="./image/BASE_E011_11.png">を押します。<br>[戦闘]ｹﾞｰﾑｵｰﾊﾞｰ処理Evがコモン82になってるのを確認して、<br>「OK」を押します。<br> <br>ゲームオーバー処理の作り方は以上です。お疲れさまでした。</TD>
+
+<TD nowrap>[9] Open "15: Basic System Settings" and press "Page 3" <img src="./image/BASE_E011_11.png">.<br>Confirm that the [Combat] Game Over Process Event is set to Common 82,<br>then press "OK".<br> <br>That's how to create the Game Over process. Great work!</TD>
 <TD nowrap><img src="./image/BASE_E011_12.png"></TD>
 </TR>
 </TBODY>
-</TABLE> 
+</TABLE>
 <HR>
 <P>
-＜執筆者：<A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">ウディタ公式ガイド執筆コミュ。</A>＞<br>
+<Author: <A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">WOLF RPG Editor Official Guide Writing Community</A>><br>
 <ul>
-<li>のと</li>
-<li>真波</li>
-</ul>　
+<li>Noto</li>
+<li>Manami</li>
+</ul>
 </P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><br>
 </P>
 </BODY>

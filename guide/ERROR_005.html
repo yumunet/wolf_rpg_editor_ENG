@@ -1,27 +1,27 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>◆ウディタで使うと鳴らないMIDIがある</TITLE>
+<TITLE>◆ There is a MIDI that does not play when used in WOLF RPG Editor</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【◆ウディタで使うと鳴らないMIDIがある】</H2>
-　　　[MIDI素材の音が鳴らない]<BR>
+<H2>【◆ There is a MIDI that does not play when used in WOLF RPG Editor】</H2>
+　　　[MIDI asset sound does not play]<BR>
 <HR>
-<P>【目標】 <BR>
-　一部または全部の音の鳴らないMIDIファイルの音が出る状態にします。<BR>
+<P>[Goal] <BR>
+　Get a MIDI file that produces no sound (partially or entirely) to play correctly.<BR>
 　<BR>
-　サンプルとして通常の音楽再生ソフトでは普通に再生され、<BR>
-　ウディタではメロディが鳴らなくなるMIDIを用意しましたので、動作確認用にお使いください。<BR>
+　As a sample, we have prepared a MIDI that plays normally in regular music players<BR>
+　but loses its melody in WOLF RPG Editor — please use it for testing.<BR>
 　<BR>
-　<A HREF ="image/ERROR_005_1.mid">sample.mid</A>(右クリック→対象をファイルに保存)<BR>
+　<A HREF ="image/ERROR_005_1.mid">sample.mid</A> (right-click → Save target as file)<BR>
 　<BR>
-　※注意※<BR>
-　状況によってはMIDI素材自体を改変することになります。<BR>
-　ダウンロード先の素材利用規約を必ず読み、トラブルが起こらないようくれぐれも気をつけてください。<BR>
+　※Note※<BR>
+　Depending on the situation, you may need to modify the MIDI asset itself.<BR>
+　Be sure to read the terms of use for the downloaded asset, and take great care to avoid any issues.<BR>
 </P>
 <HR>
 
@@ -29,21 +29,20 @@
 <TBODY>
 <TR>
 <TD nowrap>
-	【1】<BR>
-	　※この作業は予想外の音が出る可能性があるため、<BR>
-	　ヘッドホン等は外してスピーカーで音を聴くことをおすすめします。<BR>
+	[1]<BR>
+	　※ Since this procedure may produce unexpected sounds,<BR>
+	　it is recommended to remove headphones and listen through speakers.<BR>
 	　<BR>
-	　まず始めに音の環境を確認します。<BR>
-	　デスクトップの通知領域(右下の部分)から音量を右クリック、<BR>
-	　ボリュームコントロールを開きます。<BR>
+	　First, check your audio environment.<BR>
+	　Right-click the volume icon in the notification area (bottom right of the desktop)<BR>
+	　and open the Volume Control.<BR>
 	　<BR>
-	　各項目を確認し、ボリュームが0になって無いか、<BR>
-	　「入力モニタ」以外のミュートのチェックが外されているかを確認します。<BR>
+	　Check each item to make sure the volume is not set to 0,<BR>
+	　and that the mute checkbox is unchecked for everything except "Input Monitor".<BR>
 	　<BR>
-	　この状態で一度MIDI素材の音を聴きます。<BR>
-	　自分で使っている音楽再生ソフト(Windows Media Playerなど)で<BR>
-	　聴いたときと比べて抜けている音がある場合はウディタで<BR>
-	　対応していない音色を使った素材なので、【2】に進みます。<BR>
+	　Then listen to the MIDI asset once in this state.<BR>
+	　If there are missing sounds compared to listening with your usual music player (such as Windows Media Player),<BR>
+	　the asset uses sound tones not supported by WOLF RPG Editor, so proceed to [2].<BR>
 </TD>
 <TD nowrap>
 	<IMG SRC = "image/ERROR_005_1.jpg"><BR>
@@ -59,27 +58,27 @@
 <TABLE border="0">
 <TBODY><TR>
 <TD nowrap>
-	【2】<BR>
-	　ウディタ側で抜けている音は素材の中身を<BR>
-	　変更することで応急処置ができます。<BR>
-	　これは素材の改変になりますので、<BR>
-	　MIDI編集のためのソフトが必要になります。<BR>
+	[2]<BR>
+	　Sounds missing on the WOLF RPG Editor side can be temporarily fixed<BR>
+	　by modifying the contents of the asset.<BR>
+	　Since this involves modifying the asset,<BR>
+	　you will need software for MIDI editing.<BR>
 	　<BR>
-	　面倒な設定の不要なものとして以下のものがありますので、<BR>
-	　今回はこのソフトを説明のために利用し、<BR>
-	　音がきちんと再生されるように素材を改変します。<BR>
+	　The following software requires no complicated settings<BR>
+	　and is used here for this explanation;<BR>
+	　we will modify the asset so it plays correctly.<BR>
 	　<BR>
-	　Cherry　MIDIシーケンサ<BR>
+	　Cherry　MIDI Sequencer<BR>
 	　http://www.vector.co.jp/soft/win95/art/se071842.html<BR>
 	　（Vector）<BR>
 	　<BR>
-	　ダウンロードと解凍を行い、<BR>
-	　フォルダを整えたらcherry.exeを起動してください。<BR>
+	　Download and extract it,<BR>
+	　set up the folder, and launch cherry.exe.<BR>
 	　<BR>
-	　各ウィンドウの解説<BR>
-	　メインウィンドウ：ファイルの保存、ソフトの設定、曲の再生等<BR>
-	　Track Listウィンドウ：曲全体の情報を表示するウィンドウ<BR>
-	　Track#1～ウィンドウ：各パートの編集をするウィンドウ<BR>
+	　Window descriptions:<BR>
+	　Main window: file saving, software settings, song playback, etc.<BR>
+	　Track List window: a window displaying overall information about the song<BR>
+	　Track #1～ windows: windows for editing individual parts<BR>
 </TD>
 <TD nowrap>
 	<IMG SRC = "image/ERROR_005_3.jpg"><BR>
@@ -93,13 +92,13 @@
 <TBODY>
 <TR>
 <TD nowrap>
-	【3】<BR>
-	　「ファイル」より「開く」を選択し、<BR>
-	　編集したいMIDIファイルを読み込みます<BR>
-	　読み込みが終わると「Track List」ウィンドウに<BR>
-	　赤い線で音のデータが表示されるので確認します。<BR>
-	　(サンプルの場合はCH2、CH3、CH4、CH10のパートに<BR>
-	　音の情報が入っています)
+	[3]<BR>
+	　Select "Open" from "File"<BR>
+	　and load the MIDI file you want to edit.<BR>
+	　When loading is complete, the sound data will be displayed<BR>
+	　as red lines in the "Track List" window — confirm this.<BR>
+	　(For the sample, CH2, CH3, CH4, and CH10 contain<BR>
+	　sound information.)
 </TD>
 <TD nowrap>
 	<IMG SRC = "image/ERROR_005_4.jpg"><BR>
@@ -111,14 +110,14 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【4】<BR>
-	　楽器の情報を確認していきます。<BR>
-	　Track#1～ウィンドウを表示し、左上のボックスから<BR>
-	　音の情報が入っているパートであるCH2を選択します。<BR>
+<TD nowrap>[4]<BR>
+	　Let's check the instrument information.<BR>
+	　Display the Track #1～ window and select CH2,<BR>
+	　which contains sound data, from the box at the top left.<BR>
 	　<BR>
-	　すると、その下にデータが出ますので、<BR>
-	　その中から「Program」を探し、ダブルクリックします。<BR>
-	
+	　Data will appear below;<BR>
+	　find "Program" among them and double-click it.<BR>
+
 </TD>
 <TD nowrap>
 	<IMG SRC = "image/ERROR_005_5.jpg"><BR>
@@ -132,11 +131,11 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【5】
-	すると、右図のような音色を選択する画面が出るので、<BR>
-	MAPの番号を"000"番、BANKの番号を"000"番に設定します。<BR>
-	設定し終わったらOKを押します。(PC#はそのまま)<BR>
-	これで、このパート(CH2)はウディタで使える音色になりました<BR>
+<TD nowrap>[5]
+	A screen for selecting a sound tone will appear as shown on the right;<BR>
+	set the MAP number to "000" and the BANK number to "000".<BR>
+	Press OK when done. (Leave PC# unchanged.)<BR>
+	Now this part (CH2) uses a sound tone compatible with WOLF RPG Editor.<BR>
 </TD>
 <TD nowrap>
 	<IMG SRC = "image/ERROR_005_7.jpg"><BR>
@@ -149,12 +148,12 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【6】
-	どの音色のパートが鳴っていないかがわかればそこだけを直せば良いのですが(sampleはCH2のみ)<BR>
-	わからなければ打楽器パート(CH10)以外の全部のパートで【4】～【5】を繰り返します。<BR>
-	(sampleの場合はCH2、CH3、CH4の3つに対して設定)<BR>
+<TD nowrap>[6]
+	If you know which sound tone part is not playing, you only need to fix that one (in the sample, only CH2),<BR>
+	but if you are not sure, repeat [4]～[5] for all parts except the percussion part (CH10).<BR>
+	(For the sample, apply settings to the 3 parts: CH2, CH3, and CH4.)<BR>
 	<BR>
-	あとはウディタ上で鳴り方を確認して終了です。<BR>
+	Afterwards, confirm how it sounds in WOLF RPG Editor and you are done.<BR>
 </TD>
 <TD nowrap></TD>
 </TR>
@@ -163,9 +162,9 @@
 <HR>
 
 <HR>
-<P>＜執筆者：<A href="http://hinezumi.velvet.jp/" target="_blank">ユノ</A>＞　</P>
+<P><Author: <A href="http://hinezumi.velvet.jp/" target="_blank">Yuno</A>>　</P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>

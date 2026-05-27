@@ -1,58 +1,56 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>武器に属性を設定したい</TITLE>
+<TITLE>I want to set an element on a weapon</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【武器に属性を設定したい】</H2>
+<H2>【I want to set an element on a weapon】</H2>
 <HR>
-　<B>【目標】</B><BR>
+　<B>[Goal]</B><BR>
 <HR>
 <P>
-　RPGなどのゲームをよくプレイされていて、<BR>
-　属性についてすでによくご存じの方には今更かもしれませんが、<BR>
-　属性とは キャラクターの得意なもの、苦手なものを決めて<BR>
-　戦略性を広げるためのルールです。<BR>
+　If you play RPGs frequently and are already familiar with elements, this may be nothing new,<BR>
+　but elements are rules that determine what a character is strong or weak against,<BR>
+　adding strategic depth to the game.<BR>
 <BR>
-　ウディタ基本システムでは、味方や敵、装備、技能にこの属性を設定できます。<BR>
-　属性を使えば、火属性に弱くて冷気属性に強いモンスターも作れますし、<BR>
-　地震を起こして敵全体を攻撃できるが空を飛ぶモンスターに無効な技能、さらには<BR>
-　「魔王」のような特定のボスにだけ大ダメージを与えられる「聖剣」のような武器も作れます。<BR>
+　In the WOLF RPG Editor Basic System, you can set elements on allies, enemies, equipment, and skills.<BR>
+　With elements, you can create monsters that are weak to fire but strong against ice,<BR>
+　skills that can attack all enemies with an earthquake but are immune to flying monsters, and even<BR>
+　weapons like a "Holy Sword" that deals massive damage only to a specific boss like the "Demon King".<BR>
 <BR>
-　本トピックでは、サンプルゲームに元から入っている<BR>
-　武器「ダガー」に炎属性を設定し、<BR>
-　武器への属性の設定の仕方を習得します。</P>
+　In this topic, we will set the fire element on the weapon "Dagger" that is already included in the sample game,<BR>
+　and learn how to configure elements on weapons.</P>
 <HR>
-　<B>【手順】</B><BR>
+　<B>【Steps】</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY>
 <TR>
 <TD nowrap>
-　本トピックの【手順】では、<BR>
-　まず「属性の設定」の項でダガーが炎属性をもつように設定し、<BR>
-　次に「設定の確認」の項でテストプレイの仕方をご紹介します。<BR>
+　In this topic's 【Steps】, we will first configure the "Element Settings" section<BR>
+　so that the Dagger has the fire element,<BR>
+　then in the "Confirm Settings" section we will show you how to do a Test Play.<BR>
 </TD>
 </TR>
 </TBODY>
 </TABLE>
 <HR>
 
-　<B>■属性の設定</B><BR>
+　<B>■Element Settings</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>【1】 ユーザDBを開く<BR>
+<TD nowrap>[1] Opening the User Database<BR>
 <BR>
-　ユーザデータベース<IMG src="image/icon_userDB.png" width="22" height="20" border="0">をクリックすると、<BR>
-　右のようなウィンドウが表示されます。<BR>
+　Clicking the User Database<IMG src="image/icon_userDB.png" width="22" height="20" border="0"> will<BR>
+　display a window like the one on the right.<BR>
 </TD>
 <TD nowrap><IMG src="image/BASE2_002_1.png" width="340" height="300" border="0"></TD>
 </TR>
@@ -62,10 +60,10 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【2】 編集するタイプの選択<BR>
+<TD nowrap>[2] Selecting the type to edit<BR>
 <BR>
-　ウィンドウが開いた直後は「タイプ」が「技能」になっています。<BR>
-　<B>「3:武器」</B>をクリックして下さい。<BR>
+　When the window first opens, the "Type" is set to "skill".<BR>
+　Please click <B>"3:weapon"</B>.<BR>
 </TD>
 <TD nowrap><IMG src="image/BASE2_002_2.png" width="201" height="258" border="0"></TD>
 </TR>
@@ -75,10 +73,10 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【3】 編集するデータの選択<BR>
+<TD nowrap>[3] Selecting the data to edit<BR>
 <BR>
-　ウィンドウの中ほどにデータ一覧があります。<BR>
-　データはこの中から<B>「0:ダガー」</B>を選択してください。<BR>
+　There is a data list in the middle of the window.<BR>
+　Please select <B>"0:Dagger"</B> from this list.<BR>
 </TD>
 <TD nowrap><IMG src="image/BASE2_002_3.png" width="207" height="257" border="0"></TD>
 </TR>
@@ -88,20 +86,20 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap>【4】 項目の編集<BR>
+<TD nowrap>[4] Editing the entry<BR>
 <BR>
-　①ページを<B>「ページ２」</B>に切り替えてください。<BR>
+　① Switch the page to <B>"Page 2"</B>.<BR>
 <BR>
-　②項目番号28番の<B>「付与属性1」で、<BR>
-　　「[1]炎攻撃 [ﾕｰｻﾞ7]」</B>を選択してください。<BR>
+　② For entry number 28 <B>"Granted Element 1"</B>, select<BR>
+　　<B>"[1] Fire Attack [User7]"</B>.<BR>
 <BR>
-　（項目番号29番の「付与属性2」にも設定を入れることができるので、<BR>
-　　武器の属性は最大二つまで付けることができます）<BR>
+　(Entry number 29 "Granted Element 2" can also be configured,<BR>
+　　so you can attach up to two elements to a weapon.)<BR>
 <BR>
-　③設定できたら、<B>更新ボタンかＯＫボタン</B>を押して保存します。<BR>
+　③ Once configured, press the <B>Update button or OK button</B> to save.<BR>
 <BR>
-　ダガーに「炎攻撃」の属性がつきました。<BR>
-　これで属性のある武器の設定は完了です。<BR>
+　The "Fire Attack" element has been added to the Dagger.<BR>
+　That completes the setup for a weapon with an element.<BR>
 <BR>
 </TD>
 <TD nowrap><IMG src="image/BASE2_002_4.png" width="255" height="420" border="0"></TD>
@@ -110,27 +108,27 @@
 </TABLE>
 <HR>
 
-　<B>■設定の確認</B><BR>
+　<B>■Confirming the Settings</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap>　基本システムにデフォルトで設定されている敵「ドラゴンバイン」には、<BR>
-　炎攻撃が弱点である設定がされています。<BR>
+<TD nowrap>　The enemy "Dragon Vine" included by default in the Basic System<BR>
+　is configured to be weak against fire attacks.<BR>
 <BR>
-　炎属性をつけたダガーと属性なしのダガーで比較すると、<BR>
-　ダメージ量が変化していることがわかるでしょう。<BR>
+　If you compare the Dagger with the fire element to the Dagger without any element,<BR>
+　you should see a change in the amount of damage dealt.<BR>
 <BR>
-　テストプレイしたいけど戦闘イベントの作り方が分からないという場合は、<BR>
-　まず「<A href="http://www.silversecond.com/WolfRPGEditor/Guide/BASE_B003.html" target="_blank">敵グループを設定したい</A>」を参考にして<BR>
-　ドラゴンバインを含む敵グループをユーザーデータベースに作り、<BR>
-　これを「<A href="http://www.silversecond.com/WolfRPGEditor/Guide/BASE_E001.html" target="_blank">バトルを発生させたい</A>」を参考にして<BR>
-　マップイベントなどで呼び出してください。<BR>
+　If you want to do a Test Play but aren't sure how to create a combat event,<BR>
+　first refer to <A href="http://www.silversecond.com/WolfRPGEditor/Guide/BASE_B003.html" target="_blank">"I want to configure an enemy group"</A><BR>
+　to create an enemy group containing Dragon Vine in the User Database,<BR>
+　then refer to <A href="http://www.silversecond.com/WolfRPGEditor/Guide/BASE_E001.html" target="_blank">"I want to trigger a battle"</A><BR>
+　to call it from a map event or similar.<BR>
 <BR>
-　属性をつけただけではダメージ量の変化以外にわかるところは少ないので、<BR>
-　あとは名前やグラフィックを変更して好みの演出をするとよいでしょう。<BR>
-　お疲れ様でした。<BR>
+　Simply adding an element shows few visible differences beyond the change in damage,<BR>
+　so you may want to change the name and graphic to give it your preferred presentation/effect.<BR>
+　Good work!<BR>
 </TD>
 <TD nowrap><IMG src="image/BASE2_002_5.png" width="404" height="288" border="0"></TD>
 </TR>
@@ -138,24 +136,23 @@
 </TABLE>
 <HR>
 
-　<B>【余談】</B><BR>
+　<B>[Side Note]</B><BR>
 
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
 <TD nowrap>
-<B>■武器に状態異常付与効果を持たせる</B><BR>
+<B>■Giving a weapon a status ailment infliction effect</B><BR>
 <BR>
-　ユーザーデータベース「3:武器」には属性を設定できる他に、<BR>
-　毒や麻痺などの「状態異常（ステータス異常）」を与える機能を<BR>
-　追加することができます。<BR>
+　In addition to being able to set elements, User Database "3:weapon" also lets you<BR>
+　add the ability to inflict status ailments such as poison or paralysis.<BR>
 <BR>
-　項目番号18番「付与ステータス状態」と項目番号19番「付与確率[％]」が<BR>
-　これにあたります。<BR>
+　Entry number 18 "Inflicted Status Condition" and entry number 19 "Infliction Rate [%]"<BR>
+　are the relevant settings.<BR>
 <BR>
-　それぞれ、攻撃した相手に与える状態異常の種類と、<BR>
-　その状態異常を与える確率を設定することができます。<BR>
+　These let you configure the type of status ailment inflicted on the attacked target<BR>
+　and the probability of inflicting that ailment, respectively.<BR>
 </TD>
 </TR>
 </TBODY>
@@ -164,16 +161,16 @@
 
 <HR>
 
-<P>＜執筆者：ウディタ公式ガイド執筆コミュ。＞
+<P><Author: WOLF RPG Editor Official Guide Writing Community>
     <ul>
-        <li>トピック原案：真波、<A href="http://hinezumi.velvet.jp/index.php" target="_blank">ユノ</A></li>
-        <li>HTML作成：真波</li>
+        <li>Topic draft: Manami, <A href="http://hinezumi.velvet.jp/index.php" target="_blank">Yuno</A></li>
+        <li>HTML creation: Manami</li>
     </ul>
 </P>
 <HR>
-【改訂履歴】<BR>
-　Ver1.00　2013/09/06 新規作成<BR>
-<HR><A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+[Revision History]<BR>
+　Ver1.00　2013/09/06 Initial creation<BR>
+<HR><A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 

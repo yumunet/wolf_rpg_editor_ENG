@@ -1,32 +1,32 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>「1フレームあたりの処理が500000個を超えました！」と出てきた</TITLE>
+<TITLE>"Processing exceeded 500,000 operations per frame!" appeared</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【「1フレームあたりの処理が500000個を超えました！」と出てきた】</H2>
+<H2>【"Processing exceeded 500,000 operations per frame!" appeared】</H2>
 <HR>
-<P>【目標】 <BR>
-	<b>「1フレームあたりの処理が500000個を超えました！」と出るエラーを解消する</b><br>
+<P>[Goal] <BR>
+	<b>Resolve the error "Processing exceeded 500,000 operations per frame!"</b><br>
 	<br>
-	ウディタに少し慣れたころからよく出会う、このエラーメッセージの原因と対処法を理解します。<br>
-	一度理解してしまえば、次からはとっさに対応できるようになりますよ。<br>
+	Learn the cause of and solutions to this error message, which you will encounter fairly often once you get a bit more familiar with WOLF RPG Editor.<br>
+	Once you understand it, you will be able to respond quickly next time.<br>
 </P>
 <HR>
 <TABLE border="0">
 <TBODY>
 	<TR>
 		<TD nowrap>
-			ウディタ(Ver.1.31段階)では1フレーム中(=1/60秒)の間の処理は50万個が限界です。<br>
-			つまりこのエラーは1フレーム中に50万個以上の処理をしてしまっているのが原因です。<br>
-			では、何故このようなエラーが起きるのでしょうか。<br>
+			In WOLF RPG Editor (as of Ver.1.31), the limit for processing within one frame (= 1/60 of a second) is 500,000 operations.<br>
+			In other words, this error occurs because more than 500,000 operations are being performed within a single frame.<br>
+			So why does this error happen?<br>
 		</TD>
 		<TD nowrap>
-			<!-- 画像なし -->
+			<!-- no image -->
 		</TD>
 	</TR>
 </TBODY>
@@ -38,14 +38,14 @@
 <TBODY>
 	<TR>
 		<TD nowrap>
-			【無限ループに陥っている場合】<br>
-			「無限ループ」とは、あるループ内で、 <br>
-			それを抜け出すことができず、無限に同じ処理を繰り返すことです。<br>
-			この結果、1フレーム内での処理が50万個を超えることがよくあります。<br>
-			主な原因は以下の二つです。<br>
+			【When stuck in an infinite loop】<br>
+			An "infinite loop" is when, inside a loop,<br>
+			you cannot exit it and the same processing repeats indefinitely.<br>
+			As a result, the number of operations within a single frame often exceeds 500,000.<br>
+			The main causes are the following two:<br>
 		</TD>
 		<TD nowrap>
-			<!-- 画像なし -->
+			<!-- no image -->
 		</TD>
 	</TR>
 </TBODY>
@@ -56,23 +56,23 @@
 <table border="0">
 	<TR>
 		<TD nowrap>
-			①ループに「ループ中断」がない<br>
-			ループが中断されないため、<br>
-			50万個どころか無限にループし続けている状態です。<br>
-			ループの適切な位置に「ループ中断」を入れることで、<br>
-			エラーが解消することがあります。<br>
+			① There is no "Break Loop" in the Loop<br>
+			Because the loop is never interrupted,<br>
+			it loops infinitely, far exceeding 500,000 operations.<br>
+			Adding a "Break Loop" at the appropriate position in the loop<br>
+			may resolve the error.<br>
 		</TD>
 		<TD nowrap>
-			<!-- 画像なし -->
+			<!-- no image -->
 		</TD>
 	</TR>
 	<TR>
 		<TD nowrap>
-			◆「ループ中断」を入力するには<br>
-			・マップイベントエディタを開いて、<br>
-			　「■コマンド入力ウィンドウ表示■」をクリックしてください。<br>
-			・上部タブを「その他１」に切り替えます。<br>
-			・上部タブより少し下にある「ループ中断」をクリックします。<br>
+			◆ To input "Break Loop":<br>
+			・Open the map event editor,<br>
+			　click "■ Show Command Input Window ■".<br>
+			・Switch the top tab to "Other 1".<br>
+			・Click "Break Loop" slightly below the top tabs.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="./image/ERROR_003_1.png" width="367" height="317" border="0"><br>
@@ -81,39 +81,38 @@
 	<TR>
 		<TD nowrap>
 			【One Point!】<br>
-			また、ループ内で条件を満たすことができずに、<br>
-			「ループ中断」を実行できていない場合も考えられます。<br>
-			以上、以下、より大きい、未満、きちんと条件を満たせているか、<br>
-			条件分岐に使っている変数が間違っていないかを確認しましょう。<br>
+			Also consider the case where the loop condition cannot be met,<br>
+			so "Break Loop" never executes.<br>
+			Check whether the conditions (greater than or equal to, less than, greater than, etc.) are correct,<br>
+			and whether the variable used in the Conditional Branch is correct.<br>
 		</TD>
 		<TD nowrap>
-			<!-- 画像なし -->
+			<!-- no image -->
 		</TD>
 	</TR>
 	<TR><TD colspan="2"><HR></TD></TR>
 	<TR>
 		<TD nowrap>
-			②イベントの自動実行<br>
-			自動実行イベントは<br>
-			<b>「実行し終わっても自動的に、最初からまた同じことを繰り返す」</b><br>
-			という性質を持っているので、<br>
-			これも一種の無限ループになってしまう場合があります。<br>
-			この場合、原因である「自動実行」はループではなくイベントなので、<br>
-			ループ中断の代わりに「イベントの一時消去」を使ってください。<br>
+			② Auto-execute Event<br>
+			Auto-execute events have the property of<br>
+			<b>"automatically repeating from the beginning even after they finish running"</b>,<br>
+			so they can also become a kind of infinite loop.<br>
+			In this case, since the cause is an "Auto-execute" event rather than a loop,<br>
+			use "Temporarily Erase Event" instead of Break Loop.<br>
 		</TD>
 		<TD nowrap>
-			<!-- 画像なし -->
+			<!-- no image -->
 		</TD>
 	</TR>
 	<TR>
 		<TD nowrap>
-			◆「イベントの一時消去」を入力するには<br>
-			・マップイベントエディタを開いて、<br>
-			　「■コマンド入力ウィンドウ表示■」をクリックしてください。<br>
-			・上部タブを「その他１」に切り替えます。<br>
-			・下段の下から３つめにある「イベントの一時消去」を選択。<br>
-			・対象は「このイベント」にして、フェードは［0］を入力します。<br>
-			・設定できたら「入力」ボタンをクリック。<br>
+			◆ To input "Temporarily Erase Event":<br>
+			・Open the map event editor,<br>
+			　click "■ Show Command Input Window ■".<br>
+			・Switch the top tab to "Other 1".<br>
+			・Select "Temporarily Erase Event", the third from the bottom in the lower section.<br>
+			・Set the target to "This Event" and enter [0] for the fade.<br>
+			・Click the "input" button when done.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="./image/ERROR_003_2.png" width="367" height="317" border="0"><br>
@@ -122,31 +121,32 @@
 	<TR>
 		<TD nowrap>
 			【One Point!】<br>
-			この場合も、自動イベントの開始条件が満たされ続けているために<br>
-			イベントが起動し続けている、と言いかえることができます。<br> 
-			つまり、自動イベントでは、イベント自体を消してしまう方法の他にも<br>
-			イベントの最後で条件を満たさない状態にしてやることでループから抜ける<br>
-			ということもできるのです。<br> 
+			In this case too, you can think of it as:<br>
+			the auto event's start condition continues to be met,<br>
+			so the event keeps launching.<br>
+			Therefore, in addition to erasing the event itself,<br>
+			you can also exit the loop by making the condition no longer met<br>
+			at the end of the event.<br>
 		</TD>
 		<TD nowrap>
-			<!-- 画像なし -->
+			<!-- no image -->
 		</TD>
 	</TR>
 </TBODY>
 </TABLE>
 
 <HR>
-	
+
 <TABLE border="0">
 <TBODY>
 	<TR>
 		<TD nowrap>
-			【単純に処理がオーバーしている場合】<br>
-			アクションゲームなどで並列イベントを使う場合等によく起こります。<br>
-			適切な場所にウェイトを挟むか、処理数を減らすことが主な対策法です。<br>
+			【When processing simply overflows】<br>
+			This often occurs when using parallel events in action games, etc.<br>
+			The main countermeasures are to insert waits at appropriate places, or to reduce the number of operations.<br>
 		</TD>
 		<TD nowrap>
-			<!-- 画像なし -->
+			<!-- no image -->
 		</TD>
 	</TR>
 </TBODY>
@@ -157,13 +157,13 @@
 <TABLE>
 	<TR>
 		<TD nowrap>
-			◆「ウェイト」を入力するには<br>
-			・マップイベントエディタを開いて、<br>
-			　「■コマンド入力ウィンドウ表示■」をクリックしてください。<br>
-			・次に、上部タブを「その他１」に切り替えます。<br>
-			・下段の下から２つめの「ウェイト　　ﾌﾚｰﾑ」を選択してください。<br>
-			・最後に、右下の「入力」をクリックすると、<br>
-			　イベントに１フレームのウェイトが入力されます。<br>
+			◆ To input "Wait":<br>
+			・Open the map event editor,<br>
+			　click "■ Show Command Input Window ■".<br>
+			・Next, switch the top tab to "Other 1".<br>
+			・Select the "Wait　　Frame" option, the second from the bottom in the lower section.<br>
+			・Finally, click "input" in the lower right<br>
+			　to insert a 1-frame wait into the event.<br>
 		</TD>
 		<TD nowrap>
 			<IMG src="./image/ERROR_003_3.png" width="367" height="317" border="0"><br>
@@ -174,16 +174,16 @@
 
 <HR>
 
-<P>＜執筆者：<A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">ウディタ公式ガイド執筆コミュ。</A>＞<br>
+<P><Author: <A href="http://sns.prtls.jp/rpgeditor/community.html?cid=33af3514107db1a4" target="_blank">WOLF RPG Editor Official Guide Writing Community.</A>><br>
 	<ul>
-		<li>真波</li>
-		<li><A href="http://hinezumi.velvet.jp/" target="_blank">ユノ</A></li>
+		<li>Manami</li>
+		<li><A href="http://hinezumi.velvet.jp/" target="_blank">Yuno</A></li>
 		<li>esc23</li>
-		<li><A href="http://008877451.cocolog-nifty.com/aoyamaclub/" target="_blank">青山</A></li>
+		<li><A href="http://008877451.cocolog-nifty.com/aoyamaclub/" target="_blank">Aoyama</A></li>
 	</ul>
 </P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P>
 	<br>
 </P>

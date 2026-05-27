@@ -1,105 +1,104 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>戦闘時の「防御」効果もｽﾃｰﾀｽ異常なの？</TITLE>
+<TITLE>Is the "defend" effect during combat also a status ailment?</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【戦闘時の「防御」効果もｽﾃｰﾀｽ異常なの？】</H2>
+<H2>【Is the "defend" effect during combat also a status ailment?】</H2>
 <HR>
-　<B>【疑問】</B><BR>
+　<B>【Question】</B><BR>
 <HR>
 <P>
-　ステータス異常の情報はユーザデータベースの<BR>
-　8番「8:状態設定」に入っていますが、この中には<BR>
-　毒や麻痺を筆頭としたマイナスの状態のほかに、<BR>
-　防御や最大HP増加や攻撃強化といった、<BR>
-　プラス利用を目的としたステータス異常も入っています。<BR>
+　Status ailment data is stored in User Database entry 8 "8: Status Settings",<BR>
+　but in addition to negative statuses like poison and paralysis,<BR>
+　it also contains status ailments intended for positive use,<BR>
+　such as defend, max HP increase, and attack boost.<BR>
 <BR>
-　これらのプラスの効果があるものも「ステータス異常」なのでしょうか？</P>
+　Are these statuses with positive effects also considered "status ailments"?</P>
 <HR>
-　<B>【解説】</B><BR>
+　<B>【Explanation】</B><BR>
 <HR>
 
 <TABLE border="0">
 <TBODY>
 <TR>
 <TD nowrap>
-「ステータス異常」と聞くとマイナスイメージが強いですが、<BR>
-「常と異なる」と書く通り、<B>普通以外の状態(防御や力ためも含めて)、<BR>
-戦闘不能まで含めてすべてがステータス異常</B>です。<BR>
+The term "status ailment" carries a strongly negative image, but<BR>
+as the name implies any abnormal state (including defend and power charge),<BR>
+<B>everything from unusual states all the way to incapacitation counts as a status ailment</B>.<BR>
 <BR>
-マイナス効果もプラス効果も、技能を受けるキャラクターに<BR>
-付加されるので、たとえば「攻撃強化」状態を<BR>
-付与する武器で敵を攻撃すると敵に攻撃強化状態がつきます。<BR>
+Both negative and positive effects are applied to the character receiving the skill,<BR>
+so for example, if you attack an enemy with a weapon that inflicts the "Attack Boost" state,<BR>
+the enemy will receive the Attack Boost state.<BR>
 <BR>
-ステータス状態の設定はユーザデータベースの8番<BR>
-「8:状態設定」で行えます。ここで設定できることのうち、<BR>
-よく使うものを【詳細】で見ていきましょう。<BR>
+Status condition settings can be configured in User Database entry 8<BR>
+"8: Status Settings". Let us look at the most commonly used settings in 【Details】.<BR>
 </TD>
 </TR>
 </TBODY>
 </TABLE>
 <HR>
 
-　<B>【詳細】</B><BR>
+　<B>【Details】</B><BR>
 
 <HR>
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap><B>《ページ1》</B><BR>
+<TD nowrap><B>《Page 1》</B><BR>
 <BR>
-　① <B>最低持続ターン[-1:永久]</B><BR>
+　① <B>Minimum Duration [Turns] [-1: Permanent]</B><BR>
 <BR>
-　これは別名「基本ターン数」とも名づけられており、<BR>
-　<B>基準となる持続ターン数</B>です。ひとつ下の項目<BR>
-　「持続ターン変動幅[±]」によって、これより長くなったり<BR>
-　短くなったりします。-1を入力すると、ターン経過だけでは<BR>
-　回復しないステータス異常になります。0を入力すると、<BR>
-　与えたそのターンに回復するステータス異常になります。<BR>
-<BR>
-<BR>
-　② <B>持続ターン変動幅[±]</B><BR>
-<BR>
-　ひとつ上の項目「最低持続ターン[-1:永久]」が0以上のときに<BR>
-　ステータス異常の<B>持続ターン数にゆらぎ</B>を持たせる項目です。<BR>
+　Also known as the "base turn count", this is the<BR>
+　<B>baseline number of turns the ailment lasts</B>. The entry below,<BR>
+　"Duration Variance [±]", can make it longer or shorter than this value.<BR>
+　Entering -1 creates a status ailment that does not<BR>
+　heal from turn passage alone. Entering 0 creates a<BR>
+　status ailment that heals on the same turn it is applied.<BR>
 <BR>
 <BR>
-　③ <B>このｽﾃ状態が重なると↓</B><BR>
+　② <B>Duration Variance [±]</B><BR>
 <BR>
-　これはひとつ下の項目「┗ 次はこの状態になる」と対で<BR>
-　設定する項目です。戦闘不能と重なると治癒するよう<BR>
-　設定すれば、1度だけ戦闘不能を回避できるステータス異常に<BR>
-　なります(HPが回復しないので瀕死ですが)。<BR>
+　This entry adds <B>randomness to the number of turns</B> the status ailment lasts,<BR>
+　and applies when the entry above "Minimum Duration [-1: Permanent]" is 0 or more.<BR>
 <BR>
 <BR>
-　④ <B>┗ 次はこの状態になる</B><BR>
+　③ <B>When this status is stacked ↓</B><BR>
 <BR>
-　ひとつ上の項目「┗ 次はこの状態になる」とセットで<BR>
-　設定する項目です。サンプルゲームでは、この2項目を<BR>
-　使って「力ため」に段階を設けています。<BR>
-<BR>
-<BR>
-　⑤ <B>行動制限</B><BR>
-<BR>
-　麻痺状態や眠り状態のとき行動できなくなったり、<BR>
-　混乱状態のとき対象と行動内容を選べなくなったりといった<BR>
-　行動制限を設定する項目です。<BR>
-<BR>
-　味方（または敵）に特定のコマンドを使わせる機能もあるので、<BR>
-　工夫次第では味方の体力を吸収し続けるステータス異常「吸血鬼」や、<BR>
-　闇雲に敵に突進して反動でダメージを受けるステータス異常「暴走」<BR>
-　なども作ることができます。<BR>
+　This entry is configured in conjunction with the entry below "┗ Next state to enter".<BR>
+　If configured to cure when stacked with incapacitation,<BR>
+　it becomes a status ailment that can avoid incapacitation once<BR>
+　(though HP is not healed, so the character is near death).<BR>
 <BR>
 <BR>
-　⑥ <B>特殊技能制限</B><BR>
+　④ <B>┗ Next state to enter</B><BR>
 <BR>
-　いわゆる「魔法の使用が封印されて使えない」<B>封印状態</B>にする<BR>
-　ステータス異常です。封印状態以外の状態異常は<BR>
-　「[0]制限なし」にしておきましょう。<BR>
+　This entry is configured as a pair with the entry above "When this status is stacked".<BR>
+　In the sample game, these two entries are used to give<BR>
+　the "Power Charge" status multiple stages.<BR>
+<BR>
+<BR>
+　⑤ <B>Action Restriction</B><BR>
+<BR>
+　This entry configures action restrictions, such as being unable to act<BR>
+　while paralyzed or asleep, or being unable to choose targets and actions<BR>
+　while confused.<BR>
+<BR>
+　There is also a feature that forces allies (or enemies) to use specific commands,<BR>
+　so with creativity you can make status ailments like "Vampire" that continuously<BR>
+　absorbs allies' HP, or "Berserk" that makes the target blindly rush at enemies<BR>
+　and take recoil damage.<BR>
+<BR>
+<BR>
+　⑥ <B>Special Skill Restriction</B><BR>
+<BR>
+　This is a status ailment that puts the target in a <B>sealed state</B><BR>
+　where magic use is sealed and cannot be used.<BR>
+　For status ailments other than the sealed state,<BR>
+　keep this set to "[0] No Restriction".<BR>
 </TD>
 <TD nowrap><IMG src="image/BASE2_005_1.png" width="341" height="449" border="0"></TD>
 </TR>
@@ -109,27 +108,27 @@
 
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap><B>《ページ2》</B><BR>
+<TD nowrap><B>《Page 2》</B><BR>
 <BR>
-　<B>・HP増減±[%]/1ﾀｰﾝ終<BR>
-　・HP増減±[固定]/1ﾀｰﾝ終<BR>
-　・SP増減±[%]/1ﾀｰﾝ終<BR>
-　・SP増減±[固定値]/1ﾀｰﾝ終</B><BR>
+　<B>・HP Change ±[%] / End of Turn<BR>
+　・HP Change ±[Fixed] / End of Turn<BR>
+　・SP Change ±[%] / End of Turn<BR>
+　・SP Change ±[Fixed] / End of Turn</B><BR>
 <BR>
-　この4項目は、<B>徐々に体力が減っていく毒状態</B>や、<BR>
-　RPGによってはリジェネレイトなどと呼ばれていたりする、<BR>
-　<B>毎ターン徐々に数値が回復していく</B>ようなステータス異常に<BR>
-　設定できる項目です。この項目で徐々に回復・減少するのは<BR>
-　最大HP・SPではなく、現在HP・SPです。<BR>
+　These 4 entries can be configured for status ailments like the <B>poison state where HP gradually decreases</B>,<BR>
+　or what some RPGs call "Regenerate", where<BR>
+　<B>the value gradually recovers each turn</B>.<BR>
+　What gradually heals or decreases with these entries is not max HP/SP,<BR>
+　but current HP/SP.<BR>
 <BR>
 <BR>
-　<B>・敵からの狙われ度</B><BR>
+　<B>・Enemy Targeting Rate</B><BR>
 <BR>
-　「[1]前攻撃が集中」に設定すると、全体攻撃を受けた時でさえも<BR>
-　このステータス異常のかかったキャラクターにしか当たらなくなります。<BR>
-　「[-1]狙われない[※当たる]」と「[-2]狙われず＆全無効化」は<BR>
-　表記の通りの効果があります。<BR>
-　サンプルゲームでは「隠れる」「引きつける」にこの設定が使われています。<BR>
+　Setting this to "[1] Focused Front Attacks" makes it so that even when receiving<BR>
+　an all-target attack, only the character with this status ailment is hit.<BR>
+　"[-1] Not Targeted [※Still Hits]" and "[-2] Not Targeted &amp; Full Immunity"<BR>
+　have the effects as described.<BR>
+　In the sample game, this setting is used for "Hide" and "Taunt".<BR>
 </TD>
 </TR>
 </TBODY>
@@ -138,18 +137,18 @@
 
 <HR>
 
-<P>＜執筆者：ウディタ公式ガイド執筆コミュ。＞
+<P><Author: WOLF RPG Editor Official Guide Writing Community>
     <ul>
-        <li>トピック原案：真波、<A href="http://hinezumi.velvet.jp/index.php" target="_blank">ユノ</A></li>
-        <li>HTML作成：真波</li>
-        <li>画像提供：レイクソルト</li>
+        <li>Topic draft: Manami, <A href="http://hinezumi.velvet.jp/index.php" target="_blank">Yuno</A></li>
+        <li>HTML creation: Manami</li>
+        <li>Image provided by: Lake Salt</li>
     </ul>
 </P>
 <HR>
-【改訂履歴】<BR>
-　Ver1.01　2013/11/09 解説画像の追加<BR>
-　Ver1.00　2013/09/28 新規作成<BR>
-<HR><A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+[Revision History]<BR>
+　Ver1.01　2013/11/09 Added explanation images<BR>
+　Ver1.00　2013/09/28 Initial creation<BR>
+<HR><A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 

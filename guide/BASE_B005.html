@@ -1,27 +1,27 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<HTML LANG="ja">
+<HTML lang="en">
 <HEAD>
 <META http-equiv="Content-Style-Type" content="text/css">
 <meta charset="UTF-8">
-<TITLE>戦闘中にイベントを発生させたい</TITLE>
+<TITLE>I want to trigger an event during combat</TITLE>
 <LINK REL="stylesheet" HREF="manual.css" TYPE="text/css">
 </HEAD><BODY>
 <HR>
-<H2>【戦闘中にイベントを発生させたい】</H2>
+<H2>【I want to trigger an event during combat】</H2>
 <HR>
-<P>【目標】 <BR>
-　<b>戦闘開始直後、敵全滅～戦闘終了時の間<BR>
-　ターンの開始時、ターンの終了時</b><BR>
-　上記のタイミングにイベントを発生させる
+<P>[Goal] <BR>
+　Trigger events at the following timings:<BR>
+　<b>Immediately after combat starts, between all enemies being defeated and combat ending<BR>
+　At the start of a turn, at the end of a turn</b>
 <HR>
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【1】
-　使用するウディタのバージョンは <b>[2.x系]</b> です
-　まずはコモンイベントの一覧を開きましょう。
-　右の円にある <IMG src="image/icon_eventlayer.png" width="22" height="20" border="0"> を左クリック。
+<TD nowrap><pre>[1]
+　The WOLF RPG Editor version used here is <b>[2.x series]</b>.
+　First, let's open the Common Event list.
+　Left-click <IMG src="image/icon_eventlayer.png" width="22" height="20" border="0"> in the circle on the right.
 </pre></TD>
 <TD nowrap><a href="image/BASE_B005_0.png"><img src="image/BASE_B005_0.png"></a><BR>
 </TD>
@@ -32,12 +32,12 @@
 <HR>
 <TABLE border="0">
 <TBODY><TR>
-<TD nowrap><pre>【2】
-　コモンイベントエディタが開いたら
-　ウィンドウの左側にある、コモンイベント一覧の中から
-　<b>203:○[変更可]戦闘開始時処理</b>　を探します。
-　かなり下の方にあるので横のバーを一気に下げてしまっていいでしょう。
-　今回使用するのは<b> 203 ～ 206 </b>の４つのコモンイベントです。
+<TD nowrap><pre>[2]
+　Once the Common Event editor opens,
+　search the Common Event list on the left side of the window for
+　<b>203: ○[Modifiable] Combat Start Process</b>.
+　It is quite far down, so you can drag the scrollbar all the way down at once.
+　The 4 Common Events we will use are <b>203 through 206</b>.
 </TD>
 <TD nowrap><pre><a href="image/BASE_B005_1.png"><img src="image/BASE_B005_1.png"></a><pre></TD>
 </TR>
@@ -48,20 +48,19 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre><a name="No3">【3】</a>
-　戦闘開始時にメッセージを表示させてみましょう。
-　
-　コモンイベント一覧から
-　<b>203:○[変更可]戦闘開始時処理</b> を選択。
-　
-　イベントコマンドから文章の表示を選択。
-　
-　文章の内容はてきとうに
-　<b>戦闘開始時処理です</b>
-　とでも入力しておきましょう。
-　
-　Ctrl+S　か　更新ボタンを押し
-　保存するのを忘れずに。
+<TD nowrap><pre><a name="No3">[3]</a>
+　Let's display a message when combat starts.
+
+　Select <b>203: ○[Modifiable] Combat Start Process</b>
+　from the Common Event list.
+
+　Select Show Message from the Event Commands.
+
+　Enter something appropriate for the message content, like:
+　<b>Combat Start Process</b>
+
+　Don't forget to save by pressing Ctrl+S
+　or the Update button.
 <pre></TD>
 <TD nowrap><pre><a href="image/BASE_B005_2.png"><img height=318 src="image/BASE_B005_2.png"></a><pre></TD>
 </TR>
@@ -72,22 +71,21 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【4】
-　それでは戦闘を行ってどうなったか確認してみましょう。
-　
-　<a href="http://www.silversecond.com/WolfRPGEditor/Guide/BASE_E001.html">◆バトルを発生させたい</a>を参考にして
-　てきとうな相手との戦闘を発生させてみてください。
-　
-　敵が全て表示されたあとに
-　メッセージが表示されましたか？
-　
-　されていれば成功です。
-　
-　<b>>>> メッセージが表示されない場合の可能性。 <<<</b>
-　１、<b>203:○[変更可]戦闘開始時処理</b> 以外のコモンを改造している。
-　２、何らかの理由で <b>203:○[変更可]戦闘開始時処理</b> が読み込まれていない。
-　　　>> コモン <b>188:X◆戦闘処理</b> を開き
-　　　>> 43行目で <b>○[変更可]戦闘開始時処理</b> が呼び出されているか確認する。
+<TD nowrap><pre>[4]
+　Now let's trigger a combat and check what happened.
+
+　Refer to <a href="http://www.silversecond.com/WolfRPGEditor/Guide/BASE_E001.html">◆ I want to trigger a battle</a>
+　to trigger a combat against a suitable opponent.
+
+　Did the message display after all enemies appeared?
+
+　If it did, you succeeded.
+
+　<b>>>> Possible reasons if the message does not display: <<<</b>
+　1. You modified a Common Event other than <b>203: ○[Modifiable] Combat Start Process</b>.
+　2. <b>203: ○[Modifiable] Combat Start Process</b> is not being loaded for some reason.
+　　　>> Open Common <b>188: X◆ Combat Process</b>
+　　　>> Confirm that <b>○[Modifiable] Combat Start Process</b> is being called on line 43.
 <pre></TD>
 <TD nowrap><a href="image/BASE_B005_3.gif"><img height=256 src="image/BASE_B005_3.gif"></a></TD>
 </TR>
@@ -98,17 +96,16 @@
 <TABLE border="0">
 <TBODY>
 <TR>
-<TD nowrap><pre>【5】
-　<b>204:○[変更可]1ﾀｰﾝ開始時処理　<188:X◆戦闘処理 71行目>
-　205:○[変更可]1ﾀｰﾝ終了時処理　<188:X◆戦闘処理 118行目>
-　206:○[変更可]戦闘終了後処理　<188:X◆戦闘処理 181行目></b>
-　等も同様に <b><a href="#No3">[3]</a></b> を設定してみて、どのタイミングで呼び出されるか
-　テストプレイでしっかり確認しておきましょう。
-　
-　これで戦闘中のある程度決まったタイミングに
-　イベントを発生させることができるようになりました。
-　
-　おつかれさまです。
+<TD nowrap><pre>[5]
+　Similarly, try setting up <b><a href="#No3">[3]</a></b> for:
+　<b>204: ○[Modifiable] 1-Turn Start Process  &lt;188: X◆ Combat Process, line 71&gt;
+　205: ○[Modifiable] 1-Turn End Process  &lt;188: X◆ Combat Process, line 118&gt;
+　206: ○[Modifiable] Post-Combat End Process  &lt;188: X◆ Combat Process, line 181&gt;</b>
+　and confirm carefully in a Test Play at what timing each one is called.
+
+　You can now trigger events at certain fixed timings during combat.
+
+　Good work!
 <pre></TD>
 <TD nowrap><pre>
 <pre></TD>
@@ -116,7 +113,7 @@
 </TBODY>
 </TABLE>
 
-<!--　テーブル見本
+<!-- Table template
 
 <HR>
 <TABLE border="0">
@@ -130,12 +127,12 @@
 </TR>
 </TBODY>
 </TABLE>
-見本ここまで　-->
+End template -->
 <HR>
 <HR>
-<P>＜執筆者：きじこ＞　</P>
+<P><Author: Kijiko>　</P>
 <HR>
-<A href="index.html" target="_top">【←にフレームが表示されていない方はここをクリック】</A>
+<A href="index.html" target="_top">[If you don't see the navigation frame on the left, click here]</A>
 <P><BR>
 </P>
 </BODY>
